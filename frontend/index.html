@@ -6,26 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COFFEESAZO</title>
     <style>
-        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);	
-        .logo {
-            width: 30%;
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 
-        }
-
-        html {
-            border-top: 5px solid #fff;
-            background: #58DDAF;
-            color: #2a2a2a;
-        }
-
-        html, body {
+        html,
+        body {
             margin: 0;
             padding: 0;
             font-family: 'Open Sans';
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
+        a {
+            font-size: 20px;
+            text-decoration: none;
+            color: #4d2800;
+        }
+        li {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1000px;
+        }
+
+        .logo {
+            width: 400px;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            line-height: 300px;
+            margin-left: 40%;
+        }
+
+
+        .header {
+            align-items: center;
+        }
+
+        .btns-signin-signup {
+            display: inline-block;
+            text-align: right;
+
+        }
+
+        .btns-signin-signup>span {
+            margin: 20px;
+        }
+
+        .shopping {
+            margin: 20px 100px 20px 100px;
+            text-align: center;
+        }
+
+        .shopping>span {
+            margin: 0 30px 0 30px;
+        }
+
         h1 {
-            color: #fff;
             text-align: center;
             font-weight: 300;
         }
@@ -51,7 +91,7 @@
             float: left;
             margin: 0;
             padding: 0;
-            width: 500px;
+            width: 700px;
             height: 300px;
             background: #ccc;
             text-align: center;
@@ -98,40 +138,98 @@
             font-size: 18px;
         }
 
+        .items-container {
+            display: flex;
+            position: relative;
+            border-radius: 5px;
+            border: 1px solid black;
+            width: 700px;
+            height: 300px;
+            text-align: center;
+            margin-left: 33.5%;
+            margin-bottom: 20px;
+            padding: 50px;
+        }
+
+        .items-container a {
+            text-align: center;
+            font-size: 18px;
+            
+        }
+
+        .items-container-wholebean a {
+            margin: 20px;
+        }
+
+        
     </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="container"></div>
     <header>
         <div class="header">
-            <div class="logoimg">
+            <div class="header-align">
                 <a href="#"><img src="./img/logo.png" class="logo"></a>
-            </div><!-- logoimg -->
-            <div class="btns-before-signin">
-
+                <div class="btns-signin-signup">
+                    <span><a href="#">로그인</a></span>
+                    <span><a href="#">회원가입</a></span>
+                    <span><a href="#">고객센터</a></span>
+                </div>
             </div>
+
+            <div class="shopping">
+                <hr>
+                <span><a href="#">원두</a></span>
+                <span><a href="#">스틱커피</a></span>
+                <span><a href="#">캡슐커피</a></span>
+                <hr>
+            </div>
+
         </div>
     </header>
     <section>
         <div class="section-slider">
+            <h1>금주의 인기상품</h1>
             <div id="slider">
                 <a href="#" class="control_next"></a>
                 <a href="#" class="control_prev"></a>
-                        <ul>
-                            <li>SLIDE 1</li>
-                            <li style="background: #aaa;">SLIDE 2</li>
-                            <li>SLIDE 3</li>
-                            <li style="background: #aaa;">SLIDE 4</li>
-                        </ul>
+                <ul>
+                    <li>SLIDE 1</li>
+                    <li style="background: #aaa;">SLIDE 2</li>
+                    <li>SLIDE 3</li>
+                    <li style="background: #aaa;">SLIDE 4</li>
+                </ul>
             </div>
-
         </div>
-
+        <div class="section-hashtags">
+            <h1>키워드로 상품을 찾아보세요!</h1>
+            <div class="items-container">
+                <div class="items-container-wholebean">
+                    <span id="wholebean-acidity"><a href="#">#풍부한산미</a></span>
+                    <span id="wholebean-body"><a href="#">#묵직한바디감</a></span>
+                    <span id="wholebean-latin-america"><a href="#">#중남미원두</a></span>
+                    <span id="wholebean-africa"><a href="#">#아프리카원두</a></span>
+                </div>
+                <!-- <div class="items-container-stickcoffee-capsulecoffee">
+                    <span id="stickcoffee"><a href="#">#쉽고간편한</a></span>
+                    <span id="lungo"><a href="#">#룽고</a></span>
+                </div> -->
+            </div>
+        </div>
     </section>
     <footer>
         <div class="footer">
-
+            <hr>
+            <ul class="list-box">
+                <li>COFFEESAZO</li>
+                <li>주소: 서울특별시 영등포구 선유도2로 57 이레빌딩(구관) 19F, 20F</li>
+                <li>대표자: 이지현</li>
+                <li>책임자: 제윤지</li>
+                <li>개인정보관리책임자: 김은규</li>
+            </ul>
         </div>
     </footer>
     <script>
