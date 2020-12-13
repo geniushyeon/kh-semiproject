@@ -25,7 +25,7 @@
             text-align: center;
             font-weight: 300;
         }
-
+        /* header 상단 고정*/
         header {
             position: fixed;
             top: 0;
@@ -34,10 +34,11 @@
             background-color: white;
             z-index: 1000;
         }
-
+        /* optional */
         .header-logo {
             background-color:#f7efd9;
         }
+
         .container {
             max-width: 1000px;
         }
@@ -48,7 +49,7 @@
             margin: 0 auto;
             padding: 0;
         }
-
+        /* 로그인 회원가입 고객센터*/
         .btns-signin-signup {
             position: absolute;
             right: 5px;
@@ -69,14 +70,12 @@
         }
 
         section {
-            width: 100%;
-            height: 80%;
-            margin-top: 250px;
+            margin-top: 230px;
         }
+        
         .shopping {
-            margin: 0 100px 20px 100px;
+            margin: 0 auto;
             text-align: center;
-            
         }
 
         .shopping > span {
@@ -87,6 +86,7 @@
             font-weight: bold;
             color: #4d2600;
         }
+
 
         #slider {
             position: relative;
