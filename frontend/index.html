@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COFFEESAZO</title>
     <style>
-        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
 
         html,
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Open Sans';
+            font-family: 'Nanum Myeongjo', serif;
         }
 
         * {
@@ -22,6 +22,10 @@
         a {
             font-size: 20px;
             text-decoration: none;
+            color: black;
+        }
+
+        :hover {
             color: #4d2800;
         }
         li {
@@ -31,25 +35,21 @@
         .container {
             max-width: 1000px;
         }
-
+        
         .logo {
+            display: block;
             width: 400px;
-            position: relative;
-            margin: 0;
+            margin: 0 auto;
             padding: 0;
-            line-height: 300px;
-            margin-left: 40%;
-        }
-
-
-        .header {
-            align-items: center;
         }
 
         .btns-signin-signup {
-            display: inline-block;
-            text-align: right;
-
+            display: block;
+            width: 400px;
+            height: 30px;
+            margin: 0 auto;
+            text-align: center;
+            
         }
 
         .btns-signin-signup>span {
@@ -57,11 +57,11 @@
         }
 
         .shopping {
-            margin: 20px 100px 20px 100px;
+            margin: 0 100px 20px 100px;
             text-align: center;
         }
 
-        .shopping>span {
+        .shopping > span {
             margin: 0 30px 0 30px;
         }
 
@@ -139,26 +139,26 @@
         }
 
         .items-container {
-            display: flex;
+            display: block;
             position: relative;
             border-radius: 5px;
             border: 1px solid black;
             width: 700px;
             height: 300px;
             text-align: center;
-            margin-left: 33.5%;
-            margin-bottom: 20px;
+            margin: auto;
             padding: 50px;
+            margin-bottom: 20px;
         }
 
         .items-container a {
             text-align: center;
             font-size: 18px;
-            
+            margin: 20px;
         }
 
-        .items-container-wholebean a {
-            margin: 20px;
+        .items-container-wholebean {
+            margin-bottom: 60px;
         }
 
         
@@ -173,7 +173,7 @@
         <div class="header">
             <div class="header-align">
                 <a href="#"><img src="./img/logo.png" class="logo"></a>
-                <div class="btns-signin-signup">
+                 <div class="btns-signin-signup">
                     <span><a href="#">로그인</a></span>
                     <span><a href="#">회원가입</a></span>
                     <span><a href="#">고객센터</a></span>
@@ -182,9 +182,10 @@
 
             <div class="shopping">
                 <hr>
-                <span><a href="#">원두</a></span>
-                <span><a href="#">스틱커피</a></span>
-                <span><a href="#">캡슐커피</a></span>
+                <span id="wholebean"><a href="#">원두</a></span>
+                <!-- onmouseover 써볼지? (javascript)-->
+                <span id="stickcoffee"><a href="#">스틱커피</a></span>
+                <span id="capsulecoffee"><a href="#">캡슐커피</a></span>
                 <hr>
             </div>
 
@@ -213,10 +214,10 @@
                     <span id="wholebean-latin-america"><a href="#">#중남미원두</a></span>
                     <span id="wholebean-africa"><a href="#">#아프리카원두</a></span>
                 </div>
-                <!-- <div class="items-container-stickcoffee-capsulecoffee">
-                    <span id="stickcoffee"><a href="#">#쉽고간편한</a></span>
+                <div class="items-container-stickcoffee-capsulecoffee">
+                    <span id="easy-and-simple"><a href="#">#쉽고간편한</a></span>
                     <span id="lungo"><a href="#">#룽고</a></span>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>
