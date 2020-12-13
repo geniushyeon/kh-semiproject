@@ -26,6 +26,18 @@
             font-weight: 300;
         }
 
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            z-index: 1000;
+        }
+
+        .header-logo {
+            background-color:#f7efd9;
+        }
         .container {
             max-width: 1000px;
         }
@@ -56,9 +68,15 @@
             font-size: 16px;
         }
 
+        section {
+            width: 100%;
+            height: 80%;
+            margin-top: 250px;
+        }
         .shopping {
             margin: 0 100px 20px 100px;
             text-align: center;
+            
         }
 
         .shopping > span {
@@ -70,12 +88,12 @@
             color: #4d2600;
         }
 
-
         #slider {
             position: relative;
             overflow: hidden;
             margin: 20px auto 0 auto;
             border-radius: 4px;
+            
         }
 
         #slider ul {
@@ -103,7 +121,7 @@
         a.control_next {
             position: absolute;
             top: 40%;
-            z-index: 999;
+            z-index: 1;
             display: block;
             padding: 4% 3%;
             width: auto;
