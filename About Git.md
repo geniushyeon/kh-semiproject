@@ -78,3 +78,8 @@ git pull origin master
 # 생각해볼 것
 feature branch는 하나만 생성 - 작업자별로 폴더 만든 후 merge?
 어떻게 할지 고민해보기
+
+# About `pull request`
+URL
+- https://velog.io/@zansol/Pull-Request-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0
+- https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/
