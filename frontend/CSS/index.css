@@ -71,7 +71,7 @@
         }
 
         section {
-            margin-top: 230px;
+            margin-top: 170px;
         }
         
         .shopping {
@@ -173,16 +173,16 @@
             transition: all 0.2s ease;
             color: #4d2600;
         }
-
+        /*footer 하단 고정*/
         footer {
-            position: absolute;
+            position: relative;
             width: 100%;
+            margin: 0 auto;
             background-color: #4d2600;
             padding: 5px;
             text-align: center;
             color: white;
             font-size: 14px;
-            
         }
 
         .footer li {
