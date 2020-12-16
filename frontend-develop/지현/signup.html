@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COFFEESAZO</title>
-    <link rel="stylesheet" href="./CSS/signup.css" type="text/css">
+    <link rel="stylesheet" href="./css/signup.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
@@ -14,13 +14,13 @@
     <header class="header">
         <div class="header-align">
             <div class="header-logo">
-                <a href="index.html"><img src="./img/logo_white.png" class="logo"></a>
+                <a href="index.html"><img src="/frontend/img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
                 <span><a href="#">로그인</a></span>
                 <span><a href="#">회원가입</a></span>
                 <span><a href="#">고객센터</a></span>
-                <span><a href="#"><img src="./img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="#"><img src="/frontend/img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
@@ -39,9 +39,9 @@
                 <label>
                     아이디
                     <span class="field-required">아</span>
-                    <span class="warn-info">아이디는 필수 정보입니다.</span>
+                    <span class="warn-info" id="id-required">아이디는 필수 정보입니다.</span>
                 </label>
-                <input class="form-box-field-input" type="text" placeholder="아이디 입력(5~11자)" required />
+                <input class="form-box-field-input" id="input-id" type="text" placeholder="아이디 입력(5~11자, 영문 소문자와 숫자만 사용)" required />
 
             </div>
             <div class="form-box-field warn">
@@ -111,6 +111,27 @@
 
     <script>
 
+        $("#input-id").focusout(function() {
+            var idCheck = RegExp(/^[a-z0-9]{5,12}$/);
+            
+            console.log(idCheck.test($(this).val()));
+            if ($("#input-id").val() == "") {
+                $("#id-required").css("display", "inline-block");
+                
+            }
+            else if (!idCheck.test($(this).val())) {
+                $("#id-required").html("아이디가 형식에 맞지 않습니다.");
+                $("#id-required").css("display", "inline-block");
+                $("#id-required").css("color", "red");
+            }
+
+            else if (idCheck.test($(this).val())) {
+                $("#id-required").html("사용 가능한 아이디입니다.");
+                $("#id-required").css("display", "inline-block");
+                $("#id-required").css("color", "green");
+                
+            }
+        })
     </script>
 </body>
 
