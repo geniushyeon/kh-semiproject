@@ -14,7 +14,7 @@
     <header class="header">
         <div class="header-align">
             <div class="header-logo">
-                <a href="#"><img src="./img/logo_white.png" class="logo"></a>
+                <a href="index.html"><img src="./img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
                 <span><a href="#">로그인</a></span>
@@ -33,23 +33,25 @@
         </div>
     </header>
     <div class="section">
-        <h2>회원가입</h2>
-        <form class="form-box" name="sign-up-form">
+        <h2 class="sign-up-header">회원가입</h2>
+        <form class="form-box" name="sign-up-form" method="POST">
             <div class="form-box-field warn">
                 <label>
                     아이디
                     <span class="field-required">아</span>
+                    <span class="warn-info">아이디는 필수 정보입니다.</span>
                 </label>
                 <input class="form-box-field-input" type="text" placeholder="아이디 입력(5~11자)" required />
-                <p class="warn-info">아이디는 필수 정보입니다.</p>
+
             </div>
             <div class="form-box-field warn">
                 <label>
                     비밀번호
                     <span class="field-required">아</span>
+                    <span class="warn-info">비밀번호는 필수 정보입니다.</span>
                 </label>
                 <input class="form-box-field-input" type="password" placeholder="비밀번호 입력(숫자, 영문, 특수문자 조합 최소 8자)" />
-                <p class="warn-info">비밀번호는 필수 정보입니다.</p>
+
             </div>
             <div class="form-box-field warn">
                 <label>
@@ -62,19 +64,38 @@
                 <label>
                     이메일
                     <span class="field-required">아</span>
+                    <span class="warn-info">이메일은 필수 정보입니다.</span>
                 </label>
                 <input class="form-box-field-input" type="email" placeholder="이메일" />
-                <p class="warn-info">이메일은 필수 정보입니다.</p>
+
             </div>
             <div class="form-box-field warn">
                 <label>
                     전화번호
                     <span class="field-required">아</span>
+                    <span class="warn-info">전화번호는 필수 정보입니다.</span>
                 </label>
                 <input class="form-box-field-input" type="text" placeholder="전화번호 입력(- 제외)" />
-                <p class="warn-info">전화번호는 필수 정보입니다.</p>
             </div>
-
+            <div class="terms-box">
+                <div>
+                    <input id="all-admit" type="checkbox" />
+                    <label for="all-admit">약관 전체 동의</label>
+                </div>
+                <div>
+                    <input id="coffeesazo-admit" type="checkbox" />
+                    <label for="coffeesazo-admit">커피사조 이용약관 동의(필수)</label>
+                    <a href="#"><u>약관보기</u></a>
+                </div>
+                <div>
+                    <input id="user-info-admit" type="checkbox" />
+                    <label for="user-info-admit">개인정보 수집 이용동의(필수)</label>
+                    <a href="#"><u>약관보기</u></a>
+                </div>
+            </div>
+            <div>
+                <input type="submit" class="signup-btn" value="가입하기" />
+            </div>
         </form>
     </div>
     <footer>
