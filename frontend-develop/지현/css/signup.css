@@ -125,11 +125,31 @@
             text-indent: 0.5rem;
         }
 
-        .form-box-field > .form-box-field-input::placeholder {
+        .postcode input,
+        .address_detail input  {
+                width: 49.44%;
+                height: 50px;
+                outline: none;
+                border: 1px solid #e5e5e5;
+                font-size: 0.8rem;
+                text-indent: 0.5rem;
+                margin: 0 auto;
+            }
+        
+        #sample6_address {
+            width: 100%;
+            height: 50px;
+            outline: none;
+            border: 1px solid #e5e5e5;
+            font-size: 0.8rem;
+            text-indent: 0.5rem;
+        }
+        
+        .form-box-field-input::placeholder {
             color: #cccccc;
         }
 
-        .form-box-field > .form-box-field-input:focus {
+        .form-box-field-input:focus {
             border-color: #aaaaaa;
             transition: border 0.3s ease-in-out;/*!*/
         }
@@ -153,7 +173,7 @@
 
         .form-box-field > label {
             display: inline-block;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.5rem;
         }
 
 
