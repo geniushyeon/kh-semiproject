@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/header_footer.css" type="text/css">
+    <link rel="stylesheet" href="./css/Mypage_order.css" type="text/css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <title>주문목록</title>
+
+
+
+
+
+</head>
+
+
+<body>
+
+    <header class="header">
+        <div class="header-align">
+            <div class="header-logo">
+                <a href="#"><img src="./img/logo_white.png" class="logo"></a>
+            </div>
+            <div class="btns-signin-signup">
+                <span><a href="#">로그인</a></span>
+                <span><a href="#">회원가입</a></span>
+                <span><a href="#">고객센터</a></span>
+                <span><a href="#"><img src="./img/shoppingcart_white.png" id="shoppingcart"></a></span>
+            </div>
+        </div>
+
+        <div class="shopping">
+            <span id="wholebean"><a href="#">원두</a></span>
+            <!-- onmouseover 써볼지? (javascript)-->
+            <span id="stickcoffee"><a href="#">스틱커피</a></span>
+            <span id="capsulecoffee"><a href="#">캡슐커피</a></span>
+
+        </div>
+    </header>
+
+
+    <main>
+
+
+        <div class="edit_title">
+            <h1>주문목록</h1>
+        </div>
+
+        
+    <div class = "main_table">
+        <table class="table table-hover">
+            <form action="" method="POST">
+                <thead>
+                    <tr>
+                        <th>선택</th>
+                        <th>주문번호</th>
+                        <th>상품번호</th>
+                        <th>상품이미지</th>
+                        <th>상품명</th>
+                        <th>가격</th>
+                        <th>수량</th>
+                        <th>합계</th>
+                    </tr>
+                </thead>
+
+
+
+                  <tr>
+                    <td><input id="checkbox" type="checkbox"></td>
+                    <td>20201217</td>
+                    <td>35435</td>
+                    <td height = "0">
+                        <img src="..." alt="..." class="img-thumbnail">
+                      </td>
+                      <td>커피1</td>
+                      <td>7000원</td>
+                      <td>2개</td>
+                      <td>14000원</td>
+                  </tr>
+
+                  <tr>
+                    <td><input id="checkbox" type="checkbox"></td>
+                    <td>20201217</td>
+                    <td>633456</td>
+                    <td height = "0">
+                        <img src="..." alt="..." class="img-thumbnail">
+                      </td>
+                      <td>원두</td>
+                      <td>22000원</td>
+                      <td>2개</td>
+                      <td>44000원</td>
+                  </tr>
+
+                  
+                  <tr>
+                    <td><input id="checkbox" type="checkbox"></td>
+                    <td>20201217</td>
+                    <td>633456</td>
+                    <td height = "0">
+                        <img src="..." alt="..." class="img-thumbnail">
+                      </td>
+                      <td>원두</td>
+                      <td>22000원</td>
+                      <td>2개</td>
+                      <td>44000원</td>
+                  </tr>
+
+                  
+                  <tr>
+                    <td><input id="checkbox" type="checkbox"></td>
+                    <td>20201217</td>
+                    <td>633456</td>
+                    <td height = "0">
+                        <img src="..." alt="..." class="img-thumbnail">
+                      </td>
+                      <td>원두</td>
+                      <td>22000원</td>
+                      <td>2개</td>
+                      <td>44000원</td>
+                  </tr>
+
+                  
+            </table>
+
+            <div class="csl-button">
+            <p>
+                <button type="button" class="btn btn-primary btn-lg">주문취소</button>
+              </p>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+</div>
+    </main>
+</body>
+<footer>
+    <div class="footer">
+        <ul class="footer-list-box">
+            <li>COFFEESAZO | 대표자: 이지현 | 사업자등록번호 123-45-67890</li>
+            <li>서울특별시 영등포구 선유도2로 57 이레빌딩(구관) 19F</li>
+            <li>책임자: 제윤지 | 개인정보관리책임자: 김은규</li>
+            <li>고객센터 02-1234-5678 | E-mail: customer@coffeesazo.com</li>
+        </ul>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/popper.min.js"></script>
+
+</body>
+
+</html>
