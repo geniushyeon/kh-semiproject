@@ -137,10 +137,6 @@
                 
             }
 
-        #sample6_postcode, #sample6_extraAddress {
-            background-color: white;
-        }
-
         
         #sample6_address {
             width: 100%;
@@ -149,7 +145,7 @@
             border: 1px solid #e5e5e5;
             font-size: 0.8rem;
             text-indent: 0.5rem;
-            background-color: white;
+            
         }
         
         #sample6_postcode_search:hover {
