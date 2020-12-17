@@ -41,41 +41,39 @@
                     <span class="field-required">아</span>
                     <span class="warn-info" id="id-required">아이디는 필수 정보입니다.</span>
                 </label>
-                <input class="form-box-field-input" id="input-id" type="text" placeholder="아이디 입력(5~11자, 영문 소문자와 숫자만 사용)" required />
+                <input class="form-box-field-input" id="input-id" type="text"
+                    placeholder="아이디 입력(5~11자, 영문 소문자와 숫자만 사용)" required />
 
             </div>
             <div class="form-box-field warn">
                 <label>
                     비밀번호
                     <span class="field-required">아</span>
-                    <span class="warn-info">비밀번호는 필수 정보입니다.</span>
+                    <span class="warn-info" id="password-required">비밀번호는 필수 정보입니다.</span>
                 </label>
-                <input class="form-box-field-input" type="password" placeholder="비밀번호 입력(숫자, 영문, 특수문자 조합 최소 8자)" />
+                <input class="form-box-field-input" type="password" id="input-password"
+                    placeholder="비밀번호 입력(숫자, 영문, 특수문자 조합 최소 8자)" />
 
             </div>
             <div class="form-box-field warn">
-                <label>
-                    비밀번호 확인
-                    <span class="field-required">아</span>
-                </label>
-                <input class="form-box-field-input" type="password" placeholder="비밀번호 확인" />
+                <input class="form-box-field-input" type="password" id="check-input-password" placeholder="비밀번호 확인" />
             </div>
             <div class="form-box-field warn">
                 <label>
                     이메일
                     <span class="field-required">아</span>
-                    <span class="warn-info">이메일은 필수 정보입니다.</span>
+                    <span class="warn-info" id="email-required">이메일은 필수 정보입니다.</span>
                 </label>
-                <input class="form-box-field-input" type="email" placeholder="이메일" />
+                <input class="form-box-field-input" type="email" id="input-email" placeholder="이메일 형식으로 입력" />
 
             </div>
             <div class="form-box-field warn">
                 <label>
                     전화번호
                     <span class="field-required">아</span>
-                    <span class="warn-info">전화번호는 필수 정보입니다.</span>
+                    <span class="warn-info" id="phonenumber-required">전화번호는 필수 정보입니다.</span>
                 </label>
-                <input class="form-box-field-input" type="text" placeholder="전화번호 입력(- 제외)" />
+                <input class="form-box-field-input" type="text" id="input-phonenumber" placeholder="전화번호 입력(- 제외)" />
             </div>
             <div class="terms-box">
                 <div>
@@ -109,29 +107,103 @@
         </div>
     </footer>
 
-    <script>
+    <script type="text/javascript">
+        var id = $("#input-id").val();
+        var password = $("#input-password").val();
+        var checkPassword = $("#check-input-password").val();
+        var email = $("#input-email").val();
 
-        $("#input-id").focusout(function() {
-            var idCheck = RegExp(/^[a-z0-9]{5,12}$/);
-            
-            console.log(idCheck.test($(this).val()));
-            if ($("#input-id").val() == "") {
+        // 아이디 유효성 검사
+        $("#input-id").focusout(function () {
+            var idCheckRegExp = RegExp(/^[a-z0-9]{5,12}$/);
+
+            if (id == "") {
                 $("#id-required").css("display", "inline-block");
-                
+
             }
-            else if (!idCheck.test($(this).val())) {
+            else if (!idCheckRegExp.test(id)) {
                 $("#id-required").html("아이디가 형식에 맞지 않습니다.");
                 $("#id-required").css("display", "inline-block");
                 $("#id-required").css("color", "red");
             }
-
-            else if (idCheck.test($(this).val())) {
+            // db에 있는 아이디는 사용 불가능한 것 구현 핋요
+            else if (idCheckRegExp.test(id)) {
                 $("#id-required").html("사용 가능한 아이디입니다.");
                 $("#id-required").css("display", "inline-block");
                 $("#id-required").css("color", "green");
-                
+
             }
         })
+
+        $("#input-password").focusout(function () {
+            var numRegExp = password.search(/[0-9]/g);
+            var engRegExp = password.search(/[a-z]/ig);
+            var specialRegExp = password.search(/[~!?@#$%^&*();:_+=/-]/gi);
+
+            if (password == "") {
+                // 입력 여부 검사
+                $("#password-required").css("display", "inline-block");
+
+            } else if (password.length < 8) {
+                // 길이 검사
+                $("#password-required").html("8자리 이상 입력해주세요.");
+                $("#password-required").css("display", "inline-block");
+                $("#password-required").css("color", "red");
+                return false;
+
+            } else if (password.search(/\s/) != -1) {
+                // 비밀번호 공백 검사
+                $("#password-required").html("비밀번호에는 공백을 사용할 수 없습니다.");
+                $("#password-required").css("display", "inline-block");
+                $("#password-required").css("color", "red");
+                return false;
+
+            } else if (numRegExp < 0 || engRegExp < 0 || specialRegExp < 0) {
+                // 형식 유효성 검사
+                $("#password-required").html("영문, 숫자, 특수문자를 혼합하여 입력해주세요.");
+                $("#password-required").css("display", "inline-block");
+                $("#password-required").css("color", "red");
+                return false;
+            } else {
+                console.log("true");
+                $("#password-required").css("display", "none");
+                return true;
+            }
+        })
+
+        $("#check-input-password").focusout(function () {
+
+            if (checkPassword == "") {
+                // 입력 여부 검사
+                $("#password-required").html("비밀번호 재확인은 필수 정보입니다.");
+                $("#password-required").css("display", "inline-block");
+                $("#password-required").css("color", "red");
+                return false;
+
+            } else if (checkPassword != password) {
+                // 비밀번호 일치 검사
+                $("#password-required").html("비밀번호가 일치하지 않습니다.");
+                $("#password-required").css("display", "inline-block");
+                $("#password-required").css("color", "red");
+                return false;
+
+            } else {
+                console.log("true");
+                $("#password-required").css("display", "none");
+                return true;
+            }
+        })
+
+        $("#input-email").focusout(function () {
+
+            if (email == "") {
+                // 입력 여부 검사
+                $("#email-required").css("display", "inline-block");
+            }
+        })
+
+        // var reg = /^[0-9a-z~!?@#$%^&*();:_+=/-]{8,50}gi/;
+
     </script>
 </body>
 
