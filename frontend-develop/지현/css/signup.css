@@ -91,6 +91,7 @@
             color: #4d2600;
             
         }
+        /*header 끝!*/
 
         .section {
             margin: 0 400px 0 400px;
@@ -154,6 +155,7 @@
             display: inline-block;
             margin-bottom: 0.2rem;
         }
+
 
         .terms-box {
             font-size: 14pt;
