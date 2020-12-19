@@ -15,7 +15,7 @@ main{
 
 }
 
-.edit_title{
+.edit_title{   /* 제목 밑줄 띄기*/
  text-align: center;
  margin-bottom: 40px;
 
@@ -23,7 +23,7 @@ main{
 }
 
 
-h1 {  /* 마이페이지 밑줄*/
+h1 {  /* 제목 밑줄*/
     border-bottom: solid #000000;
     padding-bottom: 20px;
   }
