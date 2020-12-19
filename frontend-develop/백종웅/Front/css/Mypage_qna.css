@@ -1,10 +1,17 @@
 
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-div, h3, p, ul, li {  /*마이페이지 내부 글씨체*/
+
+.edit_title,h1, h3, p, ul, li {  /*마이페이지 내부 글씨체*/
     margin: 0;
     padding: 0;
     letter-spacing: -0.4px;
     font-family: 'Noto Sans KR', sans-serif;
+  }
+
+
+  h1 {  /* 마이페이지 밑줄*/
+    border-bottom: solid #000000;
+    padding-bottom: 20px;
   }
 
 main{
@@ -16,6 +23,7 @@ margin: 200px auto;
 
 .edit_title{
 text-align: center;
+margin-bottom: 40px;
 
 }
 
@@ -28,9 +36,7 @@ text-align: center;
 text-align: right;
 }
 
-.img-thumbnail size{
 
-}
 
 nav{
 text-align: center;

@@ -23,7 +23,7 @@
 
 
 <body>
-
+       <!---------------------- 헤더시작 --------------------->
   <header class="header">
     <div class="header-align">
       <div class="header-logo">
@@ -46,6 +46,10 @@
     </div>
   </header>
 
+
+       <!--------------------- 헤더끝 --------------------->
+
+       <!--------------------- 메인시작 --------------------->
   <main id="main_container">
 
     <div class="form_move">
@@ -55,9 +59,8 @@
 
 
       <div class="form-group">
-
+       <!--------------------- 프로필사진추가 --------------------->
         <div class="content">
-
           <img src="https://raw.githubusercontent.com/St4rFi5h/ETC/main/sourcce/article-user-blank.jpg"
             alt="blank_user">
           </br>
@@ -68,80 +71,106 @@
             </div>
           </label>
         </div>
+     <p>
 
-        <label for="inputName" class="col-sm-2 control-label">이름</label>
-        <div class="col-sm-10">
-          <input type="name" class="form-control" id="inputname" placeholder="변경하실 이름음 입력하세요">
-
-        </div>
-
-        <label for="inputPassword" class="col-sm-2 control-label">비밀번호</label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword3" placeholder="변경하실 비밀번호를 입력하세요">
-        </div>
-
-
-
-        <label for="inputPhone" class="col-sm-2 control-label">핸드폰번호</label>
-        <div class="col-sm-10">
-          <input type="phone" class="form-control" id="inputPhone" placeholder="변경하실 핸드폰번호를 입력하세요">
-        </div>
-
-
-
-        <label for="inputEmail" class="col-sm-2 control-label">이메일</label>
-        <div class="col-sm-10">
-          <input type="email" class="form-control" id="inputemail" placeholder="변경하실 이메일을 입력하세요">
-        </div>
-
-        <label for="inputAdress" class="col-sm-2 control-label">주소</label>
-
-        <p class=" form-address">
-          <div class="input-group mb-3">
-          <input type="text" class=" form-control" id="postcode" placeholder="우편번호">
-         <span class = "input-group-btn-prepend">
-          <button type="button" class="btn btn-default" id="postbutton"
-            onclick="sample4_execDaumPostcode()">우편번호 검색</button><br>
-          </span>
-        </div>
-            <label for="inputEmail" class="col-sm-2 control-label"></label>
-          <input type="text" class="form-control" id="roadAddress" placeholder="도로명주소">
-          <label for="inputEmail" class="col-sm-2 control-label"></label>
-          <input type="text" class="form-control" id="jibunAddress" placeholder="지번주소">
-          <label for="inputEmail" class="col-sm-2 control-label"></label>
-          <input type="text" class="form-control" id="detailAddress" placeholder="상세주소">
-          <label for="inputEmail" class="col-sm-2 control-label"></label>
-          <input type="text" class="form-control" id="extraAddress" placeholder="참고항목">
-        
-        </div>
-        <p>
-          <button type="button" class="btn btn-primary">취소하기</button>
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            변경하기
-          </button>
-
-          <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">확인</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                입력하신 회원정보를 변경하겠습니까?
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">취소하기</button>
-                <button type="button" class="btn btn-primary">변경하기</button>
-              </div>
-            </div>
+             <!--------------------- 회원정보 변경 --------------------->
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label">이름</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="colFormLabel" placeholder="이름">
           </div>
         </div>
+
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label">비밀번호</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="colFormLabel" placeholder="특수문자 반드시포함">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label">핸드폰번호</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="colFormLabel" placeholder="핸드폰번호">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label">이메일</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="colFormLabel" placeholder="이메일" >
+          </br></br>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label">주소</label>
+          <div class="col-sm-10">
+
+            <input type="email" class="form-control" id="postcode" placeholder="우편번호">
+          </div>
+
+        </div>
+
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="roadAddress" placeholder="도로명주소">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="jibunAddress" placeholder="지번주소">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="detailAddress" placeholder="상세주소">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="extraAddress" placeholder="참고항목">
+
+          </div>
+        </div>
+     
+        <!--------------------- 우편번호 시작 --------------------->
+        <span class = "input-group-btn-prepend">
+          <button type="button" class="btn btn-outline-secondary" id="postbutton"
+            onclick="sample4_execDaumPostcode()">우편번호</button></br></br></br>
+          </span>
+        <p>
+          <button type="button" class="btn btn-outline-secondary">취소하기</button>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  변경하기
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        정말로 변경하겠습니까?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-outline-success">저장하기</button>
+      </div>
+    </div>
+  </div>
+</div>
         </p>
 
 
@@ -177,7 +206,7 @@
   <script src="./js/addressApi.js"></script>
   <script src="./js/jquery.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>
-  <script src="./js/popper.min.js"></script>
+  <script src="./js/popper.js"></script>
 
 </body>
 
