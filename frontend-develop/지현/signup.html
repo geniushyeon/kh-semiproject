@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COFFEESAZO</title>
+    <title>COFFEESAZO 회원가입</title>
     <link rel="stylesheet" href="./css/signup.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -35,7 +35,7 @@
     </header>
     <div class="section">
         <h2 class="sign-up-header">회원가입</h2>
-        <form class="form-box" name="sign-up-form" method="POST">
+        <form class="form-box" name="sign-up-form" method="POST" onsubmit="return checkForm(this)">
             <div class="form-box-field warn">
                 <label>
                     아이디
@@ -86,7 +86,7 @@
                 </div>
                 <input class="form-box-field-input" type="text" readonly id="sample6_address" placeholder="주소" /><br />
                 <div class="address_detail">
-                    <input class="form-box-field-input" type="text" readonly id="sample6_detailAddress"
+                    <input class="form-box-field-input" type="text" id="sample6_detailAddress"
                         placeholder="상세주소" />
                     <input class="form-box-field-input" type="text" readonly id="sample6_extraAddress"
                         placeholder="참고항목" />
@@ -306,6 +306,7 @@
             }).open();
         }
 
+        // 약관동의 체크
         function isAllChecked() {
             const checkList = document.getElementsByName("admit");
             const len = checkList.length;
@@ -341,6 +342,16 @@
                     allAdmit.checked = true;
                 }
             })
+        }
+
+        // 약관 비동의 시 회원가입 불가능
+        function checkForm() {
+            var form = document.getElementsByName("sign-up-form");
+            if (!isAllChecked()) {
+                alert("필수 동의 약관에 동의하셔야 회원가입이 가능합니다.");
+                return false;
+            }
+            form.submit();
         }
 
     </script>

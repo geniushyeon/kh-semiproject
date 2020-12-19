@@ -2,7 +2,8 @@
 
 <html lang="ko">
 
-<head>
+    <head>
+    
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/header-footer.css" type="text/css">
     <link rel="stylesheet" href="./css/payment.css" type="text/css">
@@ -10,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <meta charset="utf-8">
-    <title>마이페이지</title>
+    <title>결제</title>
 
 
 </head>
@@ -49,41 +50,49 @@
                 <div class="info-buy">
                     <img src="./img/4-1.png" alt="">
                     <div class="info-buy-text">
-                        <strong>제품명</br></strong>
+                        <strong>콜롬비아 원두</br></strong>
                         <p><strong>35000원</strong>x 1개</p>
                         <u>무료배송</u>
-                        <p><strong>구매가격 &nbsp;</strong><strong>35000원</strong></p>
+                        <p><strong></strong>구매가격 &nbsp;</strong><strong>35000원</strong></p>
                     </div>
                 </div>
-               
-                
-            </div>
-                
+                <div class="info-buy">
+                    <img src="./img/4-1.png" alt="">
+                    <div class="info-buy-text">
+                        <strong>가나 원두</br></strong>
+                        <p><strong>35000원</strong>x 1개</p>
+                        <u>무료배송</u>
+                        <p><strong></strong>구매가격 &nbsp;</strong><strong>35000원</strong></p>
+                    </div>
+                </div>
                 
 
-                    
+
+            </div>
+
             <div class="info-user-container">
                 <div class="info-user">
                     <div class="top-user">
                         <div class="form-container">
                             <form action="" method="POST">
                                 <h2>주문자 정보</h2>
-                                    <div class="form-userinfo">
-                                        <label for="name">이름</label>
-                                        <input class="name" id="name" type="text" style="margin-left: 46px;">
-                                        <br>
-                                        <label for="E-mail">이메일</label>
-                                        <input class="E-mail" id="E-mail" type="email" style="margin-left: 27px;">
-                                        <br>
-                                        <label for="number">연락처</label>
-                                        <input class="number" id="number" type="text" style="margin-left: 27px;">
-                                    </div>
-                                    <div class="form-container2">
-                                        <h2>배송 정보</h2>
-                                        <div class="form-address">
-                                        <input type="text" id="postcode" placeholder="우편번호">
-                                        <button type="button" class="btn btn-primary btn-sm" id="postbutton" onclick="sample4_execDaumPostcode()">우편번호</button><br>
-                                     
+                                <div class="form-userinfo">
+                                    <label for="name">이름</label>
+                                    <input class="name" id="name" type="text" style="margin-left: 46px;">
+                                    <br>
+                                    <label for="E-mail">이메일</label>
+                                    <input class="E-mail" id="E-mail" type="email" style="margin-left: 27px;">
+                                    <br>
+                                    <label for="number">연락처</label>
+                                    <input class="number" id="number" type="text" style="margin-left: 27px;">
+                                </div>
+                                <div class="form-container2">
+                                    <h2>배송 정보</h2>
+                                    <div class="form-address">
+                                        <input type="text" id="postcode" placeholder="우편번호" maxlength="5">
+                                        <button type="button" class="btn btn-secondary" id="postbutton"
+                                            onclick="sample4_execDaumPostcode()">우편번호</button><br>
+
                                         <input type="text" id="roadAddress" placeholder="도로명주소">
                                         <input type="text" id="jibunAddress" placeholder="지번주소">
                                         <span id="guide" style="color:#999;display:none"></span><br>
@@ -93,28 +102,99 @@
                                         <label for="">배송 시 요청 사항 </label>
                                         <br>
                                         <input class="delivery-rq" id="delivery-rq" type="text">
+                                        <br>
+                                        <label for="">수령인</label>
+                                        <br>
+                                        <input class="recipient-rq" id="recipient-rq" type="text">
+                                        <br>
+                                        <label for="">연락처</label>
+                                        <br>
+                                        <input class="number-rq" id="number-rq" type="text">
                                     </div>
+                                </div>
+                                <div class="form-container3">
+                                    <h2>결제 방법 선택</h2>
+                                    <br>
+                                    <div class="payment-radio-container">
+                                        <div class="card">
+                                            <input type="radio" name="gener" checked="checked"
+                                                style="height: 20px; width: 20px; margin-right: 50px;" value="card"/>
+                                            <span class="up" style="font-size: 20px;">신용카드/체크카드</span>
+                                        </div>
+                                        <div class="money">
+                                            <input type="radio" name="gener"
+                                                style="height: 20px; width: 20px; margin-right: 50px;" value="money" />
+                                            <span class="up" style="font-size: 20px;">무통장입금</span>
+                                        </div>
                                     </div>
-                                </form>
+                                </div>
+                                <div class="form-container4">
+                                    <h2>주문 정보 확인</h2>
+                                    <div class="form-checkorder">
+                                        <table class="checkorder-table1">
+                                            
+                                                <tr>
+                                                    <td>결제방법</td>
+                                                    <td>결제방법</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>상품금액</td>
+                                                    <td>35,000원</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>배송비</td>
+                                                    <td>0원</td>
+                                                </tr>
+                                            
+                                            
+                                                
+                                            </table>
+                                            <table class="checkorder-table2">
+                                                <tr>
+                                                    <td>최종 결제 금액</td>
+                                                    <td>35,000원</td>
+                                                </tr>
+                                            </table>
+                                            
 
-                            </div>
+                                                
+
+                                    </div>
+                                </div>
+                                <div class="form-container5">
+                                    <h2>이용 약관</h2>
+                                    <div class="tos1">
+                                        <input type="checkbox"  style="width: 25; height:15px;">
+                                        <p style="display: inline-block;">개인정보 판매자 제공에 동의합니다.</p>
+                                        <div class="TermsOfService1" style="display: inline-block;margin-left: 32px;"><!--스크립트로 html불러옴--></div>
+                                    </div>
+                                    <div class="tos2">
+                                        <input type="checkbox"  style="width: 25;height:15px;">
+                                        <p style="display: inline-block;">구매자의 정보수집 및 이용에 동의합니다.</p>
+                                        <div class="TermsOfService2" style="display: inline-block;"><!--스크립트로 html불러옴--></div>
+                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="form-container6">
+                                    <div class="form-submit">
+                                        <button type="submit" class="btn btn-outline-success">구매하기</button>
+                                      </div>      
+
+                                </div>
+                                        
+
+                                
+                                
+                            </form>
+
+                        </div>
 
                     </div>
                 </div>
             </div>
 
-
         </div>
-
-
-
-
-
-
-
-
-
-
     </main>
     <footer>
         <div class="footer">
@@ -129,9 +209,18 @@
 
     <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/popper.min.js"></script>
+    <script src="./js/popper.js"></script>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="./js/addressApi.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".TermsOfService1").load("TermsOfService1.html")
+            $(".TermsOfService2").load("TermsOfService2.html")
+        })
+        
+        
+        
+    </script>
 
 </body>
 
