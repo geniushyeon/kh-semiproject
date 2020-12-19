@@ -101,12 +101,16 @@
                 <div>
                     <input id="coffeesazo-admit" name="admit" type="checkbox" />
                     <label for="coffeesazo-admit">커피사조 이용약관 동의(필수)</label>
-                    <a href="#"><u>약관보기</u></a>
+                    <a href="coffeesazo_admit.html"><u>약관보기</u></a>
                 </div>
                 <div>
                     <input id="user-info-admit" name="admit" type="checkbox" />
-                    <label for="user-info-admit">개인정보 수집 이용동의(필수)</label>
-                    <a href="#"><u>약관보기</u></a>
+                    <label for="user-info-admit">개인정보 수집 및 이용동의(필수)</label>
+                    <a href="userinfo_admit.html"><u>약관보기</u></a>
+                </div>
+                <div>
+                    <input id="upto-14-admit" name="admit" type="checkbox" />
+                    <label for="upto-14-admit">만 14세 이상입니다.(필수)</label>
                 </div>
             </div>
             <div>
@@ -191,7 +195,7 @@
 
             if (checkPassword == "") {
                 // 입력 여부 검사
-                $("#password-required").html("비밀번호 재확인은 필수 정보입니다.");
+                $("#password-required").html("비밀번호 확인은 필수 정보입니다.");
                 $("#password-required").css("display", "inline-block");
                 $("#password-required").css("color", "red");
                 return false;
