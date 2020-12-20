@@ -7,6 +7,9 @@ html, body {
   height: 100%;
 }
 
+.form-control{
+  display: inline-block;
+}
 title, header, footer, h1
 {
   font-family: 'Nanum Myeongjo', serif;
@@ -17,6 +20,10 @@ label,p,ul,li {
   padding: 0;
   letter-spacing: -0.4px;
   font-family: 'Noto Sans KR', sans-serif;
+}
+
+#postbutton{
+  display: inline-block ;
 }
 
 .input-group-btn-prepend{
@@ -83,7 +90,7 @@ content {
 
 .btn-outline-secondary,.btn-outline-success{
   margin-left: 20px;
-  margin-bottom: 20px;
+
 }
 
   .col-sm-10{
