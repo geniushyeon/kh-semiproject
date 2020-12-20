@@ -89,6 +89,7 @@ color: #888;
 .card_small:hover {   /*마우스 올릴시 효과*/
 box-shadow: 4px 8px 20px 2px rgba(0,0,0,0.15); 
 transition: 0.2s ease-in-out;
+color: #4d2600;
 }
 
 
