@@ -1,16 +1,29 @@
 
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-
-.edit_title,h1, h3, p, ul, li {  /*마이페이지 내부 글씨체*/
+/*font-family: 'Nanum Myeongjo', serif;*/
+.edit_title, h3, p, ul, li {  /*마이페이지 내부 글씨체*/
     margin: 0;
     padding: 0;
     letter-spacing: -0.4px;
     font-family: 'Noto Sans KR', sans-serif;
   }
 
+
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+  title, header, footer, h1
+{
+  font-family: 'Nanum Myeongjo', serif;
+}
+
 main{
  margin-top:200px ;
- width: 1200px;
+ width: 100%;
  margin: 200px auto;
 
 }

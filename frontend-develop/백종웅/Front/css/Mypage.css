@@ -4,16 +4,23 @@ span{ /*지현씨 푸터헤더 글씨체 */
 font-family: 'Nanum Myeongjo', serif;
 }
 
+title, header, footer, h1
+{
+  font-family: 'Nanum Myeongjo', serif;
+}
 
-
-h1,h3, p, ul, li {  /*마이페이지 내부 글씨체*/
+    h3, p, ul, li {  /*마이페이지 내부 글씨체*/
     margin: 0;
     padding: 0;
     letter-spacing: -0.4px;
     font-family: 'Noto Sans KR', sans-serif;
     }
     
-    
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
     
     
     h1 {  /* 마이페이지 밑줄*/
@@ -35,12 +42,9 @@ display: inline-block;
 
 
 #main_container { /*마이페이지 전체적 가운데*/
-padding-top : 100px;
-padding-left : 400px;
-padding-right : 400px;
-margin-top: 100px;
+width: 100%;
+margin-top: 200px;
 
-width: 1903px;
 text-align: center;
 
 }
