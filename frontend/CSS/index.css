@@ -51,7 +51,7 @@
         .btns-signin-signup {
             position: absolute;
             right: 5px;
-            top: 30px;
+            top: 45px;
             width: 400px;
             height: 30px;
             margin: 0 auto;
@@ -68,7 +68,7 @@
             position: relative;
             width: 30px;
             height: 30px;
-            top: 5px;
+            top: -5px;
             left: -8px;
         }
 
@@ -94,8 +94,6 @@
             color: #4d2600;
             
         }
-
-        
         
         .main {
             background-color:rgb(238, 235, 228);
@@ -145,19 +143,15 @@
             padding: 10px;
             margin-top: 50px;
         }
-
+        .hashtag {
+            margin-bottom: 20px;
+        }
         .hashtag-box {
             text-align: center;
             font-size: 2rem;
             
         }
 
-        .hashtag-box-2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 50px;
-        }
-        
         .tag {
             display: inline-block;
             margin: 20px;
@@ -183,6 +177,7 @@
             margin: 0 auto;
             background-color: #4d2600;
             padding: 5px;
+            padding-top: 20px;
             text-align: center;
             color: white;
             font-size: 14px;

@@ -18,6 +18,7 @@
             font-size: 20px;
             text-decoration: none;
             color: black;
+
         }
 
         p {
@@ -53,17 +54,17 @@
             margin: 0 auto;
             padding: 0;
         } 
-        /* 로그인 회원가입 고객센터*/
-        .btns-signin-signup {
+       /* 로그인 회원가입 고객센터*/
+       .btns-signin-signup {
             position: absolute;
             right: 5px;
-            top: 30px;
+            top: 45px;
             width: 400px;
             height: 30px;
             margin: 0 auto;
             text-align: center;
         }
-        
+    
         .btns-signin-signup a {
             margin: 10px;
             font-size: 16px;
@@ -74,10 +75,9 @@
             position: relative;
             width: 30px;
             height: 30px;
-            top: 5px;
+            top: -5px;
             left: -8px;
         }
-
         .shopping {
             margin: 0 auto;
             margin: 20px 0 20px 0;
@@ -284,6 +284,7 @@
             margin: 0 auto;
             background-color: #4d2600;
             padding: 5px;
+            padding-top: 20px;
             text-align: center;
             color: white;
             font-size: 14px;
