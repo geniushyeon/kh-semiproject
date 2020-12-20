@@ -6,27 +6,28 @@ font-family: 'Nanum Myeongjo', serif;
 
 
 
- h1,h3, p, ul, li {  /*마이페이지 내부 글씨체*/
-margin: 0;
-padding: 0;
-letter-spacing: -0.4px;
-font-family: 'Noto Sans KR', sans-serif;
-}
-
-
-
-
-h1 {  /* 마이페이지 밑줄*/
-      border-bottom: solid #000000;
-      padding-bottom: 20px;
+h1,h3, p, ul, li {  /*마이페이지 내부 글씨체*/
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.4px;
+    font-family: 'Noto Sans KR', sans-serif;
     }
-
-a {  /* 마우스 올릴시 전체 커서쳐리*/
-cursor: pointer;
-}
-
-
-
+    
+    
+    
+    
+    h1 {  /* 마이페이지 밑줄*/
+          border-bottom: solid #000000;
+          padding-bottom: 20px;
+        }
+    
+    a {  /* 마우스 올릴시 전체 커서쳐리*/
+    cursor: pointer;
+    text-decoration: none;
+    }
+    
+    
+    
 
 ul {  /* 버튼정렬*/
 display: inline-block;

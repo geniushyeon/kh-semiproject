@@ -21,6 +21,8 @@
 
 
 <body>
+    <!--------------------- 헤더 시작 --------------------->
+
 
     <header class="header">
         <div class="header-align">
@@ -44,7 +46,7 @@
         </div>
     </header>
 
-
+    <!---------------------메인 시작 --------------------->
     <main>
 
 
@@ -52,103 +54,103 @@
             <h1>주문목록</h1>
         </div>
 
-        
-    <div class = "main_table">
-        <table class="table table-hover">
-            <form action="" method="POST">
-                <thead>
+        <!---------------------테이블시작 --------------------->
+        <div class="main_table">
+            <table class="table table-hover">
+                <form action="" method="POST">
+                    <thead>
+                        <tr>
+                            <th>선택</th>
+                            <th>주문번호</th>
+                            <th>상품번호</th>
+                            <th>상품이미지</th>
+                            <th>상품명</th>
+                            <th>가격</th>
+                            <th>수량</th>
+                            <th>합계</th>
+                        </tr>
+                    </thead>
+
+
+                    <!--------------------- 테이블 각항목 --------------------->
                     <tr>
-                        <th>선택</th>
-                        <th>주문번호</th>
-                        <th>상품번호</th>
-                        <th>상품이미지</th>
-                        <th>상품명</th>
-                        <th>가격</th>
-                        <th>수량</th>
-                        <th>합계</th>
+                        <td><input id="checkbox" type="checkbox"></td>
+                        <td>20201217</td>
+                        <td>35435</td>
+                        <td height="0">
+                            <img src="..." alt="..." class="img-thumbnail">
+                        </td>
+                        <td>커피1</td>
+                        <td>7000원</td>
+                        <td>2개</td>
+                        <td>14000원</td>
                     </tr>
-                </thead>
+
+                    <tr>
+                        <td><input id="checkbox" type="checkbox"></td>
+                        <td>20201217</td>
+                        <td>633456</td>
+                        <td height="0">
+                            <img src="..." alt="..." class="img-thumbnail">
+                        </td>
+                        <td>원두</td>
+                        <td>22000원</td>
+                        <td>2개</td>
+                        <td>44000원</td>
+                    </tr>
 
 
+                    <tr>
+                        <td><input id="checkbox" type="checkbox"></td>
+                        <td>20201217</td>
+                        <td>633456</td>
+                        <td height="0">
+                            <img src="..." alt="..." class="img-thumbnail">
+                        </td>
+                        <td>원두</td>
+                        <td>22000원</td>
+                        <td>2개</td>
+                        <td>44000원</td>
+                    </tr>
 
-                  <tr>
-                    <td><input id="checkbox" type="checkbox"></td>
-                    <td>20201217</td>
-                    <td>35435</td>
-                    <td height = "0">
-                        <img src="..." alt="..." class="img-thumbnail">
-                      </td>
-                      <td>커피1</td>
-                      <td>7000원</td>
-                      <td>2개</td>
-                      <td>14000원</td>
-                  </tr>
 
-                  <tr>
-                    <td><input id="checkbox" type="checkbox"></td>
-                    <td>20201217</td>
-                    <td>633456</td>
-                    <td height = "0">
-                        <img src="..." alt="..." class="img-thumbnail">
-                      </td>
-                      <td>원두</td>
-                      <td>22000원</td>
-                      <td>2개</td>
-                      <td>44000원</td>
-                  </tr>
+                    <tr>
+                        <td><input id="checkbox" type="checkbox"></td>
+                        <td>20201217</td>
+                        <td>633456</td>
+                        <td height="0">
+                            <img src="..." alt="..." class="img-thumbnail">
+                        </td>
+                        <td>원두</td>
+                        <td>22000원</td>
+                        <td>2개</td>
+                        <td>44000원</td>
+                    </tr>
 
-                  
-                  <tr>
-                    <td><input id="checkbox" type="checkbox"></td>
-                    <td>20201217</td>
-                    <td>633456</td>
-                    <td height = "0">
-                        <img src="..." alt="..." class="img-thumbnail">
-                      </td>
-                      <td>원두</td>
-                      <td>22000원</td>
-                      <td>2개</td>
-                      <td>44000원</td>
-                  </tr>
 
-                  
-                  <tr>
-                    <td><input id="checkbox" type="checkbox"></td>
-                    <td>20201217</td>
-                    <td>633456</td>
-                    <td height = "0">
-                        <img src="..." alt="..." class="img-thumbnail">
-                      </td>
-                      <td>원두</td>
-                      <td>22000원</td>
-                      <td>2개</td>
-                      <td>44000원</td>
-                  </tr>
-
-                  
             </table>
-
+            <!--------------------- 주문취소 버튼 --------------------->
             <div class="csl-button">
-            <p>
-              <button type="button" class="btn btn-outline-secondary">주문취소</button>
-              </p>
+                <p>
+                    <button type="button" class="btn btn-outline-secondary">주문취소</button>
+                </p>
             </div>
 
             <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#">Next</a>
-                </li>
-              </ul>
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
             </nav>
-              </div>
-              
+        </div>
+
 
     </main>
 </body>
