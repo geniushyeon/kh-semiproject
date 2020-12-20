@@ -1,23 +1,25 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-h1,h2,h3, p, ul, li {  /*마이페이지 내부 글씨체*/
+title, header, footer, h1 {  /*결제창 내부 글씨체*/
     margin: 0;
     padding: 0;
     letter-spacing: -0.4px;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Nanum Myeongjo', serif;
     }
 main{
     
-    padding-left: 500px;
-    padding-right: 500px;
-    width: 2520px;
-    height: 2700px;
+    
+    width: 100%;
+    
     font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 400;
     
     
 }
 #main-container{
+    
+    margin-left: 25%;
+    margin-right: 25%;
     margin-top:50px;
+    
 }
 
     
@@ -38,9 +40,10 @@ main{
     
     border: 1px solid #dcdcdc; 
     width: 150px ;
-     height: 170px ;
+    height: 170px ;
  }
  .info-buy{
+     
      margin-top: 50px;
      border-bottom: 2px solid #dcdcdc;
      height: 200px;
@@ -76,6 +79,7 @@ main{
  }
  .form-container2{
      margin-top: 50px;
+     
  }
  .form-address{
      margin-top: 50px;

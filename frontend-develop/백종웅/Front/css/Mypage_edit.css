@@ -1,6 +1,20 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-div,label,p,ul,li {
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.form-control{
+  display: inline-block;
+}
+title, header, footer, h1
+{
+  font-family: 'Nanum Myeongjo', serif;
+}
+label,p,ul,li {
   /*회원정보 변경 내부 글씨체*/
   margin: 0;
   padding: 0;
@@ -8,11 +22,19 @@ div,label,p,ul,li {
   font-family: 'Noto Sans KR', sans-serif;
 }
 
+#postbutton{
+  display: inline-block ;
+}
+
 .input-group-btn-prepend{
 
   display: inline-block;
 }
-
+.user_name , .col-sm-10{
+  text-align: left;
+  
+  font-size: 20px;
+}
 
 span {
   /*지현씨 푸터헤더 글씨체 */
@@ -33,15 +55,15 @@ h1 { /* 제목 밑줄*/
   display: inline-block;
   margin: auto;
   margin-top: 160px;
-  width: 1903px ;
+  width: 100% ;
 
 }
 
 .form_move{
 
-  width: 800px;
+  width: 100% ;
   text-align: center;
-  margin: 0px 550px;
+  
 }
 
 .edit_title {
@@ -68,7 +90,7 @@ content {
 
 .btn-outline-secondary,.btn-outline-success{
   margin-left: 20px;
-  margin-bottom: 20px;
+
 }
 
   .col-sm-10{

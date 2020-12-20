@@ -1,15 +1,18 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
- h1,h2,h3, p, ul, li {  /*마이페이지 내부 글씨체*/
+title, header, footer, h1 {  /*결제창 내부 글씨체*/
     margin: 0;
     padding: 0;
     letter-spacing: -0.4px;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Nanum Myeongjo', serif;
     }
     
 main{
     margin-top: 167.89px;
-    width: 2520px;
-    height: 70%;
+    width: 100%;
+    
+    font-family: 'Noto Sans KR', sans-serif;
+    position: relative;
+    min-height: 100%;
 }
     
     
@@ -73,12 +76,14 @@ main{
 }
 .remove-button{
     padding-right: 63.3%;
+    font-family: 'Noto Sans KR', sans-serif;
     
 }
 
 .check-button button{
     width: 220px;
     height: 50px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 

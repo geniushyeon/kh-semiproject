@@ -1,7 +1,11 @@
  
  @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
  /*배송정보 css */
- 
+ html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
  .form-address *{
     margin-bottom:10px;
     
