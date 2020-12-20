@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COFFEESAZO 회원가입</title>
+    <title>COFFEESAZO :: 회원가입</title>
     <link rel="stylesheet" href="./css/signup.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <!--favicon-->
+    <link rel="shortcut icon"
+        href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
 </head>
 
 <body>
@@ -34,7 +36,7 @@
         </div>
     </header>
     <div class="section">
-        <h2 class="sign-up-header">회원가입</h2>
+        <h1 class="sign-up-header">회원가입</h1>
         <form class="form-box" name="sign-up-form" method="POST" onsubmit="return checkForm(this)">
             <div class="form-box-field warn">
                 <label>
@@ -62,6 +64,16 @@
             </div>
             <div class="form-box-field warn">
                 <label>
+                    이름
+                    <span class="field-required">아</span>
+                    <span class="warn-info" id="name-required">이름은 필수 정보입니다.</span>
+                </label>
+                <input class="form-box-field-input" type="text" id="input-name" placeholder="이름 입력" />
+
+            </div>
+
+            <div class="form-box-field warn">
+                <label>
                     이메일
                     <span class="field-required">아</span>
                     <span class="warn-info" id="email-required">이메일은 필수 정보입니다.</span>
@@ -69,6 +81,7 @@
                 <input class="form-box-field-input" type="email" id="input-email" placeholder="이메일 형식으로 입력" />
 
             </div>
+
             <div class="form-box-field warn">
                 <label>
                     전화번호
@@ -81,13 +94,12 @@
                 <label>주소</label>
                 <div class="postcode">
                     <input class="form-box-field-input" type="text" readonly id="sample6_postcode" placeholder="우편번호" />
-                    <input class="form-box-field-input" id="sample6_postcode_search" type="button" onclick="sample6_execDaumPostcode()"
-                    value="우편번호 찾기" /><br />
+                    <input class="form-box-field-input" id="sample6_postcode_search" type="button"
+                        onclick="sample6_execDaumPostcode()" value="우편번호 찾기" /><br />
                 </div>
                 <input class="form-box-field-input" type="text" readonly id="sample6_address" placeholder="주소" /><br />
                 <div class="address_detail">
-                    <input class="form-box-field-input" type="text" id="sample6_detailAddress"
-                        placeholder="상세주소" />
+                    <input class="form-box-field-input" type="text" id="sample6_detailAddress" placeholder="상세주소" />
                     <input class="form-box-field-input" type="text" readonly id="sample6_extraAddress"
                         placeholder="참고항목" />
                 </div>
@@ -240,7 +252,6 @@
             var phonenumber = $("#input-phonenumber").val();
             var phonenumberCheckRegExp = /^\d{3}\d{3,4}\d{4}$/;
 
-            console.log(phonenumberCheckRegExp.test(phonenumber))
             if (phonenumber == "") {
                 $("#phonenumber-required").html("전화번호는 필수 정보입니다.");
                 $("#phonenumber-required").css("display", "inline-block");
@@ -253,6 +264,26 @@
                 $("#phonenumber-required").html("");
 
             }
+        })
+
+        $("#input-name").focusout(function() {
+            var name = $("#input-name").val();
+            var nameRegExp = /^[가-힣]{2,5}$/;
+
+            if(name == "") {
+                $("#name-required").html("이름은 필수 정보입니다.");
+                $("#name-required").css("display", "inline-block");
+            } 
+
+            else if(nameRegExp.test(name) == false) {
+                $("#name-required").html("형식에 맞게 입력해주세요.");
+                $("#name-required").css("display", "inline-block");    
+            }
+
+            else {
+                $("#name-required").html("");
+            }
+
         })
 
         // 우편번호찾기
@@ -310,7 +341,7 @@
         function isAllChecked() {
             const checkList = document.getElementsByName("admit");
             const len = checkList.length;
-            for (var i=0; i<len; i++) {
+            for (var i = 0; i < len; i++) {
                 if (!checkList[i].checked) {
                     return false;
                 }
@@ -320,25 +351,25 @@
         }
 
         var allAdmit = document.getElementById("all-admit");
-        allAdmit.addEventListener("click", function() {
+        allAdmit.addEventListener("click", function () {
             var chks = document.getElementsByName("admit");
-            for (var i=0; i<chks.length; i++) {
+            for (var i = 0; i < chks.length; i++) {
                 // false일 때: 모두 해제됨
                 chks[i].checked = allAdmit.checked;
             }
         });
 
-        
+
         const checkList = document.getElementsByName("admit")
         const len = checkList.length
-        for(var i=0; i<len; i++) {
+        for (var i = 0; i < len; i++) {
             checkList[i].addEventListener('click', () => {
                 // 하나라도 체크해제됐을 때 전체동의 체크해제
                 if (!isAllChecked()) {
                     allAdmit.checked = false;
                 }
                 // 전체체크됐을 때 전체동의도 체크
-                if(isAllChecked()) {
+                if (isAllChecked()) {
                     allAdmit.checked = true;
                 }
             })

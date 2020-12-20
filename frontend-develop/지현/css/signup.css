@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
 
         html,
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Nanum Myeongjo', serif;
+            height: 100%;
         }
 
         *, *::before, *::after {
             box-sizing: border-box;
-            font-family: 'Nanum Myeongjo', serif;
+            
         }
         
         a {
@@ -26,6 +28,7 @@
         }
 
         h1 {
+            font-family: 'Nanum Myeongjo', serif;
             text-align: center;
             font-weight: 300;
         }
@@ -37,6 +40,7 @@
             right: 0;
             background-color: white;
             z-index: 1000;
+            font-family: 'Nanum Myeongjo', serif;
         }
         
         .header-logo {
@@ -85,6 +89,7 @@
             margin: 0 30px 0 30px;
         }
 
+        
         .shopping a:hover {
             font-weight: bold;
             transition: all 0.2s ease;
@@ -94,9 +99,11 @@
         /*header 끝!*/
 
         .section {
+            position: relative;
+            min-height: 100%;
             margin: 0 400px 0 400px;
             margin-top: 180px;
-            
+            font-family: 'Noto Sans KR', sans-serif;
         }
 
         .form-container {
@@ -127,7 +134,7 @@
 
         .postcode input,
         .address_detail input  {
-                width: 49.4444%;
+                width: 49.59%;
                 height: 50px;
                 outline: none;
                 border: 1px solid #e5e5e5;
@@ -272,7 +279,7 @@
    
         /*footer 하단 고정*/
         footer {
-            position: relative;
+            position: absolute;
             width: 100%;
             margin: 0 auto;
             background-color: #4d2600;
@@ -280,6 +287,7 @@
             text-align: center;
             color: white;
             font-size: 14px;
+            font-family: 'Nanum Myeongjo', serif;
         }
 
         .footer li {
