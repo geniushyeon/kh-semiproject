@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
         html,
         body {
             margin: 0;
             padding: 0;
+            height: 100%;
             font-family: 'Nanum Myeongjo', serif;
         }
 
@@ -71,6 +73,7 @@
         }
 
         .section {
+            min-height: 100%;
             margin-top: 170px;
         }
         
@@ -175,7 +178,7 @@
         }
         /*footer 하단 고정*/
         footer {
-            position: relative;
+            position: absolute;
             width: 100%;
             margin: 0 auto;
             background-color: #4d2600;
