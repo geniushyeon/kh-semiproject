@@ -9,7 +9,7 @@ title, header, footer, h1
   font-family: 'Nanum Myeongjo', serif;
 }
 
-    h3, p, ul, li {  /*마이페이지 내부 글씨체*/
+    h3  {  /*마이페이지 내부 글씨체*/
     margin: 0;
     padding: 0;
     letter-spacing: -0.4px;
@@ -107,3 +107,9 @@ color: #888;
     text-overflow: ellipsis;
     border-bottom: 1px solid #bcbcbc
 }
+
+.footer {
+    font-family: 'Nanum Myeongjo', serif;
+
+}
+
