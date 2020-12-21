@@ -5,18 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항 조회</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="index copy.css" type="text/css">
+    <!--favicon-->
+    <link rel="shortcut icon" href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <!-- 부트스트랩 불러오기 -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+        @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
         html,
         body {
+
+            *font-family: 'Noto Sans KR', sans-serif;
             margin: 0;
             padding: 0;
-            font-family: 'Nanum Myeongjo', serif;
+            height: 100%;
+            height: 100%;
+
         }
 
         header,
@@ -37,12 +44,17 @@
 
         /* header 상단 고정*/
         header {
+            font-family: 'Nanum Myeongjo', serif;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             background-color: white;
             z-index: 1000;
+        }
+
+        h1 {
+            font-family: 'Nanum Myeongjo', serif;
         }
 
         .header-logo {
@@ -99,10 +111,6 @@
 
         }
 
-        section {
-            margin-top: 170px;
-        }
-
         .shopping {
             margin: 0 auto;
             margin: 20px 0 20px 0;
@@ -121,17 +129,21 @@
 
         }
 
+
         /*footer 하단 고정*/
         footer {
-            position: relative;
+            position: absolute;
             width: 100%;
             margin: 0 auto;
             background-color: #4d2600;
             padding: 5px;
+            padding-top: 20px;
             text-align: center;
             color: white;
             font-size: 14px;
+            font-family: 'Nanum Myeongjo', serif;
         }
+
 
         .footer li {
             margin-bottom: 10px;
@@ -145,8 +157,7 @@
         #contents {
             padding-top: 200px;
             position: relative;
-            width: 70%;
-            height: 500px;
+            width: 60%;
             margin: 0 auto;
 
         }
@@ -199,7 +210,7 @@
         }
 
         .base-table td {
-            padding: 12px ;
+            padding: 12px;
             border-bottom: 1px solid #e5e5e5;
             color: black;
             font-size: 13px;
@@ -246,32 +257,56 @@
         p {
             margin-top: 100px;
         }
+
         .bottom-table li {
             overflow: hidden;
-            padding: 12px ;
+            padding: 12px;
             border-bottom: 1px solid #e5e5e5;
-            color:black;
+            color: black;
             font-size: 13px;
             vertical-align: middle;
             padding-bottom: 15px;
         }
+
         .bottom-table {
             padding-top: 100px;
         }
+
         .bottom-table li strong {
-           width: 70px;
-           height: 25px;
-       
+            width: 70px;
+            height: 25px;
+
         }
-        a {
+
+        .bottom-table a {
             text-decoration: none;
-            padding: 12px
+            padding: 24px;
         }
+
         li {
             list-style: none;
         }
+
         ul {
             padding-left: 0;
+        }
+
+        .button {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .button a {
+            text-decoration: none;
+            display: inline-block;
+            color: #353535;
+            font-size: 12px;
+            line-height: 28px;
+            text-align: center;
+            width: 80px;
+            height: 30px;
+            background-color: #FFF;
+            border: 1px solid #e5e5e5;
         }
     </style>
 </head>
@@ -335,7 +370,8 @@
                         <div class="view-article">
                             <p></p>
                             <p style="text-align: center;">
-                                <img src="./img/view-img.jpg" style="text-align: center style=" width:500px, height=500px"";>
+                                <img src="./img/view-img.jpg" style="text-align: center style=" width:500px,
+                                    height=500px"";>
                             </p>
                         </div>
                     </div>
@@ -351,6 +387,9 @@
                             <a href="#">공지사항 어쩌꼬 저쩌꼬</a>
                         </li>
                     </ul>
+                </div>
+                <div class="button">
+                    <a href="#" class="btn-board">목록</a>
                 </div>
             </div>
         </div>
