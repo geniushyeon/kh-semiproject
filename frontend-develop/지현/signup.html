@@ -10,6 +10,7 @@
     <!--favicon-->
     <link rel="shortcut icon"
         href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
+
 </head>
 
 <body>
@@ -19,24 +20,24 @@
                 <a href="/frontend/index.html"><img src="/frontend/img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
-                <span><a href="#">로그인</a></span>
-                <span><a href="#">회원가입</a></span>
-                <span><a href="#">고객센터</a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/민영/COFFEESAZO/login2.html">로그인</a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/지현/signup.html">회원가입</a></span>
+                <span><a href="/frontend-develop/제윤지/front/공지사항.html">고객센터</a></span>
                 <span><a href="#"><img src="/frontend/img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
         <div class="shopping">
-            <span id="wholebean"><a href="#">원두</a></span>
+            <span id="wholebean"><a href="/frontend-develop/Frontend-최종-1차/서우/wholebean.html">원두</a></span>
             <!-- onmouseover 써볼지? (javascript)-->
-            <span id="stickcoffee"><a href="#">스틱커피</a></span>
-            <span id="capsulecoffee"><a href="#">캡슐커피</a></span>
+            <span id="stickcoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/stickcoffee.html">스틱커피</a></span>
+            <span id="capsulecoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/capsulecoffee.html">캡슐커피</a></span>
 
         </div>
     </header>
     <div class="section">
         <h1 class="sign-up-header">회원가입</h1>
-        <form class="form-box" name="sign-up-form" method="POST" onsubmit="return checkForm(this)">
+        <form class="form-box" name="sign-up-form" method="GET" action="/frontend-develop/Frontend-최종-1차/지현/signup_complete.html" onsubmit="return checkForm(this)">
             <div class="form-box-field warn">
                 <label>
                     아이디
@@ -56,10 +57,11 @@
                 </label>
                 <input class="form-box-field-input" type="password" id="input-password"
                     placeholder="비밀번호 입력(숫자, 영문, 특수문자 조합 최소 8자)" />
-
+              
             </div>
             <div class="form-box-field warn">
                 <input class="form-box-field-input" type="password" id="check-input-password" placeholder="비밀번호 확인" />
+               
             </div>
             <div class="form-box-field warn">
                 <label>
@@ -125,7 +127,7 @@
                 </div>
             </div>
             <div>
-                <input type="submit" class="signup-btn" value="가입하기" />
+                <input type="submit" class="signup-btn" value="가입하기"/>
             </div>
         </form>
     </div>
