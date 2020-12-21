@@ -7,18 +7,16 @@
 <link rel="shortcut icon" href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/addressApi.css" type="text/css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/frontend-develop/백종웅/Front/css/addressApi.css" type="text/css">
+  <link rel="stylesheet" href="./css/Mypage.css" type="text/css">
   <link rel="stylesheet" href="./css/Mypage_edit.css" type="text/css">
   <link rel="stylesheet" href="./css/header_footer.css" type="text/css">
-
+  <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 
   <title>내 정보 수정</title>
-
-
-
 
 </head>
 
@@ -28,13 +26,13 @@
   <header class="header">
     <div class="header-align">
         <div class="header-logo">
-            <a href="#"><img src="/img/logo_white.png" class="logo"></a>
+            <a href="#"><img src="/frontend/img/logo_white.png" class="logo"></a>
         </div>
         <div class="btns-signin-signup">
             <span><a href="#">로그인</a></span>
             <span><a href="#">회원가입</a></span>
             <span><a href="#">고객센터</a></span>
-            <span><a href="#"><img src="/img/shoppingcart_white.png" id="shoppingcart"></a></span>
+            <span><a href="#"><img src="/frontend/img/shoppingcart_white.png" id="shoppingcart"></a></span>
         </div>
     </div>
 
@@ -47,13 +45,49 @@
     </div>
 </header>
 
-
-
-
-
   <!--------------------- 메인시작 --------------------->
   <main id="main_container">
+    <div class="size-controll">
 
+      <div class="user_info">
+          <div class="mypage_title">
+
+              <h1> 마이페이지</h1>
+          </div>
+          <div class="user_info_form"><img
+                  src="https://raw.githubusercontent.com/St4rFi5h/ETC/main/sourcce/article-user-blank.jpg"
+                  alt="blank_user">
+              이지현(jhlee0912) 님</div>
+      </div>
+
+       <!--------------전체 버튼묶음-------------->
+       <div class="button">
+        <ul>
+            <a class="card_small" href="Mypage_order.html">
+                <h3 class="softblack">주문내역</h3>
+                <p class="card_text">최근 주문내역을 </br>확인하실 수 있습니다.</p>
+                <p class="card_textlink">확인하기</p>
+            </a>
+        </ul>
+
+        <ul>
+            <a class="card_small" href="Mypage_edit.html">
+                <h3>회원정보수정</h3>
+                <p class="card_text">나의 정보를 </br>변경하실 수 있습니다.</p>
+                <p class="card_textlink">수정하기</p>
+            </a>
+        </ul>
+
+        <ul>
+            <a class="card_small" href="Mypage_qna.html">
+                <h3 class="softblack">나의문의</h3>
+                <p class="card_text">나의1:1문의를 </br>확인하실 수 있습니다.</p>
+                <p class="card_textlink">확인하기</p>
+            </a>
+        </ul>
+    </div>
+    
+  </div>
     <div class="form_move">
       <div class="edit_title">
         <h1>회원정보수정</h1>
@@ -86,13 +120,15 @@
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label">비밀번호</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="colFormLabel" placeholder="특수문자 반드시포함">
+            <input type="password" class="form-control" id="password" placeholder="특수문자 반드시포함">
+
           </div>
         </div>
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label">비밀번호 확인</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="colFormLabel" placeholder="비밀번호">
+            <input type="password" class="form-control" id="password-check" placeholder="비밀번호">
+
           </div>
         </div>
 
@@ -208,9 +244,8 @@
 
 
 
-
   <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-  <script src="./js/addressApi.js"></script>
+  <script src="/frontend-develop/백종웅/Front/js/addressApi.js"></script>
   <script src="./js/jquery.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>
   <script src="./js/popper.js"></script>

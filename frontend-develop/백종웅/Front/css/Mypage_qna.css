@@ -8,10 +8,9 @@
     font-family: 'Noto Sans KR', sans-serif;
   }
 
-  title, header, footer, h1
-{
-  font-family: 'Nanum Myeongjo', serif;
-}
+  title, header, footer, h1 {
+      font-family: 'Nanum Myeongjo', serif;
+  }
 
 html, body {
   margin: 0;
@@ -19,7 +18,7 @@ html, body {
   height: 100%;
 }
   h1 {  /* 마이페이지 밑줄*/
-    border-bottom: solid #000000;
+    border-bottom: 2px solid #000000;
     padding-bottom: 20px;
   }
 
@@ -29,7 +28,7 @@ main{
 margin-top:200px ;
 width: 100%;
 margin: 200px auto;
-height: 100%;
+
 }
 
 .edit_title{
