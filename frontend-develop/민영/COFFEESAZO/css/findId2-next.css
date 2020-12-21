@@ -5,6 +5,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 header,
@@ -129,7 +130,6 @@ footer {
 }
 /* findID css start */
 .main-body {
-  height: 632px;
   font-family: "Noto Sans KR", sans-serif;
   min-height: 100%;
   position: relative;
