@@ -5,19 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>일대일문의 작성</title>
-    <link rel="stylesheet" href="index copy.css" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <!-- 부트스트랩 불러오기 -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="index copy.css" type="text/css">
+    <!--favicon-->
+    <link rel="shortcut icon"
+        href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
         html,
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Nanum Myeongjo', serif;
+            height: 100%;
         }
 
         header,
@@ -38,12 +42,17 @@
 
         /* header 상단 고정*/
         header {
+            font-family: 'Nanum Myeongjo', serif;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             background-color: white;
             z-index: 1000;
+        }
+
+        h1 {
+            font-family: 'Nanum Myeongjo', serif;
         }
 
         .header-logo {
@@ -61,7 +70,7 @@
         .btns-signin-signup {
             position: absolute;
             right: 5px;
-            top: 30px;
+            top: 45px;
             width: 400px;
             height: 30px;
             margin: 0 auto;
@@ -78,7 +87,7 @@
             position: relative;
             width: 30px;
             height: 30px;
-            top: 5px;
+            top: -5px;
             left: -8px;
         }
 
@@ -100,11 +109,13 @@
 
         }
 
-        section {
-            margin-top: 170px;
+        .section {
+            margin-top: 180px;
+            min-height: 100%;
         }
 
         .shopping {
+            position: relative;
             margin: 0 auto;
             margin: 20px 0 20px 0;
             text-align: center;
@@ -124,18 +135,25 @@
 
         /*footer 하단 고정*/
         footer {
-            position: relative;
+            position: absolute;
             width: 100%;
             margin: 0 auto;
             background-color: #4d2600;
             padding: 5px;
+            padding-top: 20px;
             text-align: center;
             color: white;
             font-size: 14px;
+            font-family: 'Nanum Myeongjo', serif;
         }
 
         .footer li {
             margin-bottom: 10px;
+        }
+
+        main {
+            position: relative;
+            min-height: 100%;
         }
 
         #container {
@@ -147,7 +165,6 @@
             padding-top: 200px;
             position: relative;
             width: 60%;
-            height: 500px;
             margin: 0 auto;
 
         }
@@ -177,12 +194,15 @@
             color: #4d2600;
             font-size: 30px;
         }
+
         .layout-box {
             width: 100%;
             position: relative;
             display: block;
             box-sizing: border-box;
+            text-align: center;
         }
+
         .layout-box h2 {
             position: relative;
             font-size: 20px;
@@ -190,20 +210,26 @@
             text-align: center;
             color: #353535;
         }
+
         .board {
             position: relative;
-            display: inline-block;
+            display: inherit;
             height: 620px;
-            padding: 70px;
+            padding: 70px 0 70px 0;
             border: 1px solid #e5e5e5;
-            word-wrap: break-word
+            word-wrap: break-word;
+            text-align: center;
         }
+
         .board label {
-            padding-right: 200px;
+            position: relative;
             color: #353535;
             font-size: 14px;
-            word-wrap: break-word
+            float: left;
+            padding-left: 130px;
+            text-align: center;
         }
+
         #title {
             width: 700px;
             height: 28px;
@@ -213,6 +239,7 @@
             outline-style: none;
             font-size: 14px;
         }
+
         #content {
             width: 700px;
             height: 300px;
@@ -221,16 +248,24 @@
             outline-style: none;
             font-size: 14px;
         }
+
         #file {
-            padding-left: 750px;
             font-size: 13px;
             color: #353535;
+            border-radius: 0;
+            outline-style: none;
+            float: left;
+            padding-left: 115px;
+            position: relative;
         }
+
         .button {
-            padding: 40px;
+            position: relative;
+            padding: 85px;
             text-align: center;
             cursor: pointer;
         }
+
         .button a {
             text-decoration: none;
             display: inline-block;
@@ -241,9 +276,8 @@
             height: 30px;
             background-color: #4d2600;
             color: #fff;
-            margin:5px ;
+            margin: 5px;
         }
-
     </style>
 </head>
 
@@ -283,16 +317,17 @@
                 </div>
                 <div class="layout-box">
                     <h2>1:1 문의 작성하기</h2>
-                    <form name="board" method="post" class="board" >
+                    <form name="board" method="post" class="board">
                         <label for="title">제목</label>
                         <input type="text" id="title" name="title" placeholder="내용을 입력해 주세요." required />
-                        <br/>
-                        <br/>
+                        <br />
+                        <br />
                         <label for="content">내용</label>
                         <input type="text" id="content" name="content" placeholder="내용을 입력해 주세요." required />
-                        <br/>
+                        <br />
+                        <br />
                         <label for="file">첨부파일</label>
-                        <input type="file" id="file" name="file" required />
+                        <input type="file" id="file" name="file" multiple />
                         <div class="button">
                             <a href="#" class="btn-save">등록하기</a>
                             <a href="#" class="btn-cancle">취소하기</a>

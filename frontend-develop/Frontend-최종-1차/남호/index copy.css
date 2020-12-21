@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            /* font-family: 'Nanum Myeongjo', serif; */
+        }
+
+        header, footer {
+            box-sizing: border-box;
+        }
+
+        header a {
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+        }
+
+        header ul, li {
+            list-style: none;
+        }
+
+        /* header 상단 고정*/
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            z-index: 1000;
+        }
+        
+        .header-logo {
+            background-color:#4d2600;
+        }
+        
+        .logo {
+            display: block;
+            width: 400px;
+            margin: 0 auto;
+            padding: 0;
+            height: 100px;
+        }
+        /* 로그인 회원가입 고객센터*/
+        .btns-signin-signup {
+            position: absolute;
+            right: 5px;
+            top: 30px;
+            width: 400px;
+            height: 30px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .btns-signin-signup a {
+            margin: 10px;
+            font-size: 16px;
+            color: white;
+        }
+
+        #shoppingcart {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            top: 5px;
+            left: -8px;
+        }
+        
+        .shopping {
+            margin: 0 auto;
+            margin: 20px 0 20px 0;
+            text-align: center;
+            
+        }
+
+        .shopping > span {
+            margin: 0 30px 0 30px;
+        }
+
+        .shopping a:hover {
+            font-weight: bold;
+            transition: all 0.2s ease;
+            color: #4d2600;
+            
+        }
+        
+        .shopping {
+            margin: 0 auto;
+            margin: 20px 0 20px 0;
+            text-align: center;
+            
+        }
+
+        .shopping > span {
+            margin: 0 30px 0 30px;
+        }
+
+        .shopping a:hover {
+            font-weight: bold;
+            transition: all 0.2s ease;
+            color: #4d2600;
+            
+        }
+        /*main*/
+        #main-container{
+            
+            width: 1646px;
+            height: 1500px;
+            background-color: #dcdcdc;
+            margin-top: 167px;
+            
+        }
+        #main-container img{
+            width: 400px;
+            height: 400px;
+            margin-left: 200px;
+            margin-top: 100px;
+        }
+
+        .top-result{
+            
+            width: 1646px;
+        }
+        .top-result .main-text{
+            font-size: 80px;
+            color: #4d2600;
+            margin-left: 200px;
+            margin-top: 20px;
+        }
+        #sub-text{
+            font-size: 40px;
+            margin-top: 20px;
+            margin-left: 200px;
+        }
+        .top-result .text-result{
+            float: right;
+            font-size: 25px;
+            margin-right: 80px;
+            margin-top: 20px;
+            font-weight: 800;
+            width: 700px;
+            height: 600px;
+        }
+        .top-result .text-result .maintext{
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .top-result .text-result .subtext{
+            margin-top: 50px;
+        }
+        .top-result .text-result .subtext #head-text{
+            font-size: 35px;
+        }
+        .top-result .text-result div{
+            margin-top: 10px;
+            margin-left: 50px;
+        }
+        .top-result .text-result #price{
+            color:sandybrown;
+        }
+        .top-result .text-result .subtext .taste{
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            background: rgb(105,81,157);
+        }
+        .top-result .text-result .subtext .taste span{
+            display: inline-block;
+            margin-left: 10px;
+            padding-left: 15px;
+            font-family: 'NanumBarunGothic';
+            font-size: 20px;
+            color: rgb(255,255,255);
+            line-height: 28px;
+            background: url(/images/common/bar2.gif) no-repeat left center;
+        }
+        /*footer 하단 고정*/
+        footer {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            background-color: #4d2600;
+            padding: 5px;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        .footer li {
+            margin-bottom: 10px;
+        }

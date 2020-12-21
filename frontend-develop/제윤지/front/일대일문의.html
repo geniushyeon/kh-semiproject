@@ -5,19 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>일대일문의</title>
+    <!-- 부트스트랩 불러오기 -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="index copy.css" type="text/css">
+    <!--favicon-->
+    <link rel="shortcut icon"
+        href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <!-- 부트스트랩 불러오기 -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">  
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
         html,
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Nanum Myeongjo', serif;
+            height: 100%;
         }
 
         header,
@@ -38,12 +42,17 @@
 
         /* header 상단 고정*/
         header {
+            font-family: 'Nanum Myeongjo', serif;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             background-color: white;
             z-index: 1000;
+        }
+
+        h1 {
+            font-family: 'Nanum Myeongjo', serif;
         }
 
         .header-logo {
@@ -61,7 +70,7 @@
         .btns-signin-signup {
             position: absolute;
             right: 5px;
-            top: 30px;
+            top: 45px;
             width: 400px;
             height: 30px;
             margin: 0 auto;
@@ -78,7 +87,7 @@
             position: relative;
             width: 30px;
             height: 30px;
-            top: 5px;
+            top: -5px;
             left: -8px;
         }
 
@@ -100,11 +109,13 @@
 
         }
 
-        section {
-            margin-top: 170px;
+        .section {
+            margin-top: 180px;
+            min-height: 100%;
         }
 
         .shopping {
+            position: relative;
             margin: 0 auto;
             margin: 20px 0 20px 0;
             text-align: center;
@@ -124,19 +135,27 @@
 
         /*footer 하단 고정*/
         footer {
-            position: relative;
+            position: absolute;
             width: 100%;
             margin: 0 auto;
             background-color: #4d2600;
             padding: 5px;
+            padding-top: 20px;
             text-align: center;
             color: white;
             font-size: 14px;
+            font-family: 'Nanum Myeongjo', serif;
         }
 
         .footer li {
             margin-bottom: 10px;
         }
+
+        main {
+            position: relative;
+            min-height: 100%;
+        }
+
         #container {
             margin: 0 auto;
             height: 1000px;
@@ -148,8 +167,9 @@
             width: 80%;
             height: 500px;
             margin: 0 auto;
-            
+
         }
+
         .boardnavi {
             margin: 30px auto;
             padding-bottom: 10px;
@@ -157,6 +177,7 @@
             clear: both;
             overflow: hidden;
         }
+
         .boardnavi a {
             position: relative;
             display: inline-block;
@@ -165,20 +186,22 @@
             color: black;
             text-decoration: none;
         }
+
         .navi01 {
             border-bottom: 3px solid #e5e5e5;
         }
 
         .navi02 {
-           border-bottom: 3px solid #8B4F1D;
+            border-bottom: 3px solid #8B4F1D;
         }
-        
+
         h1 {
             padding-top: 50px;
             text-align: center;
             color: #4d2600;
             font-size: 30px;
         }
+
         .boardnavi table {
             position: relative;
             margin: 10px 0 0;
@@ -189,47 +212,56 @@
             color: #fff;
             line-height: 1.5;
         }
+
         .base-table thead th {
-           padding: 12px 0;
-           border-bottom: 1px solid #8B4F1D;
-           color: black;
-           vertical-align: middle;
-           font-size: 13px;
-           font-weight: 500;
-           background-color: #fff;
-           text-align: center;
-       }
-       .base-table td {
-           padding: 12px 10px;
-           border-top: 1px solid #e5e5e5;
-           border-bottom: 1px solid #e5e5e5;
-           color: black;
-           font-size: 13px;
-           vertical-align: middle;
-           text-align: center;
-       }
-       table  {
-           width: 100%;
-           border: 0;
-           border-spacing: 0;
-           border-collapse: collapse;
-       }
-       thead {
-           vertical-align: middle;
-           border-color: inherit;
-       }
-       caption {
-           display: none;
-       }
-       .displaynone {
-           display: none;
-       }
-       th, td {
-           border: 0;
-       }
-       td {
-           display: table-cell;
-       }
+            padding: 12px 0;
+            border-bottom: 1px solid #8B4F1D;
+            color: black;
+            vertical-align: middle;
+            font-size: 15px;
+            font-weight: 500;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .base-table td {
+            padding: 12px 10px;
+            border-top: 1px solid #e5e5e5;
+            border-bottom: 1px solid #e5e5e5;
+            color: black;
+            font-size: 13px;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border: 0;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        thead {
+            vertical-align: middle;
+            border-color: inherit;
+        }
+
+        caption {
+            display: none;
+        }
+
+        .displaynone {
+            display: none;
+        }
+
+        th,
+        td {
+            border: 0;
+        }
+
+        td {
+            display: table-cell;
+        }
     </style>
 </head>
 
@@ -261,7 +293,7 @@
                 <h1>고객센터</h1>
                 <div class="title-area">
                     <div class="boardnavi">
-                        <a href="#" class="navi01">
+                        <a href="http://127.0.0.1:5500/yoonji/%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD.html" class="navi01">
                             <span>공지사항</span>
                         </a>
                         <a href="#" class="navi02">
@@ -347,7 +379,7 @@
                                 <td class="txtLess ">2020-12-16</td>
                             </tr>
                         </tbody>
-                    </table>    
+                    </table>
                 </div>
             </div>
         </div>
