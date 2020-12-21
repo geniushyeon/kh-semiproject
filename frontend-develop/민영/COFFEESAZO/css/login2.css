@@ -159,6 +159,7 @@ form {
 .title > a:hover {
   text-decoration: none;
   color: #4d2600;
+  cursor: pointer;
 }
 
 h2 {
@@ -187,6 +188,7 @@ h2 {
 .login-button:hover {
   background-color: burlywood;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .signup-button {
@@ -203,6 +205,7 @@ h2 {
 .signup-button:hover {
   background-color: burlywood;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 p {
