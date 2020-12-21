@@ -220,6 +220,7 @@
             text-align: center;
             text-transform: uppercase;
             padding-top: 15px; 
+            color:black;
         }
         .product_price{
         
@@ -230,3 +231,4 @@
             color: #ff0000c4;
         }
 
+        a:link {color:black; text-decoration:none;} /*하이퍼링크데코 지움 */
