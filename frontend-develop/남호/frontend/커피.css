@@ -25,7 +25,7 @@ header ul, li {
 
  /* header 상단 고정*/
  header {
-    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Nanum Myeongjo';
     position: fixed;
     top: 0;
     left: 0;
@@ -35,7 +35,7 @@ header ul, li {
 }
 
 h1 {
-    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Nanum Myeongjo';
 }
 
 .header-logo {
@@ -149,13 +149,13 @@ h1 {
             font-size: 80px;
             color: #4d2600;
             margin-left: 15%;
-            font-family: 'Nanum Myeongjo', serif;
+            font-family: 'Nanum Myeongjo';
         }
         #sub-text{
             font-size: 40px;
             margin-top: 2%;
             margin-left: 15%;
-            font-family: 'Nanum Myeongjo', serif;
+            font-family: 'Nanum Myeongjo';
         }
         .top-result .text-result{
             float: right;
@@ -200,17 +200,19 @@ h1 {
             height: 35px;
             width: 150px;
             border-radius: 5px 5px;
+	    font-family: 'noto sans';
         }
         .text-result .subtext #btn2{
             height: 35px;
             width: 150px;
             border-radius: 5px 5px;
+	    font-family: 'noto sans';
         }
         .top-result .text-result .subtext .taste span{
             display: inline-block;
             margin-left: 10px;
             padding-left: 15px;
-            font-family: 'NanumBarunGothic';
+            font-family: 'noto sans';
             font-size: 15px;
             color: rgb(255,255,255);
             line-height: 28px;
@@ -274,7 +276,7 @@ h1 {
         text-align: center;
         color: white;
         font-size: 14px;
-        font-family: 'Nanum Myeongjo', serif;
+        font-family: 'Nanum Myeongjo';
     }
 
     .footer li {
