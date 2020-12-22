@@ -38,40 +38,44 @@
     </header>
 
     <!-- login start -->
-    <div class="main-body">
-    <form method="post" action="#">
-        <h1 class="main-title">L O G I N</h1>
+    <div class="main-body"> <!--전체div-->
+        <form method="post" action="#"> <!--form태그 시작-->
+            <h1 class="main-title">L O G I N</h1> <!--title-->
 
-        <p><input class="input" type="text" name="id" 
-               pattern="^[a-z0-9]{5,12}$" 
-               placeholder="아이디를 입력해 주세요"></p>
-        
-        <p><input class="input" type="password" name="pwd" 
-        pattern="^[0-9a-z~!?@#$%^&*();:_+=/-]{8,50}gi"
-        placeholder="비밀번호를 입력해 주세요"></p>
+            <p>
+                <input class="input" type="text" name="id" 
+                pattern="^[a-z0-9]{5,12}$" 
+                placeholder="아이디를 입력해 주세요">
+            </p>
+            
+            <p>
+                <input class="input" type="password" name="pwd" 
+                pattern="^[0-9a-z~!?@#$%^&*();:_+=/-]{8,50}gi"
+                placeholder="비밀번호를 입력해 주세요">
+            </p>
 
-        <p class="title">
-        <a href="findId2.html">아이디 찾기 |</a>
-        <a href="findPassword.html">비밀번호 재설정</a>
-        </p>
+            <p class="title">
+                <a href="findId2.html">아이디 찾기 |</a> <!--findId2페이지로 이동-->
+                <a href="findPassword.html">비밀번호 재설정</a> <!--findPassword페이지로 이동-->
+            </p>
 
-        <p><input class="login-button" type="submit" value="로그인"
+            <p>
+                <input class="login-button" type="submit" value="로그인"
                 onclick="location.href='#'"> <!--로그인성공페이지로이동-->
-        </p> 
-    </form>
+            </p> 
+        </form> <!--form태그 끝-->
 
         <p class="title">──────────────────────</p>
         <h2 class="title">아직 회원이 아니신가요?</h2>
 
-        <p><input class="signup-button" type="button" value="회원가입"
-                onclick="location.href='#'"> <!--회원가입페이지로이동-->
+        <p>
+            <input class="signup-button" type="button" value="회원가입"
+            onclick="location.href='#'"> <!--회원가입페이지로이동-->
         </p>
-        </div>
+
+    </div>
       
     <!-- login end -->
-
-
-    </section>
     <footer>
         <div class="footer">
             <ul class="footer-list-box">

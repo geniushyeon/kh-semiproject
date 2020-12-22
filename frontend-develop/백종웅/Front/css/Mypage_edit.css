@@ -14,7 +14,7 @@ title, header, footer, h1
 {
   font-family: 'Nanum Myeongjo', serif;
 }
-label,p,ul,li {
+label,p {
   /*회원정보 변경 내부 글씨체*/
   margin: 0;
   padding: 0;
