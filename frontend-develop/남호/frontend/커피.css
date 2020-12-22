@@ -121,19 +121,23 @@ h1 {
             width: 100%;
             background-color: white;
             margin-top: 10%;
-            min-height: 100%;
+            min-height: 100%;  
+            max-width: 100%;                   
         }
         .main-text {
             margin-top: 200px;
+            max-width: 100%;
         }
         .main-text a {
             color: #4d2600;
             text-decoration: none;
+            max-width: 100%;
         }
 
         #sub-text a {
             color: black;
             text-decoration: none;
+            max-width: 100%;
         }
         #main-container img{
             width: 30%;
@@ -141,72 +145,86 @@ h1 {
             margin-left: 15%;
             margin-top: 5%;
             margin-bottom: 2%;
+            max-width: 100%;
         }
         .top-result{
-            width:100%;
+            height: 100%;
+            max-width: 100%;
         }
         .top-result .main-text{
             font-size: 80px;
             color: #4d2600;
             margin-left: 15%;
             font-family: 'Nanum Myeongjo';
+            max-width: 100%;
         }
         #sub-text{
             font-size: 40px;
             margin-top: 2%;
             margin-left: 15%;
             font-family: 'Nanum Myeongjo';
+            max-width: 100%;
         }
         .top-result .text-result{
             float: right;
             font-size: 20px;
             margin-right: 6%; 
             font-weight: 800;
+            max-width: 100%;
         }
         .top-result .text-result .maintext{
             font-size: 25px;
             margin-bottom: 20px;
             border-bottom: solid;
             width: 500px;
+            max-width: 100%;
         }
         .top-result .text-result .subtext{
             margin-top: 25px;
+            max-width: 100%;
         }
         .top-result .text-result .subtext #head-text{
             font-size: 30px;
+            max-width: 100%;
         }
         .top-result .text-result div{
             margin-top: 8px;
             margin-left: 50px;
             position: relative;
             min-height: 100%;
+            max-width: 100%;
         }
 
         .top-result .text-result #price{
             color:sandybrown;
+            max-width: 100%;
         }
         .top-result .text-result .subtext .taste{
             padding: 15px 20px;
             margin-bottom: 30px;
             text-align: center;
             background: rgb(105,81,157);
+            max-width: 100%;
         }
         .text-result .subtext #allbutton{
             margin-left: 50px;
             letter-spacing: 60px;
             margin-bottom: 20px;
+            max-width: 100%;
         }
         .text-result .subtext #btn1{
             height: 35px;
             width: 150px;
             border-radius: 5px 5px;
-	    font-family: 'noto sans';
+        font-family: 'noto sans';
+        max-width: 100%;
         }
         .text-result .subtext #btn2{
             height: 35px;
             width: 150px;
             border-radius: 5px 5px;
-	    font-family: 'noto sans';
+        font-family: 'noto sans';
+        max-width: 100%;
         }
         .top-result .text-result .subtext .taste span{
             display: inline-block;
@@ -217,26 +235,31 @@ h1 {
             color: rgb(255,255,255);
             line-height: 28px;
             background: url(/images/common/bar2.gif) no-repeat left center;
+            max-width: 100%;
         }
         #number{
             width: 500px;
             margin-left: 50px;
-        
+            max-width: 100%;
         }
         #number #button{
             margin-left: 100px;
+            max-width: 100%;
         }
         #main-container .sub-result{
             border-top: solid;
             height: 100%;
+            max-width: 100%;
         }
         #main-container .sub-result img{
             height:40%;
             width:40%;
             margin-left: 100px;
+            max-width: 100%;
         }
         #main-container .sub-result .sub-subresult{
             width: 100%;
+            max-width: 100%;
         }
         #main-container .sub-result .sub-subresult .COE{
             float: right;
@@ -248,6 +271,7 @@ h1 {
             text-align: center;
             width: 40%;
             margin-right: 10%;
+            max-width: 100%;
         }
         #main-container .sub-result .sub-subresult .one-text{
             float: right;
@@ -256,6 +280,7 @@ h1 {
             color: gray;
             font-size: 20px ; 
             width: 100%;
+            max-width: 100%;
         }
         #main-container .sub-result .sub-subresult .one-text .two-text{
             float: right;
@@ -264,6 +289,7 @@ h1 {
             color: black;
             font-size: 40px;
             font-variant: all-petite-caps;
+            max-width: 100%;
         }
        /*footer 하단 고정*/
        footer {
