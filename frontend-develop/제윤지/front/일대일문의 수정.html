@@ -150,7 +150,6 @@
             margin-bottom: 10px;
         }
 
-        /* 메인 코드 시작 */
         main {
             position: relative;
             min-height: 100%;
@@ -194,7 +193,7 @@
             color: #4d2600;
             font-size: 30px;
         }
-        /* 글쓰는 부분 코드 */
+
         .layout-box {
             width: 100%;
             position: relative;
@@ -249,25 +248,24 @@
             font-size: 14px;
         }
 
-        .file-upload {
+        #file {
             font-size: 13px;
             color: #353535;
             border-radius: 0;
             outline-style: none;
-            border-radius: 0;
-            padding-right: 487px;
+            float: left;
+            padding-left: 115px;
             position: relative;
         }
 
-        /* 하단 버튼 코드 */
-        .bottom-button {
+        .button {
             position: relative;
             padding: 85px;
             text-align: center;
             cursor: pointer;
         }
 
-        .bottom-button a {
+        .button a {
             text-decoration: none;
             display: inline-block;
             color: #353535;
@@ -328,10 +326,8 @@
                         <br />
                         <br />
                         <label for="file">첨부파일</label>
-                        <div class="file-upload">
-                            <input type="file" id="file" name="file" multiple />
-                        </div>
-                        <div class="bottom-button">
+                        <input type="file" id="file" name="file" multiple />
+                        <div class="button">
                             <a href="#" class="btn-save">등록하기</a>
                             <a href="#" class="btn-modify">수정하기</a>
                         </div>
