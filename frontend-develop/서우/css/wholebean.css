@@ -52,17 +52,17 @@
             padding: 0;
         }
 
-        /* 로그인 회원가입 고객센터*/
-        .btns-signin-signup {
-            position: absolute;
-            right: 5px;
-            top: 30px;
-            width: 400px;
-            height: 30px;
-            margin: 0 auto;
-            text-align: center;
+       /* 로그인 회원가입 고객센터*/
+       .btns-signin-signup {
+        position: absolute;
+        right: 5px;
+        top: 45px;
+        width: 400px;
+        height: 30px;
+        margin: 0 auto;
+        text-align: center;
         }
-        
+
         .btns-signin-signup a {
             margin: 10px;
             font-size: 16px;
@@ -73,10 +73,9 @@
             position: relative;
             width: 30px;
             height: 30px;
-            top: 5px;
+            top: -5px;
             left: -8px;
         }
-        
         .shopping {
             margin: 0 auto;
             margin: 20px 0 20px 0;
@@ -188,6 +187,7 @@
             max-width: 33.33%;;
             box-sizing: border-box;
             padding: 15px;
+            text-decoration:none;
             
         }
 
@@ -221,6 +221,7 @@
             text-transform: uppercase;
             padding-top: 15px; 
             color: black;
+        
           
         }
 
@@ -234,7 +235,9 @@
             
         }
 
-         a:link {color:black; text-decoration:none;} /*하이퍼링크데코 지움 */
+        
+        a:link{color:black; text-decoration:none;} /*하이퍼링크데코 지움 */
+        
       
         
         
