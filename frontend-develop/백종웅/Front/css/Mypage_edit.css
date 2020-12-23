@@ -65,6 +65,13 @@ h1 { /* 제목 밑줄*/
   
 }
 
+#postbutton ,.btn-outline-success{
+
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+
 .edit_title {
   /* 타이틀 정렬*/
   text-align: center;
