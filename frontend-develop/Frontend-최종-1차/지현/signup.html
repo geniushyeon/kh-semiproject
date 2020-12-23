@@ -14,30 +14,31 @@
 </head>
 
 <body>
-    <header class="header">
+     <!-- header 시작 -->
+     <header class="header">
         <div class="header-align">
             <div class="header-logo">
-                <a href="/frontend/index.html"><img src="/frontend/img/logo_white.png" class="logo"></a>
+                <a href="/frontend-develop/Frontend-최종-1차/지현/index.html"><img src="/frontend/img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
                 <span><a href="/frontend-develop/Frontend-최종-1차/민영/COFFEESAZO/login2.html">로그인</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/지현/signup.html">회원가입</a></span>
-                <span><a href="/frontend-develop/제윤지/front/공지사항.html">고객센터</a></span>
-                <span><a href="#"><img src="/frontend/img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="/frontend/img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
         <div class="shopping">
             <span id="wholebean"><a href="/frontend-develop/Frontend-최종-1차/서우/wholebean.html">원두</a></span>
-            <!-- onmouseover 써볼지? (javascript)-->
             <span id="stickcoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/stickcoffee.html">스틱커피</a></span>
             <span id="capsulecoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/capsulecoffee.html">캡슐커피</a></span>
 
         </div>
     </header>
+    <!-- 회원가입 시작 -->
     <div class="section">
         <h1 class="sign-up-header">회원가입</h1>
-        <form class="form-box" name="sign-up-form" method="POST" onsubmit="return checkForm(this)">
+        <form class="form-box" name="sign-up-form" method="POST" action="/frontend-develop/Frontend-최종-1차/지현/signup_complete.html" onsubmit="return checkForm(this)">
             <div class="form-box-field warn">
                 <label>
                     아이디
@@ -127,10 +128,13 @@
                 </div>
             </div>
             <div>
-                <input type="submit" class="signup-btn" value="가입하기" />
+                <input type="submit" class="signup-btn" value="가입하기"/>
             </div>
         </form>
     </div>
+    <!-- 회원가입 끝 -->
+
+    <!-- footer 시작 -->
     <footer>
         <div class="footer">
             <ul class="footer-list-box">
@@ -141,6 +145,8 @@
             </ul>
         </div>
     </footer>
+    <!-- footer 끝 -->
+
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>

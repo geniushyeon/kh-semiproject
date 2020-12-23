@@ -8,29 +8,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COFFEESAZO</title>
     <link rel=“stylesheet” href=“./css/bootstrap.min.css” type=“text/css”> 
-    <link rel="stylesheet" href="./css/index copy.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <link href="./css/login2.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-    <header class="header">
+   
+     <!-- header 시작 -->
+     <header class="header">
         <div class="header-align">
             <div class="header-logo">
-                <a href="/frontend/index.html"><img src="./img/logo_white.png" class="logo"></a>
+                <a href="/frontend-develop/Frontend-최종-1차/지현/index.html"><img src="/frontend/img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
                 <span><a href="/frontend-develop/Frontend-최종-1차/민영/COFFEESAZO/login2.html">로그인</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/지현/signup.html">회원가입</a></span>
-                <span><a href="/frontend-develop/제윤지/front/공지사항.html">고객센터</a></span>
-                <span><a href="#"><img src="./img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="/frontend/img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
         <div class="shopping">
             <span id="wholebean"><a href="/frontend-develop/Frontend-최종-1차/서우/wholebean.html">원두</a></span>
-            <!-- onmouseover 써볼지? (javascript)-->
             <span id="stickcoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/stickcoffee.html">스틱커피</a></span>
             <span id="capsulecoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/capsulecoffee.html">캡슐커피</a></span>
 
@@ -38,40 +38,44 @@
     </header>
 
     <!-- login start -->
-    <div class="main-body">
-    <form method="post" action="#">
-        <h1 class="main-title">L O G I N</h1>
+    <div class="main-body"> <!--전체div-->
+        <form method="post" action="#"> <!--form태그 시작-->
+            <h1 class="main-title">L O G I N</h1> <!--title-->
 
-        <p><input class="input" type="text" name="id" 
-               pattern="^[a-z0-9]{5,12}$" 
-               placeholder="아이디를 입력해 주세요"></p>
-        
-        <p><input class="input" type="password" name="pwd" 
-        pattern="^[0-9a-z~!?@#$%^&*();:_+=/-]{8,50}gi"
-        placeholder="비밀번호를 입력해 주세요"></p>
+            <p>
+                <input class="input" type="text" name="id" 
+                pattern="^[a-z0-9]{5,12}$" 
+                placeholder="아이디를 입력해 주세요">
+            </p>
+            
+            <p>
+                <input class="input" type="password" name="pwd" 
+                pattern="^[0-9a-z~!?@#$%^&*();:_+=/-]{8,50}gi"
+                placeholder="비밀번호를 입력해 주세요">
+            </p>
 
-        <p class="title">
-        <a href="findId2.html">아이디 찾기 |</a>
-        <a href="findPassword.html">비밀번호 재설정</a>
-        </p>
+            <p class="title">
+                <a href="findId2.html">아이디 찾기 |</a> <!--findId2페이지로 이동-->
+                <a href="findPassword.html">비밀번호 재설정</a> <!--findPassword페이지로 이동-->
+            </p>
 
-        <p><input class="login-button" type="button" value="로그인"
-                onclick="location.href='/frontend-develop/Frontend-최종-1차/지현/index_after_login.html'"> <!--로그인성공페이지로이동-->
-        </p> 
-    </form>
+            <p>
+                <input class="login-button" type="submit" value="로그인"
+                onclick="location.href='#'"> <!--로그인성공페이지로이동-->
+            </p> 
+        </form> <!--form태그 끝-->
 
         <p class="title">──────────────────────</p>
         <h2 class="title">아직 회원이 아니신가요?</h2>
 
-        <p><input class="signup-button" type="button" value="회원가입"
-                onclick="location.href='/frontend-develop/Frontend-최종-1차/지현/signup.html'"> <!--회원가입페이지로이동-->
+        <p>
+            <input class="signup-button" type="button" value="회원가입"
+            onclick="location.href='/frontend-develop/Frontend-최종-1차/지현/signup.html'"> <!--회원가입페이지로이동-->
         </p>
-        </div>
+
+    </div>
       
     <!-- login end -->
-
-
-    </section>
     <footer>
         <div class="footer">
             <ul class="footer-list-box">
