@@ -6,14 +6,17 @@
     <link rel="shortcut icon" href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COFFEESAZO</title>
+    <title>아이디 찾기 | COFFEESAZO</title>
     <link rel=“stylesheet” href=“./css/bootstrap.min.css” type=“text/css”> 
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <link href="./css/findId2-finish.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./css/header-footer.css" type="text/css">
 </head>
 
 <body>
+   
+    <!-- header 시작 -->
     <header class="header">
         <div class="header-align">
             <div class="header-logo">
@@ -26,16 +29,13 @@
                 <span><a href="#"><img src="./img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
-
         <div class="shopping">
             <span id="wholebean"><a href="#">원두</a></span>
             <!-- onmouseover 써볼지? (javascript)-->
             <span id="stickcoffee"><a href="#">스틱커피</a></span>
             <span id="capsulecoffee"><a href="#">캡슐커피</a></span>
-
         </div>
     </header>
-
     <!--findId2-finish start!-->
     <div class="main-body"> <!--전체 div 시작-->
         <form> 
@@ -50,6 +50,9 @@
                     <input class="findid-button" type="button"  value="로그인 하러 가기"
                     onclick="location.href='login2.html'">
                 </p> <!--로그인 (login2) 페이지로 이동-->
+                <p class="title">
+                    <a href="findPassword.html"> 비밀번호를 잊으셨나요?</a>
+                </p>
             </div>
         </form>
     </div> <!--전체 div 끝-->

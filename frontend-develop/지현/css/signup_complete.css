@@ -129,6 +129,7 @@
             color: white;
             font-size: 1rem;
             border: none;
+            font-weight: bold;
         }
 
         .signin-and-gotomain input:hover {

@@ -7,8 +7,13 @@
     letter-spacing: -0.4px;
     font-family: 'Noto Sans KR', sans-serif;
   }
+  .table , .justify-content-center{
 
-
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  .my-order {
+    cursor: pointer;
+}
 
   html, body {
     margin: 0;

@@ -30,6 +30,11 @@ width: 100%;
 margin: 200px auto;
 
 }
+.table ,.justify-content-center{
+
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
 
 .edit_title{
 text-align: center;
