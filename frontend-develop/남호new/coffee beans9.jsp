@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,18 +23,18 @@
                 <a href="#"><img src="./img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
-                <span><a href="#">로그인</a></span>
-                <span><a href="#">회원가입</a></span>
-                <span><a href="#">고객센터</a></span>
-                <span><a href="#"><img src="./img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/민영/COFFEESAZO/login2.html">로그인</a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/지현/signup.html">회원가입</a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="./img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
         <div class="shopping">
-            <span id="wholebean"><a href="#">원두</a></span>
+            <span id="wholebean"><a href="/frontend-develop/Frontend-최종-1차/서우/wholebean.html">원두</a></span>
             <!-- onmouseover 써볼지? (javascript)-->
-            <span id="stickcoffee"><a href="#">스틱커피</a></span>
-            <span id="capsulecoffee"><a href="#">캡슐커피</a></span>
+            <span id="stickcoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/stickcoffee.html">스틱커피</a></span>
+            <span id="capsulecoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/capsulecoffee.html">캡슐커피</a></span>
             
         </div>
     </header>
@@ -69,15 +71,36 @@
                                 <p>총 9,000원</p>
                             </div>
                             <div class="result-button">
-                                <button type="button" class="btn btn-outline-secondary">장바구니</button>
-                                <button type="button" class="btn btn-outline-secondary">바로구매</button>
-                            </div>
-
-                        </form>
-                    </div>
-                        
-                </div>
-            </div>
+                                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    장바구니
+                                  </button>
+                                  
+                                  <!-- Modal -->
+                                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                         장바구니에 추가 되었습니다.
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">쇼핑 계속하기</button>
+                                          <button type="button" class="btn btn-primary" onclick= " location.href = '/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html'">장바구니로 가기</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                <button type="button" class="btn btn-outline-secondary"onclick= " location.href = '/frontend-develop/Frontend-최종-1차/은규/Project/front/payment.html'">바로구매</button>
+                                </div>
+                                
+                                    </form>
+                                    </div>
+                                                        
+                                    </div>
+                                </div>
             
             <div class="menu2">
                 <img src="./img/20.png" alt="">
