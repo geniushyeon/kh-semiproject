@@ -264,3 +264,8 @@ h1 {
     color: #fff;
     margin: 5px;
 }
+.bottom-button a:hover {
+    background-color: burlywood;
+    transition: 0.3s;
+    cursor: pointer;
+}
