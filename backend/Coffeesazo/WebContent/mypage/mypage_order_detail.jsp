@@ -59,7 +59,7 @@
                         <th scope="row">연락처</th>
                         <td>01012345678</td>
                     </tr>
-                    </thead>
+                </tbody>
             </form>
         </table>
         <!-- 결제정보 테이블 -->
