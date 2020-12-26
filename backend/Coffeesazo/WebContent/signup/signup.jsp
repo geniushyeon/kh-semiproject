@@ -16,9 +16,6 @@
 </head>
 
 <body>
-    <%--  <!-- header 시작 -->
-    <!-- 정적 include -->
-    <%@ include file="../header.jsp" %> --%>
     <!-- 회원가입 시작 -->
     <div class="section">
         <h1 class="sign-up-header">회원가입</h1>
@@ -117,12 +114,6 @@
         </form>
     </div>
     <!-- 회원가입 끝 -->
-
-    <!-- footer 시작 -->
-   <!-- 정적 include -->
-    <%-- <%@ include file="../footer.jsp" %> --%>
-    <!-- footer 끝 -->
-
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
