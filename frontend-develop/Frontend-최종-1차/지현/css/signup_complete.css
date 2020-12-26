@@ -5,7 +5,7 @@
         body {
             margin: 0;
             padding: 0;
-            height: 70%;
+            height: 100%;
         }
 
         *, *::before, *::after {
@@ -53,17 +53,17 @@
             margin: 0 auto;
             padding: 0;
         } 
-        /* 로그인 회원가입 고객센터*/
-        .btns-signin-signup {
+         /* 로그인 회원가입 고객센터*/
+       .btns-signin-signup {
             position: absolute;
             right: 5px;
-            top: 30px;
+            top: 45px;
             width: 400px;
             height: 30px;
             margin: 0 auto;
             text-align: center;
         }
-        
+    
         .btns-signin-signup a {
             margin: 10px;
             font-size: 16px;
@@ -74,7 +74,7 @@
             position: relative;
             width: 30px;
             height: 30px;
-            top: 5px;
+            top: -5px;
             left: -8px;
         }
 
@@ -98,9 +98,10 @@
         /*header 끝!*/
         .section {
             min-height: 100%;
-            margin: 0 400px 0 400px;
+            margin: 0 auto;
             margin-top: 180px;
-
+			width: 500px;
+			margin-bottom:0;
         }
 
         .welcome-message h1 {
@@ -129,6 +130,7 @@
             color: white;
             font-size: 1rem;
             border: none;
+            font-weight: bold;
         }
 
         .signin-and-gotomain input:hover {

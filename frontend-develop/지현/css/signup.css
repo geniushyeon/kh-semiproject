@@ -101,7 +101,8 @@
         .section {
             position: relative;
             min-height: 100%;
-            margin: 0 400px 0 400px;
+            margin: 0 auto;
+            width: 500px;
             margin-top: 180px;
             font-family: 'Noto Sans KR', sans-serif;
         }
@@ -109,7 +110,6 @@
         .form-container {
             max-width: 400px;
             height: 140vh;
-            margin: 0 auto;
             padding: 0 45px 100px 45px;
             
         }

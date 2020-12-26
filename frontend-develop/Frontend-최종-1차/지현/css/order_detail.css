@@ -6,22 +6,19 @@
             margin: 0;
             padding: 0;
             height: 100%;
+            /* font-family: 'Nanum Myeongjo', serif; */
         }
 
-        *, *::before, *::after {
+        * {
             box-sizing: border-box;
-            
         }
-        
+
         a {
             font-size: 20px;
             text-decoration: none;
             color: black;
         }
 
-        p {
-            margin: 0;
-        }
         ul, li {
             list-style: none;
         }
@@ -31,7 +28,6 @@
             text-align: center;
             font-weight: 300;
         }
-
         /* header 상단 고정*/
         header {
             position: fixed;
@@ -52,9 +48,9 @@
             width: 400px;
             margin: 0 auto;
             padding: 0;
-        } 
-         /* 로그인 회원가입 고객센터*/
-       .btns-signin-signup {
+        }
+        /* 로그인 회원가입 고객센터*/
+        .btns-signin-signup {
             position: absolute;
             right: 5px;
             top: 45px;
@@ -63,7 +59,7 @@
             margin: 0 auto;
             text-align: center;
         }
-    
+        
         .btns-signin-signup a {
             margin: 10px;
             font-size: 16px;
@@ -95,53 +91,65 @@
             color: #4d2600;
             
         }
-        /*header 끝!*/
-        .section {
+
+        .main-container {
             min-height: 100%;
-            margin: 0 auto;
-            margin-top: 180px;
-			width: 500px;
-			margin-bottom:0;
+            margin: 200px;
+            margin-bottom: 50px;
+            font-family: 'Noto Sans KR', sans-serif;
+
         }
 
-        .welcome-message h1 {
-            position: relative;
-            margin-top: 250px;
-            font-weight: 600;
+        .table-title {
+            margin: 20px 0 20px 0;
         }
-        .youridis {
+
+        table {
+            padding: 5px;
             width: 100%;
-            padding: 70px;
+            border: 1px solid #e5e5e5;
+        }
+
+        th, td {
+            padding : 10px;
+            border-bottom: 1px solid #e5e5e5;
+            border-right:  1px solid #e5e5e5;
+        }
+
+        th {
+            width: 200px;
+        }
+
+        #order-count {
+            width: 60px;
+        }
+
+        #product-price {
+            width: 100px;
+        }
+        .order-product-detail {
             text-align: center;
         }
 
-        .youridis span > b {
-            font-weight: 600;
-        }
-
-        .signin-and-gotomain {
-            margin: 20px 0 20px 0;
-        }
-        
-        .signin-and-gotomain input {
-            width: 49.44%;
+        .btn-orderlist > input{
+            width: 35%;
             height: 50px;
+            margin-top: 50px;
+            margin-left: 33%;   
             background-color: #4d2600;
             color: white;
-            font-size: 1rem;
             border: none;
             font-weight: bold;
         }
 
-        .signin-and-gotomain input:hover {
+        .btn-orderlist > input:hover {
             background-color: burlywood;
             transition: 0.3s;
             cursor: pointer;
         }
-        
         /*footer 하단 고정*/
         footer {
-            position: relative;
+            position: absolute;
             width: 100%;
             margin: 0 auto;
             background-color: #4d2600;
