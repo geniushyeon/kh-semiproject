@@ -13,6 +13,7 @@
 
         header, footer {
             box-sizing: border-box;
+            font-family: 'Nanum Myeongjo', serif; 
         }
 
         header a {
@@ -40,7 +41,7 @@
             font-family: 'Nanum Myeongjo', serif;
         }
         
-        .header-logo {
+        .header_logo {
             background-color:#4d2600;
         }
         
@@ -51,8 +52,8 @@
             padding: 0;
         }
 
-        /* 로그인 회원가입 고객센터*/
-       .btns-signin-signup {
+       /* 로그인 회원가입 고객센터*/
+       .btns_signin_signup {
         position: absolute;
         right: 5px;
         top: 45px;
@@ -62,7 +63,7 @@
         text-align: center;
         }
 
-        .btns-signin-signup a {
+        .btns_signin_signup a {
             margin: 10px;
             font-size: 16px;
             color: white;
@@ -75,6 +76,25 @@
             top: -5px;
             left: -8px;
         }
+            
+        .shopping {
+            margin: 0 auto;
+            margin: 20px 0 20px 0;
+            text-align: center;
+            
+        }
+
+        .shopping > span {
+            margin: 0 30px 0 30px;
+        }
+
+        .shopping a:hover {
+            font-weight: bold;
+            transition: all 0.2s ease;
+            color: #4d2600;
+            
+        }
+
         
         .shopping {
             margin: 0 auto;
@@ -94,25 +114,6 @@
             
         }
         
-        .shopping {
-            margin: 0 auto;
-            margin: 20px 0 20px 0;
-            text-align: center;
-            
-        }
-
-        .shopping > span {
-            margin: 0 30px 0 30px;
-        }
-
-        .shopping a:hover {
-            font-weight: bold;
-            transition: all 0.2s ease;
-            color: #4d2600;
-            
-        }
-        
-          
         /*footer 하단 고정*/
         footer {
             position: absolute;
@@ -127,20 +128,19 @@
             font-family: 'Nanum Myeongjo', serif;
         }
 
-
         .footer li {
             margin-bottom: 10px;
         }
 
 
-    /*상품페이지 메인*/
+        /*상품페이지 메인*/
 
         main{ 
-            margin:180px auto 0px 100px;
+            margin:180px auto auto 100px;
             position: relative;
             min-height: 100%;
-         }
-         
+        }
+
         .sub_title{
             font-size: 45px;
             text-align: left;
@@ -152,8 +152,7 @@
             font-family: 'Nanum Myeongjo', serif; 
         }
 
-
-        h3{ 
+       h3{
 
            font-size: 23px;
            text-align: left;
@@ -170,9 +169,9 @@
         }
 
         .sub_under_dec{
-            width: 10%;
+            width: 14%;
             height: 4px;
-            background-color:#bd661fee; 
+            background-color:#bd661fee; /*넣을지 말지 */
             margin: 5px 0px;
            /* margin: 0px auto 10px auto;*/
         }
@@ -198,7 +197,7 @@
             padding: 0px;
             background-color: white;
             border:1px solid rgba(161, 153, 153, 0.74);
-            width: 74%; /*  width: 270px;*/
+            width: 74%;
             height: 370px;
         }
 
@@ -207,23 +206,21 @@
             background-color: #f9f9f9;
             cursor: pointer;
         }
-  
         .item_list img{
             width: 100%;
             height: 270px;
         }
 
-        .capsule_name{
-   
+        .stick_name{
             font-size: 20px;
             font-weight: bold;
             text-align: center;
+
             text-transform: uppercase;
             padding-top: 15px; 
             color:black;
         }
         .product_price{
-        
             font-size: 18px;
             text-align: center;
             line-height: 1.5rem;
