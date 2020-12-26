@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <link href="./css/QnA_modify.css" rel="stylesheet" type="text/css" /> 
+    <link href="./css/qna_modify.css" rel="stylesheet" type="text/css" /> 
 </head>
 
 <body>
@@ -65,8 +65,8 @@
                             <input type="file" id="file" name="file" multiple />
                         </div>
                         <div class="bottom-button">
-                            <a href="#" class="btn-save">등록하기</a>
-                            <a href="#" class="btn-modify">수정하기</a>
+                            <a href="#" class="btn-save" onclick="javascript:btn_save()">등록하기</a>
+                            <a href="#" class="btn-modify" onclick="javascript:btn_modify()" >수정하기</a>
                         </div>
                     </form>
                 </div>
@@ -86,6 +86,16 @@
     </footer>
     <!-- 부트스트랩 자바스크립트 추가 -->
     <script src="./js/bootstrap.min.js"></script>
+    <script>
+        function btn_save() {
+            alert("등록이 완료되었습니다.");
+            window.location.href="./QnA.html";
+        }
+        function btn_modify() {
+          alert("수정이 완료되었습니다.");
+          window.location.href="./QnA.html";
+        }
+    </script>
 </body>
 
 </html>
