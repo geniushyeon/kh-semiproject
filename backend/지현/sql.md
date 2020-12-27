@@ -101,3 +101,10 @@ SELECT p.*, h.hashtag_name FROM cs_product p JOIN cs_hashtag h ON p.hashtag_inde
 /* 상품정보, 카테고리정보 확인 */
 SELECT p.*, c.category_name FROM cs_product p JOIN cs_category c ON p.category_index = c.category_index ORDER BY p.product_index ASC;
 ```
+
+10. 3개 테이블 조인(상품, 카테고리, 해시태그)
+```sql
+SELECT p.*, c.category_name, h.hashtag_name 
+FROM cs_product p, cs_category c, cs_hashtag h 
+WHERE p.category_index=c.category_index AND p.hashtag_index=h.hashtag_index;
+```
