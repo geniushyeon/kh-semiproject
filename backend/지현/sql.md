@@ -9,7 +9,7 @@ CREATE TABLE cs_member(
     member_phone VARCHAR2(100) UNIQUE NOT NULL,
     member_zipcode VARCHAR2(5),
     member_address VARCHAR2(1000),
-    member_admin NUMBER DEFAULT 1 NOT NULL
+    member_admin NUMBER DEFAULT 0 NOT NULL
 );
 ```
 
@@ -50,7 +50,7 @@ CREATE TABLE CS_HASHTAG (
 ```sql
 CREATE SEQUENCE seq_hashtag_index
 START WITH 1
-INCREMENT BY 1;e
+INCREMENT BY 1;
 ```
 
 7. cs_product 테이블 생성
@@ -79,7 +79,7 @@ INCREMENT BY 1;
 ```
 데이터 삽입
 ```sql
-INSERT INTO cs_category VALUES(seq_category_indx.nextval, '원두');
+INSERT INTO cs_category VALUES(seq_category_index.nextval, '원두');
 INSERT INTO cs_category VALUES(seq_category_index.nextval, '스틱커피');
 INSERT INTO cs_category VALUES(seq_category_index.nextval, '캡슐커피');
 
@@ -94,6 +94,10 @@ INSERT INTO cs_product VALUES(seq_product_index.nextval, '모리타', '16,000원
 INSERT INTO cs_product VALUES(seq_product_index.nextval, '엘 라우렐', '16,000원', 100, 'laurel.jpg', '라우렐어쩌구', '라우렐저쩌구', 1, 1);
 INSERT INTO cs_product VALUES(seq_product_index.nextval, '부산제', '14,000원', 100, 'busanje.jpg', '부산제어쩌구', '부산제저쩌구', 1, 1);
 ```
-
-
-
+9. 테이블 조인 확인하기
+```sql
+/* 상품정보, 카테고리정보, 해시태그정보 확인 */
+SELECT p.*, h.hashtag_name FROM cs_product p JOIN cs_hashtag h ON p.hashtag_index = h.hashtag_index ORDER BY p.product_index ASC;
+/* 상품정보, 카테고리정보 확인 */
+SELECT p.*, c.category_name FROM cs_product p JOIN cs_category c ON p.category_index = c.category_index ORDER BY p.product_index ASC;
+```
