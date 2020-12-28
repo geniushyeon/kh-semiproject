@@ -19,7 +19,7 @@
     <!-- 회원가입 시작 -->
     <div class="section">
         <h1 class="sign-up-header">회원가입</h1>
-        <form class="form-box" name="sign-up-form" method="POST" action="/frontend-develop/Frontend-최종-1차/지현/signup_complete.html" onsubmit="return checkForm(this)">
+        <form class="form-box" name="sign-up-form" method="POST" action="signup.do" onsubmit="return checkForm(this)">
             <div class="form-box-field warn">
                 <label>
                     아이디
@@ -27,7 +27,7 @@
                     <span class="warn-info" id="id-required">아이디는 필수 정보입니다.</span>
                 </label>
                 <input class="form-box-field-input" id="input-id" type="text"
-                    placeholder="아이디 입력(5~11자, 영문 소문자와 숫자만 사용)" required />
+                    name="memberId" placeholder="아이디 입력(5~11자, 영문 소문자와 숫자만 사용)" required />
 
 
             </div>
@@ -38,7 +38,7 @@
                     <span class="warn-info" id="password-required">비밀번호는 필수 정보입니다.</span>
                 </label>
                 <input class="form-box-field-input" type="password" id="input-password"
-                    placeholder="비밀번호 입력(숫자, 영문, 특수문자 조합 최소 8자)" />
+                    name="memberPwd" placeholder="비밀번호 입력(숫자, 영문, 특수문자 조합 최소 8자)" />
               
             </div>
             <div class="form-box-field warn">
@@ -51,7 +51,8 @@
                     <span class="field-required">아</span>
                     <span class="warn-info" id="name-required">이름은 필수 정보입니다.</span>
                 </label>
-                <input class="form-box-field-input" type="text" id="input-name" placeholder="이름 입력" />
+                <input class="form-box-field-input" type="text" id="input-name" 
+                name="memberName" placeholder="이름 입력" />
 
             </div>
 
@@ -61,7 +62,8 @@
                     <span class="field-required">아</span>
                     <span class="warn-info" id="email-required">이메일은 필수 정보입니다.</span>
                 </label>
-                <input class="form-box-field-input" type="email" id="input-email" placeholder="이메일 형식으로 입력" />
+                <input class="form-box-field-input" type="email" id="input-email" 
+                name="memberEmail" placeholder="이메일 형식으로 입력" />
 
             </div>
 
@@ -71,20 +73,24 @@
                     <span class="field-required">아</span>
                     <span class="warn-info" id="phonenumber-required">전화번호는 필수 정보입니다.</span>
                 </label>
-                <input class="form-box-field-input" type="text" id="input-phonenumber" placeholder="전화번호 입력(- 제외)" />
+                <input class="form-box-field-input" type="text" id="input-phonenumber" 
+                name="memberPhone" placeholder="전화번호 입력(- 제외)" />
             </div>
             <div class="form-box-field">
                 <label>주소</label>
                 <div class="postcode">
-                    <input class="form-box-field-input" type="text" readonly id="sample6_postcode" placeholder="우편번호" />
+                    <input class="form-box-field-input" type="text" readonly id="sample6_postcode" 
+                    name="memberZipcode" placeholder="우편번호" />
                     <input class="form-box-field-input" id="sample6_postcode_search" type="button"
                         onclick="sample6_execDaumPostcode()" value="우편번호 찾기" /><br />
                 </div>
-                <input class="form-box-field-input" type="text" readonly id="sample6_address" placeholder="주소" /><br />
+                <input class="form-box-field-input" type="text" readonly id="sample6_address" 
+                name="memberAddress" placeholder="주소" /><br />
                 <div class="address_detail">
-                    <input class="form-box-field-input" type="text" id="sample6_detailAddress" placeholder="상세주소" />
+                    <input class="form-box-field-input" type="text" id="sample6_detailAddress" 
+                    name="memberAddress" placeholder="상세주소" />
                     <input class="form-box-field-input" type="text" readonly id="sample6_extraAddress"
-                        placeholder="참고항목" />
+                    name="memberAddress" placeholder="참고항목" />
                 </div>
             </div>
             <!-- 약관동의 -->
@@ -118,8 +124,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script src="../js/signup.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="./js/signup.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
 </body>
 
 </html>
