@@ -59,7 +59,6 @@ INSERT INTO cs_order VALUES(
     '무통장입금',
     '어쩌구해주세요',
     default,
-  
     '이지봉',
     1
 );
