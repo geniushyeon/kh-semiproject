@@ -4,12 +4,13 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../css/bootstrap.min.css"type="text/css">
-    <link rel="stylesheet" href="../css/headerfooter.css" type="text/css">
-    <link rel="stylesheet" href="../css/coffemenu.css" type="text/css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"type="text/css">
+    <link rel="stylesheet" href="../../css/header.css" type="text/css">
+    <link rel="stylesheet" href="../../css/footer.css" type="text/css">
+    <link rel="stylesheet" href="../../css/coffemenu.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>'수프리모'|COFFEESAZO</title>
+    <title>'세하도'|COFFEESAZO</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <!--favicon-->
@@ -20,13 +21,13 @@
     <header class="header">
         <div class="header-align">
             <div class="header-logo">
-                <a href="#"><img src="../img/logo_white.png" class="logo"></a>
+                <a href="/frontend-develop/Frontend-최종-1차/지현/index.html"><img src="../../img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
                 <span><a href="/frontend-develop/Frontend-최종-1차/민영/COFFEESAZO/login2.html">로그인</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/지현/signup.html">회원가입</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
-                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="../img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="../../img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
@@ -52,23 +53,23 @@
                     
 
                     
-                    <img src="../img/20.png" alt="gold">
+                    <img src="../../img/Cerrado.png" alt="gold">
                     <div class="menu-result">
                         <form action="">
                             <div class="result-title">
                                 <h2>클래식 에스프레소 블렌드</h2>
                             </div>
                             <div class="result-product">
-                                <h3>'수프리모'</h3>
-                                <p>6,500원</p>
-                                <p>콜롬비아</p>
+                                <h3>'세하도'</h3>
+                                <p>5,500원</p>
+                                <p>브라질</p>
                                 <p>용량:200g</p>
                                 <p>배송비:2,500원</p>
                                 <p>배송 기간:이틀 예정</p>
                                 <p>[영업일 기준 2일 이내 발송]</p>
                                 <label for="addcount">수량</label>
                                 <input type="text" class="addcount" value="1">
-                                <p>총 9,000원</p>
+                                <p>총 8,000원</p>
                             </div>
                             <div class="result-button">
                                 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -101,22 +102,21 @@
                                                         
                                     </div>
                                 </div>
-            
             <div class="menu2">
-                <img src="../img/20.png" alt="">
+                <img src="../../img/Cerrado.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
-                        <p class="p1">콤롬비아'수프리모'</p>
-                            <p class="p2">Colombia'Supremo'</p>
+                        <p class="p1">브라질'세하도'</p>
+                            <p class="p2">Brazil'Seha Island'</p>
                                 
                             </div>
                             <div class="detail-mid">
-                                <p>국가 : 콜롬비아</p>
-                                <p>지역 : 콤롬비아전역</p>
-                                <p>농장 : LIA</p>
-                                <p>농장주 : LIA</p> 
-                                <p>재배 고도 : 4,000M</p>
-                                <p>품종 : IH-90</p>
+                                <p>국가 : 브라질</p>
+                                <p>지역 : 브라질</p>
+                                <p>농장 : Carlos</p>
+                                <p>농장주 : Carlos</p> 
+                                <p>재배 고도 : 3,000M</p>
+                                <p>품종 : Catuai</p>
                                 <p>가공방식 : 위시드</p>
 
                             </div>
@@ -141,8 +141,8 @@
             </ul>
         </div>
     </footer>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/popper.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/popper.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

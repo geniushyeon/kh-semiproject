@@ -4,9 +4,10 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../css/bootstrap.min.css"type="text/css">
-    <link rel="stylesheet" href="../css/headerfooter.css" type="text/css">
-    <link rel="stylesheet" href="../css/coffemenu.css" type="text/css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"type="text/css">
+    <link rel="stylesheet" href="../../css/header.css" type="text/css">
+    <link rel="stylesheet" href="../../css/footer.css" type="text/css">
+    <link rel="stylesheet" href="../../css/coffemenu.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>'카페 아메리카노'|COFFEESAZO</title>
@@ -20,13 +21,13 @@
     <header class="header">
         <div class="header-align">
             <div class="header-logo">
-                <a href="#"><img src="../img/logo_white.png" class="logo"></a>
+                <a href="/frontend-develop/Frontend-최종-1차/지현/index.html"><img src="../../img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
                 <span><a href="/frontend-develop/Frontend-최종-1차/민영/COFFEESAZO/login2.html">로그인</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/지현/signup.html">회원가입</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
-                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="../img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="../../img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
@@ -52,7 +53,7 @@
                     
 
                     
-                    <img src="../img/CoffeeStick1.png" alt="gold">
+                    <img src="../../img/cafe_americano.png" alt="gold">
                     <div class="menu-result">
                         <form action="">
                             <div class="result-title">
@@ -103,7 +104,7 @@
                                 </div>
             
             <div class="menu2">
-                <img src="../img/CoffeeStick1.png" alt="">
+                <img src="../../img/cafe_americano.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
                         <p class="p1">>NS몰'카페 아메리카노'</p>
@@ -141,8 +142,8 @@
             </ul>
         </div>
     </footer>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/popper.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/popper.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
