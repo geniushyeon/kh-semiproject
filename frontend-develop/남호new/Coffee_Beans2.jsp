@@ -4,12 +4,13 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../css/bootstrap.min.css"type="text/css">
-    <link rel="stylesheet" href="../css/headerfooter.css" type="text/css">
-    <link rel="stylesheet" href="../css/coffemenu.css" type="text/css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"type="text/css">
+    <link rel="stylesheet" href="../../css/header.css" type="text/css">
+    <link rel="stylesheet" href="../../css/footer.css" type="text/css">
+    <link rel="stylesheet" href="../../css/coffemenu.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>'카사훈 제보'|COFFEESAZO</title>
+    <title>'엘 라우렐'|COFFEESAZO</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <!--favicon-->
@@ -20,13 +21,13 @@
     <header class="header">
         <div class="header-align">
             <div class="header-logo">
-                <a href="#"><img src="./img/logo_white.png" class="logo"></a>
+                <a href="/frontend-develop/Frontend-최종-1차/지현/index.html"><img src="../../img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
                 <span><a href="/frontend-develop/Frontend-최종-1차/민영/COFFEESAZO/login2.html">로그인</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/지현/signup.html">회원가입</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
-                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="../img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="../../img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
@@ -45,30 +46,30 @@
                     <h1><a href="#">원두</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="#">#묵직한바디감</a>
+                    <a href="#">#풍부한산미</a>
                 </div>
                 
                 <div class="menu-productinfo">
                     
 
                     
-                    <img src="../img/13.png" alt="gold">
+                    <img src="../../img/El_Laure.png" alt="gold">
                     <div class="menu-result">
                         <form action="">
                             <div class="result-title">
                                 <h2>클래식 에스프레소 블렌드</h2>
                             </div>
                             <div class="result-product">
-                                <h3>'카사훈 제보'</h3>
-                                <p>12,500원</p>
-                                <p>에티오피아</p>
+                                <h3>'엘 라우렐'</h3>
+                                <p>13,500원</p>
+                                <p>온두라스</p>
                                 <p>용량:200g</p>
                                 <p>배송비:2,500원</p>
                                 <p>배송 기간:이틀 예정</p>
                                 <p>[영업일 기준 2일 이내 발송]</p>
                                 <label for="addcount">수량</label>
                                 <input type="text" class="addcount" value="1">
-                                <p>총 15,000원</p>
+                                <p>총 16,000원</p>
                             </div>
                             <div class="result-button">
                                 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -96,28 +97,27 @@
                                 <button type="button" class="btn btn-outline-secondary"onclick= " location.href = '/frontend-develop/Frontend-최종-1차/은규/Project/front/payment.html'">바로구매</button>
                                 </div>
                                 
-                                    </form>
-                                    </div>
+                                                        </form>
+                                                    </div>
                                                         
-                                    </div>
-                                </div>
-            
+                                                </div>
+                                            </div>
             <div class="menu2">
-                <img src="../img/13.png" alt="">
+                <img src="../../img/El_Laure.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
-                        <p class="p1">에티오피아'카사훈제보'</p>
-                            <p class="p2">Ethiopia'Kasahun Jebo'</p>
+                        <p class="p1">'엘 라우렐'</p>
+                            <p class="p2">온두라스 '엘 라우렐 El Laurel'</p>
                                 
                             </div>
                             <div class="detail-mid">
-                                <p>국가 : ETHIOPIA</p>
-                                <p>지역 : WEGIDA,YIRGACHEFFEE</p>
-                                <p>농장 : KASAHUN JEBO</p>
-                                <p>농장주 : KASAHUN JEBO</p> 
-                                <p>재배 고도 : 2,110M</p>
-                                <p>품종 : 74110,WELLISHO,OLDMOTHERTREE</p>
-                                <p>가공방식 : NATURAL</p>
+                                <p>국가 : 온두라스</p>
+                                <p>지역 :  엘 파라이소, 단리 Danli, El Paraiso</p>
+                                <p>농장 : 엘 라우렐 El Laurel</p>
+                                <p>농장주 :오스카 라미레즈 Oscar Ramirez</p>
+                                <p>재배 고도 : 1,400m</p> 
+                                <p>품종 : 파라이네마 Parainema</p>
+                                <p>가공방식 : 워시드 Washed</p>
 
                             </div>
 
@@ -141,8 +141,8 @@
             </ul>
         </div>
     </footer>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/popper.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/popper.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
