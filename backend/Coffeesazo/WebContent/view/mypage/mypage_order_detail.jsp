@@ -10,29 +10,32 @@
     <!--favicon-->
     <link rel="shortcut icon"
         href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/mypage_order_detail.css" type="text/css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/mypage_order_detail.css" type="text/css">
 </head>
 
 <body>
-      <!-- 로그인 후 index -->
+    <!-- 로그인 후 index -->
     <header class="header">
         <div class="header-align">
             <div class="header-logo">
-                <a href="/frontend-develop/Frontend-최종-1차/지현/index_after_login.html"><img src="../img/logo_white.png" class="logo"></a>
+                <a href="/frontend-develop/Frontend-최종-1차/지현/index_after_login.html"><img
+                        src="/frontend/img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
                 <span><a href="/frontend-develop/Frontend-최종-1차/지현/index.html">로그아웃</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/백종웅/Front/Mypage_order.html">마이페이지</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
-                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="../img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img
+                            src="/frontend/img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
         <div class="shopping">
             <span id="wholebean"><a href="/frontend-develop/Frontend-최종-1차/서우/wholebean.html">원두</a></span>
             <span id="stickcoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/stickcoffee.html">스틱커피</a></span>
-            <span id="capsulecoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/capsulecoffee.html">캡슐커피</a></span>
+            <span id="capsulecoffee"><a
+                    href="/frontend-develop/Frontend-최종-1차/서우/capsulecoffee.html">캡슐커피</a></span>
         </div>
     </header>
 
@@ -40,8 +43,8 @@
         <h1>주문상세보기</h1>
         <!-- 주문정보 테이블 시작 -->
         <h3 class="table-title">주문 정보</h3>
-        <table class="order-detail">
-            <form action="" method="POST">
+        <form action="" method="POST">
+            <table class="order-detail">
                 <tbody>
                     <tr>
                         <th scope="row">주문번호</th>
@@ -59,8 +62,8 @@
                         <th scope="row">연락처</th>
                         <td>01012345678</td>
                     </tr>
-                </tbody>
-            </form>
+                    </thead>
+        </form>
         </table>
         <!-- 결제정보 테이블 -->
         <h3 class="table-title">결제 정보</h3>
@@ -139,13 +142,14 @@
                     </tr>
 
                 </thead>
-            </form>
         </table>
-        <div class="btn-orderlist">
-            <input type="button" value="주문내역으로" onclick="location.href='/frontend-develop/Frontend-최종-1차/백종웅/Front/Mypage_order.html'"/>
-
+        <div class="btns-orderlist">
+            <span><input type="button" value="주문내역으로"
+                onclick="location.href='/frontend-develop/Frontend-최종-1차/백종웅/Front/Mypage_order.html'" /></span>
+            <span><input type="submit" value="주문취소"></span>
         </div>
-        
+
+        </form>
     </div>
     <footer>
         <div class="footer">

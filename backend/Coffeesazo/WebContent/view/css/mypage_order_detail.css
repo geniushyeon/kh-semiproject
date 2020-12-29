@@ -130,19 +130,20 @@
         .order-product-detail {
             text-align: center;
         }
-
-        .btn-orderlist > input{
-            width: 35%;
+        .btns-orderlist {
+            text-align: center;
+        }
+        .btns-orderlist input{
+            width: 200px;
             height: 50px;
             margin-top: 50px;
-            margin-left: 33%;   
             background-color: #4d2600;
             color: white;
             border: none;
             font-weight: bold;
         }
 
-        .btn-orderlist > input:hover {
+        .btns-orderlist input:hover {
             background-color: burlywood;
             transition: 0.3s;
             cursor: pointer;

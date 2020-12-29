@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입 | COFFEESAZO</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="./css/signup.css" type="text/css">
+    <link rel="stylesheet" href="./view/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="./view/css/signup.css" type="text/css">
     <!--favicon-->
     <link rel="shortcut icon"
         href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
@@ -124,8 +124,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script src="./js/signup.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
+    <script src="./view/js/signup.js"></script>
+    <script src="./view/js/bootstrap.min.js"></script>
 </body>
 
 </html>

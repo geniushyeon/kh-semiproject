@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="./css/bootstrap.min.css">
-<link rel="stylesheet" href="./css/index.css" type="text/css">    
+<link rel="stylesheet" href="view/css/bootstrap.min.css">
+<link rel="stylesheet" href="view/css/index.css" type="text/css">    
 </head>
 <body>
         <div class='main'>
@@ -17,9 +17,9 @@
 
                 <div class="slider-wrapper">
                     <!-- innermost wrapper element -->
-                    <img src="./img/7-1.png" alt="First" class="slide" /><!-- slides -->
-                    <img src="./img/4-1.png" alt="Second" class="slide" />
-                    <img src="./img/5.png" alt="Third" class="slide" />
+                    <img src="view/img/7-1.png" alt="First" class="slide" /><!-- slides -->
+                    <img src="view/img/4-1.png" alt="Second" class="slide" />
+                    <img src="view/img/5.png" alt="Third" class="slide" />
                 </div>
             </div>
         </div>

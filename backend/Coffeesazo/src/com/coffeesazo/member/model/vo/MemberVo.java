@@ -1,4 +1,4 @@
-package com.coffeesazo.model.member;
+package com.coffeesazo.member.model.vo;
 
 public class MemberVo {
 	private int memberIndex;

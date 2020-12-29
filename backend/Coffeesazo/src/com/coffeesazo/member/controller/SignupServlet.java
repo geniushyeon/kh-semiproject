@@ -1,4 +1,4 @@
-package com.coffeesazo.controller.member;
+package com.coffeesazo.member.controller;
 
 import java.io.IOException;
 
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.coffeesazo.model.member.MemberDao;
-import com.coffeesazo.model.member.MemberVo;
+import com.coffeesazo.member.model.dao.MemberDao;
+import com.coffeesazo.member.model.vo.MemberVo;
 
 /**
  * Servlet implementation class MemberServlet
@@ -21,7 +21,7 @@ import com.coffeesazo.model.member.MemberVo;
 public class SignupServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
-	String url = "index.jsp?inc=./signup/";
+	String url = "index.jsp?inc=view/signup/";
     /**
      * @see HttpServlet#HttpServlet()
      */
