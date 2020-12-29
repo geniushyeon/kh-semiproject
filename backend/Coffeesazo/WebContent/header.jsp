@@ -24,9 +24,9 @@
         </div>
 
         <div class="shopping">
-            <span id="wholebean"><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">원두</a></span>
-            <span id="stickcoffee"><a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">스틱커피</a></span>
-            <span id="capsulecoffee"><a href="index.jsp?inc=view/shopping/product/capsule_coffee.jsp">캡슐커피</a></span>
+            <span id="wholebean"><a href="/frontend-develop/Frontend-최종-1차/서우/wholebean.html">원두</a></span>
+            <span id="stickcoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/stickcoffee.html">스틱커피</a></span>
+            <span id="capsulecoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/capsulecoffee.html">캡슐커피</a></span>
 
         </div>
     </header>
