@@ -4,12 +4,12 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="./css/bootstrap.min.css"type="text/css">
-    <link rel="stylesheet" href="./css/headerfooter.css" type="text/css">
-    <link rel="stylesheet" href="./css/coffemenu.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css"type="text/css">
+    <link rel="stylesheet" href="../css/headerfooter.css" type="text/css">
+    <link rel="stylesheet" href="../css/coffemenu.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>'부산제'|COFFEESAZO</title>
+    <title>'카페 아메리카노'|COFFEESAZO</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <!--favicon-->
@@ -20,13 +20,13 @@
     <header class="header">
         <div class="header-align">
             <div class="header-logo">
-                <a href="#"><img src="./img/logo_white.png" class="logo"></a>
+                <a href="#"><img src="../img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
                 <span><a href="/frontend-develop/Frontend-최종-1차/민영/COFFEESAZO/login2.html">로그인</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/지현/signup.html">회원가입</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
-                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="./img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="../img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
@@ -42,33 +42,33 @@
         <div id="menu-container">
             <div class="menu-1">
                 <div class="menu-toplogo">
-                    <h1><a href="#">원두</a></h1>
+                    <h1><a href="#">스틱</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="#">#풍부한산미</a>
+                    <a href="#">#쉽고간편한</a>
                 </div>
                 
                 <div class="menu-productinfo">
                     
 
                     
-                    <img src="./img/03.png" alt="gold">
+                    <img src="../img/CoffeeStick1.png" alt="gold">
                     <div class="menu-result">
                         <form action="">
                             <div class="result-title">
-                                <h2>클래식 에스프레소 블렌드</h2>
+                                <h2>아메리카노</h2>
                             </div>
                             <div class="result-product">
-                                <h3>'부산제'</h3>
-                                <p>11,500원</p>
-                                <p>르완다</p>
-                                <p>용량:200g</p>
+                                <h3>'카페 아메리카노'</h3>
+                                <p>8,500원</p>
+                                <p>NS물</p>
+                                <p>용량:500g(100개입)</p>
                                 <p>배송비:2,500원</p>
                                 <p>배송 기간:이틀 예정</p>
                                 <p>[영업일 기준 2일 이내 발송]</p>
                                 <label for="addcount">수량</label>
                                 <input type="text" class="addcount" value="1">
-                                <p>총 14,000원</p>
+                                <p>총 11,000원</p>
                             </div>
                             <div class="result-button">
                                 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -103,21 +103,21 @@
                                 </div>
             
             <div class="menu2">
-                <img src="./img/03.png" alt="">
+                <img src="../img/CoffeeStick1.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
-                        <p class="p1">르완다'부산제'</p>
-                            <p class="p2">Rwanda 'Busanze'</p>
+                        <p class="p1">>NS몰'카페 아메리카노'</p>
+                            <p class="p2">NS Mall 'Cafe Americano'</p>
                                 
                             </div>
                             <div class="detail-mid">
-                                <p>국가 : RWANDA</p>
-                                <p>지역 : NYARUGURU,BUSANZE</p>
-                                <p>농장 : BUSANZE</p>
-                                <p>농장주 : SMALLFARMERS</p> 
-                                <p>재배 고도 : 2,500-2115M</p>
-                                <p>품종 : BOURBON</p>
-                                <p>가공방식 : WASHED PROCESS</p>
+                                <p>국가 : 콜롬비아,에티오피아</p>
+                                <p>지역 : 콜롬비아,에티오피아</p>
+                                <p>품종 : 칼라스 수프리모,예가체프</p>
+                                <p>칼라스 수프리모의 깊은 향미와 깔끔함</p> 
+                                <p>>'마일드 커피'의 대명사로 명성이 높은 고급 원두 커피</p>
+                                <p>예가체프의 풍부한 아로마,부드러운 바디감</p>
+                                <p>세련된 맛과 향때문에 '커피의 귀부인'이라고 불림</p>
 
                             </div>
 
@@ -141,8 +141,8 @@
             </ul>
         </div>
     </footer>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/popper.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/popper.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

@@ -4,12 +4,12 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="./css/bootstrap.min.css"type="text/css">
-    <link rel="stylesheet" href="./css/headerfooter.css" type="text/css">
-    <link rel="stylesheet" href="./css/coffemenu.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css"type="text/css">
+    <link rel="stylesheet" href="../css/headerfooter.css" type="text/css">
+    <link rel="stylesheet" href="../css/coffemenu.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>'탄자니아AA'|COFFEESAZO</title>
+    <title>'비발토 룽고'|COFFEESAZO</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <!--favicon-->
@@ -20,13 +20,13 @@
     <header class="header">
         <div class="header-align">
             <div class="header-logo">
-                <a href="#"><img src="./img/logo_white.png" class="logo"></a>
+                <a href="#"><img src="../img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
                 <span><a href="/frontend-develop/Frontend-최종-1차/민영/COFFEESAZO/login2.html">로그인</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/지현/signup.html">회원가입</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
-                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="./img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="../img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
@@ -35,40 +35,39 @@
             <!-- onmouseover 써볼지? (javascript)-->
             <span id="stickcoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/stickcoffee.html">스틱커피</a></span>
             <span id="capsulecoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/capsulecoffee.html">캡슐커피</a></span>
-            
         </div>
     </header>
     <main>
         <div id="menu-container">
             <div class="menu-1">
                 <div class="menu-toplogo">
-                    <h1><a href="#">원두</a></h1>
+                    <h1><a href="#">캡슐</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="#">#아프리카원두</a>
+                    <a href="#">#룽고</a>
                 </div>
                 
                 <div class="menu-productinfo">
                     
 
                     
-                    <img src="./img/21.png" alt="gold">
+                    <img src="../img/24.png" alt="gold">
                     <div class="menu-result">
                         <form action="">
                             <div class="result-title">
-                                <h2>클래식 에스프레소 블렌드</h2>
+                                <h2>>클래식 에스프레소</h2>
                             </div>
                             <div class="result-product">
-                                <h3>'탄자니아AA'</h3>
-                                <p>6,500원</p>
-                                <p>탄자니아</p>
-                                <p>용량:200g</p>
+                                <h3>'비발토 룽고'</h3>
+                                <p>7,500원</p>
+                                <p>버츄오</p>
+                                <p>용량:500g(100개입)</p>
                                 <p>배송비:2,500원</p>
                                 <p>배송 기간:이틀 예정</p>
                                 <p>[영업일 기준 2일 이내 발송]</p>
                                 <label for="addcount">수량</label>
                                 <input type="text" class="addcount" value="1">
-                                <p>총 9,000원</p>
+                                <p>총 10,000원</p>
                             </div>
                             <div class="result-button">
                                 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -103,21 +102,21 @@
                                 </div>
             
             <div class="menu2">
-                <img src="./img/21.png" alt="">
+                <img src="../img/24.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
-                        <p class="p1">탄자니아'탄자니아AA'</p>
-                            <p class="p2">Tanjania'TanjaniaAA'</p>
+                        <p class="p1">버츄오'비발토 룽고'</p>
+                            <p class="p2">Birchﬁo'Vivalto Lungo'</p>
                                 
                             </div>
                             <div class="detail-mid">
-                                <p>국가 : 탄자니아</p>
-                                <p>지역 : 탄자니아전역</p>
-                                <p>농장 : Amigo</p>
-                                <p>농장주 : Amigo</p> 
-                                <p>재배 고도 : 500M</p>
-                                <p>품종 : IH-90</p>
-                                <p>가공방식 : 위시드</p>
+                                <p>국가 : 대한민국</p>
+                                <p>지역 : 서울</p>
+                                <p>농장 : 동네 텃밭</p>
+                                <p>농장주 : 집주인</p> 
+                                <p>재배 고도 : 500CM</p>
+                                <p>품종 : 에스프레소</p>
+                                <p>가공방식 : 기계압축</p>
 
                             </div>
 
@@ -141,8 +140,8 @@
             </ul>
         </div>
     </footer>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/popper.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/popper.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

@@ -4,12 +4,12 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="./css/bootstrap.min.css"type="text/css">
-    <link rel="stylesheet" href="./css/headerfooter.css" type="text/css">
-    <link rel="stylesheet" href="./css/coffemenu.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css"type="text/css">
+    <link rel="stylesheet" href="../css/headerfooter.css" type="text/css">
+    <link rel="stylesheet" href="../css/coffemenu.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>'맥심 모카골드'|COFFEESAZO</title>
+    <title>'탄자니아AA'|COFFEESAZO</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <!--favicon-->
@@ -20,13 +20,13 @@
     <header class="header">
         <div class="header-align">
             <div class="header-logo">
-                <a href="#"><img src="./img/logo_white.png" class="logo"></a>
+                <a href="#"><img src="../img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
                 <span><a href="/frontend-develop/Frontend-최종-1차/민영/COFFEESAZO/login2.html">로그인</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/지현/signup.html">회원가입</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
-                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="./img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="../img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
@@ -42,33 +42,33 @@
         <div id="menu-container">
             <div class="menu-1">
                 <div class="menu-toplogo">
-                    <h1><a href="#">스틱</a></h1>
+                    <h1><a href="#">원두</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="#">#쉽고간편한</a>
+                    <a href="#">#아프리카원두</a>
                 </div>
                 
                 <div class="menu-productinfo">
                     
 
                     
-                    <img src="./img/스틱3.jpg" alt="gold">
+                    <img src="../img/21.png" alt="gold">
                     <div class="menu-result">
                         <form action="">
                             <div class="result-title">
-                                <h2>카페모카</h2>
+                                <h2>클래식 에스프레소 블렌드</h2>
                             </div>
                             <div class="result-product">
-                                <h3>'맥심 모카골드'</h3>
-                                <p>15,500원</p>
-                                <p>동서식품</p>
-                                <p>용량:500g(100개입)</p>
+                                <h3>'탄자니아AA'</h3>
+                                <p>6,500원</p>
+                                <p>탄자니아</p>
+                                <p>용량:200g</p>
                                 <p>배송비:2,500원</p>
                                 <p>배송 기간:이틀 예정</p>
                                 <p>[영업일 기준 2일 이내 발송]</p>
                                 <label for="addcount">수량</label>
                                 <input type="text" class="addcount" value="1">
-                                <p>총 18,000원</p>
+                                <p>총 9,000원</p>
                             </div>
                             <div class="result-button">
                                 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -103,22 +103,21 @@
                                 </div>
             
             <div class="menu2">
-                
-                <img src="./img/스틱3.jpg" alt="">
+                <img src="../img/21.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
-                        <p class="p1">동서식품'맥심모카골드'</p>
-                            <p class="p2">East-West Foods'Maxim Moccagold'</p>
+                        <p class="p1">탄자니아'탄자니아AA'</p>
+                            <p class="p2">Tanjania'TanjaniaAA'</p>
                                 
                             </div>
                             <div class="detail-mid">
-                                <p>국가 : 온두라스,콜롬비아</p>
-                                <p>지역 : 온두라스,콤롬비아</p>
-                                <p>맥심 모카골드 마일드 커피에는</p>
-                                <p>아라비카 원두의 깨끗하고, </p> 
-                                <p>신선한 향미를 그대로 전달할 수 있는</p>
-                                <p>APEX(Advanced Prime Extraction) 공법을</p>
-                                <p>적용하였습니다.</p>
+                                <p>국가 : 탄자니아</p>
+                                <p>지역 : 탄자니아전역</p>
+                                <p>농장 : Amigo</p>
+                                <p>농장주 : Amigo</p> 
+                                <p>재배 고도 : 500M</p>
+                                <p>품종 : IH-90</p>
+                                <p>가공방식 : 위시드</p>
 
                             </div>
 
@@ -142,8 +141,8 @@
             </ul>
         </div>
     </footer>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/popper.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/popper.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
