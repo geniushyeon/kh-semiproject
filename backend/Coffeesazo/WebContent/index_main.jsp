@@ -30,10 +30,10 @@
                 <h2>키워드로 상품을 찾아보세요!</h2>
             </div>
             <div class="hashtag-box">
-                <div class="tag"><a href='/frontend-develop/Frontend-최종-1차/서우/wholebean.html'>#풍부한산미</a></div>
-                <div class="tag"><a href='/frontend-develop/Frontend-최종-1차/서우/wholebean.html#tag_body'>#묵직한바디감</a></div>
-                <div class="tag"><a href='/frontend-develop/Frontend-최종-1차/서우/wholebean.html#tag_latin'>#중남미원두</a></div>
-                <div class="tag"><a href='/frontend-develop/Frontend-최종-1차/서우/wholebean.html#tag_africa'>#아프리카원두</a></div>
+                <div class="tag"><a href='index.jsp?inc=view/shopping/product/whole_bean.jsp'>#풍부한산미</a></div>
+                <div class="tag"><a href='index.jsp?inc=view/shopping/product/whole_bean.jsp#tag_body'>#묵직한바디감</a></div>
+                <div class="tag"><a href='index.jsp?inc=view/shopping/product/whole_bean.jsp#tag_latin'>#중남미원두</a></div>
+                <div class="tag"><a href='index.jsp?inc=view/shopping/product/whole_bean.jsp#tag_africa'>#아프리카원두</a></div>
             </div>
             <div class="hashtag-box">
                 <div class="tag"><a href='/frontend-develop/Frontend-최종-1차/서우/stickcoffee.html'>#쉽고간편한</a></div>
