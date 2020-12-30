@@ -40,7 +40,7 @@
             </p>
             
             <p class="title">
-                <a href="find_id_1step"> 아이디를 잊으셨나요?</a>
+                <a href="index.jsp?inc=view/signin/find_id_1step.jsp">아이디를 잊으셨나요?</a>
             </p>
         </form> <!-- form 태그 시작-->
     </div> <!-- 전체 div 끝 -->
