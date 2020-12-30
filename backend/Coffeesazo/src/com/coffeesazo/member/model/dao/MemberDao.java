@@ -22,8 +22,7 @@ public class MemberDao {
 		
 		try {
 			String sql = "INSERT INTO cs_member VALUES("
-					+ "seq_member_index.nextval,"
-					+ "?, ?, ?, ?, ?, ?, ?, DEFAULT)";
+					+ "?, ?, ?, ?, ?, ?, ?, DEFAULT, DEFAULT)";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberVo.getMemberId());
@@ -57,5 +56,98 @@ public class MemberDao {
 		return affectedRows;
 		
 	}
+
+	public int idDuplicatedCheck(String memberId) {
+		int result = 0;
+		try {
+			String sql = "SELECT COUNT(*) FROM cs_member WHERE member_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberId);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				result = rs.getInt(1);
+			}
+			System.out.println(result);
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
 	
+	public int signin(String id, String pwd) {
+		MemberVo member = new MemberVo();
+				
+		try {
+			String sql = "select * from cs_member where MEMBER_ID=? and MEMBER_PWD=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pwd);
+
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+
+				
+				 member = new MemberVo(); 
+				 member.setMemberId(rs.getString("member_id"));
+				 member.setMemberPwd(rs.getString("member_pwd"));
+				 
+				return 0;
+			}
+			else
+				return 1 ;
+		}
+		
+		catch (Exception e) {
+
+			System.out.println(e.toString());
+			return -1;
+			
+		}
+	}
+
+	public int findid(String name, String email) {
+		MemberVo member = new MemberVo();
+		
+		try {
+			String sql = "select * from cs_member where MEMBER_NAME=? and MEMBER_EMAIL=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, email);
+
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+
+				
+				 member = new MemberVo(); 
+				 
+				 member.setMemberId(rs.getString("member_id"));
+				 member.setMemberName(rs.getString("member_name"));
+				 member.setMemberEmail(rs.getString("member_email"));
+				 
+				return 0;
+			}
+			else
+				return 1 ;
+		}
+		
+		catch (Exception e) {
+
+			System.out.println(e.toString());
+			return -1;
+			
+		}
+	}
 }
