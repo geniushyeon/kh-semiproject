@@ -1,5 +1,5 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-title, header, footer, h1 {  /*결제창 내부 글씨체*/
+title, h1 {  /*결제창 내부 글씨체*/
     margin: 0;
     padding: 0;
     letter-spacing: -0.4px;
