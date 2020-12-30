@@ -168,7 +168,6 @@
 	var orderCancel = document.getElementById("order-cancel");
 	orderCancel.onclick = function() {
 		if (confirm("주문을 취소하시겠습니까?") == true) {
-			alert("주문이 취소되었습니다. ");
 			document.form.submit();
 		} else {
 			return;
