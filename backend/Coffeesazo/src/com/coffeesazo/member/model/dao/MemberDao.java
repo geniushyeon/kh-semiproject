@@ -66,14 +66,10 @@ public class MemberDao {
 			
 			rs = pstmt.executeQuery();
 			
-			while(rs.next()) {				
-				rs.last();
-				result = rs.getRow();
-				rs.beforeFirst();
-				
-				System.out.println(result);
+			while(rs.next()) {
+				result = rs.getInt(1);
 			}
-			
+			System.out.println(result);
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {

@@ -2,6 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.coffeesazo.member.model.vo.MemberVo"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
-    <fullyQualifiedTypeName name="com.coffeesazo.member.model.dao.MemberDao"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="com.coffeesazo.member.model.dao.MemberDao"/>
 </qualifiedTypeNameHistroy>
