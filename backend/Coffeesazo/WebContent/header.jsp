@@ -16,9 +16,9 @@
                 <a href="index.jsp"><img src="view/img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
-                <span><a href="index.jsp?inc=view/signin/login.jsp">로그인</a></span>
+                <span><a href="index.jsp?inc=view/mypage/Mypage_order.jsp">로그인</a></span>
                 <span><a href="index.jsp?inc=view/signup/signup.jsp">회원가입</a></span>
-                <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
+                <span><a href="index.jsp?inc=view/notice/notice.jsp">고객센터</a></span>
                 <span><a href="index.jsp?inc=view/order/shopping_cart.jsp"><img src="view/img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>

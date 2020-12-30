@@ -102,12 +102,12 @@
                 <div>
                     <input id="coffeesazo-admit" name="admit" type="checkbox" />
                     <label for="coffeesazo-admit">커피사조 이용약관 동의(필수)</label>
-                    <a href="coffeesazo_admit.jsp"><u>약관보기</u></a>
+                    <a href="view/signup/coffeesazo_admit.jsp"><u>약관보기</u></a>
                 </div>
                 <div>
                     <input id="user-info-admit" name="admit" type="checkbox" />
                     <label for="user-info-admit">개인정보 수집 및 이용동의(필수)</label>
-                    <a href="userinfo_admit.jsp"><u>약관보기</u></a>
+                    <a href="view/signup/userinfo_admit.jsp"><u>약관보기</u></a>
                 </div>
                 <div>
                     <input id="upto-14-admit" name="admit" type="checkbox" />
@@ -123,7 +123,49 @@
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+	 // 아이디 유효성 검사
+	    $("#input-id").focusout(function () {
+	        var id = $("#input-id").val();
+	        var idCheckRegExp = /^[a-z0-9]{5,12}$/;
+	
+			if (id == "") {
+	            $("#id-required").html("아이디는 필수 정보입니다.");
+	            $("#id-required").css("display", "inline-block");
+				
+			}
+			
+				$.ajax ({
+					type : 'POST',
+					url : './IdDuplicatedCheckServlet',
+					data : {memberId : id}, // 파라미터값, 사용자가 입력한 
+					success : function(result) {
+						if (result == 1) {
+							$("#id-required").html("사용 중인 아이디입니다.");
+		            		$("#id-required").css("display", "inline-block");
+		            		$("#id-required").css("color", "red");
+						} else if (result == 0){
+							$("#id-required").css("display", "none");
+							idCheck();
+						} else if (!idCheckRegExp.test(id)) {
+							$("#id-required").html("아이디가 형식에 맞지 않습니다.");
+							$("#id-required").css("display", "inline-block");
+							$("#id-required").css("color", "red");
+						} else if (idCheckRegExp.test(id)) {
+							$("#id-required").html("사용 가능한 아이디입니다.");
+							$("#id-required").css("display", "inline-block");
+							$("#id-required").css("color", "green");
+				        }	
+					}
+					
+				})
+			
+		})
+	        
+
+    </script>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    
     <script src="./view/js/signup.js"></script>
     <script src="./view/js/bootstrap.min.js"></script>
 </body>

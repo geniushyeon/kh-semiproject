@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <link href="view/css/coffemenu.css" rel="stylesheet" type="text/css" />
+    <link href="view/css/coffemenu2.css" rel="stylesheet" type="text/css" />
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>파푸아뉴기니'모리타'|COFFEESAZO</title>

@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../../css/coffemenu.css" type="text/css">
+    <link rel="stylesheet" href="./view/css/coffemenu.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>'카사훈 제보'|COFFEESAZO</title>
@@ -29,7 +29,7 @@
                     
 
                     
-                    <img src="../../img/kasahun_jebo.png" alt="gold">
+                    <img src="./view/img/kasahun_jebo.png" alt="gold">
                     <div class="menu-result">
                         <form action="">
                             <div class="result-title">
@@ -80,7 +80,7 @@
                                 </div>
             
             <div class="menu2">
-                <img src="../../img/kasahun_jebo.png" alt="">
+                <img src="./view/img/kasahun_jebo.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
                         <p class="p1">에티오피아'카사훈제보'</p>
