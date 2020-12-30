@@ -65,12 +65,12 @@
                                         </div>
                                         <div class="modal-footer">
                                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">쇼핑 계속하기</button>
-                                          <button type="button" class="btn btn-primary" onclick= " location.href = '/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html'">장바구니로 가기</button>
+                                          <button type="button" class="btn btn-primary" onclick= " location.href = 'index.jsp?inc=view/order/shopping_cart.jsp'">장바구니로 가기</button>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                <button type="button" class="btn btn-outline-secondary"onclick= " location.href = '/frontend-develop/Frontend-최종-1차/은규/Project/front/payment.html'">바로구매</button>
+                                <button type="button" class="btn btn-outline-secondary"onclick= " location.href = 'index.jsp?inc=view/order/shopping_payment.jsp'">바로구매</button>
                                 </div>
                                 
                                     </form>
