@@ -116,4 +116,38 @@ public class MemberDao {
 		}
 	}
 
+	public int findid(String name, String email) {
+		MemberVo member = new MemberVo();
+		
+		try {
+			String sql = "select * from cs_member where MEMBER_NAME=? and MEMBER_EMAIL=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, email);
+
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+
+				
+				 member = new MemberVo(); 
+				 
+				 member.setMemberId(rs.getString("member_id"));
+				 member.setMemberName(rs.getString("member_name"));
+				 member.setMemberEmail(rs.getString("member_email"));
+				 
+				return 0;
+			}
+			else
+				return 1 ;
+		}
+		
+		catch (Exception e) {
+
+			System.out.println(e.toString());
+			return -1;
+			
+		}
+	}
 }
