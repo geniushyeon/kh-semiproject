@@ -40,6 +40,7 @@ public class FindIdServlet extends HttpServlet {
 		//MemberVo vo = new MemberVo();
 		//vo.setMemberId(id);
 		//vo.setMemberPwd(pwd);
+		MemberVo vo =new MemberVo();
 		System.out.println("vo객체가 생성되었습니다.");
 		MemberDao dao = new MemberDao();
 		System.out.println("dao객체가 생성되었습니다.");
@@ -49,12 +50,11 @@ public class FindIdServlet extends HttpServlet {
 		
 		
 		if(result == 0) {
-			MemberVo vo =new MemberVo();
 			
 			// mail server 설정
 			String host = "smtp.naver.com";
-			String user = "chicc101@naver.com"; // 자신의 네이버 계정
-			String password = "zjvlwhdk!12";// 자신의 네이버 패스워드
+			String user = "chicc101@naver.com";
+			String password = "zjvlwhdk!12";
 
 			// 메일 받을 주소
 			/* String to_email = m.getEmail(); */
@@ -90,7 +90,7 @@ public class FindIdServlet extends HttpServlet {
 				}
 			}
 			String AuthenticationKey = temp.toString();
-			System.out.println(AuthenticationKey);
+			System.out.println("인증번호 : " + AuthenticationKey);
 
 			Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
 				protected PasswordAuthentication getPasswordAuthentication() {
@@ -107,21 +107,21 @@ public class FindIdServlet extends HttpServlet {
 				// 메일 제목
 				msg.setSubject("안녕하세요 COFFEESAZO 인증 메일입니다.");
 				// 메일 내용
-				msg.setText("인증 번호는 :" + temp);
+				msg.setText("인증 번호는 :" + temp + "입니다.");
 
 				Transport.send(msg);
 				System.out.println("이메일 전송");
 
 			} catch (Exception e) {
-				e.printStackTrace();// TODO: handle exception
+				e.printStackTrace();
 			}
-			HttpSession session1 = request.getSession();
+			HttpSession session1 = request.getSession(false);
 			session1.setAttribute("AuthenticationKey", AuthenticationKey);	
 			session1.setAttribute("id", vo.getMemberId());
 			//request.setAttribute("id", "vo.getMemberId");
 			//session1.setAttribute("email", email);
 			
-			request.setAttribute("id", vo.getMemberId());
+			//request.setAttribute("id", vo.getMemberId());
 			
 			// 패스워드 바꿀때 뭘 바꿀지 조건에 들어가는 id
 			/*
