@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주문상세보기 | COFFEESAZO</title>
+    <title>주문상세보기 |  COFFEESAZO</title>
     <!--favicon-->
     <link rel="shortcut icon"
         href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
