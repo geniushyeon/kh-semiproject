@@ -38,6 +38,10 @@
 	</div>
 	 <!-- 정적 include -->
    	<%@ include file="footer.jsp" %>
+   	<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>   
+   	<script src="view/js/bootstrap.min.js"></script>
+   	<script src="view/js/popper.min.js"></script>
 </body>
 
 </html>

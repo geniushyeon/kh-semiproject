@@ -5,30 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="view/css/Mypage_edit.css" type="text/css">
 </head>
 <body>
-  <!---------------------- 헤더시작 --------------------->
-  <header class="header">
-    <div class="header-align">
-        <div class="header-logo">
-          <a href="/frontend-develop/Frontend-최종-1차/index.html"><img src="./img/logo_white.png" class="logo"></a>
-        </div>
-        <div class="btns-signin-signup">
-            <span><a href="/frontend-develop/Frontend-최종-1차/민영/COFFEESAZO/login2.html">로그인</a></span>
-            <span><a href="/frontend-develop/Frontend-최종-1차/지현/signup.html">회원가입</a></span>
-            <span><a href="/frontend-develop/제윤지/front/공지사항.html">고객센터</a></span>
-            <span><a href="#"><img src="./img/shoppingcart_white.png" id="shoppingcart"></a></span>
-        </div>
-    </div>
 
-    <div class="shopping">
-        <span id="wholebean"><a href="/frontend-develop/Frontend-최종-1차/서우/wholebean.html">원두</a></span>
-        <!-- onmouseover 써볼지? (javascript)-->
-        <span id="stickcoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/stickcoffee.html">스틱커피</a></span>
-        <span id="capsulecoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/capsulecoffee.html">캡슐커피</a></span>
-
-    </div>
-</header>
 
   <!--------------------- 메인시작 --------------------->
   <main id="main_container">
@@ -80,18 +60,7 @@
 
 
       <div class="form-group">
-        <!--------------------- 프로필사진추가 --------------------->
-        <div class="content">
-          <img src="https://raw.githubusercontent.com/St4rFi5h/ETC/main/sourcce/article-user-blank.jpg"
-            alt="blank_user">
-          </br>
-          <label for="exampleInputFile">사진
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" id="customFile">
-              <label class="custom-file-label" for="customFile"></label>
-            </div>
-          </label>
-        </div>
+
         <p>
 
           <!--------------------- 회원정보 변경 --------------------->

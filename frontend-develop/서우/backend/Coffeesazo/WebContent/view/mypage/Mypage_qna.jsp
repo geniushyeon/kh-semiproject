@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="view/css/Mypage_qna.css" type="text/css">
 </head>
 <body>
   <main>

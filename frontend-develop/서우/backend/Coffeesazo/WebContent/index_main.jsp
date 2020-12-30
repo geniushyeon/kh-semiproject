@@ -40,8 +40,7 @@
                 <div class="tag"><a href='index.jsp?inc=view/shopping/product/capsule_coffee.jsp'>#룽고</a></div>
             </div>
         </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>   
+    
    
 
     <!-- slider script -->
