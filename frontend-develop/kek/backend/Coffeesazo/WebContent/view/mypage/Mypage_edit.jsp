@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="view/css/Mypage_edit.css" type="text/css">
+<link rel="stylesheet" href="/css/Mypage_edit.css" type="text/css">
 </head>
 <body>
 
@@ -103,7 +103,6 @@
           <label for="colFormLabel" class="col-sm-2 col-form-label">이메일</label>
           <div class="col-sm-10">
             <input type="email" class="form-control" id="colFormLabel" placeholder="이메일">
-            </br></br>
           </div>
         </div>
         <!--------------------- 주소시작 --------------------->
@@ -176,7 +175,7 @@
             </div>
           </div>
         </div>
-        </p>
+       
 
 
       </div>
