@@ -12,129 +12,8 @@
 
         }
 
-        header, footer {
-            box-sizing: border-box;
-            font-family: 'Nanum Myeongjo', serif; 
-        }
 
-        header a {
-            font-size: 20px;
-            text-decoration: none;
-            color: black;
-        }
-
-        header ul, li {
-            list-style: none;
-        }
-
-        /* header 상단 고정*/
-        header {
-            font-family: 'Nanum Myeongjo', serif;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: white;
-            z-index: 1000;
-        }
-        
-        h1 {
-            font-family: 'Nanum Myeongjo', serif;
-        }
-        
-        .header_logo {
-            background-color:#4d2600;
-        }
-        
-        .logo {
-            display: block;
-            width: 400px;
-            margin: 0 auto;
-            padding: 0;
-        }
-
-       /* 로그인 회원가입 고객센터*/
-       .btns_signin_signup {
-        position: absolute;
-        right: 5px;
-        top: 45px;
-        width: 400px;
-        height: 30px;
-        margin: 0 auto;
-        text-align: center;
-        }
-
-        .btns_signin_signup a {
-            margin: 10px;
-            font-size: 16px;
-            color: white;
-         
-           
-        }
-
-        #shoppingcart {
-            position: relative;
-            width: 30px;
-            height: 30px;
-            top: -5px;
-            left: -8px;
-        }
-            
-        .shopping {
-            margin: 0 auto;
-            margin: 20px 0 20px 0;
-            text-align: center;
-            
-        }
-
-        .shopping > span {
-            margin: 0 30px 0 30px;
-        }
-
-        .shopping a:hover {
-            font-weight: bold;
-            transition: all 0.2s ease;
-            color: #4d2600;
-            
-        }
-
-        
-        .shopping {
-            margin: 0 auto;
-            margin: 20px 0 20px 0;
-            text-align: center;
-            
-        }
-
-        .shopping > span {
-            margin: 0 30px 0 30px;
-        }
-
-        .shopping a:hover {
-            font-weight: bold;
-            transition: all 0.2s ease;
-            color: #4d2600;
-            
-        }
-        
-        /*footer 하단 고정*/
-        footer {
-            position: absolute;
-            width: 100%;
-            margin: 0 auto;
-            background-color: #4d2600;
-            padding: 5px;
-            padding-top: 20px;
-            text-align: center;
-            color: white;
-            font-size: 14px;
-            font-family: 'Nanum Myeongjo', serif;
-        }
-
-        .footer li {
-            margin-bottom: 10px;
-        }
-
+     
 
         /*상품페이지 메인*/
 
@@ -143,25 +22,23 @@
             position: relative;
             min-height: 100%;
         }
-
+   
         .sub_title{
+      	    font-family: 'Nanum Myeongjo', serif;
             font-size: 45px;
             text-align: left;
             color:  #4d2600;
             padding: 0px 0px 0px 100px;
         }    
-
-        h1{
-            font-family: 'Nanum Myeongjo', serif; 
-        }
-
-       h3{
-
-           font-size: 23px;
-           text-align: left;
-           font-weight: bold;
-           color: #222020e5;
         
+    
+      
+        .tag_title{
+        font-family: 'Noto Sans KR', sans-serif; 
+        font-size: 23px;
+        text-align: left;
+        font-weight: bold;
+        color: #222020e5;
         }
 
         .inner_space{
@@ -226,7 +103,7 @@
         .product_price{
             font-size: 18px;
             text-align: center;
-            line-height: 1.5rem;
+            line-height: 0.5rem;
             font-weight: bold;
             color: #ff0000c4;
             text-decoration:none;
