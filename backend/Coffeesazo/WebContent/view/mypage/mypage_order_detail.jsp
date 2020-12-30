@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주문상세보기 |  COFFEESAZO</title>
     <!--favicon-->
-	<link rel="stylesheet" type="text/css" href="./view/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./view/css/header.css">
-	<link rel="stylesheet" type="text/css" href="./view/css/footer.css">
-	<link rel="stylesheet" type="text/css" href="./view/css/mypage_order_detail.css">
+	<link rel="stylesheet" type="text/css" href="view/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="view/css/header.css">
+	<link rel="stylesheet" type="text/css" href="view/css/footer.css">
+	<link rel="stylesheet" type="text/css" href="view/css/mypage_order_detail.css">
     <link rel="shortcut icon"
         href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
 </head>
@@ -168,6 +168,7 @@
 	var orderCancel = document.getElementById("order-cancel");
 	orderCancel.onclick = function() {
 		if (confirm("주문을 취소하시겠습니까?") == true) {
+			alert("주문이 취소되었습니다.");
 			document.form.submit();
 		} else {
 			return;
