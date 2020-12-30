@@ -21,7 +21,7 @@
  
     <div class="main-body"> <!--전체 div 시작-->
 
-        <form method="post" action="findid" onsubmit= "return checks()"> <!--form태그 시작-->
+        <form method="post" action="findid" onsubmit= "return login_checks()"> <!--form태그 시작-->
             <p class="main-title">아이디 찾기</p>
             <p>　</p>
             <p><input class="input" type="text" name="name" id="name"
