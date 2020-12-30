@@ -11,7 +11,8 @@
     <link rel="shortcut icon"
         href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/mypage_order_detail.css" type="text/css">
+	<link rel="stylesheet" href="view/css/mypage_order_detail.css" type="text/css">
+    
 </head>
 
 <body>
