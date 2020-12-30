@@ -19,10 +19,10 @@
         <div id="menu-container">
             <div class="menu-1">
                 <div class="menu-toplogo">
-                    <h1><a href="#">원두</a></h1>
+                    <h1><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">원두</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="#">#풍부한산미</a>
+                    <a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">#풍부한산미</a>
                 </div>
                 
                 <div class="menu-productinfo">

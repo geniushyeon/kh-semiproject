@@ -56,8 +56,7 @@ public class MemberDao {
 		return affectedRows;
 		
 	}
-	
-<<<<<<< HEAD
+
 	public int idDuplicatedCheck(String memberId) {
 		int result = 0;
 		try {
@@ -88,7 +87,6 @@ public class MemberDao {
 		return result;
 	}
 	
-=======
 	public int signin(String id, String pwd) {
 		MemberVo member = new MemberVo();
 				
@@ -121,5 +119,5 @@ public class MemberDao {
 			
 		}
 	}
->>>>>>> 8a6d3c8 (LMY-add login mvc files)
+
 }
