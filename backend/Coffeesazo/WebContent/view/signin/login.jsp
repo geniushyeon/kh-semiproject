@@ -53,7 +53,7 @@
 
         <p>
             <input class="signup-button" type="button" value="회원가입"
-            onclick="location.href='./view/signup/signup.jsp'"> <!--회원가입페이지로이동-->
+            onclick="location.href='index.jsp?inc=view/signup/signup.jsp'"> <!--회원가입페이지로이동-->
         </p>
 
     </div>
