@@ -18,10 +18,10 @@
         <div id="menu-container">
             <div class="menu-1">
                 <div class="menu-toplogo">
-                    <h1><a href="#">스틱</a></h1>
+                    <h1><a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">스틱</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="#">#쉽고간편한</a>
+                    <a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">#쉽고간편한</a>
                 </div>
                 
                 <div class="menu-productinfo">

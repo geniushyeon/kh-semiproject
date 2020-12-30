@@ -19,10 +19,10 @@
         <div id="menu-container">
             <div class="menu-1">
                 <div class="menu-toplogo">
-                    <h1><a href="#">캡슐</a></h1>
+                    <h1><a href="index.jsp?inc=view/shopping/product/capsule_coffee.jsp">캡슐</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="#">#룽고</a>
+                    <a href="index.jsp?inc=view/shopping/product/capsule_coffee.jsp">#룽고</a>
                 </div>
                 
                 <div class="menu-productinfo">
