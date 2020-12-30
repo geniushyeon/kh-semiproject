@@ -32,7 +32,7 @@
 
                      <div class="col_space"> 
                       <div class="item_list">
-                           <a href="#">
+                           <a href="view/shopping/product_detail/Coffee_Capsule1.jsp">
                              <img src="view/img/Fortissio_Lungo.png" alt="">
                              <div class="capsule_name"> '포시티오 룽고'</div> 
                             <p><div class="product_price">10,000원</div></p>
@@ -42,7 +42,7 @@
 
                      <div class="col_space"> 
                       <div class="item_list">
-                        <a href="#">
+                        <a href="view/shopping/product_detail/Coffee_Capsule2.jsp">
                             <img src="view/img/Volluto.png" alt="">
                             <div class="capsule_name"> '비발토 룽고'</div> 
                             <p><div class="product_price">10,000원</div></p>
@@ -52,7 +52,7 @@
 
                      <div class="col_space"> 
                       <div class="item_list">
-                        <a href="#">
+                        <a href="view/shopping/product_detail/Coffee_Capsule2.jsp">
                             <img src="view/img/Linizio_Lungo.png" alt="">
                             <div class="capsule_name"> '리니지오 룽고'</div> 
                             <p><div class="product_price">10,000원</div></p>
