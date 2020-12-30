@@ -12,7 +12,7 @@
     <link rel=“stylesheet” href=“./view/css/bootstrap.min.css” type=“text/css”> 
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <link href="./view/css/find_id_2step.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./view/css/find_id_2step.css" type="text/css">
     <link rel="stylesheet" href="./view/css/header.css" type="text/css">
     <link rel="stylesheet" href="./view/css/footer.css" type="text/css">
 </head>
