@@ -8,10 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주문상세보기 |  COFFEESAZO</title>
     <!--favicon-->
+	<link rel="stylesheet" type="text/css" href="./view/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./view/css/header.css">
+	<link rel="stylesheet" type="text/css" href="./view/css/footer.css">
+	<link rel="stylesheet" type="text/css" href="./view/css/mypage_order_detail.css">
     <link rel="shortcut icon"
         href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/mypage_order_detail.css" type="text/css">
 </head>
 
 <body>
@@ -19,15 +21,14 @@
     <header class="header">
         <div class="header-align">
             <div class="header-logo">
-                <a href="/frontend-develop/Frontend-최종-1차/지현/index_after_login.html"><img
-                        src="/frontend/img/logo_white.png" class="logo"></a>
+                <a href="../index.jsp"><img src="./view/img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
                 <span><a href="/frontend-develop/Frontend-최종-1차/지현/index.html">로그아웃</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/백종웅/Front/Mypage_order.html">마이페이지</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img
-                            src="/frontend/img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                            src="./view/img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
@@ -146,7 +147,7 @@
         <div class="btns-orderlist">
             <span><input type="button" value="주문내역으로"
                 onclick="location.href='/frontend-develop/Frontend-최종-1차/백종웅/Front/Mypage_order.html'" /></span>
-            <span><input type="submit" value="주문취소"></span>
+            <span><input type="submit" id="order-cancel" value="주문취소" action=""></span>
         </div>
 
         </form>
@@ -161,6 +162,19 @@
             </ul>
         </div>
     </footer>
+     <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>   
+<script>
+	var orderCancel = document.getElementById("order-cancel");
+	orderCancel.onclick = function() {
+		if (confirm("주문을 취소하시겠습니까?") == true) {
+			alert("주문이 취소되었습니다. ");
+			document.form.submit();
+		} else {
+			return;
+		}	
+	}
+</script>
 </body>
 
 </html>
