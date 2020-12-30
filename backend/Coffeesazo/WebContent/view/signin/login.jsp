@@ -25,7 +25,7 @@
     <!-- login start -->
     <div class="main-body"> <!--전체div-->
     	 <!--form태그 시작-->
-        <form method="post" action="Login" onsubmit= "return checks()">
+        <form method="post" action="Login" onsubmit= "return login_checks()">
             <h1 class="main-title">L O G I N</h1>
 
             <p>
