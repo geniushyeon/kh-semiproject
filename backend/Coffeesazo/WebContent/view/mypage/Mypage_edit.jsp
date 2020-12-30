@@ -5,11 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="view/css/Mypage_edit.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../css/Mypage_edit.css">
+
 </head>
 <body>
-
-
   <!--------------------- 메인시작 --------------------->
   <main id="main_container">
     <div class="size-controll">
@@ -35,13 +34,6 @@
             </a>
         </ul>
 
-        <ul>
-            <a class="card_small" href="Mypage_edit.html">
-                <h3>회원정보수정</h3>
-                <p class="card_text">나의 정보를 </br>변경하실 수 있습니다.</p>
-                <p class="card_textlink">수정하기</p>
-            </a>
-        </ul>
 
         <ul>
             <a class="card_small" href="Mypage_qna.html">
@@ -62,7 +54,6 @@
       <div class="form-group">
 
         <p>
-
           <!--------------------- 회원정보 변경 --------------------->
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label">이름</label>
@@ -186,7 +177,5 @@
 
   </main>
   
-  
-
 </body>
 </html>

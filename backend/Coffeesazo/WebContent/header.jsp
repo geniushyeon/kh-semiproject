@@ -20,6 +20,7 @@
                 <span><a href="index.jsp?inc=view/signup/signup.jsp">회원가입</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
                 <span><a href="index.jsp?inc=view/order/shopping_cart.jsp"><img src="view/img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="index.jsp?inc=view/mypage/Mypage_edit.jsp">마이페이지</a></span>
             </div>
         </div>
 
