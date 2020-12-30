@@ -18,28 +18,7 @@
 </head>
 
 <body>
-    <!-- header 시작 -->
-    <header class="header">
-        <div class="header-align">
-            <div class="header-logo">
-                <a href="#"><img src="./view/img/logo_white.png" class="logo"></a>
-            </div>
-            <div class="btns-signin-signup">
-                <span><a href="#">로그인</a></span>
-                <span><a href="#">회원가입</a></span>
-                <span><a href="#">고객센터</a></span>
-                <span><a href="#"><img src="./view/img/shoppingcart_white.png" id="shoppingcart"></a></span>
-            </div>
-        </div>
-        <div class="shopping">
-            <span id="wholebean"><a href="#">원두</a></span>
-            <!-- onmouseover 써볼지? (javascript)-->
-            <span id="stickcoffee"><a href="#">스틱커피</a></span>
-            <span id="capsulecoffee"><a href="#">캡슐커피</a></span>
-        </div>
-    </header>
-    
-    <!-- findPassword start! -->
+   
     <div class="main-body"> <!-- 전체 div시작 -->
         <form method="post" action="#"> <!-- form 태그 시작-->
             <p class="main-title">비밀번호 재설정</p>
@@ -65,17 +44,7 @@
             </p>
         </form> <!-- form 태그 시작-->
     </div> <!-- 전체 div 끝 -->
-    <!-- findPassword end! -->
-    <footer>
-        <div class="footer">
-            <ul class="footer-list-box">
-                <li>COFFEESAZO | 대표자: 이지현 | 사업자등록번호 123-45-67890</li>
-                <li>서울특별시 영등포구 선유도2로 57 이레빌딩(구관) 19F</li>
-                <li>책임자: 제윤지 | 개인정보관리책임자: 김은규</li>
-                <li>고객센터 02-1234-5678 | E-mail: customer@coffeesazo.com</li>
-            </ul>
-        </div>
-    </footer>
+
 </body>
 
 </html>
