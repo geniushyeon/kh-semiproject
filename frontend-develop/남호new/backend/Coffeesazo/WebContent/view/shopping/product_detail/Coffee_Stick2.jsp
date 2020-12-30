@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./view/css/coffemenu.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>'맥심 카누'|COFFEESAZO</title>
+    <title>'카누 다크로스트'|COFFEESAZO</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <!--favicon-->
@@ -19,10 +19,10 @@
         <div id="menu-container">
             <div class="menu-1">
                 <div class="menu-toplogo">
-                    <h1><a href="#">스틱</a></h1>
+                    <h1><a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">스틱</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="#">#쉽고간편한</a>
+                    <a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">#쉽고간편한</a>
                 </div>
                 
                 <div class="menu-productinfo">
@@ -36,7 +36,7 @@
                                 <h2>아메리카노</h2>
                             </div>
                             <div class="result-product">
-                                <h3>'맥심 카누'</h3>
+                                <h3>'카누 다크로스트'</h3>
                                 <p>18,500원</p>
                                 <p>동서식품</p>
                                 <p>용량:500g(100개입)</p>
@@ -83,8 +83,8 @@
                 <img src="./view/img/kanu.jpg" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
-                        <p class="p1">동서식품'맥심 카누'</p>
-                            <p class="p2">East-West Foods'Maxim Canoe'</p>
+                        <p class="p1">동서식품'카누 다크로스트'</p>
+                            <p class="p2">East-West Foods'Canoe dachroist'</p>
                                 
                             </div>
                             <div class="detail-mid">

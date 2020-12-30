@@ -31,10 +31,10 @@
                 <p>　</p>
                 <p>
                     <input class="findid-button" type="button"  value="로그인 하러 가기"
-                    onclick="location.href='login.jsp'">
+                    onclick="location.href='index.jsp?inc=view/signin/login.jsp'">
                 </p> <!--로그인 (login2) 페이지로 이동-->
                 <p class="title">
-                    <a href="find_password_1step"> 비밀번호를 잊으셨나요?</a>
+                	<a href="index.jsp?inc=view/signin/find_password_1step.jsp">비밀번호를 잊으셨나요?</a>
                 </p>
             </div>
         </form>

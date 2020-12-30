@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../../css/coffemenu.css" type="text/css">
+    <link rel="stylesheet" href="./view/css/coffemenu.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>'맥심 모카골드'|COFFEESAZO</title>
@@ -19,17 +19,17 @@
         <div id="menu-container">
             <div class="menu-1">
                 <div class="menu-toplogo">
-                    <h1><a href="#">스틱</a></h1>
+                    <h1><a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">스틱</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="#">#쉽고간편한</a>
+                    <a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">#쉽고간편한</a>
                 </div>
                 
                 <div class="menu-productinfo">
                     
 
                     
-                    <img src="../../img/maxim.jpg" alt="gold">
+                    <img src="./view/img/maxim.jpg" alt="gold">
                     <div class="menu-result">
                         <form action="">
                             <div class="result-title">
@@ -81,7 +81,7 @@
             
             <div class="menu2">
                 
-                <img src="../../img/maxim.jpg" alt="">
+                <img src="./view/img/maxim.jpg" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
                         <p class="p1">동서식품'맥심모카골드'</p>

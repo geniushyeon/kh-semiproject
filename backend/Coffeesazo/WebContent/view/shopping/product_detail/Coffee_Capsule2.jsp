@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../../css/coffemenu.css" type="text/css">
+    <link rel="stylesheet" href="./view/css/coffemenu.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>'비발토 룽고'|COFFEESAZO</title>
@@ -19,21 +19,21 @@
         <div id="menu-container">
             <div class="menu-1">
                 <div class="menu-toplogo">
-                    <h1><a href="#">캡슐</a></h1>
+                    <h1><a href="index.jsp?inc=view/shopping/product/capsule_coffee.jsp">캡슐</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="#">#룽고</a>
+                    <a href="index.jsp?inc=view/shopping/product/capsule_coffee.jsp">#룽고</a>
                 </div>
                 
                 <div class="menu-productinfo">
                     
 
                     
-                    <img src="../../img/Volluto.png" alt="gold">
+                    <img src="./view/img/Volluto.png" alt="gold">
                     <div class="menu-result">
                         <form action="">
                             <div class="result-title">
-                                <h2>>클래식 에스프레소</h2>
+                                <h2>클래식 에스프레소</h2>
                             </div>
                             <div class="result-product">
                                 <h3>'비발토 룽고'</h3>
@@ -80,7 +80,7 @@
                                 </div>
             
             <div class="menu2">
-                <img src="../../img/Volluto.png" alt="">
+                <img src="./view/img/Volluto.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
                         <p class="p1">버츄오'비발토 룽고'</p>

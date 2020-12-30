@@ -33,7 +33,7 @@
 
                 <div class="col_space">
                     <div class="item_list">
-                    <a href="view/shopping/product_detail/Coffee_Beans1.jsp">
+                    <a href="index.jsp?inc=./view/shopping/product_detail/Coffee_Beans1.jsp">
                         <img src="view/img/Morita.png" alt="">
                        <div class="bean_name"> '모리타'</div> 
                        <p><div class="product_price">16,000원</div></p> 
@@ -43,7 +43,7 @@
 
                  <div class="col_space"> 
                     <div class="item_list">
-                        <a href="view/shopping/product_detail/Coffee_Beans2.jsp">
+                        <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans2.jsp">
                             <img src="view/img/El_Laure.png" alt="">
                             <div class="bean_name"> '엘 라우렐'</div> 
                             <p><div class="product_price">16,000원</div></p>
@@ -53,7 +53,7 @@
 
                  <div class="col_space"> 
                     <div class="item_list">
-                        <a href="view/shopping/product_detail/Coffee_Beans3.jsp">
+                        <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans3.jsp">
                             <img src="view/img/Busanze.png" alt="">
                             <div class="bean_name"> '부산제'</div>
                             <p><div class="product_price">14,000원</div></p>
@@ -74,7 +74,7 @@
 
                 <div class="col_space"> 
                    <div class="item_list">
-                       <a href="view/shopping/product_detail/Coffee_Beans4.jsp">
+                       <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans4.jsp">
                            <img src="view/img/KasahunJebo.png" alt="">
                            <div class="bean_name"> '카사훈 제보'</div> 
                            <p><div class="product_price">15,000원</div></p>
@@ -84,7 +84,7 @@
 
                 <div class="col_space"> 
                    <div class="item_list">
-                       <a href="view/shopping/product_detail/Coffee_Beans5.jsp">
+                       <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans5.jsp">
                            <img src="view/img/ElLaurelHijo.png" alt="">
                            <div class="bean_name"> '엘 라우렐 이호'</div> 
                            <p><div class="product_price">27,000원</div></p>
@@ -94,7 +94,7 @@
 
                  <div class="col_space"> 
                    <div class="item_list">
-                       <a href="view/shopping/product_detail/Coffee_Beans6.jsp">
+                       <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans6.jsp">
                            <img src="view/img/Esencia.png" alt="">
                            <div class="bean_name"> '에센시아 디카페인'</div> 
                            <p><div class="product_price">16,000원</div></p>
@@ -115,7 +115,7 @@
 
                 <div class="col_space"> 
                 <div class="item_list">
-                   <a href="view/shopping/product_detail/Coffee_Beans7.jsp">
+                   <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans7.jsp">
                         <img src="view/img/Marcala.png" alt="">
                         <div class="bean_name">'마르카라 마르칼라'</div> 
                         <p><div class="product_price">20,000원</div></p>
@@ -125,7 +125,7 @@
 
                 <div class="col_space"> 
                 <div class="item_list">
-                   <a href="view/shopping/product_detail/Coffee_Beans8.jsp">
+                   <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans8.jsp">
                         <img src="view/img/Cerrado.png" alt="">
                         <div class="bean_name">'세하도'</div> 
                         <p><div class="product_price">8,000원</div></p>
@@ -135,7 +135,7 @@
 
                 <div class="col_space"> 
                 <div class="item_list">
-                    <a href="view/shopping/product_detail/Coffee_Beans9.jsp">
+                    <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans9.jsp">
                         <img src="view/img/Supremo.png" alt="">
                         <div class="bean_name">   '수프리모'</div> 
                         <p><div class="product_price">9,000원</div></p>
@@ -156,7 +156,7 @@
 
                 <div class="col_space"> 
                 <div class="item_list">
-                   <a href="view/shopping/product_detail/Coffee_Beans10.jsp">
+                   <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans10.jsp">
                         <img src="view/img/TanzaniaAA.png" alt="">
                         <div class="bean_name">'탄자니아AA'</div> 
                         <p><div class="product_price">9,000원</div></p>
@@ -166,7 +166,7 @@
 
                 <div class="col_space"> 
                 <div class="item_list">
-                    <a href="view/shopping/product_detail/Coffee_Beans11.jsp">
+                    <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans11.jsp">
                         <img src="view/img/SidamoG4.png" alt="">
                         <div class="bean_name">   '시다모G4'</div> 
                         <p><div class="product_price">11,000원</div></p>
@@ -176,7 +176,7 @@
 
                 <div class="col_space"> 
                 <div class="item_list">
-                    <a href="view/shopping/product_detail/Coffee_Beans12.jsp">
+                    <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans12.jsp">
                         <img src="view/img/KenyaAA.png" alt="">
                         <div class="bean_name">   '케냐AA'</div> 
                         <p><div class="product_price">12,000원</div></p>

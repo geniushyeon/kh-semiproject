@@ -22,13 +22,7 @@ public class SignupServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
 	String url = "index.jsp?inc=view/signup/";
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SignupServlet() {
-        super();
-    }
-
+   
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */

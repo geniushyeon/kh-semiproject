@@ -13,15 +13,8 @@ main{
 }
     
 #menu-container{
-    
-    padding-top: 100px;
-    padding-left: 250px;
-    padding-right: 250px;
-    width: 100%;
-    
-    
-    
-    
+	margin: 0 auto;
+    width: 1000px;
     
 }
     
@@ -29,25 +22,27 @@ main{
     
 .menu1{
     width: 100%;
-    
+    margin: 0 auto;
     
 }
 .menu-toplogo{
-    margin-top: 50px;
+	width: 100%;
+	float: left;
 }
 .menu-toplogo h1 {
-    width: 100%;
-    
+
+	float: left;
     color: #4d2600;
     font-size: 70px;
     font-weight: 800;
     letter-spacing: 5px;
+    margin: 0;
 }
 .menu-toplogo h1 a{
     color: #4d2600;;
     text-decoration: none;
     font-size:50px;
-    margin-right:1290px;
+    margin: 0;
 }
 .menu-toptag{
     
@@ -63,11 +58,14 @@ main{
     color: black;
     
 }
+
+.menu-toptag a:hover {
+	color: black;
+}
 .menu-productinfo{
     border-bottom: 2px solid black;
-    margin-top: 5%;
-   
-    width: 100%;
+    
+    width: 1000px;
     height: 800px;
     
 }
@@ -96,12 +94,10 @@ main{
     font-size: 20px;
 }
 .menu2{
+	margin: 0 auto;
     margin-top: 15%;
     margin-bottom: 100px;
     width: 100%;
-    height: 900px;
-    
-    
     
     
 }
@@ -113,7 +109,7 @@ main{
     
 }
 .detail-infomation{
-    display: inline-block;
+    
     float: right;
     width: 600px;
     height: 470px;

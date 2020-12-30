@@ -32,7 +32,7 @@
                 
                      <div class="col_space">
                       <div class="item_list">
-                        <a href="view/shopping/product_detail/Coffee_Stick1.jsp">
+                        <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Stick1.jsp">
                             <img src="view/img/maxim.jpg" alt="">
                             <div class="stick_name"> '맥심 모카골드'</div> 
                             <p><div class="product_price">18,000원</div></p>
@@ -42,7 +42,7 @@
 
                      <div class="col_space"> 
                       <div class="item_list">
-                        <a href="view/shopping/product_detail/Coffee_Stick2.jsp">
+                        <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Stick2.jsp">
                             <img src="view/img/kanu.jpg" alt="">
                             <div class="stick_name"> '카누 다크로스트'</div> 
                             <p><div class="product_price">21,000원</div></p>
@@ -52,7 +52,7 @@
 
                      <div class="col_space"> 
                       <div class="item_list">
-                        <a href="view/shopping/product_detail/Coffee_Stick3.jsp">
+                        <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Stick3.jsp">
                             <img src="view/img/cafe_americano.png" alt="">
                             <div class="stick_name"> '카페 아메리카노'</div> 
                             <p><div class="product_price">11,000원</div></p>

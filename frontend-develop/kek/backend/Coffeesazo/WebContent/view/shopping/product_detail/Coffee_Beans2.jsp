@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../../css/coffemenu.css" type="text/css">
+    <link rel="stylesheet" href="./view/css/coffemenu.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>'엘 라우렐'|COFFEESAZO</title>
@@ -19,17 +19,17 @@
         <div id="menu-container">
             <div class="menu-1">
                 <div class="menu-toplogo">
-                    <h1><a href="#">원두</a></h1>
+                    <h1><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">원두</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="#">#풍부한산미</a>
+                    <a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">#풍부한산미</a>
                 </div>
                 
                 <div class="menu-productinfo">
                     
 
                     
-                    <img src="../../img/El_Laure.png" alt="gold">
+                    <img src="./view/img/El_Laure.png" alt="gold">
                     <div class="menu-result">
                         <form action="">
                             <div class="result-title">
@@ -79,7 +79,7 @@
                                                 </div>
                                             </div>
             <div class="menu2">
-                <img src="../../img/El_Laure.png" alt="">
+                <img src="./view/img/El_Laure.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
                         <p class="p1">'엘 라우렐'</p>
