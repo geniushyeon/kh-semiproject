@@ -16,7 +16,7 @@
                 <a href="index.jsp"><img src="view/img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
-                <span><a href="/frontend-develop/Frontend-최종-1차/민영/COFFEESAZO/login2.html">로그인</a></span>
+                <span><a href="">로그인</a></span>
                 <span><a href="index.jsp?inc=view/signup/signup.jsp">회원가입</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/민영/COFFEESAZO/login2.html"><img src="view/img/shoppingcart_white.png" id="shoppingcart"></a></span>
@@ -24,9 +24,9 @@
         </div>
 
         <div class="shopping">
-            <span id="wholebean"><a href="/frontend-develop/Frontend-최종-1차/서우/wholebean.html">원두</a></span>
-            <span id="stickcoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/stickcoffee.html">스틱커피</a></span>
-            <span id="capsulecoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/capsulecoffee.html">캡슐커피</a></span>
+            <span id="wholebean"><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">원두</a></span>
+            <span id="stickcoffee"><a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">스틱커피</a></span>
+            <span id="capsulecoffee"><a href="index.jsp?inc=view/shopping/product/capsule_coffee.jsp">캡슐커피</a></span>
 
         </div>
     </header>

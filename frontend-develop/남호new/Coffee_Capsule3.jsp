@@ -4,12 +4,13 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../css/bootstrap.min.css"type="text/css">
-    <link rel="stylesheet" href="../css/headerfooter.css" type="text/css">
-    <link rel="stylesheet" href="../css/coffemenu.css" type="text/css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"type="text/css">
+    <link rel="stylesheet" href="../../css/header.css" type="text/css">
+    <link rel="stylesheet" href="../../css/footer.css" type="text/css">
+    <link rel="stylesheet" href="../../css/coffemenu.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>'비발토 룽고'|COFFEESAZO</title>
+    <title>'리니지오 룽고'|COFFEESAZO</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <!--favicon-->
@@ -20,13 +21,13 @@
     <header class="header">
         <div class="header-align">
             <div class="header-logo">
-                <a href="#"><img src="../img/logo_white.png" class="logo"></a>
+                <a href="/frontend-develop/Frontend-최종-1차/지현/index.html"><img src="../../img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
                 <span><a href="/frontend-develop/Frontend-최종-1차/민영/COFFEESAZO/login2.html">로그인</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/지현/signup.html">회원가입</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
-                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="../img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img src="../../img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
@@ -35,6 +36,7 @@
             <!-- onmouseover 써볼지? (javascript)-->
             <span id="stickcoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/stickcoffee.html">스틱커피</a></span>
             <span id="capsulecoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/capsulecoffee.html">캡슐커피</a></span>
+            
         </div>
     </header>
     <main>
@@ -51,14 +53,14 @@
                     
 
                     
-                    <img src="../img/24.png" alt="gold">
+                    <img src="../../img/Linizio_Lungo.png" alt="gold">
                     <div class="menu-result">
                         <form action="">
                             <div class="result-title">
-                                <h2>>클래식 에스프레소</h2>
+                                <h2>클래식 에스프레소</h2>
                             </div>
                             <div class="result-product">
-                                <h3>'비발토 룽고'</h3>
+                                <h3>'리니지오 룽고'</h3>
                                 <p>7,500원</p>
                                 <p>버츄오</p>
                                 <p>용량:500g(100개입)</p>
@@ -102,19 +104,19 @@
                                 </div>
             
             <div class="menu2">
-                <img src="../img/24.png" alt="">
+                <img src="../../img/Linizio_Lungo.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
-                        <p class="p1">버츄오'비발토 룽고'</p>
-                            <p class="p2">Birchﬁo'Vivalto Lungo'</p>
+                        <p class="p1">버츄오'리니지오 룽고'</p>
+                            <p class="p2">Birchﬁo'Lineageo Rungo'</p>
                                 
                             </div>
                             <div class="detail-mid">
                                 <p>국가 : 대한민국</p>
-                                <p>지역 : 서울</p>
-                                <p>농장 : 동네 텃밭</p>
-                                <p>농장주 : 집주인</p> 
-                                <p>재배 고도 : 500CM</p>
+                                <p>지역 : 창원</p>
+                                <p>농장 : 나때는말이야</p>
+                                <p>농장주 : 늙은이</p> 
+                                <p>재배 고도 : 350CM</p>
                                 <p>품종 : 에스프레소</p>
                                 <p>가공방식 : 기계압축</p>
 
@@ -140,8 +142,8 @@
             </ul>
         </div>
     </footer>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/popper.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/popper.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
