@@ -82,7 +82,7 @@
                 <img src="./view/img/cafe_americano.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
-                        <p class="p1">>NS몰'카페 아메리카노'</p>
+                        <p class="p1">NS몰'카페 아메리카노'</p>
                             <p class="p2">NS Mall 'Cafe Americano'</p>
                                 
                             </div>

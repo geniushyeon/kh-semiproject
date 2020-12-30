@@ -33,7 +33,7 @@
                     <div class="menu-result">
                         <form action="">
                             <div class="result-title">
-                                <h2>>클래식 에스프레소</h2>
+                                <h2>클래식 에스프레소</h2>
                             </div>
                             <div class="result-product">
                                 <h3>'비발토 룽고'</h3>

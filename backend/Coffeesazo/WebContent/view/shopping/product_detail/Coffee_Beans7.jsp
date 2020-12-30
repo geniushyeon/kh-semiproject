@@ -21,7 +21,7 @@
                     <h1><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">원두</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">#중남미원두</a>
+                    <a href="index.jsp?inc=view/shopping/product/whole_bean.jsp#tag_latin">#중남미원두</a>
                 </div>
                 
                 <div class="menu-productinfo">
