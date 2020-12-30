@@ -130,7 +130,7 @@ public class FindIdServlet extends HttpServlet {
 			 * (req, resp);
 			 */
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/view/find_id_2step.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp?inc=view/signin/find_id_2step.jsp");
 			dispatcher.forward(request, response);
 		
 		}
