@@ -26,6 +26,17 @@
   font-family: 'Nanum Myeongjo', serif;
 }
 
+.size-controll{
+	text-align: center;
+}
+
+.user_info { /*유저이미지,이름 묶음*/
+  
+    font-size: 30px;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid #bcbcbc
+}
+
 main{
  margin-top:200px ;
  width: 100%;
@@ -92,6 +103,9 @@ color: #888;
     transition: 0.2s ease-in-out;
     color: #4d2600;
     }
+    
+    
+    
 ul {  /* 버튼정렬*/
 display: inline-block;
 }

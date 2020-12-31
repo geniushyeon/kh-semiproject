@@ -1,11 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<html lang = "en">
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="view/css/Mypage_qna.css" type="text/css">
+ <link rel="stylesheet" href="view/css/bootstrap.min.css">
+  <link rel="stylesheet" href="view/css/Mypage.css" type="text/css">
+ <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
 </head>
 <body>
   <main>
@@ -14,7 +20,7 @@
             <div class="user_info">
                 <div class="mypage_title">
 
-                    <h1> 마이페이지 | COFFEESAZO</h1>
+                    <h1>마이페이지</h1>
                 </div>
                 <div class="user_info_form"><img
                         src="https://raw.githubusercontent.com/St4rFi5h/ETC/main/sourcce/article-user-blank.jpg"
@@ -28,7 +34,7 @@
                     <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_order.jsp">
                         <h3 class="softblack">주문내역</h3>
                         <p class="card_text">최근 주문내역을 </br>확인하실 수 있습니다.</p>
-                        <p class="card_textlink">확인하기</p>
+                 
                     </a>
                 </ul>
       
@@ -36,7 +42,7 @@
                     <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_edit.jsp">
                         <h3>회원정보수정</h3>
                         <p class="card_text">나의 정보를 </br>변경하실 수 있습니다.</p>
-                        <p class="card_textlink">수정하기</p>
+
                     </a>
                 </ul>
       
