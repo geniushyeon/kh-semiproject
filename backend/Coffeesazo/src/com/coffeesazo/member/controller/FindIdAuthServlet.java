@@ -9,9 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import com.coffeesazo.member.model.dao.MemberDao;
-import com.coffeesazo.member.model.vo.MemberVo;
+
 
 
 @WebServlet("/auth")
@@ -23,7 +21,8 @@ public class FindIdAuthServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		
+	
+	
 		String auth_number =request.getParameter("auth_number");
 		System.out.println("고객이 입력한 인증번호 : " + auth_number);
 		String AuthenticationKey = (String)request.getSession().getAttribute("AuthenticationKey");

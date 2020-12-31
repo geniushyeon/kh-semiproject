@@ -40,13 +40,12 @@ public class FindIdServlet extends HttpServlet {
 		//MemberVo vo = new MemberVo();
 		//vo.setMemberId(id);
 		//vo.setMemberPwd(pwd);
-		MemberVo vo =new MemberVo();
-		System.out.println("vo객체가 생성되었습니다.");
 		MemberDao dao = new MemberDao();
 		System.out.println("dao객체가 생성되었습니다.");
+		MemberVo vo =new MemberVo();
+		System.out.println("vo객체가 생성되었습니다.");
 		int result = dao.findid(name,email);
 		System.out.println("DB 조회 결과값 :" + result + "(성공 : 0 / 실패 : 1)");
-		
 		
 		
 		if(result == 0) {
@@ -117,7 +116,9 @@ public class FindIdServlet extends HttpServlet {
 			}
 			HttpSession session1 = request.getSession(false);
 			session1.setAttribute("AuthenticationKey", AuthenticationKey);	
+			System.out.println(AuthenticationKey);
 			session1.setAttribute("id", vo.getMemberId());
+			
 			//request.setAttribute("id", "vo.getMemberId");
 			//session1.setAttribute("email", email);
 			
