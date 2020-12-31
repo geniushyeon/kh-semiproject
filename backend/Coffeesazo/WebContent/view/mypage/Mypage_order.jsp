@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../css/Mypage_order.css" type="text/css">
+<link rel="stylesheet" href="view/css/Mypage_order.css" type="text/css">
 </head>
 <body>
   <main id="main_container">
