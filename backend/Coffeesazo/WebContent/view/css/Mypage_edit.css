@@ -14,7 +14,7 @@ title, header, footer, h1
 {
   font-family: 'Nanum Myeongjo', serif;
 }
-label, p , h3 , .edit_title, h3{
+label, p , h3 , .edit_title, h3 , .btn-outline-secondary{
   /*회원정보 변경 내부 글씨체*/
   margin: 0;
   padding: 0;
@@ -36,6 +36,16 @@ margin-bottom: 40px;
 }
 
 
+.section{
+	
+	margin-top:0px;
+}
+
+
+
+.main_container{
+	margin-top : 60px;
+}
 
 .input-group-btn-prepend{
 
@@ -46,6 +56,8 @@ margin-bottom: 40px;
   font-size: 20px;
 }
 
+
+
 span {
   /*지현씨 푸터헤더 글씨체 */
   font-family: 'Nanum Myeongjo', serif;
@@ -53,7 +65,7 @@ span {
 
 
 h1 { /* 제목 밑줄*/
-  border-bottom: 2px solid #000000;
+  border-bottom: solid #000000;
   padding-bottom: 20px;
 }
 
@@ -61,8 +73,7 @@ h1 { /* 제목 밑줄*/
 #main_container {
   /*마이페이지 전체적 가운데*/
   display: inline-block;
-  margin: auto;
-  margin-top: 200px;
+
   width: 100% ;
 
 }

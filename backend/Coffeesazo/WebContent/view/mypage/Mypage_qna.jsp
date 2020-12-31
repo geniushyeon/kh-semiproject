@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="view/css/Mypage_qna.css" type="text/css">
  <link rel="stylesheet" href="view/css/bootstrap.min.css">
+ <link rel="stylesheet" href="view/css/Mypage_qna.css" type="text/css">
   <link rel="stylesheet" href="view/css/Mypage.css" type="text/css">
  <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -47,6 +47,13 @@
                 </ul>
       
 
+        <ul>
+            <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_qna.jsp">
+                <h3 class="softblack">나의문의</h3>
+                <p class="card_text">나의1:1문의를 </br>확인하실 수 있습니다.</p>
+
+            </a>
+        </ul>
             </div>
       
 
