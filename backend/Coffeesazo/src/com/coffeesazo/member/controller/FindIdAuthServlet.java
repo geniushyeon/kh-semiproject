@@ -27,8 +27,8 @@ public class FindIdAuthServlet extends HttpServlet {
 		String auth_number =request.getParameter("auth_number");
 		System.out.println("고객이 입력한 인증번호 : " + auth_number);
 		String AuthenticationKey = (String)request.getSession().getAttribute("AuthenticationKey");
-		String id = (String)request.getSession().getAttribute("id");
-		System.out.println("과연 아이디가저장돼서 넘어 왔을지? " + id);
+		String result = (String)request.getSession().getAttribute("result");
+		System.out.println("과연 아이디가저장돼서 넘어 왔을지? " + result);
 		System.out.println("세션에 저장된 보낸 인증번호 : " + AuthenticationKey);
 		
 		
@@ -38,7 +38,7 @@ public class FindIdAuthServlet extends HttpServlet {
             
         }
 		else {
-			request.setAttribute("id", id);
+			request.setAttribute("result", result);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp?inc=view/signin/find_id_success.jsp");
 			dispatcher.forward(request, response); 
 		}

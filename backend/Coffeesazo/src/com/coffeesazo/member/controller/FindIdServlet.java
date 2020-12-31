@@ -44,15 +44,15 @@ public class FindIdServlet extends HttpServlet {
 		//MemberVo vo =new MemberVo();
 		//System.out.println("vo객체가 생성되었습니다.");
 		String result = dao.findid(name,email);
-		System.out.println("DB 조회 결과값 :" + result + "(성공 : 0 / 실패 : 1)");
+		System.out.println("DB 조회 결과값 :" + result + "(성공 : 값이 들어있음 / 실패 : null)");
 		
 		
 		if(result != null) {
 			
 			// mail server 설정
-			String host = "smtp.naver.com";
-			String user = "chicc101@naver.com";
-			String password = "zjvlwhdk!12";
+			String host = "smtp.gmail.com";
+			String user = "coffeesazo.cop";
+			String password = "Coffeesazo!123";
 
 			// 메일 받을 주소
 			/* String to_email = m.getEmail(); */
@@ -66,6 +66,10 @@ public class FindIdServlet extends HttpServlet {
 			props.put("mail.smtp.ssl.enable", "true");
 			props.put("mail.smtp.starttls.enable", "true");
 			props.put("mail.debug", "true");
+			
+			props.put("mail.smtp.socketFactory.port","465");
+			props.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
+			props.put("mail.smtp.socketFactory.fallback","false");
 
 			// 인증 번호 생성기
 			StringBuffer temp = new StringBuffer();
@@ -116,7 +120,7 @@ public class FindIdServlet extends HttpServlet {
 			HttpSession session1 = request.getSession(false);
 			session1.setAttribute("AuthenticationKey", AuthenticationKey);	
 			System.out.println(AuthenticationKey);
-			session1.setAttribute("id", result);
+			session1.setAttribute("result", result);
 			
 			//request.setAttribute("id", "vo.getMemberId");
 			//session1.setAttribute("email", email);
