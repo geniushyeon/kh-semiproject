@@ -1,22 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<html lang = "en">
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<link rel="stylesheet" type="text/css" href="../css/Mypage_edit.css">
-
+ <link rel="stylesheet" href="view/css/bootstrap.min.css">
+  <link rel="stylesheet" href="view/css/addressApi.css" type="text/css">
+  <link rel="stylesheet" href="view/css/Mypage.css" type="text/css">
+<link rel = "stylesheet" href="view/css/Mypage_edit.css" type = "text/css" >
+ <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
 </head>
 <body>
-  <!--------------------- 메인시작 --------------------->
+ <!--------------------- 메인시작 --------------------->
   <main id="main_container">
     <div class="size-controll">
 
       <div class="user_info">
           <div class="mypage_title">
 
-              <h1> 마이페이지 | COFFEESAZO</h1>
+              <h1>마이페이지</h1>
           </div>
           <div class="user_info_form"><img
                   src="https://raw.githubusercontent.com/St4rFi5h/ETC/main/sourcce/article-user-blank.jpg"
@@ -27,19 +33,19 @@
        <!--------------전체 버튼묶음-------------->
        <div class="button">
         <ul>
-            <a class="card_small" href="Mypage_order.html">
+            <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_order.jsp">
                 <h3 class="softblack">주문내역</h3>
                 <p class="card_text">최근 주문내역을 </br>확인하실 수 있습니다.</p>
-                <p class="card_textlink">확인하기</p>
+
             </a>
         </ul>
 
 
         <ul>
-            <a class="card_small" href="Mypage_qna.html">
+            <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_qna.jsp">
                 <h3 class="softblack">나의문의</h3>
                 <p class="card_text">나의1:1문의를 </br>확인하실 수 있습니다.</p>
-                <p class="card_textlink">확인하기</p>
+
             </a>
         </ul>
     </div>
@@ -97,6 +103,7 @@
             </br></br>
           </div>
         </div>
+        <p>
         <!--------------------- 주소시작 --------------------->
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label">주소</label>
@@ -108,7 +115,8 @@
           <button type="button" class="btn btn-outline-secondary" id="postbutton"
             onclick="sample4_execDaumPostcode()">우편번호</button>
         </span>
-        <p>
+        
+        
           </div>
 
         </div>
@@ -176,6 +184,13 @@
 
 
   </main>
+
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="view/js/addressApi.js"></script>
+  <script src="view/js/jquery.min.js"></script>
+  <script src="view/js/bootstrap.min.js"></script>
+  <script src="view/js/popper.js"></script>
+
   
 </body>
 </html>
