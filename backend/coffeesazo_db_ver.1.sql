@@ -1,4 +1,4 @@
-```sql
+
 /* 회원 테이블 생성 */
 CREATE TABLE cs_member(
     member_id VARCHAR2(20) PRIMARY KEY,
@@ -24,9 +24,15 @@ CREATE TABLE cs_order(
     order_receiver VARCHAR2(128) NOT NULL,
     order_receiver_phone VARCHAR2(100) NOT NULL,
     order_total_price NUMBER NOT NULL
-​
 );
 /* 주문 상세 테이블 */
+CREATE TABLE cs_order_detail(
+    order_detail_index NUMBER PRIMARY KEY,
+    fk_order_index NUMBER REFERENCES cs_order(order_index) ON DELETE CASCADE,
+    fk_product_index NUMBER REFERENCES cs_product(product_index) ON DELETE CASCADE,
+    order_product_count NUMBER NOT NULL
+);
+
 CREATE TABLE cs_order_detail(
     order_detail_index NUMBER PRIMARY KEY,
     fk_order_index NUMBER REFERENCES cs_order(order_index) ON DELETE CASCADE,
@@ -82,18 +88,19 @@ NOCYCLE;
 
 ​
 CREATE TABLE CS_QNA (
-	QNA_INDEX	    NUMBER		PRIMARY KEY,
-	fk_member_id    VARCHAR2(128)	NOT NULL,	
-	QNA_TITLE	    VARCHAR2(128)	                NOT NULL,
+	QNA_INDEX NUMBER	PRIMARY KEY,
+	fk_member_id  VARCHAR2(20)	NOT NULL,	
+	QNA_TITLE  VARCHAR2(128)       NOT NULL,
 	QNA_DATE	DATE    default sysdate	        	NOT NULL, 
 	QNA_TEXT	    VARCHAR2(2000)	                NOT NULL,
 	QNA_IMAGE	    VARCHAR2(128)	,
-	QNA_CHECK	    NUMBER	                        NOT NULL,
+	QNA_CHECK NUMBER	 NOT NULL
+
 );
 ​
 ALTER TABLE CS_QNA
-ADD CONSTRAINT FK_member_index FOREIGN KEY(fk_member_id) REFERENCES cs_member(member_id)
-ON DELETE CASCADE
+ADD CONSTRAINT fk_member_id FOREIGN KEY(fk_member_id) REFERENCES cs_member(member_id)
+ON DELETE CASCADE;
 ​
 CREATE SEQUENCE seq_qna_index
 MINVALUE 1
@@ -101,12 +108,6 @@ MAXVALUE 999999
 START WITH 1
 INCREMENT BY 1
 NOCYCLE;
-​
-INSERT INTO CS_QNA(QNA_INDEX, member_id, QNA_TITLE ,QNA_TEXT ,QNA_IMAGE ,QNA_CHECK)
-VALUES(seq_QNA_NO.NEXTVAL  ,'이은규','커피색이 갈색이에요' ,  '커피색은 왜갈색이죠' , '이미지링크입니다' , '0');
-​
-INSERT INTO CS_QNA(QNA_INDEX, member_id, QNA_TITLE ,QNA_TEXT ,QNA_IMAGE ,QNA_CHECK)
-VALUES(seq_QNA_NO.NEXTVAL  ,'백종웅','빈봉지가왔어요' ,  '커피가없어요' , '이미지링크입니다' , '0');
 ​
 ​
 SELECT * FROM CS_QNA ;
@@ -119,8 +120,8 @@ CREATE TABLE cs_notice(
     notice_date DATE default sysdate NOT NULL,
     notice_text VARCHAR2(400) NOT NULL,
     notice_file VARCHAR2(128),
-    CONSTRAINT fk_member_id FOREIGN KEY(member_id) REFERENCES cs_member(member_id) 
-    ON DELETE CASCADE 
+    CONSTRAINT fk_notice_member_id FOREIGN KEY(fk_member_id) REFERENCES cs_member(member_id) 
+    ON DELETE CASCADE
 );
 
 /* seq_notice_index */
@@ -130,13 +131,6 @@ MAXVALUE 9999999
 START WITH 1
 INCREMENT BY 1
 NOCYCLE;
-
-​
-
-
-INSERT INTO cs_notice(notice_index, member_id, notice_title, notice_text, notice_file)
-VALUES(seq_notice_index.nextval, 'ji', '크리스마스 EVENT','어렵다어려워', null);
-
 
 
 /*상품 테이블*/   ​
@@ -151,16 +145,14 @@ CREATE TABLE cs_product(
     product_text VARCHAR2(2000) null
 
     );
-​​
-ALTER TABLE cs_product
-ADD CONSTRAINT fk_hastag_index FOREIGN KEY(fk_hashtag_index)REFERENCES cs_hastag(hastag_index) 
+​​/* 확인하기 */
+ALTER TABLE cs_product ADD CONSTRAINT fk_hastag_index FOREIGN KEY(fk_hastag_index) REFERENCES cs_hashtag(hashtag_index)
 ON DELETE CASCADE;
 
-​
 /*상품 식별자 시퀀스 */
-CREATE SEQUENCE seq_product_index
+CREATE SEQUENCE seq_product_index 
     START WITH 1
-    INCREMEMT BY 1
+    INCREMENT BY 1
     MAXVALUE 99999999
     MINVALUE 1
     NOCYCLE;
@@ -175,11 +167,11 @@ order_count NUMBER not null
 
 /*제약조건*/
 ALTER TABLE cs_cart
-ADD CONSTRAINT FK_member_index FOREIGN KEY(fk_member_id) REFERENCES cs_member(member_id) 
+ADD CONSTRAINT FK_cart_member_id FOREIGN KEY(fk_member_id) REFERENCES cs_member(member_id) 
 ON DELETE CASCADE;
 
 ALTER TABLE cs_cart
-ADD CONSTRAINT FK_product_index FOREIGN KEY(fk_product_index) REFERENCES cs_product(product_index) ON DELETE CASCADE;
+ADD CONSTRAINT FK_cart_product_index FOREIGN KEY(fk_product_index) REFERENCES cs_product(product_index) ON DELETE CASCADE;
 
 /*장바구니 시퀀스*/
 CREATE SEQUENCE seq_cart_index
@@ -188,4 +180,4 @@ CREATE SEQUENCE seq_cart_index
     MAXVALUE 99999999
     MINVALUE 1
     NOCYCLE;
-```
+

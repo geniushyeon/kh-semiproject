@@ -3,45 +3,9 @@
  */
 
 // 아이디 유효성 검사
-	var id = $("#input-id").val();
-	var idCheckRegExp = /^[a-z0-9]{5,12}$/;
-	        
-var idCheck = function() {
-		if (!idCheckRegExp.test(id)) {
-			$("#id-required").html("아이디가 형식에 맞지 않습니다.");
-			$("#id-required").css("display", "inline-block");
-			$("#id-required").css("color", "red");
-		} else if (idCheckRegExp.test(id)) {
-			$("#id-required").html("사용 가능한 아이디입니다.");
-			$("#id-required").css("display", "inline-block");
-			$("#id-required").css("color", "green");
-	        
-		}	
-	}
-$("#input-id").focusout(function () {
-	        
-	        
-		if (id == "") {
-	            $("#id-required").html("아이디는 필수 정보입니다.");
-	            $("#id-required").css("display", "inline-block");
-				
-			} else if (id != ""){ 
-				$.ajax ({
-					type : 'POST',
-					url : './IdDuplicatedCheckServlet',
-					data : {memberId : id}, // 파라미터값 : 사용자가 입력한 id 
-					success : function(result) {
-						if (result == 1) {
-							$("#id-required").html("사용 중인 아이디입니다.");
-		            		$("#id-required").css("display", "inline-block");
-		            		$("#id-required").css("color", "red");
-						} else if (result == 0){
-							idCheck();
-						}
-					}
-				})
- 			}
-		})
+
+
+		
 
  $("#input-password").focusout(function () {
         var password = $("#input-password").val();

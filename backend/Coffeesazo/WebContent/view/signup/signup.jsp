@@ -123,33 +123,62 @@
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-	 // 아이디 유효성 검사
-	    $("#input-id").focusout(function () {
- 	        var id = $("#input-id").val();
-	        console.log(id);
-			$.ajax ({
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    
+	<!-- <script src="./view/js/signup.js"></script> -->
+	<script type="text/javascript">
+	$("#input-id").focusout(function () {
+		var id = $("#input-id").val();
+		var idCheckRegExp = /^[a-z0-9]{5,12}$/;
+		var idExists;
+		
+		if (id == "") {
+			$("#id-required").html("아이디는 필수 정보입니다.");
+			$("#id-required").css("display", "inline-block");
+			$("#id-required").css("color", "red");
+		}
+		
+		var idCheck = function() {
+			if (!idCheckRegExp.test(id)) {
+				$("#id-required").html("아이디가 형식에 맞지 않습니다.");
+				$("#id-required").css("display", "inline-block");
+				$("#id-required").css("color", "red");
+			} else if (idCheckRegExp.test(id)) {
+				$("#id-required").html("사용 가능한 아이디입니다.");
+				$("#id-required").css("display", "inline-block");
+				$("#id-required").css("color", "green");
+		        
+			}	
+		}
+		
+
+		console.log(id);
+
+		$.ajax ({
 				type : 'POST',
 				url : './IdDuplicatedCheckServlet',
+				async: false,
 				data : {memberId : id}, // 파라미터값 : 사용자가 입력한 id 
 				success : function(result) {
 					if (result == 1) {
 						$("#id-required").html("사용 중인 아이디입니다.");
 		           		$("#id-required").css("display", "inline-block");
 		           		$("#id-required").css("color", "red");
+						idExists = result;
 					} else if (result == 0){
 						$("#id-required").css("display", "none");
-						
+						idExists = result;	
 					}
 				}
 			})
 
-		})
+		if (idExists == 0) {
+			idCheck();
+		}
 
-    </script>
-    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    
-	<!-- <script src="./view/js/signup.js"></script> -->
+	})
+
+	</script>
     <script src="./view/js/bootstrap.min.js"></script>
 </body>
 

@@ -69,7 +69,7 @@ public class MemberDao {
 			while(rs.next()) {
 				result = rs.getInt(1);
 			}
-			System.out.println(result);
+			System.out.println(result); // 0이면 사용가능, 1이면 중복 
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -83,5 +83,57 @@ public class MemberDao {
 		return result;
 	}
 	
+	public int emailDuplicatedCheck(String memberEmail) {
+		int result = 0;
+		try {
+			String sql = "SELECT COUNT(*) FROM cs_member WHERE member_email = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberEmail);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+			System.out.println(result); // 0이면 사용가능, 1이면 중복 
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+	
+	public int phoneDuplicatedCheck(String memberPhone) {
+		int result = 0;
+		try {
+			String sql = "SELECT COUNT(*) FROM cs_member WHERE member_phone = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberPhone);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				result = rs.getInt(1);
+			}
+			System.out.println(result); // 0이면 사용가능, 1이면 중복
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
 	
 }
