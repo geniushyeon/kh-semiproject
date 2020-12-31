@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="view/css/Mypage_order.css" type="text/css">
+<link rel="stylesheet" href="../css/Mypage_order.css" type="text/css">
 </head>
 <body>
   <main id="main_container">
@@ -14,7 +14,7 @@
             <div class="user_info">
                 <div class="mypage_title">
 
-                    <h1> 마이페이지</h1>
+                    <h1>마이페이지 | COFFEESAZO</h1>
                 </div>
                 <div class="user_info_form"><img
                         src="https://raw.githubusercontent.com/St4rFi5h/ETC/main/sourcce/article-user-blank.jpg"
@@ -24,16 +24,10 @@
 
             <!--------------전체 버튼묶음-------------->
             <div class="button">
-                <ul>
-                    <a class="card_small" href="/frontend-develop/Frontend-최종-1차/백종웅/Front/Mypage_order.html">
-                        <h3 class="softblack">주문내역</h3>
-                        <p class="card_text">최근 주문내역을 </br>확인하실 수 있습니다.</p>
-                        <p class="card_textlink">확인하기</p>
-                    </a>
-                </ul>
+
       
                 <ul>
-                    <a class="card_small" href="/frontend-develop/Frontend-최종-1차/백종웅/Front/Mypage_edit.html">
+                    <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_edit.jsp">
                         <h3>회원정보수정</h3>
                         <p class="card_text">나의 정보를 </br>변경하실 수 있습니다.</p>
                         <p class="card_textlink">수정하기</p>
@@ -41,7 +35,7 @@
                 </ul>
       
                 <ul>
-                    <a class="card_small" href="/frontend-develop/Frontend-최종-1차/백종웅/Front/Mypage_qna.html">
+                    <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_qna.jsp">
                         <h3 class="softblack">나의문의</h3>
                         <p class="card_text">나의1:1문의를 </br>확인하실 수 있습니다.</p>
                         <p class="card_textlink">확인하기</p>
