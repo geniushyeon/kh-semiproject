@@ -22,8 +22,7 @@ public class MemberDao {
 		
 		try {
 			String sql = "INSERT INTO cs_member VALUES("
-					+ "seq_member_index.nextval,"
-					+ "?, ?, ?, ?, ?, ?, ?, DEFAULT)";
+					+ "?, ?, ?, ?, ?, ?, ?, DEFAULT, DEFAULT)";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberVo.getMemberId());
@@ -57,5 +56,32 @@ public class MemberDao {
 		return affectedRows;
 		
 	}
+
+	public int idDuplicatedCheck(String memberId) {
+		int result = 0;
+		try {
+			String sql = "SELECT COUNT(*) FROM cs_member WHERE member_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberId);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				result = rs.getInt(1);
+			}
+			System.out.println(result);
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
+	
 	
 }

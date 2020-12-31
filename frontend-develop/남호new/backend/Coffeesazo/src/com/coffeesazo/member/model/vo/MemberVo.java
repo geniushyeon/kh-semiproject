@@ -1,5 +1,7 @@
 package com.coffeesazo.member.model.vo;
 
+import java.sql.Date;
+
 public class MemberVo {
 	private int memberIndex;
 	private String memberId;
@@ -10,6 +12,7 @@ public class MemberVo {
 	private String memberZipcode;
 	private String memberAddress;
 	private String memberAdmin;
+	private Date memberJoinedDate;
 	
 	public int getMemberIndex() {
 		return memberIndex;
@@ -81,6 +84,15 @@ public class MemberVo {
 	public void setMemberAdmin(String memberAdmin) {
 		this.memberAdmin = memberAdmin;
 	}
+
+	public Date getMemberJoinedDate() {
+		return memberJoinedDate;
+	}
+
+	public void setMemberJoinedDate(Date memberJoinedDate) {
+		this.memberJoinedDate = memberJoinedDate;
+	}
+	
 	
 	
 }

@@ -13,11 +13,7 @@
         
         }
 
-   
-        h1 {
-            font-family: 'Nanum Myeongjo', serif;
-        }
-        
+  
       
         /*상품페이지 메인*/
 
@@ -113,7 +109,7 @@
         }
 
         .product_price{
-            
+            font-family: 'Noto Sans KR', sans-serif; 
             font-size: 18px;
             text-align: center;
             line-height: 0.5rem;

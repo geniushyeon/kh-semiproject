@@ -33,7 +33,7 @@
 
                 <div class="col_space">
                     <div class="item_list">
-                    <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans1.jsp">
+                    <a href="index.jsp?inc=./view/shopping/product_detail/Coffee_Beans1.jsp">
                         <img src="view/img/Morita.png" alt="">
                        <div class="bean_name"> '모리타'</div> 
                        <p><div class="product_price">16,000원</div></p> 

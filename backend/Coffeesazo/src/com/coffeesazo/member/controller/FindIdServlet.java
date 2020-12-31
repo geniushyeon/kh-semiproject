@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import com.coffeesazo.member.model.dao.MemberDao2;
-import com.coffeesazo.member.model.vo.MemberVo;
 
 
 @WebServlet("/findid")
@@ -42,13 +41,13 @@ public class FindIdServlet extends HttpServlet {
 		//vo.setMemberPwd(pwd);
 		MemberDao2 dao = new MemberDao2();
 		System.out.println("dao객체가 생성되었습니다.");
-		MemberVo vo =new MemberVo();
-		System.out.println("vo객체가 생성되었습니다.");
-		int result = dao.findid(name,email);
+		//MemberVo vo =new MemberVo();
+		//System.out.println("vo객체가 생성되었습니다.");
+		String result = dao.findid(name,email);
 		System.out.println("DB 조회 결과값 :" + result + "(성공 : 0 / 실패 : 1)");
 		
 		
-		if(result == 0) {
+		if(result != null) {
 			
 			// mail server 설정
 			String host = "smtp.naver.com";
@@ -117,7 +116,7 @@ public class FindIdServlet extends HttpServlet {
 			HttpSession session1 = request.getSession(false);
 			session1.setAttribute("AuthenticationKey", AuthenticationKey);	
 			System.out.println(AuthenticationKey);
-			session1.setAttribute("id", vo.getMemberId());
+			session1.setAttribute("id", result);
 			
 			//request.setAttribute("id", "vo.getMemberId");
 			//session1.setAttribute("email", email);

@@ -50,8 +50,8 @@ public class MemberDao2 {
 		}
 	}
 
-	public int findid(String name, String email) {
-		MemberVo member = new MemberVo();
+	public String findid(String name, String email) {
+	
 		
 		try {
 			String sql = "select member_id from cs_member where MEMBER_NAME=? and MEMBER_EMAIL=?";
@@ -61,26 +61,29 @@ public class MemberDao2 {
 			pstmt.setString(2, email);
 
 			rs = pstmt.executeQuery();
+			String result = null; 
 			
 			if(rs.next()) {
-
 				
-				 member = new MemberVo(); 
+				
+				 //member = new MemberVo(); 
 				 
-				 member.setMemberId(rs.getString(1));
+				 //member.setMemberId(rs.getString(1));
 				 //member.setMemberName(rs.getString(2));
 				 //member.setMemberEmail(rs.getString(3));
+				
+				result = rs.getString(1);
 				 
-				return 0;
+				return result;
 			}
 			else
-				return 1 ;
+				return null ;
 		}
 		
 		catch (Exception e) {
 
 			System.out.println(e.toString());
-			return -1;
+			return null;
 			
 		}
 	}
