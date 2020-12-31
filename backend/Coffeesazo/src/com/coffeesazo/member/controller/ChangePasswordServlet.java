@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import com.coffeesazo.member.model.dao.MemberDao2;
 
 
@@ -21,8 +23,8 @@ public class ChangePasswordServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		
-		String id = (String) request.getAttribute("result");
+		HttpSession session1 = request.getSession(false);
+		String id = (String)session1.getAttribute("result");
 		System.out.println("과연 id가 넘어왔을지? " +id);
 		String pwd = request.getParameter("pwd");
 		
@@ -34,13 +36,13 @@ public class ChangePasswordServlet extends HttpServlet {
 		MemberDao2 dao = new MemberDao2();
 		System.out.println("dao객체가 생성되었습니다.");
 		int result = dao.updatepwd(id , pwd); 
-		System.out.println("DB 조회 결과값 :" + result + "(성공 : 0 / 실패 : 1)");
+		System.out.println("DB 조회 결과값 :" + result + "(성공 : 1 / 실패 : 0)");
 		
-		if(result == 0) {
+		if(result == 1) {
 			//업데이트성공시
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp?inc=view/signin/login.jsp");
-			//dispatcher.forward(request, response);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp?inc=view/signin/find_password_success.jsp");
+			dispatcher.forward(request, response);
 		}
 		else out.println("<script>alert('비밀번호 재설정에 실패하였습니다.'); history.back();</script>");
 		

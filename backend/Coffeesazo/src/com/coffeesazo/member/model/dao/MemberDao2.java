@@ -3,6 +3,7 @@ package com.coffeesazo.member.model.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import com.coffeesazo.Application;
 import com.coffeesazo.member.model.vo.MemberVo;
@@ -126,23 +127,21 @@ public class MemberDao2 {
 		}
 	}
 
-	public int updatepwd(String id, String pwd) {
+	public int updatepwd(String id, String pwd)  {
 
 
 		try {
 			String sql = "UPDATE cs_member SET member_pwd =? WHERE member_id=?";
-			int row = 0;
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, pwd);
 			pstmt.setString(2, id);
 
-			row = pstmt.executeUpdate();
-			
+			int row = pstmt.executeUpdate();
 
-			if(rs.next()) {
+			if(row ==1) {
 
-
-				return row;
+				return 1;
 			}
 			else
 				return 0 ;
@@ -151,8 +150,9 @@ public class MemberDao2 {
 		catch (Exception e) {
 
 			System.out.println(e.toString());
-			return 0;
+			return -1;
 
 		}
+			
 	}
 }
