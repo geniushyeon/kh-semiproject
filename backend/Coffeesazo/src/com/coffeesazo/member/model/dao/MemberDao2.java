@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 
 import com.coffeesazo.Application;
 import com.coffeesazo.member.model.vo.MemberVo;
-
+//민영작업
 public class MemberDao2 {
 	Connection conn; // db의 연결 정보 
 	PreparedStatement pstmt; // 문자열로 되어 있는 sql 문장을 실행 

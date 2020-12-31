@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import com.coffeesazo.member.model.dao.MemberDao;
+import com.coffeesazo.member.model.dao.MemberDao2;
 import com.coffeesazo.member.model.vo.MemberVo;
 
 
@@ -40,7 +40,7 @@ public class FindIdServlet extends HttpServlet {
 		//MemberVo vo = new MemberVo();
 		//vo.setMemberId(id);
 		//vo.setMemberPwd(pwd);
-		MemberDao dao = new MemberDao();
+		MemberDao2 dao = new MemberDao2();
 		System.out.println("dao객체가 생성되었습니다.");
 		MemberVo vo =new MemberVo();
 		System.out.println("vo객체가 생성되었습니다.");
