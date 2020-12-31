@@ -137,6 +137,7 @@ footer {
 
 /* 메인 코드 시작 */
 main {
+	font-family: 'Noto Sans KR', sans-serif; 
 	position: relative;
 	min-height: 100%;
 }
@@ -172,8 +173,11 @@ main {
 	border-bottom: 3px solid #8B4F1D;
 }
 
+.boardnavi a:hover {
+	color: black;
+}
 h1 {
-	padding-top: 50px;
+	/* padding-top: 50px; */
 	text-align: center;
 	color: #4d2600;
 	font-size: 30px;
@@ -265,6 +269,9 @@ p {
 	color: black;
 	padding: 24px;
 }
+.bottom-table a:hover {
+	color: black;
+}
 
 li {
 	list-style: none;
@@ -292,4 +299,7 @@ ul {
 	height: 30px;
 	background-color: #FFF;
 	border: 1px solid #e5e5e5;
+}
+.list-button a:hover {
+	color: black;
 }
