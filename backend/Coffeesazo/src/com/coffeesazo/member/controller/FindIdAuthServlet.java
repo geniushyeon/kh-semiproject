@@ -23,6 +23,7 @@ public class FindIdAuthServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 	
 	
+		
 		String auth_number =request.getParameter("auth_number");
 		System.out.println("고객이 입력한 인증번호 : " + auth_number);
 		String AuthenticationKey = (String)request.getSession().getAttribute("AuthenticationKey");
