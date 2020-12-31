@@ -1,5 +1,5 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-title, h1 {  /*결제창 내부 글씨체*/
+title, h1 {  /*寃곗젣李� �궡遺� 湲��뵪泥�*/
     margin: 0;
     padding: 0;
     letter-spacing: -0.4px;
@@ -90,9 +90,13 @@ main{
     color: sandybrown;
     border-bottom: 2px solid #dcdcdc;
 }
+.result-product {
+	padding:10px;
+}
 .result-product p{
     font-size: 20px;
 }
+
 .menu2{
 	margin: 0 auto;
     margin-top: 15%;
