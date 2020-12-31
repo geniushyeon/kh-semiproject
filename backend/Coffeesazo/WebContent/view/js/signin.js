@@ -72,7 +72,9 @@ function checks(){
 		return false; }
 	}
 	
-
-		
+	if($("#pwd").val() != $("#pwd2").val()){ 
+		alert("두 비밀번호가 일치하지 않습니다."); 
+		$("#pwd2").focus(); 
+		return false; }
 		
 		
