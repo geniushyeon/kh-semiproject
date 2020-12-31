@@ -52,7 +52,7 @@ public class FindIdServlet extends HttpServlet {
 			// mail server 설정
 			String host = "smtp.gmail.com";
 			String user = "coffeesazo.cop";
-			String password = "Coffeesazo!123";
+			String password = "커피는아메!12";
 
 			// 메일 받을 주소
 			/* String to_email = m.getEmail(); */
