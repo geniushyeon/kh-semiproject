@@ -22,7 +22,7 @@
                     <h1><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">원두</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">#중남미원두</a>
+                    <a href="index.jsp?inc=view/shopping/product/whole_bean.jsp#tag_latin">#중남미원두</a>
                 </div>
                 
                 <div class="menu-productinfo">
@@ -37,10 +37,10 @@
                             </div>
                             <div class="result-product">
                                 <h3>'수프리모'</h3>
-                                <p>6,500원</p>
+                                <p>9,000원</p>
                                 <p>콜롬비아</p>
                                 <p>용량:200g</p>
-                                <p>배송비:2,500원</p>
+                                <p>배송비:무료</p>
                                 <p>배송 기간:이틀 예정</p>
                                 <p>[영업일 기준 2일 이내 발송]</p>
                                 <label for="addcount">수량</label>
@@ -83,13 +83,13 @@
                 <img src="./view/img/Supremo.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
-                        <p class="p1">콤롬비아'수프리모'</p>
+                        <p class="p1">콜롬비아'수프리모'</p>
                             <p class="p2">Colombia'Supremo'</p>
                                 
                             </div>
                             <div class="detail-mid">
                                 <p>국가 : 콜롬비아</p>
-                                <p>지역 : 콤롬비아전역</p>
+                                <p>지역 : 콜롬비아전역</p>
                                 <p>농장 : LIA</p>
                                 <p>농장주 : LIA</p> 
                                 <p>재배 고도 : 4,000M</p>

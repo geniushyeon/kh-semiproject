@@ -37,10 +37,10 @@
                             </div>
                             <div class="result-product">
                                 <h3>'탄자니아AA'</h3>
-                                <p>6,500원</p>
+                                <p>9,000원</p>
                                 <p>탄자니아</p>
                                 <p>용량:200g</p>
-                                <p>배송비:2,500원</p>
+                                <p>배송비:무료</p>
                                 <p>배송 기간:이틀 예정</p>
                                 <p>[영업일 기준 2일 이내 발송]</p>
                                 <label for="addcount">수량</label>

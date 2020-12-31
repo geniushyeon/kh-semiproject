@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="view/css/shopping_finish.css" type="text/css">
 <title>결제완료 | COFFEESAZO</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
 
 
 				<div class="button">
-					<button type="button" class="btn btn-dark">HOME으로 이동하기</button>
+					<button type="button" class="btn btn-dark" onclick= " location.href = 'index.jsp'" >HOME으로 이동하기</button>
 				</div>
 
 			</div>

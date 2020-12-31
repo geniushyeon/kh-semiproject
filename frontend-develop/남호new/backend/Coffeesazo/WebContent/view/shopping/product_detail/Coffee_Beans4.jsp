@@ -22,7 +22,7 @@
                     <h1><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">원두</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">#묵직한바디감</a>
+                    <a href="index.jsp?inc=view/shopping/product/whole_bean.jsp#tag_body">#묵직한바디감</a>
                 </div>
                 
                 <div class="menu-productinfo">
@@ -37,10 +37,10 @@
                             </div>
                             <div class="result-product">
                                 <h3>'카사훈 제보'</h3>
-                                <p>12,500원</p>
+                                <p>15,000원</p>
                                 <p>에티오피아</p>
                                 <p>용량:200g</p>
-                                <p>배송비:2,500원</p>
+                                <p>배송비:무료</p>
                                 <p>배송 기간:이틀 예정</p>
                                 <p>[영업일 기준 2일 이내 발송]</p>
                                 <label for="addcount">수량</label>

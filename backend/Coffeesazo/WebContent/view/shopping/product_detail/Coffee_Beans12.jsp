@@ -37,10 +37,10 @@
                             </div>
                             <div class="result-product">
                                 <h3>'케냐AA'</h3>
-                                <p>9,500원</p>
+                                <p>12,000원</p>
                                 <p>케냐</p>
                                 <p>용량:200g</p>
-                                <p>배송비:2,500원</p>
+                                <p>배송비:무료</p>
                                 <p>배송 기간:이틀 예정</p>
                                 <p>[영업일 기준 2일 이내 발송]</p>
                                 <label for="addcount">수량</label>
