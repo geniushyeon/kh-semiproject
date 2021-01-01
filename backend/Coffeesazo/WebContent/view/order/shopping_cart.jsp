@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="view/css/bootstrap.min.css">
 <link rel="stylesheet" href="view/css/shopping_cart.css" type="text/css">
 <title>장바구니 | COFFEESAZO</title>
 </head>
@@ -29,29 +31,22 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <c:forEach items="${pList }" var="cart" >
+                                        <tr>
+                        <td><input id="checkbox" type="checkbox"></td>
+                        <td>${cart.productIndex }</td>
+                        <td height="0">
+                            <div style="height:100%"><img src="${cart.productImage }" height="100%"></div>
+                        </td>
+                        <td>${cart.productName}</td>
+                        <td>${cart.productPrice }원</td>
+                        <td>${cart.orderCount }개</td>
+                        <td>50000원</td>
+                    </tr>
+                    </c:forEach>
                     
-                    <tr>
-                        <td><input id="checkbox" type="checkbox"></td>
-                        <td>1231415</td>
-                        <td height="0">
-                            <div style="height:100%"><img src="./img/4-1.png" height="100%"></div>
-                        </td>
-                        <td>상품명</td>
-                        <td>10000원</td>
-                        <td>5개</td>
-                        <td>50000원</td>
-                    </tr>
-                    <tr>
-                        <td><input id="checkbox" type="checkbox"></td>
-                        <td>1231415</td>
-                        <td height="0">
-                            <div style="height:100%"><img src="./img/4-1.png" height="100%"></div>
-                        </td>
-                        <td>상품명</td>
-                        <td>10000원</td>
-                        <td>5개</td>
-                        <td>50000원</td>
-                    </tr>
+                    
+                    
 
 
                 </tbody>
@@ -137,5 +132,10 @@
         </form>
 
     </main>
+       	<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>   
+   	<script src="view/js/bootstrap.min.js"></script>
+   	<script src="view/js/popper.js"></script>
+    
 </body>
 </html>

@@ -66,14 +66,10 @@ public class MemberDao {
 			
 			rs = pstmt.executeQuery();
 			
-			while(rs.next()) {				
-				rs.last();
-				result = rs.getRow();
-				rs.beforeFirst();
-				
-				System.out.println(result);
+			while(rs.next()) {
+				result = rs.getInt(1);
 			}
-			
+			System.out.println(result);
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -87,37 +83,5 @@ public class MemberDao {
 		return result;
 	}
 	
-	public int signin(String id, String pwd) {
-		MemberVo member = new MemberVo();
-				
-		try {
-			String sql = "select * from cs_member where MEMBER_ID=? and MEMBER_PWD=?";
-			
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
-			pstmt.setString(2, pwd);
-
-			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
-
-				
-				 member = new MemberVo(); 
-				 member.setMemberId(rs.getString("member_id"));
-				 member.setMemberPwd(rs.getString("member_pwd"));
-				 
-				return 0;
-			}
-			else
-				return 1 ;
-		}
-		
-		catch (Exception e) {
-
-			System.out.println(e.toString());
-			return -1;
-			
-		}
-	}
-
+	
 }

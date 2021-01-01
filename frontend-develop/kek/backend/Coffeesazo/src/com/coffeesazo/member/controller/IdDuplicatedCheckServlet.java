@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.coffeesazo.member.model.dao.MemberDao;
+
 /**
  * Servlet implementation class IdDuplicatedCheckServlet
  */
@@ -32,9 +34,13 @@ public class IdDuplicatedCheckServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		
 		String memberId = request.getParameter("memberId");
-		PrintWriter out = response.getWriter();
-		out.write(memberId);
-		out.flush();
+		System.out.println(memberId); // 입력받은 값 들어오는지 확인 
+		
+		
+		MemberDao memberDao = new MemberDao();
+		response.getWriter().write(memberDao.idDuplicatedCheck(memberId)+ "");
+				
+		
 	}	
  
 }
