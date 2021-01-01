@@ -6,7 +6,14 @@ public class Cart {
 	private String productName;
 	private int productPrice;
 	private int orderCount;
+	private int priceResult;
 	
+	public int getPriceResult() {
+		return priceResult;
+	}
+	public void setPriceResult(int priceResult) {
+		this.priceResult = priceResult;
+	}
 	public int getProductIndex() {
 		return productIndex;
 	}

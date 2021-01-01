@@ -22,7 +22,7 @@ import cart.model.vo.Cart;
 /**
  * Servlet implementation class CartSelectServlet
  */
-@WebServlet("/index.jsp/cart")
+@WebServlet("/cart")
 public class CartSelectServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -32,24 +32,23 @@ public class CartSelectServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("utf-8");//요청사항 모든 텍스트 등등 을 utf-8인코딩해서 가져와라
 		response.setCharacterEncoding("utf-8");
-		HttpSession session = request.getSession();
-		String memberid = ((String)session.getAttribute("id"));
-		ArrayList<Cart> pList = new CartService().selectCartList(memberid);
 		
+		
+		HttpSession session = request.getSession(); //나 세션을 가지고올래
+		String memberid = ((String)session.getAttribute("id"));
+		//뇌절오는부분 -- 50%이해햇다 아주칭찬해
+		ArrayList<Cart> pList = new CartService().selectCartList(memberid);
 	    
-	    
-	    if(!pList.isEmpty()) {
-	    	request.setAttribute("pList", pList);
-	    	RequestDispatcher view = request.getRequestDispatcher("/view/order/shopping_cart.jsp");
+		if(!pList.isEmpty()) {
+			request.setAttribute("pList", pList);
+			RequestDispatcher view = request.getRequestDispatcher("view/order/shopping_cart.jsp");
 			view.forward(request, response);
-	    }else {
-	    	
-	    	response.sendRedirect("index.jsp");
-			return;
+			System.out.println(pList);
+		} else {
+			response.sendRedirect("");
 		}
-	    
 	    
 		
 		

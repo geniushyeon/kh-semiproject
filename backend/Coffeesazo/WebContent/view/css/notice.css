@@ -259,10 +259,9 @@ th, td {
 	position: relative;
 	display:inline-block;
 	text-decoration: none;
-/* 	padding: 10px; */
-	margin: 5px;
 }
 
 .btns input:focus {
 	outline: none;
+	cursor: pointer;
 }

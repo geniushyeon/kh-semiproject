@@ -12,16 +12,17 @@ public class CartDao {
 
 	public ArrayList<Cart> selectCartList(Connection conn, String memberid) {
 		
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
+		ResultSet rs = null;//결과값을 다루는 아이
 		ArrayList<Cart> pList = null;
 		
 		String sql = " SELECT p.product_index,  p.product_image,  p.product_name, p.product_price, c.order_count FROM cs_member m INNER JOIN cs_cart c ON m.member_id = c.fk_member_id INNER JOIN cs_product p ON c.fk_product_index = p.product_index WHERE m.member_id = ? " ;
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, memberid);
+			pstmt.setString(1, memberid);//setString(물음표위치, 넣어줄값)
 			rs = pstmt.executeQuery();
 			pList = new ArrayList<Cart>();
+			
 			while(rs.next()) {
 				Cart cart = new Cart();
 				cart.setProductIndex(rs.getInt("product_index"));
@@ -30,11 +31,13 @@ public class CartDao {
 				cart.setProductPrice(rs.getInt("product_price"));
 				cart.setOrderCount(rs.getInt("order_count"));
 				
+				//첫번째vo가 꽉참
 				
 				pList.add(cart);
-				
-				
+				//Cart객채를 0~6번인덱스로 만듬
 			}
+				
+				
 		} catch (Exception e) {
 			// TODO: handle exception
 		}finally {

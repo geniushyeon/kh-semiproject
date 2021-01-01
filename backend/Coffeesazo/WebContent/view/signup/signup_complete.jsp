@@ -33,8 +33,8 @@
             </div>
         </div>
         <div class="signin-and-gotomain">
-            <input type="button" value="로그인하기" onclick="location.href='/frontend-develop/Frontend-최종-1차/민영/COFFEESAZO/login2.html'"/>
-            <input type="button" value="메인으로 이동" onclick="location.href='../index.jsp'" />
+            <input type="button" value="로그인하기" onclick="location.href='index.jsp?inc=view/signin/login.jsp'"/>
+            <input type="button" value="메인으로 이동" onclick="location.href='./index.jsp'" />
         </div>
     </div>
 

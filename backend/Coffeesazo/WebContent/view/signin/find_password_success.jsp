@@ -26,6 +26,9 @@
                 <p class="main-title">비밀번호 재설정</p>
                 <p>　</p>
                 <p class="sub-title">비밀번호가 정상적으로<br>변경 되었습니다.</p>
+                <%
+                session.invalidate();
+                %>
                 <p>　</p>
                 <p>
                     <input class="findid-button" type="button" value="로그인 하러 가기"

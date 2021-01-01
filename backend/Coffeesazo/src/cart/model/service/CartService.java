@@ -10,14 +10,14 @@ import cart.model.vo.Cart;
 import common.JDBCTemplate;
 
 public class CartService {
+	ArrayList<Cart> pList = null;
 
 	public ArrayList<Cart> selectCartList(String memberid) {
-		ArrayList<Cart> pList = null;
 		
 	    
 		try {
 			
-			Connection conn = new Application().getConn();
+			Connection conn = new Application().getConn();//데이터베이스 창고 열쇠를 만듬
 		    pList = new CartDao().selectCartList(conn, memberid);
 			JDBCTemplate.close(conn);
 			} catch (Exception e) {

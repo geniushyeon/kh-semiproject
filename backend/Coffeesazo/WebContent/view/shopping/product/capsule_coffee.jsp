@@ -29,12 +29,11 @@
                  <h3 class="tag_title"> # 룽고</h3>
                  <div class="sub_under_dec"></div><!--해시태그 밑의 바-->
                  <div class="row_space"><!--위치고정 큰 틀-->
-
                      <div class="col_space"> 
                       <div class="item_list">
                            <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Capsule1.jsp">
                              <img src="view/img/Fortissio_Lungo.png" alt="">
-                             <div class="capsule_name"> '포시티오 룽고'</div> 
+                             <div class="capsule_name"> '포시티오 룽고' </div> 
                             <p><div class="product_price">10,000원</div></p>
                            </a>
                       </div>
