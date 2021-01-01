@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>아이디 찾기 | COFFEESAZO</title>
-    <link rel=“stylesheet” href=“./css/bootstrap.min.css” type=“text/css”> 
+    <link rel=“stylesheet” href=“./view/css/bootstrap.min.css” type=“text/css”> 
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <link href="./view/css/find_id_1step.css" rel="stylesheet" type="text/css" />
@@ -21,7 +21,7 @@
  
     <div class="main-body"> <!--전체 div 시작-->
 
-        <form method="post" action="findid" onsubmit= "return checks()"> <!--form태그 시작-->
+        <form method="post" action="findid" onsubmit= "return login_checks()"> <!--form태그 시작-->
             <p class="main-title">아이디 찾기</p>
             <p>　</p>
             <p><input class="input" type="text" name="name" id="name"
@@ -43,7 +43,7 @@
             </p>
        </form> <!--form태그 끝-->
             <p class="title">
-                <a href="find_password.jsp"> 비밀번호를 잊으셨나요?</a>
+                <a href="index.jsp?inc=view/signin/find_password_1step.jsp">비밀번호를 잊으셨나요?</a>
             </p>
 
     </div> <!--전체 div 끝-->

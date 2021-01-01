@@ -21,13 +21,13 @@
     <header class="header">
         <div class="header-align">
             <div class="header-logo">
-                <a href="../index.jsp"><img src="./view/img/logo_white.png" class="logo"></a>
+                <a href="./index.jsp"><img src="./view/img/logo_white.png" class="logo"></a>
             </div>
             <div class="btns-signin-signup">
-                <span><a href="/frontend-develop/Frontend-최종-1차/지현/index.html">로그아웃</a></span>
+                <span><a href="./index.jsp">로그아웃</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/백종웅/Front/Mypage_order.html">마이페이지</a></span>
                 <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
-                <span><a href="/frontend-develop/Frontend-최종-1차/은규/Project/front/shopcart.html"><img
+                <span><a href="index.jsp?inc=view/order/shopping_cart.jsp"><img
                             src="./view/img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>

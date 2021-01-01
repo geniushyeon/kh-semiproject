@@ -20,7 +20,7 @@
 	<main>
 		<div id="container">
 			<div id="contents">
-				<h1>고객센터</h1>
+				<a href="index.jsp?inc=view/notice/notice.jsp"><h1>고객센터</h1></a>
 				<div class="boardnavi">
 					<a href="index.jsp?inc=view/notice/notice.jsp" class="navi01"> <span>공지사항</span>
 					</a> <a href="index.jsp?inc=view/qna/qna.jsp" class="navi02"> <span>1:1 문의</span>
@@ -30,9 +30,10 @@
 					<h2>1:1 문의 수정하기</h2>
 					<form name="board" method="post" class="board">
 						<label for="title">제목</label> <input type="text" id="title"
-							name="title" required /> <br /> <br /> <label for="content">내용</label>
-						<input type="text" id="content" name="content" required /> <br />
-						<br /> <label for="file">첨부파일</label>
+							name="title" required /> <br /> <br /> 
+						<label for="content">내용</label> 
+						<textarea class="content" rows="13" cols="85" name="content" required /></textarea> <br /> <br />	
+						<label for="file">첨부파일</label>
 						<div class="file-upload">
 							<input type="file" id="file" name="file" multiple />
 						</div>

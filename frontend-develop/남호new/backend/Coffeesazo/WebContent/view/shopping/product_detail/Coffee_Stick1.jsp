@@ -19,7 +19,7 @@
         <div id="menu-container">
             <div class="menu-1">
                 <div class="menu-toplogo">
-                    <h1><a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">스틱</a></h1>
+                    <h1><a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">스틱커피</a></h1>
                 </div>
                 <div class="menu-toptag">
                     <a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">#쉽고간편한</a>
@@ -37,10 +37,10 @@
                             </div>
                             <div class="result-product">
                                 <h3>'맥심 모카골드'</h3>
-                                <p>15,500원</p>
+                                <p>18,000원</p>
                                 <p>동서식품</p>
                                 <p>용량:500g(100개입)</p>
-                                <p>배송비:2,500원</p>
+                                <p>배송비:무료</p>
                                 <p>배송 기간:이틀 예정</p>
                                 <p>[영업일 기준 2일 이내 발송]</p>
                                 <label for="addcount">수량</label>
@@ -90,7 +90,7 @@
                             </div>
                             <div class="detail-mid">
                                 <p>국가 : 온두라스,콜롬비아</p>
-                                <p>지역 : 온두라스,콤롬비아</p>
+                                <p>지역 : 온두라스,콜롬비아</p>
                                 <p>맥심 모카골드 마일드 커피에는</p>
                                 <p>아라비카 원두의 깨끗하고, </p> 
                                 <p>신선한 향미를 그대로 전달할 수 있는</p>

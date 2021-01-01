@@ -19,7 +19,7 @@
         <div id="menu-container">
             <div class="menu-1">
                 <div class="menu-toplogo">
-                    <h1><a href="index.jsp?inc=view/shopping/product/capsule_coffee.jsp">캡슐</a></h1>
+                    <h1><a href="index.jsp?inc=view/shopping/product/capsule_coffee.jsp">캡슐커피</a></h1>
                 </div>
                 <div class="menu-toptag">
                     <a href="index.jsp?inc=view/shopping/product/capsule_coffee.jsp">#룽고</a>
@@ -37,10 +37,10 @@
                             </div>
                             <div class="result-product">
                                 <h3>'리니지오 룽고'</h3>
-                                <p>7,500원</p>
+                                <p>10,000원</p>
                                 <p>버츄오</p>
                                 <p>용량:500g(100개입)</p>
-                                <p>배송비:2,500원</p>
+                                <p>배송비:무료</p>
                                 <p>배송 기간:이틀 예정</p>
                                 <p>[영업일 기준 2일 이내 발송]</p>
                                 <label for="addcount">수량</label>
@@ -88,15 +88,12 @@
                                 
                             </div>
                             <div class="detail-mid">
-                                <p>국가 : 대한민국</p>
-                                <p>지역 : 창원</p>
-                                <p>농장 : 나때는말이야</p>
-                                <p>농장주 : 늙은이</p> 
-                                <p>재배 고도 : 350CM</p>
-                                <p>품종 : 에스프레소</p>
-                                <p>가공방식 : 기계압축</p>
-
-                            </div>
+                                <p>국가 : 브라질,콜롬비아</p>
+                                <p>지역 : 브라질,콜롬비아</p>
+                                <p>가공방식 : 습식 가공 방식</p>
+                                <p>부드러운 풍미 와 버번종의 맥아 곡물향</p> 
+                                <p>섬세한 아로마</p>
+                  </div>
 
                 </div>
             </div>

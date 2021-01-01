@@ -36,10 +36,10 @@
                             </div>
                             <div class="result-product">
                                 <h3>'카페 아메리카노'</h3>
-                                <p>8,500원</p>
+                                <p>11,000원</p>
                                 <p>NS물</p>
                                 <p>용량:500g(100개입)</p>
-                                <p>배송비:2,500원</p>
+                                <p>배송비:무료</p>
                                 <p>배송 기간:이틀 예정</p>
                                 <p>[영업일 기준 2일 이내 발송]</p>
                                 <label for="addcount">수량</label>
@@ -82,7 +82,7 @@
                 <img src="./view/img/cafe_americano.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
-                        <p class="p1">>NS몰'카페 아메리카노'</p>
+                        <p class="p1">NS몰'카페 아메리카노'</p>
                             <p class="p2">NS Mall 'Cafe Americano'</p>
                                 
                             </div>

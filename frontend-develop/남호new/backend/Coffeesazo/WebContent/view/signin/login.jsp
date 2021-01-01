@@ -25,7 +25,7 @@
     <!-- login start -->
     <div class="main-body"> <!--전체div-->
     	 <!--form태그 시작-->
-        <form method="post" action="Login" onsubmit= "return checks()">
+        <form method="post" action="Login" onsubmit= "return login_checks()">
             <h1 class="main-title">L O G I N</h1>
 
             <p>
@@ -39,8 +39,8 @@
             </p>
 
             <p class="title">
-                <a href="find_id_1step.jsp">아이디 찾기 |</a> <!--findId2페이지로 이동-->
-                <a href="find_password_1step.jsp">비밀번호 재설정</a> <!--findPassword페이지로 이동-->
+                <a href="index.jsp?inc=view/signin/find_id_1step.jsp">아이디 찾기 |</a> <!--findId2페이지로 이동-->
+                <a href="index.jsp?inc=view/signin/find_password_1step.jsp">비밀번호 재설정</a> <!--findPassword페이지로 이동-->
             </p>
 
             <p>

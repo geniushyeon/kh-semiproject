@@ -19,7 +19,7 @@
         <div id="menu-container">
             <div class="menu-1">
                 <div class="menu-toplogo">
-                    <h1><a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">스틱</a></h1>
+                    <h1><a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">스틱커피</a></h1>
                 </div>
                 <div class="menu-toptag">
                     <a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">#쉽고간편한</a>
@@ -37,10 +37,10 @@
                             </div>
                             <div class="result-product">
                                 <h3>'카누 다크로스트'</h3>
-                                <p>18,500원</p>
+                                <p>21,000원</p>
                                 <p>동서식품</p>
                                 <p>용량:500g(100개입)</p>
-                                <p>배송비:2,500원</p>
+                                <p>배송비:무료</p>
                                 <p>배송 기간:이틀 예정</p>
                                 <p>[영업일 기준 2일 이내 발송]</p>
                                 <label for="addcount">수량</label>
@@ -88,8 +88,8 @@
                                 
                             </div>
                             <div class="detail-mid">
-                                <p>국가 : 콤롬비아,과테말라,코스타리카</p>
-                                <p>지역 : 콤롬비아,과테말라,코스타리카</p>
+                                <p>국가 : 콜롬비아,과테말라,코스타리카</p>
+                                <p>지역 : 콜롬비아,과테말라,코스타리카</p>
                                 <p>에스프레소 방식으로 저수율</p>
                                 <p>저온 추출한 고품질 커피 파우더 </p> 
                                 <p>갓 분쇄한 원두 고유의 신선한 아로마의 향미</p>
