@@ -4,6 +4,9 @@
 
 // 아이디 유효성 검사
 
+
+		
+
  $("#input-password").focusout(function () {
         var password = $("#input-password").val();
         var numRegExp = password.search(/[0-9]/g);
@@ -67,7 +70,45 @@
         }
     })
 
-   
+    $("#input-email").focusout(function () {
+        var email = $("#input-email").val();
+        var emailCheckRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+
+        if (email == "") {
+            // 입력 여부 검사
+            $("#email-required").html("이메일은 필수 정보입니다.");
+            $("#email-required").css("display", "inline-block");
+        } else if (!emailCheckRegExp.test(email)) {
+            // 형식 유효성 검사
+            $("#email-required").html("이메일 형식에 맞지 않습니다.");
+            $("#email-required").css("display", "inline-block");
+            $("#email-required").css("color", "red");
+        } else if (emailCheckRegExp.test(email)) {
+            // 형식에 맞을 때
+            // db에 있는 이메일 사용불가 구현 필요
+            $("#email-required").html("사용 가능한 이메일입니다.");
+            $("#email-required").css("display", "inline-block");
+            $("#email-required").css("color", "green");
+        }
+    })
+
+    $("#input-phonenumber").focusout(function () {
+        var phonenumber = $("#input-phonenumber").val();
+        var phonenumberCheckRegExp = /^\d{3}\d{3,4}\d{4}$/;
+
+        if (phonenumber == "") {
+            $("#phonenumber-required").html("전화번호는 필수 정보입니다.");
+            $("#phonenumber-required").css("display", "inline-block");
+        }
+        else if (phonenumberCheckRegExp.test(phonenumber) == false) {
+            $("#phonenumber-required").html("형식에 맞게 입력해주세요.");
+            $("#phonenumber-required").css("display", "inline-block");
+
+        } else {
+            $("#phonenumber-required").html("");
+
+        }
+    })
 
     $("#input-name").focusout(function() {
         var name = $("#input-name").val();

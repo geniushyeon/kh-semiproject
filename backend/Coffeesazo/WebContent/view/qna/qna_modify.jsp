@@ -38,8 +38,8 @@
 							<input type="file" id="file" name="file" multiple />
 						</div>
 						<div class="bottom-button">
-							<a href="#" class="btn-save" onclick="javascript:btn_save()">등록하기</a>
-							<a href="#" class="btn-modify" onclick="javascript:btn_modify()">수정하기</a>
+							<a href="#" class="btn-save" onclick="javascript:registration()">등록하기</a>
+							<a href="#" class="btn-modify" onclick="javascript:modify()">수정하기</a>
 						</div>
 					</form>
 				</div>
@@ -49,14 +49,21 @@
 	<!-- 부트스트랩 자바스크립트 추가 -->
 	<script src="./js/bootstrap.min.js"></script>
 	<script>
-        function btn_save() {
-            alert("등록이 완료되었습니다.");
-            window.location.href="index.jsp?inc=view/qna/qna.jsp";
-        }
-        function btn_modify() {
-          alert("수정이 완료되었습니다.");
-          window.location.href="index.jsp?inc=view/qna/qna.jsp";
-        }
+		function registration(){
+			var writeRegistration = confirm("등록하시겠습니까?");
+			if(writeRegistration) {
+				alert("등록이 완료되었습니다.");
+				location.href = "index.jsp?inc=view/qna/qna.jsp";
+			}
+		}	
+		
+        function modify() {
+        	var writemodify = confirm("수정하시겠습니까?");  
+        	if(writemodify) {
+        	alert("수정이 완료되었습니다.");
+          	location.href="index.jsp?inc=view/qna/qna.jsp";
+        	}
+        }	
     </script>
 </body>
 </html>

@@ -264,18 +264,19 @@ td {
 	position: relative;
 	display:inline-block;
 	text-decoration: none;
+	margin: 5px;
 }
 
 .btns input:focus {
 	outline: none;
-	cursor: pointer;
+/* 	cursor: pointer; */
 }
 
 .bottom-button {
 	position: relative;
 	text-align: center;
 	display: absolute;
-	left: 292px;
+	left: 274px;
 	cursor: pointer;
 }
 

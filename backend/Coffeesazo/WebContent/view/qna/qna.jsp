@@ -109,13 +109,24 @@
 
 					<input type='button' value='Next' /> 
 					<div class="bottom-button">
-						<a href="index.jsp?inc=view/qna/qna_write.jsp" class="bottom-button">등록하기</a>
+						<a href="#" class="bottom-button" onclick="javascript:bottom_button();">등록하기</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</main>
 	<!-- 부트스트랩 자바스크립트 추가 -->
-	<script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+	<script>
+	function bottom_button() {
+		var id = '<%=(String)session.getAttribute("id")%>';
+		
+		if(id == null) {
+		} else {
+			alert("로그인이 필요한 항목입니다."); 
+			location.href = "index.jsp?inc=view/signin/login.jsp";
+		}
+	}
+	</script>
 </body>
 </html>
