@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 
@@ -26,10 +27,10 @@ public class FindIdAuthServlet extends HttpServlet {
 		
 		String auth_number =request.getParameter("auth_number");
 		System.out.println("고객이 입력한 인증번호 : " + auth_number);
+		
+	
 		String AuthenticationKey = (String)request.getSession().getAttribute("AuthenticationKey");
 		String result = (String)request.getSession().getAttribute("result");
-		System.out.println("과연 아이디가저장돼서 넘어 왔을지? " + result);
-		System.out.println("세션에 저장된 보낸 인증번호 : " + AuthenticationKey);
 		
 		
 		if(!AuthenticationKey.equals(auth_number))

@@ -25,7 +25,7 @@ public class ChangePasswordServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		HttpSession session1 = request.getSession(false);
 		String id = (String)session1.getAttribute("result");
-		System.out.println("과연 id가 넘어왔을지? " +id);
+		System.out.println("과연 id가 넘어왔을지?(세션 저장 값 불러오기) " +id);
 		String pwd = request.getParameter("pwd");
 		
 		System.out.println("고객 입력 비밀번호 : "+ pwd); //이걸로 update

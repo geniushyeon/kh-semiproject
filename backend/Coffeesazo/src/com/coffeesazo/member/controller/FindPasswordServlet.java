@@ -52,7 +52,7 @@ public class FindPasswordServlet extends HttpServlet {
 			// mail server 설정
 			String host = "smtp.gmail.com";
 			String user = "coffeesazo.cop@gmail.com";
-			String password = "qtcnmdfhzugyokmy";
+			String password = "nhbvidfaawgyxejz";
 
 			// 메일 받을 주소
 			/* String to_email = m.getEmail(); */

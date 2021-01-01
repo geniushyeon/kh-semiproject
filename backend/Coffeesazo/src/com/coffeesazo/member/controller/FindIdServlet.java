@@ -52,7 +52,7 @@ public class FindIdServlet extends HttpServlet {
 			// mail server 설정
 			String host = "smtp.gmail.com";
 			String user = "coffeesazo.cop";
-			String password = "커피는아메!12";
+			String password = "nhbvidfaawgyxejz";
 
 			// 메일 받을 주소
 			/* String to_email = m.getEmail(); */
@@ -117,10 +117,10 @@ public class FindIdServlet extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			HttpSession session1 = request.getSession(false);
-			session1.setAttribute("AuthenticationKey", AuthenticationKey);	
+			HttpSession session2 = request.getSession(false);
+			session2.setAttribute("AuthenticationKey", AuthenticationKey);	
 			System.out.println(AuthenticationKey);
-			session1.setAttribute("result", result);
+			session2.setAttribute("result", result);
 			
 			//request.setAttribute("id", "vo.getMemberId");
 			//session1.setAttribute("email", email);
