@@ -12,8 +12,8 @@ import com.coffeesazo.member.model.dao.MemberDao;
 /**
  * Servlet implementation class EmailDuplicatdCheckServlet
  */
-@WebServlet("/EmailDuplicatdCheckServlet")
-public class EmailDuplicatdCheckServlet extends HttpServlet {
+@WebServlet("/EmailDuplicatedCheckServlet")
+public class EmailDuplicatedCheckServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
@@ -38,7 +38,7 @@ public class EmailDuplicatdCheckServlet extends HttpServlet {
 		
 		
 		MemberDao memberDao = new MemberDao();
-		response.getWriter().write(memberDao.emailDuplicatedCheck(memberEmail + ""));
+		response.getWriter().write(memberDao.emailDuplicatedCheck(memberEmail) + "");
 	}
 
 }

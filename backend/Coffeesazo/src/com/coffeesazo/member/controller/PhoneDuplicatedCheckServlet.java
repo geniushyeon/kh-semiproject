@@ -36,7 +36,7 @@ public class PhoneDuplicatedCheckServlet extends HttpServlet {
 		
 		
 		MemberDao memberDao = new MemberDao();
-		response.getWriter().write(memberDao.phoneDuplicatedCheck(memberPhone + ""));
+		response.getWriter().write(memberDao.phoneDuplicatedCheck(memberPhone) + "");
 
 	}
 
