@@ -149,6 +149,8 @@ CREATE TABLE cs_product(
     );
     
 /*product_count number로 변경*/
+ALTER TABLE cs_product MODIFY product_count NUMBER;
+
 ​​/* 확인하기 */
 ALTER TABLE cs_product ADD CONSTRAINT fk_hastag_index FOREIGN KEY(fk_hastag_index) REFERENCES cs_hashtag(hashtag_index)
 ON DELETE CASCADE;

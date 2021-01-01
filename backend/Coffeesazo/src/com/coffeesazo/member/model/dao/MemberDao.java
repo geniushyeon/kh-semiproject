@@ -38,7 +38,9 @@ public class MemberDao {
 			
 			if(affectedRows < 1) {
 				System.out.println("회원가입 실패");
+				conn.rollback();
 			} else {
+				conn.commit();
 				return affectedRows;
 			}
 			
