@@ -7,11 +7,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-  <link rel="stylesheet" href="view/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="view/css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="view/css/addressApi.css" type="text/css">
-  <link rel="stylesheet" href="view/css/Mypage.css" type="text/css">
-  <link rel ="stylesheet" href="view/css/mypage_edit.css" type = "text/css" >
   <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="view/css/Mypage.css" type="text/css">
+    <link rel="stylesheet" href="view/css/bootcontroll.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 </head>
@@ -44,7 +45,7 @@
         </ul>
         
         
-              <form action="" method="POST" name="form_edit">
+         
                 <ul>
                     <a class="card_small" id="mypage-edit" onclick="gotoEdit()">
                         <h3>회원정보수정</h3>
@@ -52,7 +53,7 @@
 
                     </a>
                 </ul>
-      		</form>
+      	
         
             <ul>
                     <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_qna.jsp">
