@@ -1,13 +1,13 @@
-package product.model.service;
+package com.coffeesazo.product.model.service;
 
 import java.sql.Connection;
 import java.util.ArrayList;
 
 import com.coffeesazo.Application;
+import com.coffeesazo.product.model.dao.ProductDao;
+import com.coffeesazo.product.model.vo.Product;
 
 import common.JDBCTemplate;
-import product.model.dao.ProductDao;
-import product.model.vo.Product;
 
 
 public class ProductService {

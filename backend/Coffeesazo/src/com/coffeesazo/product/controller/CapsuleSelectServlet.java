@@ -1,4 +1,4 @@
-package product.controller;
+package com.coffeesazo.product.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import product.model.service.ProductService;
-import product.model.vo.Product;
+import com.coffeesazo.product.model.service.ProductService;
+import com.coffeesazo.product.model.vo.Product;
 
 /**
  * Servlet implementation class CapsuleSelectServlet

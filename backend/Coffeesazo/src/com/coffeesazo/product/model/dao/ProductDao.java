@@ -1,12 +1,13 @@
-package product.model.dao;
+package com.coffeesazo.product.model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import com.coffeesazo.product.model.vo.Product;
+
 import common.JDBCTemplate;
-import product.model.vo.Product;
 
 public class ProductDao {
 

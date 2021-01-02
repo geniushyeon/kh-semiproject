@@ -1,4 +1,4 @@
-package product.model.vo;
+package com.coffeesazo.product.model.vo;
 
 public class Product {
 	private int productIndex;
