@@ -23,7 +23,7 @@
                 <span><a href="index.jsp?inc=view/signin/login.jsp">로그인</a></span>
                 <span><a href="index.jsp?inc=view/signup/signup.jsp">회원가입</a></span>
                 <span><a href="index.jsp?inc=view/notice/notice.jsp">고객센터</a></span>
-                <span><a href="index.jsp?inc=view/order/shopping_cart.jsp"><img src="view/img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="index.jsp?inc=view/signin/login.jsp" id="cart_before_login"><img src="view/img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
@@ -55,5 +55,11 @@
         </div>
     <%} %>
 </header>
+<script type="text/javascript">
+	var cartBeforeLogin = document.getElementById("cart_before_login");
+	cartBeforeLogin.onclick = function() {
+		alert("먼저 로그인해주세요. ");
+	}
+</script>
 </body>
 </html>

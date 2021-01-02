@@ -1,6 +1,7 @@
 package com.coffeesazo.member.controller;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -43,7 +44,14 @@ public class SignupServlet extends HttpServlet {
 		String memberEmail = request.getParameter("memberEmail");
 		String memberPhone = request.getParameter("memberPhone");
 		String memberZipcode = request.getParameter("memberZipcode");
-		String memberAddress = request.getParameter("memberAddress");
+		String[] memberAddressArray = request.getParameterValues("memberAddress");
+		String memberAddress = "";
+
+		for(int i=0; i<memberAddressArray.length; i++) {
+			memberAddress += memberAddressArray[i] + " ";
+		}
+		
+		System.out.println(memberAddress); // 디버깅용
 		
 		MemberVo memberVo = new MemberVo();
 		memberVo.setMemberId(memberId);
@@ -54,12 +62,13 @@ public class SignupServlet extends HttpServlet {
 		memberVo.setMemberZipcode(memberZipcode);
 		memberVo.setMemberAddress(memberAddress);
 		
+		
 		int affectedRows = new MemberDao().signup(memberVo);
 		RequestDispatcher rd = null;
 
 		if(affectedRows > 0) {
 			rd = request.getRequestDispatcher(url + "signup_complete.jsp");
-			request.setAttribute("memberVo", memberVo);
+			request.setAttribute("memberId", memberVo.getMemberId());
 			rd.forward(request, response);
 		}
 	}

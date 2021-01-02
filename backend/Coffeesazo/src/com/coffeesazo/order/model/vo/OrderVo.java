@@ -13,6 +13,8 @@ public class OrderVo {
 	private String orderReceiver;
 	private String orderReceiverPhone;
 	private int orderTotalPrice;
+	
+	
 	public int getOrderIndex() {
 		return orderIndex;
 	}

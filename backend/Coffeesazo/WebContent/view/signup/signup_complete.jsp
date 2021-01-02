@@ -18,18 +18,13 @@
 </head>
 
 <body>
-<%
-	MemberVo memberVo = (MemberVo)request.getAttribute("memberVo");
-
-%>
-
     <!-- 회원가입 완료 -->
     <div class="section">
         <div class="welcome-message">
             <h1>회원가입이 완료되었습니다.</h1>
             <div class="youridis">
                 <!-- jsp에서 회원가입한 아이디 db에서 가져오도록 -->
-                <span>회원님의 아이디는 <b><%=memberVo.getMemberId() %></b>입니다.</span>
+                <span>회원님의 아이디는 <b><%= request.getAttribute("memberId") %></b>입니다.</span>
             </div>
         </div>
         <div class="signin-and-gotomain">

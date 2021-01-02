@@ -13,6 +13,7 @@ CREATE TABLE cs_member(
 );
 
 SELECT * FROM cs_member;
+
 /* 주문 테이블 */
 CREATE TABLE cs_order(
     order_index NUMBER PRIMARY KEY,
@@ -28,12 +29,21 @@ CREATE TABLE cs_order(
     order_total_price NUMBER NOT NULL
 );
 /* 주문 상세 테이블 */
-CREATE TABLE cs_order_detail(
-    order_detail_index NUMBER PRIMARY KEY,
-    fk_order_index NUMBER REFERENCES cs_order(order_index) ON DELETE CASCADE,
-    fk_product_index NUMBER REFERENCES cs_product(product_index) ON DELETE CASCADE,
-    order_product_count NUMBER NOT NULL
+
+INSERT INTO cs_order VALUES(
+    seq_order_index.nextval,
+    'laurel',
+    '서울시 관악구 봉천동',
+    '무통장입금',
+    '11234',
+    '문 앞에 놔주세요',
+    DEFAULT,
+    '지니어스현',
+    '01098987867',
+    50000
 );
+
+SELECT * FROM cs_order;
 
 CREATE TABLE cs_order_detail(
     order_detail_index NUMBER PRIMARY KEY,
@@ -41,6 +51,7 @@ CREATE TABLE cs_order_detail(
     fk_product_index NUMBER REFERENCES cs_product(product_index) ON DELETE CASCADE,
     order_product_count NUMBER NOT NULL
 );
+
 /* 주문 상세 인덱스 시퀀스 */
 CREATE SEQUENCE seq_order_detail_index
 START WITH 1
@@ -57,12 +68,44 @@ MINVALUE 1
 MAXVALUE 9999999
 NOCYCLE;
 
+
+/*상품 테이블*/   ​
+CREATE TABLE cs_product(
+    product_index NUMBER PRIMARY KEY,
+    fk_hastag_index NUMBER not null,
+    product_name VARCHAR2(100) not null,
+    product_price NUMBER not null,
+    product_count VARCHAR2(100) not null,
+    product_image VARCHAR2(400) not null,
+    product_info VARCHAR2(400) not null,
+    product_text VARCHAR2(2000) null
+
+);
+
+/*product_count number로 변경*/
+ALTER TABLE cs_product MODIFY product_count NUMBER;
+
 /*cs_category*/
 CREATE TABLE CS_CATEGORY (
     category_index NUMBER PRIMARY KEY, --시퀀스 / PK
     category_name VARCHAR(20) UNIQUE NOT NULL
 );
+INSERT INTO cs_category VALUES(
+    seq_category_index.nextval,
+    '원두'
+);
+INSERT INTO cs_category VALUES(
+    seq_category_index.nextval,
+    '스틱커피'
+    
+);
+INSERT INTO cs_category VALUES(
+    seq_category_index.nextval,
+    '캡슐커피'
+    
+);
 
+SELECT * FROM cs_category;
 /*seq_category_index 시퀀스*/
 ​
 CREATE SEQUENCE seq_category_index
@@ -72,6 +115,29 @@ MINVALUE 1
 MAXVALUE 9999999
 NOCYCLE;
 ​
+INSERT INTO cs_hashtag VALUES(
+    seq_hashtag_index.nextval, 1, '#풍부한산미'
+);
+
+
+INSERT INTO cs_hashtag VALUES(
+    seq_hashtag_index.nextval, 1,'#묵직한바디감'
+);
+
+INSERT INTO cs_hashtag VALUES(
+    seq_hashtag_index.nextval,1,'#중남미원두'
+);
+
+INSERT INTO cs_hashtag VALUES(
+    seq_hashtag_index.nextval,1,'#아프리카원두'
+);
+INSERT INTO cs_hashtag VALUES(
+    seq_hashtag_index.nextval,2,'#쉽고간편한'
+);
+INSERT INTO cs_hashtag VALUES(
+    seq_hashtag_index.nextval,1,'#룽고'
+);
+
 /*cs_hashtag*/
 CREATE TABLE CS_HASHTAG (
     hashtag_index NUMBER PRIMARY KEY, --시퀀스 / PK
@@ -134,22 +200,6 @@ START WITH 1
 INCREMENT BY 1
 NOCYCLE;
 
-
-/*상품 테이블*/   ​
-CREATE TABLE cs_product(
-    product_index NUMBER PRIMARY KEY,
-    fk_hastag_index NUMBER not null,
-    product_name VARCHAR2(100) not null,
-    product_price NUMBER not null,
-    product_count VARCHAR2(100) not null,
-    product_image VARCHAR2(400) not null,
-    product_info VARCHAR2(400) not null,
-    product_text VARCHAR2(2000) null
-
-    );
-    
-/*product_count number로 변경*/
-ALTER TABLE cs_product MODIFY product_count NUMBER;
 
 ​​/* 확인하기 */
 ALTER TABLE cs_product ADD CONSTRAINT fk_hastag_index FOREIGN KEY(fk_hastag_index) REFERENCES cs_hashtag(hashtag_index)
