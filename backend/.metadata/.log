@@ -8484,3 +8484,21 @@ Binding(COMMAND+SHIFT+T,
 
 !ENTRY org.eclipse.jst.server.core 4 0 2021-01-02 17:43:07.946
 !MESSAGE Could not launch in profiling mode because no profilers are configured.
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-01-02 21:56:11.377
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-01-02 21:56:11.380
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-01-02 21:56:11.382
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-01-02 21:58:51.056
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-01-02 21:58:51.057
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-01-02 21:58:51.058
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
