@@ -45,7 +45,7 @@
                                 <p>[영업일 기준 2일 이내 발송]</p>
                                 <label for="addcount">수량</label>
                                 <input type="text" class="addcount" value="1">
-                                <p>총 10,000원</p>
+                          
                             </div>
                             <div class="result-button">
                                 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">

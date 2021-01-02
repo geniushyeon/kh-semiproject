@@ -3,6 +3,8 @@ package com.coffeesazo.member.model.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.coffeesazo.Application;
 import com.coffeesazo.member.model.vo.MemberVo;
@@ -38,7 +40,9 @@ public class MemberDao {
 			
 			if(affectedRows < 1) {
 				System.out.println("회원가입 실패");
+				conn.rollback();
 			} else {
+				conn.commit();
 				return affectedRows;
 			}
 			
@@ -135,5 +139,44 @@ public class MemberDao {
 		
 		return result;
 	}
+	
+	public List<MemberVo> selectMemberInfo(String memberId) {
+		List<MemberVo> memberInfoList = new ArrayList<>();
+
+		
+		try {
+			String sql = "SELECT member_id, member_pwd, member_name, member_phone, member_email, member_zipcode, member_address FROM cs_member WHERE member_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberId);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MemberVo memberVo = new MemberVo();
+				memberVo.setMemberId(rs.getString("member_id"));
+				memberVo.setMemberPwd(rs.getString("member_pwd"));
+				memberVo.setMemberName(rs.getString("member_name"));
+				memberVo.setMemberPhone(rs.getString("member_phone"));
+				memberVo.setMemberEmail(rs.getString("member_email"));
+				memberVo.setMemberZipcode(rs.getString("member_zipcode"));
+				memberVo.setMemberAddress(rs.getString("member_address"));
+				
+				memberInfoList.add(memberVo);
+			
+			}
+			
+			
+		} catch(Exception e) {
+			
+		} finally {
+			try {
+				conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return memberInfoList;
+	}
+	
 	
 }

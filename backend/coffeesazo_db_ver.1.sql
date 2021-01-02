@@ -11,6 +11,8 @@ CREATE TABLE cs_member(
     member_admin NUMBER DEFAULT 0 NOT NULL,
     member_joined_date DATE DEFAULT SYSDATE
 );
+
+SELECT * FROM cs_member;
 /* 주문 테이블 */
 CREATE TABLE cs_order(
     order_index NUMBER PRIMARY KEY,
@@ -145,6 +147,8 @@ CREATE TABLE cs_product(
     product_text VARCHAR2(2000) null
 
     );
+    
+/*product_count number로 변경*/
 ​​/* 확인하기 */
 ALTER TABLE cs_product ADD CONSTRAINT fk_hastag_index FOREIGN KEY(fk_hastag_index) REFERENCES cs_hashtag(hashtag_index)
 ON DELETE CASCADE;
