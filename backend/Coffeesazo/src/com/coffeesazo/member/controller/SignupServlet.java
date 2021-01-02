@@ -48,7 +48,7 @@ public class SignupServlet extends HttpServlet {
 		String memberAddress = "";
 
 		for(int i=0; i<memberAddressArray.length; i++) {
-			memberAddress += memberAddressArray[i] + " ";
+			memberAddress += memberAddressArray[i] + "+";
 		}
 		
 		System.out.println(memberAddress); // 디버깅용
