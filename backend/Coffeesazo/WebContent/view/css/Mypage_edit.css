@@ -90,6 +90,9 @@ h1 { /* 제목 밑줄*/
   font-family: 'Noto Sans KR', sans-serif;
 }
 
+#postbutton {
+	display: inline-block;
+}
 
 
 .edit_title {

@@ -39,7 +39,7 @@
                     <span class="warn-info" id="password-required">비밀번호는 필수 정보입니다.</span>
                 </label>
                 <input class="form-box-field-input" type="password" id="input-password"
-                    name="memberPwd" placeholder="비밀번호 입력(숫자, 영문, 특수문자 조합 최소 8자)" />
+                    name="memberPwd" placeholder="비밀번호 입력(영문, 숫자, 특수문자 조합 최소 8자)" />
               
             </div>
             <div class="form-box-field warn">
