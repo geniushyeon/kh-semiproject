@@ -138,10 +138,11 @@
         }
     })
 
-    $("#check-input-password").focusout(function () {
+    $("#input-new-password-check").focusout(function () {
         var password = $("#input-new-password").val();
         var checkPassword = $("#input-new-password-check").val();
-
+		console.log(checkPassword);
+		
         if (checkPassword == "") {
             // 입력 여부 검사
             $("#new-password-check-required").html("비밀번호 확인은 필수 정보입니다.");
@@ -157,8 +158,7 @@
             return false;
 
         } else {
-            console.log("true");
-            $("#new-password-check-requiredrequired").css("display", "none");
+            $("#new-password-check-required").css("display", "none");
             return true;
         }
     })

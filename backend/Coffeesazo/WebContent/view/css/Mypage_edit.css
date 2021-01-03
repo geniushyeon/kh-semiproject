@@ -211,12 +211,6 @@ h3 { /*마이페이지 내부 글씨체*/
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
-html, body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-}
-
 h1 { /* 마이페이지 밑줄*/
 	border-bottom: solid #000000;
 	padding-bottom: 20px;
@@ -253,8 +247,4 @@ form {
 #input-container {
 	margin: 0 auto;
 	width: 1000px;
-}
-
-label #label-original-pwd {
-	width: 100px;
 }
