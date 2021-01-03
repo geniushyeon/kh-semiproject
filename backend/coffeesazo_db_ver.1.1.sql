@@ -28,7 +28,7 @@ CREATE TABLE cs_order(
     order_receiver_phone VARCHAR2(100) NOT NULL,
     order_total_price NUMBER NOT NULL
 );
-/* 주문 상세 테이블 */
+
 
 INSERT INTO cs_order VALUES(
     seq_order_index.nextval,
@@ -43,8 +43,29 @@ INSERT INTO cs_order VALUES(
     50000
 );
 
-SELECT * FROM cs_order;
+SELECT * FROM cs_order o, cs_order_detail od WHERE o.order_index = od.fk_order_index;
+SELECT o.*, od.*, m.member_phone, m.member_name 
+FROM cs_order o, cs_member m, cs_order_detail od WHERE o.fk_member_id = m.member_id;
 
+SELECT od.*, p.product_name, p.product_price FROM cs_order_detail od, cs_product p WHERE od.fk_product_index = p.product_index;
+
+INSERT INTO cs_order_detail VALUES(
+    seq_order_detail_index.nextval,
+    1,
+    1,
+    10
+);
+
+INSERT INTO cs_order_detail VALUES(
+    seq_order_detail_index.nextval,
+    1,
+    2,
+    3
+);
+
+SELECT * FROM cs_order_detail;
+
+/* 주문 상세 테이블 */
 CREATE TABLE cs_order_detail(
     order_detail_index NUMBER PRIMARY KEY,
     fk_order_index NUMBER REFERENCES cs_order(order_index) ON DELETE CASCADE,
@@ -68,7 +89,29 @@ MINVALUE 1
 MAXVALUE 9999999
 NOCYCLE;
 
+INSERT INTO cs_product VALUES(
+    seq_product_index.nextval,
+    1,
+    '모리타',
+    16000,
+    100,
+    'Morita.png',
+    '어쩌구저쩌구',
+    '어쩌구저쩌구'
+);
 
+INSERT INTO cs_product VALUES(
+    seq_product_index.nextval,
+    1,
+    '엘 라우렐',
+    16000,
+    100,
+    'El_laurel.png',
+    '어쩌구저쩌구',
+    '어쩌구저쩌구'
+);
+
+SELECT * FROM cs_product;
 /*상품 테이블*/   ​
 CREATE TABLE cs_product(
     product_index NUMBER PRIMARY KEY,
@@ -115,6 +158,7 @@ MINVALUE 1
 MAXVALUE 9999999
 NOCYCLE;
 ​
+SELECT * FROM cs_hashtag;
 INSERT INTO cs_hashtag VALUES(
     seq_hashtag_index.nextval, 1, '#풍부한산미'
 );
@@ -135,7 +179,7 @@ INSERT INTO cs_hashtag VALUES(
     seq_hashtag_index.nextval,2,'#쉽고간편한'
 );
 INSERT INTO cs_hashtag VALUES(
-    seq_hashtag_index.nextval,1,'#룽고'
+    seq_hashtag_index.nextval,3,'#룽고'
 );
 
 /*cs_hashtag*/

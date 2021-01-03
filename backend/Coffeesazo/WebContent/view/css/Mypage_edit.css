@@ -240,7 +240,8 @@ form {
 	height: 38px;
 }
 
-#input-email, #input-phonenumber, #input-new-password-check, #input-new-password, #original-password {
+#input-email, #input-phonenumber, #input-new-password-check, #input-new-password, 
+#original-password {
 	width: 500px;
 }
 

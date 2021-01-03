@@ -194,15 +194,15 @@
 
   </main>
 
-  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="view/js/addressApi.js"></script>
 <script src="view/js/mypage_edit.js"></script>
 <script type="text/javascript">
-function gotoEdit() {
-	var form = document.form_edit;
-	form.action = "mypage_edit";
-	form.submit();
-}
+	function gotoEdit() {
+		var form = document.form_edit;
+		form.action = "mypage_edit";
+		form.submit();
+	}
 
 </script>
   <script src="view/js/jquery.min.js"></script>
