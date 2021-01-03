@@ -8,9 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주문상세보기 |  COFFEESAZO</title>
     <!--favicon-->
-	<link rel="stylesheet" type="text/css" href="view/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="view/css/header.css">
-	<link rel="stylesheet" type="text/css" href="view/css/footer.css">
 	<link rel="stylesheet" type="text/css" href="view/css/mypage_order_detail.css">
     <link rel="shortcut icon"
         href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
@@ -18,27 +15,6 @@
 
 <body>
     <!-- 로그인 후 index -->
-    <header class="header">
-        <div class="header-align">
-            <div class="header-logo">
-                <a href="./index.jsp"><img src="./view/img/logo_white.png" class="logo"></a>
-            </div>
-            <div class="btns-signin-signup">
-                <span><a href="./index.jsp">로그아웃</a></span>
-                <span><a href="/frontend-develop/Frontend-최종-1차/백종웅/Front/Mypage_order.html">마이페이지</a></span>
-                <span><a href="/frontend-develop/Frontend-최종-1차/제윤지/front/공지사항.html">고객센터</a></span>
-                <span><a href="index.jsp?inc=view/order/shopping_cart.jsp"><img
-                            src="./view/img/shoppingcart_white.png" id="shoppingcart"></a></span>
-            </div>
-        </div>
-
-        <div class="shopping">
-            <span id="wholebean"><a href="/frontend-develop/Frontend-최종-1차/서우/wholebean.html">원두</a></span>
-            <span id="stickcoffee"><a href="/frontend-develop/Frontend-최종-1차/서우/stickcoffee.html">스틱커피</a></span>
-            <span id="capsulecoffee"><a
-                    href="/frontend-develop/Frontend-최종-1차/서우/capsulecoffee.html">캡슐커피</a></span>
-        </div>
-    </header>
 
     <div class="main-container">
         <h1>주문상세보기</h1>
@@ -152,16 +128,6 @@
 
         </form>
     </div>
-    <footer>
-        <div class="footer">
-            <ul class="footer-list-box">
-                <li>COFFEESAZO | 대표자: 이지현 | 사업자등록번호 123-45-67890</li>
-                <li>서울특별시 영등포구 선유도2로 57 이레빌딩(구관) 19F</li>
-                <li>책임자: 제윤지 | 개인정보관리책임자: 김은규</li>
-                <li>고객센터 02-1234-5678 | E-mail: customer@coffeesazo.com</li>
-            </ul>
-        </div>
-    </footer>
      <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>   
 <script>

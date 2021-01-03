@@ -1,6 +1,12 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap')
+	;
 
 html, body {
 	margin: 0;
@@ -9,15 +15,25 @@ html, body {
 }
 
 .form-control {
-	display: inline-block;
-	width: 50%;
-	font-family: 'Noto Sans KR', sans-serif;	
-	
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
-#sample6_postcode, #sample6_address, #sample6_detailAddress {
+#sample6_address {
+	display: inline-block;
 	background-color: white;
+	width: 500px;
 }
+#sample6_extraAddress, #sample6_detailAddress {
+	display: inline-block;
+	background-color: white;
+	width: 247px;
+}
+#sample6_postcode {
+	display: inline-block;
+	background-color: white;
+	width: 250px;
+} 
+
 title, header, footer, h1 {
 	font-family: 'Nanum Myeongjo', serif;
 }
@@ -30,12 +46,6 @@ label, p, h3, .edit_title, h3, .btn-outline-secondary {
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
-#postbutton {
-	display: inline-block;
-	margin-top: 20px;
-	padding: 0;
-}
-
 .edit_title {
 	text-align: center;
 	margin-bottom: 40px;
@@ -45,6 +55,7 @@ label, p, h3, .edit_title, h3, .btn-outline-secondary {
 	margin-top: 0px;
 	width: 100%;
 }
+
 .input-group-btn-prepend {
 	display: inline-block;
 }
@@ -129,7 +140,6 @@ ul { /* 버튼정렬*/
 	display: inline-block;
 }
 
-
 .size-controll {
 	text-align: center;
 }
@@ -147,8 +157,9 @@ ul { /* 버튼정렬*/
 	text-overflow: ellipsis;
 	border-bottom: 1px solid #bcbcbc
 }
+
 .user_name {
-	font-family: 'Noto Sans KR', sans-serif;	
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 #inputemail, #inputPhone, #inputPassword3, #inputname {
@@ -170,7 +181,6 @@ h1 { /* 마이페이지 밑줄*/
 	padding-bottom: 20px;
 }
 
-
 #main_container { /*마이페이지 전체적 가운데*/
 	width: 100%;
 	margin-top: 200px;
@@ -183,9 +193,8 @@ h1 { /* 마이페이지 밑줄*/
 	color: red;
 	/*js 이용하여 입력되지 않았을 시 보이게 하기*/
 	display: none;
-	font-family: 'Noto Sans KR', sans-serif;	
+	font-family: 'Noto Sans KR', sans-serif;
 }
-
 
 span { /*지현씨 푸터헤더 글씨체 */
 	font-family: 'Nanum Myeongjo', serif;
@@ -222,9 +231,30 @@ ul { /* 버튼정렬*/
 	display: inline-block;
 }
 
-
 .footer {
 	font-family: 'Nanum Myeongjo', serif;
 }
 
+form {
+	display: inline-block;
+}
 
+#sample6_postcode_search {
+	display: inline-block;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	height: 38px;
+}
+
+#input-email, #input-phonenumber, #input-new-password-check, #input-new-password, #original-password {
+	width: 500px;
+}
+
+#input-container {
+	margin: 0 auto;
+	width: 1000px;
+}
+
+label #label-original-pwd {
+	width: 100px;
+}

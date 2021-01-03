@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="view/css/addressApi.css" type="text/css">
   <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="view/css/Mypage.css" type="text/css">
-    <link rel="stylesheet" href="view/css/bootcontroll.css" type="text/css">
+    <link rel="stylesheet" href="view/css/mypage_edit.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 </head>
@@ -45,7 +45,7 @@
         </ul>
         
         
-         
+         <form method="POST" name="form_edit">
                 <ul>
                     <a class="card_small" id="mypage-edit" onclick="gotoEdit()">
                         <h3>회원정보수정</h3>
@@ -53,7 +53,7 @@
 
                     </a>
                 </ul>
-      	
+      	</form>
         
             <ul>
                     <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_qna.jsp">
@@ -72,19 +72,19 @@
       </div>
 
 
-      <div class="form-group">
+      <div class="form-group" id="input-container">
 
         <p>
           <!--------------------- 회원정보 변경 --------------------->
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label">이름</label>
           <div class="col-sm-10">
-            <div class="user_name">${memberVo.memberName }</div>
+            <div class="user_name" id=div-user-name>${memberVo.memberName }</div>
           </div>
         </div>
 
         <div class="row mb-3">
-          <label for="colFormLabel" class="col-sm-2 col-form-label">기존 비밀번호 입력</label>
+          <label for="colFormLabel" class="col-sm-2 col-form-label" id="label-original-pwd">기존 비밀번호 입력</label>
           <div class="col-sm-10">
             <input type="password" class="form-control" id="original-password" placeholder="기존 비밀번호">
           </div>
@@ -131,10 +131,10 @@
 
             <input type="text" class="form-control" id="sample6_postcode" readonly placeholder="우편번호">
                     <!--------------------- 우편번호 시작 --------------------->
-        <span class="input-group-btn-prepend">
+        
           <button type="button" class="btn btn-outline-secondary" id="sample6_postcode_search"
             onclick="sample6_execDaumPostcode()">우편번호 찾기</button>
-        </span>
+        
         
         
           </div>
@@ -152,17 +152,11 @@
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="sample6_detailAddress" readonly placeholder="상세주소">
+            <input type="text" class="form-control" id="sample6_detailAddress" placeholder="상세주소">
+          	<input type="text" class="form-control" id="sample6_extraAddress" readonly placeholder="참고항목">
           </div>
         </div>
 
-        <div class="row mb-3">
-          <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="sample6_extraAddress" placeholder="참고항목">
-
-          </div>
-        </div>
 
 
           <button type="button" class="btn btn-outline-secondary">취소하기</button>
