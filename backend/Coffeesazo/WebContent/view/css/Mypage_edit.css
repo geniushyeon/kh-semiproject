@@ -241,7 +241,7 @@ form {
 }
 
 #input-email, #input-phonenumber, #input-new-password-check, #input-new-password, 
-#original-password {
+#input-original-password {
 	width: 500px;
 }
 

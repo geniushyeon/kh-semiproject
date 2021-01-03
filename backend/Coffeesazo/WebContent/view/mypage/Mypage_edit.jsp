@@ -1,6 +1,8 @@
 <%@page import="com.coffeesazo.member.model.vo.MemberVo"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html lang = "en">
 <html>
@@ -17,8 +19,11 @@
     crossorigin="anonymous"></script>
 </head>
 <body>
-
+<%
+	List<MemberVo> memberInfoList = (List<MemberVo>)request.getAttribute("memberInfoList");
+%>
  <!--------------------- 메인시작 --------------------->
+  <!--------------------- 메인시작 --------------------->
   <main id="main_container">
     <div class="size-controll">
 
@@ -30,7 +35,7 @@
           <div class="user_info_form"><img
                   src="https://raw.githubusercontent.com/St4rFi5h/ETC/main/sourcce/article-user-blank.jpg"
                   alt="blank_user">
-              이지현(jhlee0912) 님
+              <%=memberInfoList.get(0).getMemberName() %>(<%= memberInfoList.get(0).getMemberId()%>) 님
           </div>
       </div>
 
@@ -79,14 +84,15 @@
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label">이름</label>
           <div class="col-sm-10">
-            <div class="user_name" id=div-user-name>${memberVo.memberName }</div>
+            <div class="user_name" id=div-user-name><%=memberInfoList.get(0).getMemberName() %></div>
           </div>
         </div>
 
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label" id="label-original-pwd">기존 비밀번호 입력</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="original-password" placeholder="기존 비밀번호">
+            <input type="password" class="form-control" id="input-original-password" name="memberPwd" placeholder="기존 비밀번호">
+          	<span class="warn-info" id="original-password-check"></span>
           </div>
         </div>
 
@@ -110,15 +116,15 @@
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label">전화번호</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="input-phonenumber" placeholder="전화번호 입력">
+            <input type="text" class="form-control" value="<%= memberInfoList.get(0).getMemberPhone()%>"id="input-phonenumber" placeholder="전화번호 입력">
           	<span class="warn-info" id="phonenumber-required">형식에 맞게 입력해주세요.</span>
           </div>
         </div>
 
         <div class="row mb-3">
-          <label for="colFormLabel" class="col-sm-2 col-form-label">이메일</label>
+          <label for="colFormLabel" class="col-sm-2 col-form-label" >이메일</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="input-email" placeholder="이메일 형식에 맞게 입력">
+            <input type="email" class="form-control" id="input-email" value="<%=memberInfoList.get(0).getMemberEmail()%>" placeholder="이메일 형식에 맞게 입력">
             <span class="warn-info" id="email-required">형식에 맞게 입력해주세요.</span>
             </br></br>
           </div>
@@ -129,7 +135,7 @@
           <label for="colFormLabel" class="col-sm-2 col-form-label">주소</label>
           <div class="col-sm-10">
 
-            <input type="text" class="form-control" id="sample6_postcode" readonly placeholder="우편번호">
+            <input type="text" class="form-control" id="sample6_postcode" value="<%=memberInfoList.get(0).getMemberZipcode() %>"readonly placeholder="우편번호">
                     <!--------------------- 우편번호 시작 --------------------->
         
           <button type="button" class="btn btn-outline-secondary" id="sample6_postcode_search"
@@ -197,15 +203,52 @@
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="view/js/addressApi.js"></script>
 <script src="view/js/mypage_edit.js"></script>
+  <script src="view/js/jquery.min.js"></script>
 <script type="text/javascript">
 	function gotoEdit() {
 		var form = document.form_edit;
 		form.action = "mypage_edit";
 		form.submit();
 	}
+	$("#input-original-password").focusout(function() {
+		var password = $("#input-original-password").val();
+		var passwordCheck;
+		
+		var passwordEmptyCheck = function() {
+			if (password == "") {
+				$("#original-password-check").html("기존 비밀번호를 입력해주세요. ");
+		        $("#original-password-check").css("display", "inline-block");
+	           	$("#original-password-check").css("color", "red");    	
+			
+			}
+		}
+		
+		$.ajax({
+			type : "POST",
+			url : "./CheckOriginPasswordServlet",
+			async : false,
+			data : {memberPwd : password},
+			success : function(result) {
+				if (result == 1) {
+					$("#original-password-check").css("display", "none");
+					passwordCheck = result;
+				}
+				else if(result == 0) {
+					$("#original-password-check").html("비밀번호가 틀립니다. ");
+			        $("#original-password-check").css("display", "inline-block");
+		           	$("#original-password-check").css("color", "red"); 
+		           	passwordCheck = result;
+				}
+			}
+			
+		})
+		
+		if (passwordCheck == 0) {
+			passwordEmptyCheck();
+		}
+	})
 
 </script>
-  <script src="view/js/jquery.min.js"></script>
   <script src="view/js/bootstrap.min.js"></script>
   <script src="view/js/popper.js"></script>
 

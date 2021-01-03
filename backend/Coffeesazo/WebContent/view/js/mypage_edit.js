@@ -96,6 +96,8 @@
        			}
         	}
         })
+
+		
         console.log(phonenumberExists);
         
         if (phonenumberExists == 0) {
@@ -107,6 +109,7 @@
 
  $("#input-new-password").focusout(function () {
         var password = $("#input-new-password").val();
+		var originalPassword = $("#input-original-password").val();
         var numRegExp = password.search(/[0-9]/g);
         var engRegExp = password.search(/[a-z]/ig);
 		
@@ -132,7 +135,12 @@
             $("#new-password-required").css("display", "inline-block");
             $("#new-password-required").css("color", "red");
             return false;
-        } else {
+		
+        } else if(originalPassword == password){
+			$("#new-password-required").html("기존 비밀번호와 다르게 입력해주세요.");
+            $("#new-password-required").css("display", "inline-block");
+            $("#new-password-required").css("color", "red");
+		} else {
             $("#new-password-required").css("display", "none");
             return true;
         }
