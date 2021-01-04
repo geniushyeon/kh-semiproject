@@ -33,7 +33,7 @@ public class coffee_datilServlet extends HttpServlet {
 		
 		if(!List.isEmpty()) {
 			request.setAttribute("capList", List);
-			RequestDispatcher view = request.getRequestDispatcher("view/shopping/product/capsule_coffee.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("view/shopping/product_detail/Coffee_Beans1.jsp");
 			view.forward(request, response);
 			System.out.println(List);
 		} else {
