@@ -31,7 +31,7 @@
       <a name="tag_body"></a> <!-- 메인 '묵직한바디감' 해시태그  -->
             <c:choose>
              <c:when test="${product.hashtagName eq '풍부한산미'}">
-             <h3 class="tag_title">#${product.hashtagName }</h3>
+             <h3 class="tag_title">#풍부한산미</h3>
              <div class="sub_under_dec"></div><!--해시태그 밑의 바-->
              <div class="row_space"><!--위치고정 큰 틀-->
 			
@@ -49,7 +49,7 @@
              </c:when>
              
              <c:when test="${product.hashtagName eq '묵직한바디감'}">
-             <h3 class="tag_title">#${product.hashtagName }</h3>
+             <h3 class="tag_title">#묵직한바디감</h3>
              <div class="sub_under_dec"></div><!--해시태그 밑의 바-->
              <div class="row_space"><!--위치고정 큰 틀-->
 			
@@ -67,7 +67,7 @@
              
              </c:when>
              <c:when test="${product.hashtagName eq '중남미원두'}">
-             <h3 class="tag_title">#${product.hashtagName }</h3>
+             <h3 class="tag_title">#중남미원두</h3>
              <div class="sub_under_dec"></div><!--해시태그 밑의 바-->
              <div class="row_space"><!--위치고정 큰 틀-->
 			
@@ -85,7 +85,7 @@
              
              </c:when>
              <c:when test="${product.hashtagName eq '아프리카원두'}">
-             <h3 class="tag_title">#${product.hashtagName }</h3>
+             <h3 class="tag_title">#아프리카원두</h3>
              <div class="sub_under_dec"></div><!--해시태그 밑의 바-->
              <div class="row_space"><!--위치고정 큰 틀-->
 			
