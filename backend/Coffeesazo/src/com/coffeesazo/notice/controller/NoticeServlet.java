@@ -37,7 +37,8 @@ public class NoticeServlet extends HttpServlet {
 	
 		if(!noticeList.isEmpty()) {
 			request.setAttribute("noticeList", noticeList);
-			RequestDispatcher view = request.getRequestDispatcher("view/notice/notice.jsp");
+			String url = "index.jsp?inc=view/notice/";
+			RequestDispatcher view = request.getRequestDispatcher(url + "notice.jsp");
 			view.forward(request, response);
 			System.out.println(noticeList);
 		} else {
