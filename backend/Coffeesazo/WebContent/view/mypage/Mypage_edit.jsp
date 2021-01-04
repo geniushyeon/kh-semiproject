@@ -21,6 +21,10 @@
 <body>
 <%
 	List<MemberVo> memberInfoList = (List<MemberVo>)request.getAttribute("memberInfoList");
+	String mainAddress = (String)request.getAttribute("mainAddress");
+	String detailAddress = (String)request.getAttribute("detailAddress");
+	String extraAddress = (String)request.getAttribute("extraAddress");
+	String memberZipcode = (String)request.getAttribute("memberZipcode");
 %>
  <!--------------------- 메인시작 --------------------->
   <!--------------------- 메인시작 --------------------->
@@ -135,7 +139,7 @@
           <label for="colFormLabel" class="col-sm-2 col-form-label">주소</label>
           <div class="col-sm-10">
 
-            <input type="text" class="form-control" id="sample6_postcode" value="<%=memberInfoList.get(0).getMemberZipcode() %>"readonly placeholder="우편번호">
+            <input type="text" class="form-control" id="sample6_postcode" value="<%=memberZipcode %>"readonly placeholder="우편번호">
                     <!--------------------- 우편번호 시작 --------------------->
         
           <button type="button" class="btn btn-outline-secondary" id="sample6_postcode_search"
@@ -150,7 +154,7 @@
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="sample6_address" readonly placeholder="주소">
+            <input type="text" class="form-control" id="sample6_address" value="<%=mainAddress %>" readonly placeholder="주소">
           </div>
         </div>
 
@@ -158,8 +162,8 @@
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="sample6_detailAddress" placeholder="상세주소">
-          	<input type="text" class="form-control" id="sample6_extraAddress" readonly placeholder="참고항목">
+            <input type="text" class="form-control" id="sample6_detailAddress" value="<%=detailAddress %>" placeholder="상세주소">
+          	<input type="text" class="form-control" id="sample6_extraAddress" value="<%=extraAddress %>" readonly placeholder="참고항목">
           </div>
         </div>
 
@@ -183,8 +187,8 @@
                 정말로 변경하시겠습니까?
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">취소</button>
-                <button type="button" class="btn btn-outline-success">저장하기</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">취소하기</button>
+                <button type="button" class="btn btn-outline-success">변경하기</button>
               </div>
             </div>
           </div>

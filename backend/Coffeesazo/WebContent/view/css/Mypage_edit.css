@@ -242,10 +242,13 @@ form {
 
 #input-email, #input-phonenumber, #input-new-password-check, #input-new-password, 
 #input-original-password {
+	display: inline-block;
 	width: 500px;
 }
 
 #input-container {
 	margin: 0 auto;
+	
 	width: 1000px;
+	
 }
