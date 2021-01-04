@@ -43,14 +43,16 @@
 							</tr>
 						</thead>
 						<tbody class="index-box">
+							<c:forEach items="${noticeList}" var="noticevo">
 							<tr style="background-color: #FFFFFF; color: black;">
-								<td>6</td>
+								<td>${noticevo.noticeIndex }</td>
 								<td class="displaynone"></td>
 								<td class="subject"><a
-									href="index.jsp?inc=view/notice/notice_detail.jsp"">크리스마스 EVENT</a></td>
-								<td>관리자</td>
-								<td class="txtLess ">2020-12-16</td>
+									href="index.jsp?inc=view/notice/notice_detail.jsp">${noticevo.noticeText }</a></td>
+								<td>${noticevo.fkMemberId }</td>
+								<td class="txtLess ">${noticevo.noticeDate }</td>
 							</tr>
+							</c:forEach>
 						</tbody>
 						<tbody class="index-box">
 							<tr style="background-color: #FFFFFF; color: black;">

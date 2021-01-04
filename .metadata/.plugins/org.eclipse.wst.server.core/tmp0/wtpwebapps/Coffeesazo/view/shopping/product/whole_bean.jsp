@@ -29,12 +29,13 @@
          <div class="inner_space">
          
       <a name="tag_body"></a> <!-- 메인 '묵직한바디감' 해시태그  -->
-            
+            <c:choose>
+             <c:when test="${product.hashtagName eq '풍부한산미'}">
              <h3 class="tag_title">#풍부한산미</h3>
              <div class="sub_under_dec"></div><!--해시태그 밑의 바-->
              <div class="row_space"><!--위치고정 큰 틀-->
 			
-			  <c:forEach items="${beanList}" var="product" >
+			  <c:forEach items="${beanList}" var="product" end="2" >
                 <div class="col_space">
                  <div class="item_list">
                     <a href="index.jsp?inc=./view/shopping/product_detail/Coffee_Beans1.jsp">
@@ -44,35 +45,74 @@
                     </a> 
                     </div>
                  </div>
-                 
                  </c:forEach>
-<!-- 
-                 <div class="col_space"> 
-                    <div class="item_list">
-                        <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans2.jsp">
-                            <img src="view/img/El_Laure.png" alt="">
-                            <div class="bean_name"> '엘 라우렐'</div> 
-                            <p><div class="product_price">16,000원</div></p>
-                        </a>
+             </c:when>
+             
+             <c:when test="${product.hashtagName eq '묵직한바디감'}">
+             <h3 class="tag_title">#묵직한바디감</h3>
+             <div class="sub_under_dec"></div><!--해시태그 밑의 바-->
+             <div class="row_space"><!--위치고정 큰 틀-->
+			
+			  <c:forEach items="${beanList}" var="product" end="5" >
+                <div class="col_space">
+                 <div class="item_list">
+                    <a href="index.jsp?inc=./view/shopping/product_detail/Coffee_Beans1.jsp">
+                        <img src="view/img/${product.productImage}" alt="">
+                        <div class="bean_name"> '${product.productName}'</div> 
+                        <p><div class="product_price">${product.productPrice}원</div></p> 
+                    </a> 
                     </div>
                  </div>
+                 </c:forEach>
+             
+             </c:when>
+             <c:when test="${product.hashtagName eq '중남미원두'}">
+             <h3 class="tag_title">#중남미원두</h3>
+             <div class="sub_under_dec"></div><!--해시태그 밑의 바-->
+             <div class="row_space"><!--위치고정 큰 틀-->
+			
+			  <c:forEach items="${beanList}" var="product" end="8" >
+                <div class="col_space">
+                 <div class="item_list">
+                    <a href="index.jsp?inc=./view/shopping/product_detail/Coffee_Beans1.jsp">
+                        <img src="view/img/${product.productImage}" alt="">
+                        <div class="bean_name"> '${product.productName}'</div> 
+                        <p><div class="product_price">${product.productPrice}원</div></p> 
+                    </a> 
+                    </div>
+                 </div>
+                 </c:forEach>
+             
+             </c:when>
+             <c:when test="${product.hashtagName eq '아프리카원두'}">
+             <h3 class="tag_title">#아프리카원두</h3>
+             <div class="sub_under_dec"></div><!--해시태그 밑의 바-->
+             <div class="row_space"><!--위치고정 큰 틀-->
+			
+			  <c:forEach items="${beanList}" var="product" end="11" >
+                <div class="col_space">
+                 <div class="item_list">
+                    <a href="index.jsp?inc=./view/shopping/product_detail/Coffee_Beans1.jsp">
+                        <img src="view/img/${product.productImage}" alt="">
+                        <div class="bean_name"> '${product.productName}'</div> 
+                        <p><div class="product_price">${product.productPrice}원</div></p> 
+                    </a> 
+                    </div>
+                 </div>
+                 </c:forEach>
+             
+             </c:when>
+            </c:choose>
+             
+                 
+             
+            
 
-                 <div class="col_space"> 
-                    <div class="item_list">
-                        <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans3.jsp">
-                            <img src="view/img/Busanze.png" alt="">
-                            <div class="bean_name"> '부산제'</div>
-                            <p><div class="product_price">14,000원</div></p>
-                       </a>
-                    </div>
-                 </div>
-            </div>
-        </div>
-    </div>
+                 
     
-                      묵직한바디감 상품 리스트
+                      
     <div class="bean_product_list"> 
-       <a name="tag_latin"></a> 메인 '중남미원두' 해시태그 
+       <a name="tag_latin"></a> 
         <div class="inner_space">
             <h3 class="tag_title">#묵직한바디감</h3>
             <div class="sub_under_dec"></div>
@@ -112,7 +152,7 @@
    </div>
 
 
-                     중남미원두 상품리스트
+                    
     <div class="bean_product_list"> 
         <div class="inner_space">
             <h3 class="tag_title">#중남미원두</h3>
@@ -152,9 +192,9 @@
       </div>
     </div>
 
-                아프리카원두 상품리스트
+               
     <div class="bean_product_list"> 
-     <a name="tag_africa"></a> 메인 '아프리카원두' 해시태그 
+     <a name="tag_africa"></a> 
         <div class="inner_space">
             <h3 class="tag_title">#아프리카원두</h3>
             <div class="sub_under_dec"></div>
@@ -188,7 +228,7 @@
                         <p><div class="product_price">12,000원</div></p>
                    </a>
                 </div>
-             </div> -->
+             </div>
            </div>
        </div>
      </div>

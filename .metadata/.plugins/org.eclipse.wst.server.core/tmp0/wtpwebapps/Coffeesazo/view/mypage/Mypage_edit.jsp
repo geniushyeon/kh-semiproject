@@ -1,33 +1,46 @@
+<%@page import="com.coffeesazo.member.model.vo.MemberVo"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html lang = "en">
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-  <link rel="stylesheet" href="view/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="view/css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="view/css/addressApi.css" type="text/css">
-  <link rel="stylesheet" href="view/css/Mypage.css" type="text/css">
-  <link rel ="stylesheet" href="view/css/Mypage_edit.css" type = "text/css" >
   <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="view/css/Mypage.css" type="text/css">
+    <link rel="stylesheet" href="view/css/mypage_edit.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 </head>
 <body>
+<%
+	List<MemberVo> memberInfoList = (List<MemberVo>)request.getAttribute("memberInfoList");
+	String mainAddress = (String)request.getAttribute("mainAddress");
+	String detailAddress = (String)request.getAttribute("detailAddress");
+	String extraAddress = (String)request.getAttribute("extraAddress");
+	String memberZipcode = (String)request.getAttribute("memberZipcode");
+%>
  <!--------------------- 메인시작 --------------------->
+  <!--------------------- 메인시작 --------------------->
   <main id="main_container">
     <div class="size-controll">
 
       <div class="user_info">
           <div class="mypage_title">
-
+			
               <h1>마이페이지</h1>
           </div>
           <div class="user_info_form"><img
                   src="https://raw.githubusercontent.com/St4rFi5h/ETC/main/sourcce/article-user-blank.jpg"
                   alt="blank_user">
-              이지현(jhlee0912) 님</div>
+              <%=memberInfoList.get(0).getMemberName() %>(<%= memberInfoList.get(0).getMemberId()%>) 님
+          </div>
       </div>
 
        <!--------------전체 버튼묶음-------------->
@@ -41,15 +54,15 @@
         </ul>
         
         
-              
+         <form method="POST" name="form_edit">
                 <ul>
-                    <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_edit.jsp">
+                    <a class="card_small" id="mypage-edit" onclick="gotoEdit()">
                         <h3>회원정보수정</h3>
                         <p class="card_text">나의 정보를 </br>변경하실 수 있습니다.</p>
 
                     </a>
                 </ul>
-      
+      	</form>
         
             <ul>
                     <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_qna.jsp">
@@ -68,49 +81,55 @@
       </div>
 
 
-      <div class="form-group">
+      <div class="form-group" id="input-container">
 
         <p>
           <!--------------------- 회원정보 변경 --------------------->
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label">이름</label>
           <div class="col-sm-10">
-            <div class="user_name">이지현</div>
+            <div class="user_name" id=div-user-name><%=memberInfoList.get(0).getMemberName() %></div>
           </div>
         </div>
 
         <div class="row mb-3">
-          <label for="colFormLabel" class="col-sm-2 col-form-label">기존 비밀번호</label>
+          <label for="colFormLabel" class="col-sm-2 col-form-label" id="label-original-pwd">기존 비밀번호 입력</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="colFormLabel" placeholder="기존 비밀번호">
+            <input type="password" class="form-control" id="input-original-password" name="memberPwd" placeholder="기존 비밀번호">
+          	<span class="warn-info" id="original-password-check"></span>
           </div>
         </div>
 
 
         <div class="row mb-3">
-          <label for="colFormLabel" class="col-sm-2 col-form-label">변경 할 비밀번호</label>
+          <label for="colFormLabel" class="col-sm-2 col-form-label">변경할 비밀번호</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="colFormLabel" placeholder="특수문자 반드시포함">
+            <input type="password" class="form-control" id="input-new-password" placeholder="영문, 숫자, 특수문자 포함 최소 8자">
+          	<span class="warn-info" id="new-password-required">형식에 맞게 입력해주세요.</span>
+          	
           </div>
         </div>
         <div class="row mb-3">
-          <label for="colFormLabel" class="col-sm-2 col-form-label">변경 할 비밀번호 확인</label>
+          <label for="colFormLabel" class="col-sm-2 col-form-label">변경할 비밀번호 확인</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="colFormLabel" placeholder="비밀번호">
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <label for="colFormLabel" class="col-sm-2 col-form-label">핸드폰번호</label>
-          <div class="col-sm-10">
-            <input type="phone" class="form-control" id="colFormLabel" placeholder="핸드폰번호">
+            <input type="password" class="form-control"  id="input-new-password-check" placeholder="비밀번호 확인">
+          	<span class="warn-info" id="new-password-check-required">형식에 맞게 입력해주세요.</span>
           </div>
         </div>
 
         <div class="row mb-3">
-          <label for="colFormLabel" class="col-sm-2 col-form-label">이메일</label>
+          <label for="colFormLabel" class="col-sm-2 col-form-label">전화번호</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="colFormLabel" placeholder="이메일">
+            <input type="text" class="form-control" value="<%= memberInfoList.get(0).getMemberPhone()%>"id="input-phonenumber" placeholder="전화번호 입력">
+          	<span class="warn-info" id="phonenumber-required">형식에 맞게 입력해주세요.</span>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label" >이메일</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="input-email" value="<%=memberInfoList.get(0).getMemberEmail()%>" placeholder="이메일 형식에 맞게 입력">
+            <span class="warn-info" id="email-required">형식에 맞게 입력해주세요.</span>
             </br></br>
           </div>
         </div>
@@ -120,14 +139,14 @@
           <label for="colFormLabel" class="col-sm-2 col-form-label">주소</label>
           <div class="col-sm-10">
 
-            <input type="email" class="form-control" id="postcode" placeholder="우편번호">
+            <input type="text" class="form-control" id="sample6_postcode" value="<%=memberZipcode %>"readonly placeholder="우편번호">
                     <!--------------------- 우편번호 시작 --------------------->
-        <span class="input-group-btn-prepend">
-          <button type="button" class="btn btn-outline-secondary" id="postbutton"
-            onclick="sample4_execDaumPostcode()">우편번호</button>
-        </span>
+        
+          <button type="button" class="btn btn-outline-secondary" id="sample6_postcode_search"
+            onclick="sample6_execDaumPostcode()">우편번호 찾기</button>
         
         
+        
           </div>
 
         </div>
@@ -135,31 +154,19 @@
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="roadAddress" placeholder="도로명주소">
+            <input type="text" class="form-control" id="sample6_address" value="<%=mainAddress %>" readonly placeholder="주소">
           </div>
         </div>
+
 
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="jibunAddress" placeholder="지번주소">
+            <input type="text" class="form-control" id="sample6_detailAddress" value="<%=detailAddress %>" placeholder="상세주소">
+          	<input type="text" class="form-control" id="sample6_extraAddress" value="<%=extraAddress %>" readonly placeholder="참고항목">
           </div>
         </div>
 
-        <div class="row mb-3">
-          <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="detailAddress" placeholder="상세주소">
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="extraAddress" placeholder="참고항목">
-
-          </div>
-        </div>
 
 
           <button type="button" class="btn btn-outline-secondary">취소하기</button>
@@ -177,14 +184,15 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                정말로 변경하겠습니까?
+                정말로 변경하시겠습니까?
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">취소</button>
-                <button type="button" class="btn btn-outline-success">저장하기</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">취소하기</button>
+                <button type="button" class="btn btn-outline-success">변경하기</button>
               </div>
             </div>
           </div>
+        
         </div>
         </p>
 
@@ -196,9 +204,55 @@
 
   </main>
 
-  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-  <script src="view/js/addressApi.js"></script>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="view/js/addressApi.js"></script>
+<script src="view/js/mypage_edit.js"></script>
   <script src="view/js/jquery.min.js"></script>
+<script type="text/javascript">
+	function gotoEdit() {
+		var form = document.form_edit;
+		form.action = "mypage_edit";
+		form.submit();
+	}
+	$("#input-original-password").focusout(function() {
+		var password = $("#input-original-password").val();
+		var passwordCheck;
+		
+		var passwordEmptyCheck = function() {
+			if (password == "") {
+				$("#original-password-check").html("기존 비밀번호를 입력해주세요. ");
+		        $("#original-password-check").css("display", "inline-block");
+	           	$("#original-password-check").css("color", "red");    	
+			
+			}
+		}
+		
+		$.ajax({
+			type : "POST",
+			url : "./CheckOriginPasswordServlet",
+			async : false,
+			data : {memberPwd : password},
+			success : function(result) {
+				if (result == 1) {
+					$("#original-password-check").css("display", "none");
+					passwordCheck = result;
+				}
+				else if(result == 0) {
+					$("#original-password-check").html("비밀번호가 틀립니다. ");
+			        $("#original-password-check").css("display", "inline-block");
+		           	$("#original-password-check").css("color", "red"); 
+		           	passwordCheck = result;
+				}
+			}
+			
+		})
+		
+		if (passwordCheck == 0) {
+			passwordEmptyCheck();
+		}
+	})
+
+</script>
   <script src="view/js/bootstrap.min.js"></script>
   <script src="view/js/popper.js"></script>
 

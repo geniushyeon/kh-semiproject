@@ -12,8 +12,7 @@
     <!--favicon-->
     <link rel="shortcut icon"
         href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
-	<script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	
 </head>
 
 <body>
@@ -39,7 +38,7 @@
                     <span class="warn-info" id="password-required">비밀번호는 필수 정보입니다.</span>
                 </label>
                 <input class="form-box-field-input" type="password" id="input-password"
-                    name="memberPwd" placeholder="비밀번호 입력(숫자, 영문, 특수문자 조합 최소 8자)" />
+                    name="memberPwd" placeholder="비밀번호 입력(영문, 숫자, 특수문자 조합 최소 8자)" />
               
             </div>
             <div class="form-box-field warn">
@@ -122,7 +121,8 @@
     </div>
     <!-- 회원가입 끝 -->
     <!-- scripts -->
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="./view/js/signup.js"></script>
     <script src="./view/js/bootstrap.min.js"></script>

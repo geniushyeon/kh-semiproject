@@ -10,17 +10,17 @@ import com.coffeesazo.product.model.vo.Product;
 import common.JDBCTemplate;
 
 public class ProductDao {
-
-	public ArrayList<Product> CapsuleSelect(Connection conn) {
+	
+	public ArrayList<Product> WholeSelect(Connection conn) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		ArrayList<Product> capList = null;
+		ArrayList<Product> beanList = null;
 		
-		String sql = "SELECT * FROM cs_product p INNER JOIN cs_hashtag h ON p.fk_hastag_index = h.hashtag_index INNER JOIN cs_category ca ON h.fk_category_index = ca.category_index";
+		String sql = "SELECT * FROM cs_product p INNER JOIN cs_hashtag h ON p.fk_hastag_index = h.hashtag_index INNER JOIN cs_category ca ON h.fk_category_index = ca.category_index WHERE ca.category_index = 1";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			capList = new ArrayList<Product>();
+			beanList = new ArrayList<Product>();
 			
 			while(rs.next()) {
 				Product product = new Product();
@@ -36,8 +36,7 @@ public class ProductDao {
 				product.setHashtagName(rs.getString("hashtag_name"));
 				product.setCategoryName(rs.getString("category_name"));
 				
-				capList.add(product);
-				
+				beanList.add(product);
 			}
 			
 			
@@ -47,15 +46,17 @@ public class ProductDao {
 			JDBCTemplate.close(pstmt);
 			JDBCTemplate.close(rs);
 		}
-		return capList;
+		return beanList;
 	}
-
+	
+	
+	
 	public ArrayList<Product> StickSelect(Connection conn) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<Product> stickList = null;
 		
-		String sql = "SELECT * FROM cs_product p INNER JOIN cs_hashtag h ON p.fk_hastag_index = h.hashtag_index INNER JOIN cs_category ca ON h.fk_category_index = ca.category_index";
+		String sql = "SELECT * FROM cs_product p INNER JOIN cs_hashtag h ON p.fk_hastag_index = h.hashtag_index INNER JOIN cs_category ca ON h.fk_category_index = ca.category_index WHERE ca.category_index = 2";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -90,16 +91,16 @@ public class ProductDao {
 	}
 
 
-	public ArrayList<Product> WholeSelect(Connection conn) {
+	public ArrayList<Product> CapsuleSelect(Connection conn) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		ArrayList<Product> beanList = null;
+		ArrayList<Product> capList = null;
 		
-		String sql = "SELECT * FROM cs_product p INNER JOIN cs_hashtag h ON p.fk_hastag_index = h.hashtag_index INNER JOIN cs_category ca ON h.fk_category_index = ca.category_index";
+		String sql = "SELECT * FROM cs_product p INNER JOIN cs_hashtag h ON p.fk_hastag_index = h.hashtag_index INNER JOIN cs_category ca ON h.fk_category_index = ca.category_index WHERE ca.category_index =3";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			beanList = new ArrayList<Product>();
+			capList = new ArrayList<Product>();
 			
 			while(rs.next()) {
 				Product product = new Product();
@@ -115,7 +116,7 @@ public class ProductDao {
 				product.setHashtagName(rs.getString("hashtag_name"));
 				product.setCategoryName(rs.getString("category_name"));
 				
-				beanList.add(product);
+				capList.add(product);
 				
 			}
 			
@@ -126,6 +127,7 @@ public class ProductDao {
 			JDBCTemplate.close(pstmt);
 			JDBCTemplate.close(rs);
 		}
-		return beanList;
+		return capList;
 	}
+
 }
