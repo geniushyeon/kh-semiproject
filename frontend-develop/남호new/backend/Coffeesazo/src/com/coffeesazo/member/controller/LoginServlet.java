@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import com.coffeesazo.member.model.dao.MemberDao;
+import com.coffeesazo.member.model.dao.MemberDao2;
 
 
 
@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 		//vo.setMemberId(id);
 		//vo.setMemberPwd(pwd);
 		System.out.println("vo객체가 생성되었습니다.");
-		MemberDao dao = new MemberDao();
+		MemberDao2 dao = new MemberDao2();
 		System.out.println("dao객체가 생성되었습니다.");
 		int result = dao.signin(id, pwd);
 		System.out.println("DB 조회 결과값 :" + result + "(성공 : 0 / 실패 : 1)");

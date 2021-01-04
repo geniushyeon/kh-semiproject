@@ -18,25 +18,31 @@
 </head>
 
 <body>
-  
-    <div class="main-body"> <!-- 전체 div 시작 -->
-        <form> <!-- form태그 시작 -->
-            <p class="main-title">비밀번호 재설정</p>
-            <p>　</p>
-            <p class="sub-title">이메일로 전송된 인증번호를<br>바르게 입력해 주세요</p>
-            <p>　</p>
-            <p>
-                <input class="input" type="text" name="name" 
-                placeholder="인증번호를 입력해 주세요"></p> <!--인증번호 입력 인풋-->
-            <p>　</p>
-            <p>
-                <input class="findid-button" type="button" value="인증번호 확인"
-                onclick="location.href='#'"> <!--타입 :submit -> button으로 하고 임시로 링크해놨음-->
-            </p>
-        </form> <!-- form태그 끝 -->
-    </div> <!-- 전체 div 끝 -->
-    
-  
-</body>
+ 
+    <div class="main-body"> <!--전체 div-->
 
+    <form method="post" action="change" onsubmit= "return checks()"> <!--form 태그 시작-->
+        <p class="main-title">비밀번호 재설정</p>
+        <p> </p>
+        <p class="sub-title">새로운 비밀번호를<br>설정해 주세요</p>
+        <p>　</p>
+        
+        <p>
+            <input class="input" type="password" name="password" id="pwd"
+            placeholder="비밀번호를 입력해 주세요"> <!--비번 입력 인풋-->
+        </p>
+        
+        <p>
+            <input class="input" type="password" name="pwd" id="pwd2"
+                placeholder="다시 한 번 입력해 주세요"> <!--비번 확인 입력 인풋-->
+        </p>
+        <p>　</p>
+        
+        <p>
+            <input class="findpassword-button" type="submit" value="비밀번호 재설정">
+        </p>
+     </form> <!--form 태그 끝-->
+    </div> <!--전체 div 끝-->
+</body>
+<script src="./view/js/signin.js" charset="utf-8"></script>
 </html>

@@ -3,45 +3,158 @@
  */
 
 // 아이디 유효성 검사
-	var id = $("#input-id").val();
-	var idCheckRegExp = /^[a-z0-9]{5,12}$/;
-	        
-var idCheck = function() {
-		if (!idCheckRegExp.test(id)) {
-			$("#id-required").html("아이디가 형식에 맞지 않습니다.");
-			$("#id-required").css("display", "inline-block");
-			$("#id-required").css("color", "red");
-		} else if (idCheckRegExp.test(id)) {
-			$("#id-required").html("사용 가능한 아이디입니다.");
-			$("#id-required").css("display", "inline-block");
-			$("#id-required").css("color", "green");
-	        
-		}	
-	}
 $("#input-id").focusout(function () {
-	        
-	        
-		if (id == "") {
-	            $("#id-required").html("아이디는 필수 정보입니다.");
-	            $("#id-required").css("display", "inline-block");
-				
-			} else if (id != ""){ 
-				$.ajax ({
-					type : 'POST',
-					url : './IdDuplicatedCheckServlet',
-					data : {memberId : id}, // 파라미터값 : 사용자가 입력한 id 
-					success : function(result) {
-						if (result == 1) {
-							$("#id-required").html("사용 중인 아이디입니다.");
-		            		$("#id-required").css("display", "inline-block");
-		            		$("#id-required").css("color", "red");
-						} else if (result == 0){
-							idCheck();
-						}
+		var id = $("#input-id").val();
+		var idCheckRegExp = /^[a-z0-9]{5,12}$/;
+		var idExists;
+		
+		
+		var idCheck = function() {
+			if (id == "") {
+				$("#id-required").html("아이디는 필수 정보입니다.");
+				$("#id-required").css("display", "inline-block");
+				$("#id-required").css("color", "red");
+			}
+			else if (!idCheckRegExp.test(id)) {
+				$("#id-required").html("아이디가 형식에 맞지 않습니다.");
+				$("#id-required").css("display", "inline-block");
+				$("#id-required").css("color", "red");
+			} else if (idCheckRegExp.test(id)) {
+				$("#id-required").html("사용 가능한 아이디입니다.");
+				$("#id-required").css("display", "inline-block");
+				$("#id-required").css("color", "green");
+		        
+			}	
+		}
+		
+
+		console.log(id);
+
+		$.ajax ({
+				type : 'POST',
+				url : './IdDuplicatedCheckServlet',
+				async: false,
+				data : {memberId : id}, // 파라미터값 : 사용자가 입력한 id 
+				success : function(result) {
+					if (result == 1) {
+						$("#id-required").html("사용 중인 아이디입니다.");
+		           		$("#id-required").css("display", "inline-block");
+		           		$("#id-required").css("color", "red");
+						
+					} else if (result == 0){
+						$("#id-required").css("display", "none");
 					}
-				})
- 			}
-		})
+					idExists = result;	
+				}
+			})
+		console.log(idExists);
+		if (idExists == 0) {
+			idCheck();
+		}
+
+	})
+	
+	 $("#input-email").focusout(function () {
+        var email = $("#input-email").val();
+        var emailCheckRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+		var emailExists;
+        
+       	var emailCheck = function() {	       		
+	        if (email == "") {
+	            // 입력 여부 검사
+	            $("#email-required").html("이메일은 필수 정보입니다.");
+	            $("#email-required").css("display", "inline-block");
+	        } else if (!emailCheckRegExp.test(email)) {
+	            // 형식 유효성 검사
+	            $("#email-required").html("이메일 형식에 맞지 않습니다.");
+	            $("#email-required").css("display", "inline-block");
+	            $("#email-required").css("color", "red");
+	        } else if (emailCheckRegExp.test(email)) {
+	            // 형식에 맞을 때
+	            // db에 있는 이메일 사용불가 구현 필요
+	            $("#email-required").html("사용 가능한 이메일입니다.");
+	            $("#email-required").css("display", "inline-block");
+	            $("#email-required").css("color", "green");
+	        }
+       	}
+       	
+       	console.log(email);
+       	
+       	$.ajax ({
+       		type : 'POST',
+       		url : './EmailDuplicatedCheckServlet',
+       		async : false,
+       		data : {memberEmail : email}, // 파라미터값 : 사용자가 입력한 값 
+       		success : function(result) {
+       			if (result == 1) {
+       				$("#email-required").html("사용 중인 이메일 주소입니다.");
+	           		$("#email-required").css("display", "inline-block");
+	           		$("#email-required").css("color", "red");
+	       			emailExists = result;
+	           		
+       			} else if (result == 0) {
+       				$("#email-required").css("display", "none");
+	       			emailExists = result;
+       			}
+       		}
+       		
+       	})
+       	console.log(emailExists);
+       	
+       	if (emailExists == 0) {
+       		emailCheck();
+       	}
+       	
+    })
+
+    $("#input-phonenumber").focusout(function () {
+        var phonenumber = $("#input-phonenumber").val();
+        var phonenumberCheckRegExp = /^\d{3}\d{3,4}\d{4}$/;
+		var phonenumberExists;
+        
+        var phonenumberCheck = function() {
+	        if (phonenumber == "") {
+	            $("#phonenumber-required").html("전화번호는 필수 정보입니다.");
+	            $("#phonenumber-required").css("display", "inline-block");
+	            $("#phonenumber-required").css("color", "red");
+	        }
+	        else if (phonenumberCheckRegExp.test(phonenumber) == false) {
+	            $("#phonenumber-required").html("형식에 맞게 입력해주세요.");
+	            $("#phonenumber-required").css("display", "inline-block");
+	            $("#phonenumber-required").css("color", "red");
+	        } else {
+	            $("#phonenumber-required").html("사용 가능한 전화번호입니다.");
+	            $("#phonenumber-required").css("display", "inline-block");
+	            $("#phonenumber-required").css("color", "green");
+	        }
+        	
+        }
+        
+        $.ajax ({
+        	type : 'POST',
+        	url : './PhoneDuplicatedCheckServlet',
+        	async : false,
+        	data : {memberPhone : phonenumber}, // 파라미터값 : 사용자가 입력한 값 
+        	success : function(result) {
+        		if (result == 1) {
+        			$("#phonenumber-required").html("사용 중인 전화번호입니다.");
+	           		$("#phonenumber-required").css("display", "inline-block");
+	           		$("#phonenumber-required").css("color", "red");
+		           	phonenumberExists = result;
+       			} else if (result == 0) {
+       				$("#phonenumber-required").css("display", "none");
+		           	phonenumberExists = result;
+       			}
+        	}
+        })
+        console.log(phonenumberExists);
+        
+        if (phonenumberExists == 0) {
+        	phonenumberCheck();
+        }
+        
+        
+    })
 
  $("#input-password").focusout(function () {
         var password = $("#input-password").val();
@@ -106,45 +219,7 @@ $("#input-id").focusout(function () {
         }
     })
 
-    $("#input-email").focusout(function () {
-        var email = $("#input-email").val();
-        var emailCheckRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-
-        if (email == "") {
-            // 입력 여부 검사
-            $("#email-required").html("이메일은 필수 정보입니다.");
-            $("#email-required").css("display", "inline-block");
-        } else if (!emailCheckRegExp.test(email)) {
-            // 형식 유효성 검사
-            $("#email-required").html("이메일 형식에 맞지 않습니다.");
-            $("#email-required").css("display", "inline-block");
-            $("#email-required").css("color", "red");
-        } else if (emailCheckRegExp.test(email)) {
-            // 형식에 맞을 때
-            // db에 있는 이메일 사용불가 구현 필요
-            $("#email-required").html("사용 가능한 이메일입니다.");
-            $("#email-required").css("display", "inline-block");
-            $("#email-required").css("color", "green");
-        }
-    })
-
-    $("#input-phonenumber").focusout(function () {
-        var phonenumber = $("#input-phonenumber").val();
-        var phonenumberCheckRegExp = /^\d{3}\d{3,4}\d{4}$/;
-
-        if (phonenumber == "") {
-            $("#phonenumber-required").html("전화번호는 필수 정보입니다.");
-            $("#phonenumber-required").css("display", "inline-block");
-        }
-        else if (phonenumberCheckRegExp.test(phonenumber) == false) {
-            $("#phonenumber-required").html("형식에 맞게 입력해주세요.");
-            $("#phonenumber-required").css("display", "inline-block");
-
-        } else {
-            $("#phonenumber-required").html("");
-
-        }
-    })
+   
 
     $("#input-name").focusout(function() {
         var name = $("#input-name").val();
@@ -216,7 +291,8 @@ $("#input-id").focusout(function () {
             }
         }).open();
     }
-
+	
+	
     // 약관동의 체크
     function isAllChecked() {
         const checkList = document.getElementsByName("admit");
@@ -264,6 +340,3 @@ $("#input-id").focusout(function () {
         }
         form.submit();
     }
-
-
-

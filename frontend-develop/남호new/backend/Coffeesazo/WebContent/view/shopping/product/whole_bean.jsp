@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,21 +27,26 @@
                                  
      <div class="bean_product_list"> <!--풍부한 산미 리스트-->
          <div class="inner_space">
-            <a name="tag_body"></a> <!-- 메인 '묵직한바디감' 해시태그  -->
+         
+      <a name="tag_body"></a> <!-- 메인 '묵직한바디감' 해시태그  -->
+            
              <h3 class="tag_title">#풍부한산미</h3>
              <div class="sub_under_dec"></div><!--해시태그 밑의 바-->
              <div class="row_space"><!--위치고정 큰 틀-->
-
+			
+			  <c:forEach items="${beanList}" var="product" >
                 <div class="col_space">
-                    <div class="item_list">
+                 <div class="item_list">
                     <a href="index.jsp?inc=./view/shopping/product_detail/Coffee_Beans1.jsp">
-                        <img src="view/img/Morita.png" alt="">
-                       <div class="bean_name"> '모리타'</div> 
-                       <p><div class="product_price">16,000원</div></p> 
+                        <img src="view/img/${product.productImage}" alt="">
+                        <div class="bean_name"> '${product.productName}'</div> 
+                        <p><div class="product_price">${product.productPrice}원</div></p> 
                     </a> 
                     </div>
                  </div>
-
+                 
+                 </c:forEach>
+<!-- 
                  <div class="col_space"> 
                     <div class="item_list">
                         <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans2.jsp">
@@ -64,9 +70,9 @@
         </div>
     </div>
     
-                      <!--묵직한바디감 상품 리스트-->
+                      묵직한바디감 상품 리스트
     <div class="bean_product_list"> 
-       <a name="tag_latin"></a> <!-- 메인 '중남미원두' 해시태그  -->
+       <a name="tag_latin"></a> 메인 '중남미원두' 해시태그 
         <div class="inner_space">
             <h3 class="tag_title">#묵직한바디감</h3>
             <div class="sub_under_dec"></div>
@@ -106,7 +112,7 @@
    </div>
 
 
-                     <!--중남미원두 상품리스트-->
+                     중남미원두 상품리스트
     <div class="bean_product_list"> 
         <div class="inner_space">
             <h3 class="tag_title">#중남미원두</h3>
@@ -146,9 +152,9 @@
       </div>
     </div>
 
-                <!--아프리카원두 상품리스트-->
+                아프리카원두 상품리스트
     <div class="bean_product_list"> 
-     <a name="tag_africa"></a> <!-- 메인 '아프리카원두' 해시태그  -->
+     <a name="tag_africa"></a> 메인 '아프리카원두' 해시태그 
         <div class="inner_space">
             <h3 class="tag_title">#아프리카원두</h3>
             <div class="sub_under_dec"></div>
@@ -182,11 +188,11 @@
                         <p><div class="product_price">12,000원</div></p>
                    </a>
                 </div>
-             </div>
+             </div> -->
            </div>
-      </div>
-    </div>
-    </main>
+       </div>
+     </div>
+   </main>
 
 
 

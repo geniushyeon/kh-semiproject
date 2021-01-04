@@ -3,8 +3,6 @@ package com.coffeesazo.member.model.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import com.coffeesazo.Application;
 import com.coffeesazo.member.model.vo.MemberVo;
 //민영작업

@@ -137,6 +137,7 @@ footer {
 
 /* 메인 코드 시작*/
 main {
+	font-family: 'Noto Sans KR', sans-serif; 
 	position: relative;
 	min-height: 100%;
 }
@@ -173,7 +174,7 @@ main {
 }
 
 h1 {
-	padding-top: 50px;
+	/* padding-top: 50px; */
 	text-align: center;
 	color: #4d2600;
 	font-size: 30px;
@@ -213,6 +214,17 @@ h1 {
 	float: left;
 	padding-left: 130px;
 	text-align: center;
+}
+
+.board .content {
+	position: relative;
+	width: 700px;
+	color: #353535;
+	font-size: 14px;
+	border: 1px solid #e5e5e5;
+	resize:none;
+	border-radius: 0;
+	outline-style: none;
 }
 
 #title {
@@ -269,4 +281,5 @@ h1 {
 	background-color: burlywood;
 	transition: 0.3s;
 	cursor: pointer;
+	color: black;
 }

@@ -18,15 +18,17 @@
 </head>
 
 <body>
-   
-   
+  
     <div class="main-body"> <!--전체 div 시작-->
         <form> 
             <div class="wrapper">
                 <p class="main-title">아이디 찾기</p>
                 <p>　</p>
             
-                <p class="sub-title">회원님의 아이디는<br>' <span id='id'>${'id'}</span> ' 입니다.</p>
+                <p class="sub-title">회원님의 아이디는<br><%=request.getAttribute("result") %> 입니다.</p>
+                <% 
+                session.invalidate();
+                %>
                 <!--span태그 사이에 디비에서 가져온 아이디 보일 수 있게 -->
                 <p>　</p>
                 <p>

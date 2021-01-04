@@ -119,7 +119,7 @@
         }
 
         
-       /* a:link{color:black; text-decoration:none;} /*하이퍼링크데코 지움 */
+       a:link{color:black; text-decoration:none;} /*하이퍼링크데코 지움 */
         
       
         

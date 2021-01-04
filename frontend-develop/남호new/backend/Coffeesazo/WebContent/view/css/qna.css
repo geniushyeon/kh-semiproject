@@ -137,13 +137,14 @@ footer {
 
 /* 메인 코드 시작 */
 main {
+	font-family: 'Noto Sans KR', sans-serif; 
 	position: relative;
 	min-height: 100%;
 }
 
 #container {
 	margin: 0 auto;
-	height: 900px;
+	height: 800px;
 }
 
 #contents {
@@ -171,7 +172,10 @@ main {
 	color: black;
 	text-decoration: none;
 }
-
+.boardnavi a:hover {
+	color: black;
+	text-decoration: none;
+}
 .navi01 {
 	border-bottom: 3px solid #e5e5e5;
 }
@@ -181,7 +185,7 @@ main {
 }
 
 h1 {
-	padding-top: 50px;
+	/* padding-top: 50px; */
 	text-align: center;
 	color: #4d2600;
 	font-size: 30px;
@@ -245,13 +249,34 @@ td {
 	display: table-cell;
 }
 
+.btns {
+	padding-top:30px;
+	display: flex;
+	position: relative;
+    justify-content:center;
+    margin-left: 81px;
+}
+
+.btns input {
+	background-color: #fff;
+	border: none;
+	align-self:center;
+	position: relative;
+	display:inline-block;
+	text-decoration: none;
+}
+
+.btns input:focus {
+	outline: none;
+	cursor: pointer;
+}
+
 .bottom-button {
 	position: relative;
-	padding-top: 30px;
 	text-align: center;
+	display: absolute;
+	left: 292px;
 	cursor: pointer;
-	float: right;
-	padding-right: 3px;
 }
 
 .bottom-button a {
@@ -267,6 +292,8 @@ td {
 }
 
 .bottom-button a:hover {
+	text-decoration: none;
+	color: #fff;
 	background-color: burlywood;
 	transition: 0.3s;
 	cursor: pointer;

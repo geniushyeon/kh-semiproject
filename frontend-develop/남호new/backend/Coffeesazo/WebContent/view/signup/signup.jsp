@@ -12,7 +12,8 @@
     <!--favicon-->
     <link rel="shortcut icon"
         href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
-
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -38,7 +39,7 @@
                     <span class="warn-info" id="password-required">비밀번호는 필수 정보입니다.</span>
                 </label>
                 <input class="form-box-field-input" type="password" id="input-password"
-                    name="memberPwd" placeholder="비밀번호 입력(숫자, 영문, 특수문자 조합 최소 8자)" />
+                    name="memberPwd" placeholder="비밀번호 입력(영문, 숫자, 특수문자 조합 최소 8자)" />
               
             </div>
             <div class="form-box-field warn">
@@ -121,35 +122,9 @@
     </div>
     <!-- 회원가입 끝 -->
     <!-- scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-	 // 아이디 유효성 검사
-	    $("#input-id").focusout(function () {
- 	        var id = $("#input-id").val();
-	        console.log(id);
-			$.ajax ({
-				type : 'POST',
-				url : './IdDuplicatedCheckServlet',
-				data : {memberId : id}, // 파라미터값 : 사용자가 입력한 id 
-				success : function(result) {
-					if (result == 1) {
-						$("#id-required").html("사용 중인 아이디입니다.");
-		           		$("#id-required").css("display", "inline-block");
-		           		$("#id-required").css("color", "red");
-					} else if (result == 0){
-						$("#id-required").css("display", "none");
-						
-					}
-				}
-			})
-
-		})
-
-    </script>
-    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     
-	<!-- <script src="./view/js/signup.js"></script> -->
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="./view/js/signup.js"></script>
     <script src="./view/js/bootstrap.min.js"></script>
 </body>
 
