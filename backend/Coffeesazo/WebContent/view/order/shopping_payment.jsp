@@ -84,16 +84,15 @@
 								<div class="form-container2">
 									<h2>배송 정보</h2>
 									<div class="form-address">
-										<input type="text" id="postcode" placeholder="우편번호"
-											maxlength="5">
+										<input type="text" id="sample6_postcode" placeholder="우편번호"
+											maxlength="5" readonly="readonly">
 										<button type="button" class="btn btn-secondary"
-											id="postbutton" onclick="sample4_execDaumPostcode()">우편번호</button>
-										<br> <input type="text" id="roadAddress"
-											placeholder="도로명주소"> <input type="text"
-											id="jibunAddress" placeholder="지번주소"> <span
+											id="postbutton" onclick="sample6_execDaumPostcode()">우편번호</button>
+										<br> <input type="text" id="sample6_address"
+											placeholder="도로명주소"><span
 											id="guide" style="color: #999; display: none"></span><br>
-										<input type="text" id="detailAddress" placeholder="상세주소">
-										<input type="text" id="extraAddress" placeholder="참고항목">
+										<input type="text" id="sample6_detailAddress" placeholder="상세주소" style="width: 300px" >
+										<input type="text" id="sample6_extraAddress" placeholder="참고항목">
 										<br> <label for="">배송 시 요청 사항 </label> <br> <input
 											class="delivery-rq" id="delivery-rq" type="text"> <br>
 										<label for="">수령인</label> <br> <input
@@ -237,13 +236,7 @@
 	</main>
 	<script
 		src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script src="view/js/shopping_addressApi.js"></script>
-	<script>
-		$(document).ready(function() {
-			 
-				$(".modal-body1").load("shopping_service1.jsp");
-			
-		})
-	</script>
+	<script src="view/js/addressApi.js"></script>
+	
 </body>
 </html>
