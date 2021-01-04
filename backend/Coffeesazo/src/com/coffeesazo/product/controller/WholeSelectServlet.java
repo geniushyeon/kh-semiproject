@@ -29,6 +29,7 @@ public class WholeSelectServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		ArrayList<Product> beanList = new ProductService().WholeSelete();
+		
 	
 		if(!beanList.isEmpty()) {
 			request.setAttribute("beanList", beanList);
