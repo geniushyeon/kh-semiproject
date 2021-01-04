@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +23,7 @@
      <!-- 상품페이지 메인 -->
 
     <main>
+      
         <p><h1 class="sub_title">스틱커피</h1></p>
 
         <div class="stick_product_list"> 
@@ -29,17 +31,21 @@
                  <h3 class="tag_title">#쉽고간편한</h3>
                  <div class="sub_under_dec"></div><!--해시태그 밑의 바-->
                  <div class="row_space"><!--위치고정 큰 틀-->
-                
+                 
+                 
+ 				<c:forEach items="${stickList }" var="product" >
                      <div class="col_space">
                       <div class="item_list">
                         <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Stick1.jsp">
-                            <img src="view/img/maxim.jpg" alt="">
-                            <div class="stick_name"> '맥심 모카골드'</div> 
-                            <p><div class="product_price">18,000원</div></p>
+                            <img src="view/img/${product.productImage}" alt="">
+                            <div class="stick_name"> '${product.productName}'</div> 
+                            <p><div class="product_price">${product.productPrice}원</div></p>
                         </a>
                       </div>
                      </div>
-
+				</c:forEach>
+				
+			<!-- 	
                      <div class="col_space"> 
                       <div class="item_list">
                         <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Stick2.jsp">
@@ -58,7 +64,7 @@
                             <p><div class="product_price">11,000원</div></p>
                         </a>
                       </div>
-                     </div>
+                     </div> -->
 
                  </div>
             </div>

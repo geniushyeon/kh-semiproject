@@ -20,23 +20,21 @@
 <body>
    
     <div class="main-body"> <!-- 전체 div시작 -->
-        <form method="post" action="#"> <!-- form 태그 시작-->
+        <form method="post" action="findpwd" onsubmit= "return login_checks()"> <!-- form 태그 시작-->
             <p class="main-title">비밀번호 재설정</p>
             <p>　</p>
             <p>
-                <input class="input" type="text" name="id" 
-                pattern="^([a-z0-9_]){6,50}$" 
+                <input class="input" type="text" name="id" id="id"
                 placeholder="아이디를 입력해 주세요"> <!-- 아이디 입력 인풋 -->
             </p>
 
             <p>
-                <input class="input" type="email" name="email" 
-                    placeholder="이메일을 입력해 주세요"> <!-- 비번 입력 인풋 -->
+                <input class="input" type="email" name="email" id="email"
+                    placeholder="이메일을 입력해 주세요"> <!-- 이메일 입력 인풋 -->
             </p>
             <p>　</p>
             <p>
-                <input class="findpassword-button" type="button" value="이메일로 인증번호 받기"
-                onclick="location.href='#'"> <!--타입 :submit -> button으로 하고 임시로 링크해놨음-->
+                <input class="findpassword-button" type="submit" value="이메일로 인증번호 받기">
             </p>
             
             <p class="title">
@@ -44,7 +42,7 @@
             </p>
         </form> <!-- form 태그 시작-->
     </div> <!-- 전체 div 끝 -->
-
+<script src="./view/js/signin.js" charset="utf-8"></script>
 </body>
 
 </html>

@@ -94,6 +94,10 @@ color: #888;
     color: #4d2600;
     }
 
+    h1 {  /* 마이페이지 밑줄*/
+          border-bottom: solid #000000;
+          padding-bottom: 20px;
+        }
 
 
 .button { /*전체 버튼속성*/

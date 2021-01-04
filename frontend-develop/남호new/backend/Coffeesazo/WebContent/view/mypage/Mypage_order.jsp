@@ -6,9 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="view/css/Mypage_order.css" type="text/css">
  <link rel="stylesheet" href="view/css/bootstrap.min.css">
-  <link rel="stylesheet" href="view/css/Mypage.css" type="text/css">
+<link rel="stylesheet" href="view/css/Mypage_order.css" type="text/css">
+ <link rel="stylesheet" href="view/css/Mypage.css" type="text/css">
  <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
@@ -31,7 +31,17 @@
             <!--------------전체 버튼묶음-------------->
             <div class="button">
 
-      
+        
+        
+                <ul>
+            <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_order.jsp">
+                <h3 class="softblack">주문내역</h3>
+                <p class="card_text">최근 주문내역을 </br>확인하실 수 있습니다.</p>
+
+            </a>
+        </ul>
+        
+        
                 <ul>
                     <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_edit.jsp">
                         <h3>회원정보수정</h3>

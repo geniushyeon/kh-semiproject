@@ -20,7 +20,7 @@
 	<main>
 		<div id="container">
 			<div id="contents">
-				<h1>고객센터</h1>
+				<a href="index.jsp?inc=view/notice/notice.jsp"><h1>고객센터</h1></a>
 				<div class="title-area">
 					<div class="boardnavi">
 						<a href="index.jsp?inc=view/notice/notice.jsp" class="navi01"> <span>공지사항</span>
@@ -52,8 +52,7 @@
 						<div class="view-article">
 							<p></p>
 							<p style="text-align: center;">
-								<img src="./view/img/view-img.jpg"
-									style="width: 550px; height: 500px;">
+								<img src="./view/img/view-img.jpg" style="width: 550px; height: 500px; padding-top: 70px;">
 							</p>
 						</div>
 					</div>

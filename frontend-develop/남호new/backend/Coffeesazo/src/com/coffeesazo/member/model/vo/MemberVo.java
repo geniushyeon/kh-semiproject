@@ -92,6 +92,14 @@ public class MemberVo {
 	public void setMemberJoinedDate(Date memberJoinedDate) {
 		this.memberJoinedDate = memberJoinedDate;
 	}
+
+	@Override
+	public String toString() {
+		return "MemberVo [memberIndex=" + memberIndex + ", memberId=" + memberId + ", memberPwd=" + memberPwd
+				+ ", memberName=" + memberName + ", memberEmail=" + memberEmail + ", memberPhone=" + memberPhone
+				+ ", memberZipcode=" + memberZipcode + ", memberAddress=" + memberAddress + ", memberAdmin="
+				+ memberAdmin + ", memberJoinedDate=" + memberJoinedDate + "]";
+	}
 	
 	
 	

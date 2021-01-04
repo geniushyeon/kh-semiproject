@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %> 	
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +21,7 @@
 	<main>
 		<div id="container">
 			<div id="contents">
-				<h1>고객센터</h1>
+				<a href="index.jsp?inc=view/notice/notice.jsp"><h1>고객센터</h1></a>
 				<div class="title-area">
 					<div class="boardnavi">
 						<a href="index.jsp?inc=view/notice/notice.jsp" class="navi01"> <strong>공지사항</strong>
@@ -97,6 +98,15 @@
 							</tr>
 						</tbody>
 					</table>
+				</div>
+					<div class='btns'>
+					<input type='button' value='Prev' />
+
+					<c:forEach var='i' begin='1' end='5'>
+						<input type='button' value='${i }' onclick='goPage(${i})' />
+					</c:forEach>
+
+					<input type='button' value='Next' /> 
 				</div>
 			</div>
 		</div>
