@@ -28,9 +28,11 @@ public class NoticeDetailServlet extends HttpServlet {
 
 		HttpSession session = request.getSession(); 
 		
-		int noticeIndex = Integer.parseInt(request.getParameter("noticeIndex"));
+		int noticeIndex = Integer.parseInt(request.getParameter("index"));
 		
 		ArrayList<NoticeVo> noticeDetailList = new NoticeService().selectNoticeDetailList(noticeIndex);
+		System.out.println("여기까지");
+		System.out.println(noticeDetailList);
 	
 		if(!noticeDetailList.isEmpty()) {
 			request.setAttribute("noticeDetailList", noticeDetailList);

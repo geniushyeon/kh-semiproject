@@ -33,7 +33,7 @@ public class NoticeService {
 
 		try {
 			Connection conn = new Application().getConn();
-			noticeDetailList =  new NoticeDao().selectNoticeList(conn);
+			noticeDetailList =  new NoticeDao().selectNoticeDetailList(conn,noticeIndex);
 			JDBCTemplate.close(conn);
 		} catch (Exception e) {
 			// TODO: handle exception

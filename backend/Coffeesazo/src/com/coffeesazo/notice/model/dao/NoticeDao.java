@@ -49,6 +49,7 @@ public class NoticeDao {
 		ArrayList<NoticeVo> noticeList = null;
 
 		String sql = "SELECT * FROM cs_notice WHERE notice_index = ?";
+		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, noticeIndex);
@@ -66,7 +67,7 @@ public class NoticeDao {
 				noticeList.add(noticevo);		
 			}		
 		} catch (Exception e){
-
+			e.printStackTrace();
 		} finally {
 			JDBCTemplate.close(pstmt);
 			JDBCTemplate.close(rs);	

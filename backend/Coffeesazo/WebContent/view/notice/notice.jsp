@@ -46,14 +46,17 @@
 						</thead>
 						<tbody class="index-box">
 							<c:forEach items="${noticeList}" var="noticevo">
+							<form action="noticedetail" method="post" id="form1">
 							<tr style="background-color: #FFFFFF; color: black;">
 								<td>${noticevo.noticeIndex }</td>
+								<input type="text" value="${noticevo.noticeIndex}" name="index" />
 								<td class="displaynone"></td>
-								<td class="subject"><a href="noticedetail">${noticevo.noticeTitle }</a></td>
-								<%-- <td class="subject" onclick="view('${noticevo.noticeIndex}')">${noticevo.noticeTitle }</td> --%>
+								<!--<td class="subject"><a href="noticedetail">${noticevo.noticeTitle }</a></td>-->
+								<td class="subject" onclick="document.getElementById('form1').submit();">${noticevo.noticeTitle }</td>
 								<td>관리자</td>
 								<td class="txtLess ">${noticevo.noticeDate }</td>
 							</tr>
+							</form>
 							</c:forEach>
 						</tbody>
 						<!-- <tbody class="index-box">
@@ -119,12 +122,11 @@
 	<!-- 부트스트랩 자바스크립트 추가 -->
 	<script src="./js/bootstrap.min.js"></script>
 	<script>
-		function view(noticeIndex){
-			var frm = document.notice;
-			frm.action = "index.jsp?inc=view/notice/notice_detail.jsp";
-			frm.noticeIndex.value = noticeIndex;
-			frm.submit();
-		}
-	</script>
+      function view(noticeIndex){
+         var frm = document.getElementById("form1");
+		 frm.noticeIndex.value = noticeIndex;
+         frm.submit();
+      }
+   </script>
 </body>
 </html>
