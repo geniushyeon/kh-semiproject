@@ -20,7 +20,7 @@
 <body>
     
     <div class="main-body"> <!--전체 div 시작-->
-    <form method="post" action="auth"> <!--form 태그 시작-->
+    <form method="post" action="auth" onsubmit= "return auth_check()"> <!--form 태그 시작-->
 
         <p class="main-title">아이디 찾기</p>
         <p>　</p>
