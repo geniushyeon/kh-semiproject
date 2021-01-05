@@ -38,7 +38,7 @@ public class OrderDeleteServelt extends HttpServlet {
 		for(int i=0; i<cpd.length ; i++) {
 			cpd[i] = Integer.parseInt(checkproduct[i]);
 		}
-			int result = new OrderService().CheckCartDelete(cpd,memberid);
+			int result = new OrderService().OrderDelete(cpd,memberid);
 			System.out.println("선택삭제 값:"+result);
 			if(result != 0) {
 				RequestDispatcher view = request.getRequestDispatcher("view/order/shopping_cart.jsp");

@@ -46,7 +46,7 @@
         </ul>
         
         
-				<form method="POST" name="form_edit">
+				<form action="deleteorder" method="POST" name="form_edit">
                 <ul>
                     <a class="card_small" id="mypage-edit" onclick="gotoEdit()">
                         <h3>회원정보수정</h3>
@@ -57,7 +57,7 @@
       	</form>
       
                 <ul>
-                    <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_qna.jsp">
+                    <a class="card_small" href="MyQnaList">
                         <h3 class="softblack">나의문의</h3>
                         <p class="card_text">나의1:1문의를 </br>확인하실 수 있습니다.</p>
         
@@ -99,7 +99,7 @@
                         <td height="0">
                             <div style="height:100%"><img src="${OrderViewList.productImage }" height="100%"></div>
                         </td>
-                        <td>${OrderViewList.productName}></td>
+                        <td>${OrderViewList.productName}</td>
                         <td>${OrderViewList.productPrice }원</td>
                         <td>${OrderViewList.orderCount }개</td>
                         <td>${OrderViewList.productPrice * cart.orderCount}원</td>
@@ -107,22 +107,7 @@
                     </c:forEach>
                          
                        
-                    <tr>
-                        <tr class="my-order" onclick="location.href='Project/kh-semiproject/frontend-develop/지현/order_detail.html' ">
-                        <td><input id="checkbox" type="checkbox"></td>
-                        <td>20201217</td>
-
-                        <td height="0">
-                            <img src="..." alt="..." class="img-thumbnail">
-                        </td>
-                        <td>커피1</td>
-                        <td>7000원</td>
-                        <td>2개</td>
-                        <td>14000원</td>
-                    </tr>
-
-
-
+    
 					</tbody>
 				</form>
 				
