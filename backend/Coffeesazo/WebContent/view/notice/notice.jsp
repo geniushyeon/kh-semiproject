@@ -19,7 +19,8 @@
 </head>
 <body>
 	<main>
-		<form action="notice" method="post">
+		<form action="notice" method="post" name="notice">
+		<input type='hidden' name='noticeIndex' />
 		<div id="container">
 			<div id="contents">
 				<a href="index.jsp?inc=view/notice/notice.jsp"><h1>고객센터</h1></a>
@@ -48,7 +49,8 @@
 							<tr style="background-color: #FFFFFF; color: black;">
 								<td>${noticevo.noticeIndex }</td>
 								<td class="displaynone"></td>
-								<td class="subject"><a href="index.jsp?inc=view/notice/notice_detail.jsp">${noticevo.noticeTitle }</a></td>
+								<td class="subject"><a href="noticedetail">${noticevo.noticeTitle }</a></td>
+								<%-- <td class="subject" onclick="view('${noticevo.noticeIndex}')">${noticevo.noticeTitle }</td> --%>
 								<td>관리자</td>
 								<td class="txtLess ">${noticevo.noticeDate }</td>
 							</tr>
@@ -116,6 +118,13 @@
 	</main>
 	<!-- 부트스트랩 자바스크립트 추가 -->
 	<script src="./js/bootstrap.min.js"></script>
-
+	<script>
+		function view(noticeIndex){
+			var frm = document.notice;
+			frm.action = "index.jsp?inc=view/notice/notice_detail.jsp";
+			frm.noticeIndex.value = noticeIndex;
+			frm.submit();
+		}
+	</script>
 </body>
 </html>
