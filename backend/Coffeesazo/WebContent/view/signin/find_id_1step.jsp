@@ -21,7 +21,7 @@
  
     <div class="main-body"> <!--전체 div 시작-->
 
-        <form method="post" action="findid" onsubmit= "return login_checks()"> <!--form태그 시작-->
+        <form method="post" action="findid" onsubmit= "return find_id()"> <!--form태그 시작-->
             <p class="main-title">아이디 찾기</p>
             <p>　</p>
             <p><input class="input" type="text" name="name" id="name"
@@ -49,7 +49,7 @@
     </div> <!--전체 div 끝-->
     
 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-	<script src="./view/js/signin.js" charset="utf-8"></script>
+	<script src="./view/js/find_id.js" charset="utf-8"></script>
 
 </body>
 </html>

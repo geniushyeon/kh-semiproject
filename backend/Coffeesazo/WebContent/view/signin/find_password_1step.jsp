@@ -20,7 +20,7 @@
 <body>
    
     <div class="main-body"> <!-- 전체 div시작 -->
-        <form method="post" action="findpwd" onsubmit= "return login_checks()"> <!-- form 태그 시작-->
+        <form method="post" action="findpwd" onsubmit= "return find_pwd()"> <!-- form 태그 시작-->
             <p class="main-title">비밀번호 재설정</p>
             <p>　</p>
             <p>
@@ -35,6 +35,7 @@
             <p>　</p>
             <p>
                 <input class="findpassword-button" type="submit" value="이메일로 인증번호 받기">
+                <!-- 일치 하지 않을 경우 alert '입력하신 정보로 일치하는 회원이 없습니다.' -->
             </p>
             
             <p class="title">
@@ -42,7 +43,7 @@
             </p>
         </form> <!-- form 태그 시작-->
     </div> <!-- 전체 div 끝 -->
-<script src="./view/js/signin.js" charset="utf-8"></script>
+<script src="./view/js/find_pwd.js" charset="utf-8"></script>
 </body>
 
 </html>
