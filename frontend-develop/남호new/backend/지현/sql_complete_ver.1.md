@@ -22,7 +22,8 @@ CREATE TABLE cs_order(
     order_text VARCHAR2(1000),
     order_date DATE default SYSDATE,
     order_receiver VARCHAR2(128) NOT NULL,
-    order_receiver_phone VARCHAR2(100) NOT NULL
+    order_receiver_phone VARCHAR2(100) NOT NULL,
+    order_total_price NUMBER NOT NULL
 ​
 );
 /* 주문 상세 테이블 */
@@ -143,12 +144,12 @@ CREATE TABLE cs_product(
     product_index NUMBER PRIMARY KEY,
     fk_hastag_index NUMBER not null,
     product_name VARCHAR2(100) not null,
-    product_price VARCHAR2(50) not null,
+    product_price NUMBER not null,
     product_count VARCHAR2(100) not null,
     product_image VARCHAR2(400) not null,
     product_info VARCHAR2(400) not null,
     product_text VARCHAR2(2000) null
-    
+
     );
 ​​
 ALTER TABLE cs_product
@@ -167,8 +168,8 @@ CREATE SEQUENCE seq_product_index
 /* 장바구니 테이블 */
 CREATE TABLE cs_cart(
 cart_index NUMBER PRIMARY KEY,
-fk_member_id NUMBER not null,
-product_index NUMBER not null,
+fk_member_id VARCHAR2(20) not null,
+fk_product_index NUMBER not null,
 order_count NUMBER not null
 );
 

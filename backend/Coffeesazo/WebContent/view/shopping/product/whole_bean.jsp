@@ -28,7 +28,7 @@
  
     <div class="bean_product_list">  <!--풍부한 산미 리스트-->
       
-       <a name="tag_latin"="${product.fkHashtagIndex}" var="product" begin="2"></a> 
+       <a name="tag_latin"></a> 
        
         <div class="inner_space">
         

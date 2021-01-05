@@ -23,7 +23,7 @@ public class CoffeeDetailServlet extends HttpServlet {
         super();
 
     }
-
+ 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
@@ -32,7 +32,8 @@ public class CoffeeDetailServlet extends HttpServlet {
 		
 		
 		if(!List.isEmpty()) {
-			request.setAttribute("capList", List);
+			request.setAttribute("List", List);
+			String url = "index.jsp?inc=view/shopping/product_deatil/";
 			RequestDispatcher view = request.getRequestDispatcher("view/shopping/product_detail/Coffee_Beans1.jsp");
 			view.forward(request, response);
 			System.out.println(List);
@@ -42,7 +43,7 @@ public class CoffeeDetailServlet extends HttpServlet {
 		
 	}
 
-
+ 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

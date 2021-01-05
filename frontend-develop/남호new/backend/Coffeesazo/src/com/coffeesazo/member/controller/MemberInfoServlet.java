@@ -21,7 +21,7 @@ import com.coffeesazo.member.model.vo.MemberVo;
 @WebServlet("/mypage_edit")
 public class MemberInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	String url = "index.jsp?inc=view/mypage/";
 
 	/**
@@ -45,8 +45,33 @@ public class MemberInfoServlet extends HttpServlet {
 		System.out.println(memberId);
 		System.out.println(memberInfoList.toString());
 
+		String memberAddress = memberInfoList.get(0).getMemberAddress();
+		String memberZipcode = memberInfoList.get(0).getMemberZipcode();
+		System.out.println(memberAddress);
+		
+		String mainAddress = "";
+		String detailAddress = "";
+		String extraAddress = "";
+		
+		if (memberAddress != null) {
+			String[] addressArray = memberAddress.split("\\+");
+
+			mainAddress = addressArray[0];
+			detailAddress = addressArray[1];
+			extraAddress = addressArray[2];
+		}
+		
+		if (memberZipcode == null) {
+			memberZipcode = "";
+		}
+
 		RequestDispatcher rd = request.getRequestDispatcher(url + "Mypage_edit.jsp");
 		request.setAttribute("memberInfoList", memberInfoList);
+		request.setAttribute("mainAddress", mainAddress);
+		request.setAttribute("detailAddress", detailAddress);
+		request.setAttribute("extraAddress", extraAddress);
+		request.setAttribute("memberZipcode", memberZipcode);
+
 		rd.forward(request, response);
 	}
 

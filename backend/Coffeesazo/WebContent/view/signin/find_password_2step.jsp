@@ -20,13 +20,13 @@
 <body>
   
     <div class="main-body"> <!-- 전체 div 시작 -->
-        <form method="post" action="auth2"> <!-- form태그 시작 -->
+        <form method="post" action="auth2" onsubmit= "return auth_check()"> <!-- form태그 시작 -->
             <p class="main-title">비밀번호 재설정</p>
             <p>　</p>
             <p class="sub-title">이메일로 전송된 인증번호를<br>바르게 입력해 주세요</p>
             <p>　</p>
             <p>
-                <input class="input" type="text" name="auth_number" 
+                <input class="input" type="text" name="auth_number" id="auth_number"
                 placeholder="인증번호를 입력해 주세요"></p> <!--인증번호 입력 인풋-->
             <p>　</p>
             <p>
@@ -34,7 +34,7 @@
             </p>
         </form> <!-- form태그 끝 -->
     </div> <!-- 전체 div 끝 -->
-    
+ <script src="./view/js/auth_check.js" charset="utf-8"></script>   
 </body>
 
 </html>

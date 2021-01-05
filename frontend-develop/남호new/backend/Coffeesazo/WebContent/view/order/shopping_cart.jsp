@@ -17,7 +17,7 @@
             <h1>장바구니</h1>
         </div>
         <table class="data-result">
-            <form action="" method="POST">
+            <form action="deleteone" method="POST">
                 <thead>
                     <tr>
 
@@ -33,7 +33,7 @@
                 <tbody>
                     <c:forEach items="${pList }" var="cart" >
                     <tr>
-                        <td><input id="checkbox" type="checkbox"></td>
+                        <td><input id="checkbox" type="checkbox" name="delete-name" value="${cart.productIndex }"></td>
                         <td>${cart.productIndex }</td>
                         <td height="0">
                             <div style="height:100%"><img src="${cart.productImage }" height="100%"></div>
@@ -41,7 +41,7 @@
                         <td>${cart.productName}</td>
                         <td>${cart.productPrice }원</td>
                         <td>${cart.orderCount }개</td>
-                        <td>50000원</td>
+                        <td>${cart.productPrice * cart.orderCount}원</td>
                     </tr>
                     </c:forEach>
                     
@@ -55,7 +55,7 @@
                 <tfoot>
                     <tr>
                         <td colspan="6"></td>
-                        <td>총가격:15000000만원</td>
+                        <td>총가격:${allresult}원</td>
                     </tr>
                 </tfoot>
         </table>
@@ -84,7 +84,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-                                <button type="button" class="btn btn-primary">삭제</button>
+                                <button type="submit" class="btn btn-primary">삭제</button>
                             </div>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-                                <button type="button" class="btn btn-primary">삭제</button>
+                                <button type="button" class="btn btn-primary" onclick= "location.href = 'deleteall'">삭제</button>
                             </div>
                         </div>
                     </div>

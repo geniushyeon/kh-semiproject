@@ -30,21 +30,25 @@
             <!--------------전체 버튼묶음-------------->
             <div class="button">
                 <ul>
-                    <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_order.jsp">
+                    <a class="card_small" href="OrderListSelect">
                         <h3 class="softblack">주문내역</h3>
                         <p class="card_text">최근 주문내역을 </br>확인하실 수 있습니다.</p>
                  
                     </a>
                 </ul>
       
+      
+   
+      
+<form method="POST" name="form_edit">
                 <ul>
-                    <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_edit.jsp">
+                    <a class="card_small" id="mypage-edit" onclick="gotoEdit()">
                         <h3>회원정보수정</h3>
                         <p class="card_text">나의 정보를 </br>변경하실 수 있습니다.</p>
 
                     </a>
                 </ul>
-      
+      	</form>
 
         <ul>
             <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_qna.jsp">
@@ -129,5 +133,14 @@
 
             </div>
     </main>
+    
+        <script>
+	function gotoEdit() {
+		var form = document.form_edit;
+		form.action = "mypage_edit";
+		form.submit();
+	}
+    </script>
+    
 </body>
 </html>

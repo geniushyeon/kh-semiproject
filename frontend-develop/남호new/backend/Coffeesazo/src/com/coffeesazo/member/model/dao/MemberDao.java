@@ -13,19 +13,19 @@ public class MemberDao {
 	Connection conn; // db의 연결 정보 
 	PreparedStatement pstmt; // 문자열로 되어 있는 sql 문장을 실행 
 	ResultSet rs; // select문의 실행 결과 
-	
+
 	public MemberDao() {
 		conn = new Application().getConn();
-		
+
 	}
-	
+
 	public int signup(MemberVo memberVo) {
 		int affectedRows = 0;
-		
+
 		try {
 			String sql = "INSERT INTO cs_member VALUES("
 					+ "?, ?, ?, ?, ?, ?, ?, DEFAULT, DEFAULT)";
-			
+
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberVo.getMemberId());
 			pstmt.setString(2, memberVo.getMemberPwd());
@@ -34,10 +34,10 @@ public class MemberDao {
 			pstmt.setString(5, memberVo.getMemberPhone());
 			pstmt.setString(6, memberVo.getMemberZipcode());
 			pstmt.setString(7, memberVo.getMemberAddress());
-			
+
 			affectedRows = pstmt.executeUpdate();
 			System.out.println(affectedRows); // 디버깅용 
-			
+
 			if(affectedRows < 1) {
 				System.out.println("회원가입 실패");
 				conn.rollback();
@@ -45,8 +45,8 @@ public class MemberDao {
 				conn.commit();
 				return affectedRows;
 			}
-			
-			
+
+
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -56,9 +56,9 @@ public class MemberDao {
 				e.printStackTrace();
 			}
 		}
-		
+
 		return affectedRows;
-		
+
 	}
 
 	public int idDuplicatedCheck(String memberId) {
@@ -67,9 +67,9 @@ public class MemberDao {
 			String sql = "SELECT COUNT(*) FROM cs_member WHERE member_id = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberId);
-			
+
 			rs = pstmt.executeQuery();
-			
+
 			while(rs.next()) {
 				result = rs.getInt(1);
 			}
@@ -83,23 +83,23 @@ public class MemberDao {
 				e.printStackTrace();
 			}
 		}
-		
+
 		return result;
 	}
-	
+
 	public int emailDuplicatedCheck(String memberEmail) {
 		int result = 0;
 		try {
 			String sql = "SELECT COUNT(*) FROM cs_member WHERE member_email = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberEmail);
-			
+
 			rs = pstmt.executeQuery();
-			
+
 			while(rs.next()) {
 				result = rs.getInt(1);
 			}
-			
+
 			System.out.println(result); // 0이면 사용가능, 1이면 중복 
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -112,21 +112,21 @@ public class MemberDao {
 		}
 		return result;
 	}
-	
+
 	public int phoneDuplicatedCheck(String memberPhone) {
 		int result = 0;
 		try {
 			String sql = "SELECT COUNT(*) FROM cs_member WHERE member_phone = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberPhone);
-			
+
 			rs = pstmt.executeQuery();
-			
+
 			while(rs.next()) {
 				result = rs.getInt(1);
 			}
 			System.out.println(result); // 0이면 사용가능, 1이면 중복
-			
+
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -136,21 +136,21 @@ public class MemberDao {
 				e.printStackTrace();
 			}
 		}
-		
+
 		return result;
 	}
-	
+
 	public List<MemberVo> selectMemberInfo(String memberId) {
 		List<MemberVo> memberInfoList = new ArrayList<>();
 
-		
+
 		try {
 			String sql = "SELECT member_id, member_pwd, member_name, member_phone, member_email, member_zipcode, member_address FROM cs_member WHERE member_id = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberId);
-			
+
 			rs = pstmt.executeQuery();
-			
+
 			while(rs.next()) {
 				MemberVo memberVo = new MemberVo();
 				memberVo.setMemberId(rs.getString("member_id"));
@@ -160,14 +160,14 @@ public class MemberDao {
 				memberVo.setMemberEmail(rs.getString("member_email"));
 				memberVo.setMemberZipcode(rs.getString("member_zipcode"));
 				memberVo.setMemberAddress(rs.getString("member_address"));
-				
+
 				memberInfoList.add(memberVo);
-			
+
 			}
-			
-			
+
+
 		} catch(Exception e) {
-			
+
 		} finally {
 			try {
 				conn.close();
@@ -177,6 +177,64 @@ public class MemberDao {
 		}
 		return memberInfoList;
 	}
-	
-	
+
+	public int checkOriginPassword(String memberId, String memberPwd) {
+		int result = 0;
+
+		try {
+			String sql = "SELECT COUNT(*) FROM cs_member WHERE member_id = ? AND member_pwd = ? ";
+
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberId);
+			pstmt.setString(2, memberPwd);
+
+			rs = pstmt.executeQuery();
+
+			while(rs.next()) {
+				result = rs.getInt(1);
+			}
+			System.out.println(result); // 0이면 오류, 1이면 맞음
+
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+
+	public int checkOriginPhone(String memberId, String memberPhone) {
+		int result = 0;
+		
+		try {
+			String sql = "SELECT COUNT(*) FROM cs_member WHERE member_id = ? AND member_phone = ?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberId);
+			pstmt.setString(2, memberPhone);
+
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				result = rs.getInt(1);
+			}
+			System.out.println(result);
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return result;
+	}
+
 }
