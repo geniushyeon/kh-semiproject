@@ -20,7 +20,6 @@
 	}
 	
 	
-	
 	$("#button-edit-phonenumber").click(function() {
 		$("#div-edit-phonenumber").show();
 		$("#input-new-phonenumber").focus();
