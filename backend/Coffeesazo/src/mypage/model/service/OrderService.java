@@ -25,7 +25,7 @@ public class OrderService {
 		
 	}
 
-	public int CheckCartDelete(int[] cpd, String memberid) {
+	public int OrderDelete(int[] cpd, String memberid) {
 		int result = 0;
 		try {
 			Connection conn = new Application().getConn();

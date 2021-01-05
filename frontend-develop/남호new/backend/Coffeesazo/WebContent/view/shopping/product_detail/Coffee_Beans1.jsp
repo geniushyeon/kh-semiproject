@@ -21,21 +21,21 @@
             <div class="menu1">
                 <div class="menu-toplogo">
                 <c:forEach items="${List }" var="Product_detail">
-                    <h1><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">원두</a></h1>
+                    <h1><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">${fkCategoryIndex}</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">#풍부한산미</a>
+                    <a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">${fkHashtagIndex}</a>
                 </div>
                 
                 <div class="menu-productinfo">
                     
 
                     
-                    <img src="./view/img/Morita.png" alt="gold">
+                    <img src="./view/img/${product.productImage}" alt="">
                     <div class="menu-result">
                         <form action="">
                             <div class="result-title">
-                                <h2>클래식 에스프레소 블렌드</h2>
+                                <h2>${product.product_info}</h2>
                             </div>
                             <div class="result-product">
                                 <h3>'모리타'</h3>
@@ -115,7 +115,7 @@
                 <img src="./view/img/Morita.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
-                        <p class="p1">파푸아뉴기니'모리타'</p>
+                        <p class="p1">${product.product_text}</p>
                             <p class="p2">Papua New Guinea 'Morita'</p>
                                 
                             </div>
