@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>  
 <!DOCTYPE html>
 <html lang = "en">
 <html>
@@ -72,7 +73,6 @@
                         <tr>
                             <th>선택</th>
                             <th>주문번호</th>
-                            <th>상품번호</th>
                             <th>상품이미지</th>
                             <th>상품명</th>
                             <th>가격</th>
@@ -83,11 +83,28 @@
 
 
                     <!--------------------- 테이블 각항목 --------------------->
+                    
+                    
+                           <tbody>
+                      <c:forEach items="${pList}" var="order" >
+                    <tr>
+                        <td><input id="checkbox" type="checkbox" name="delete-name" value="${OrderViewList.productIndex }"></td>
+                        <td>${OrderViewList.productIndex }</td>
+                        <td height="0">
+                            <div style="height:100%"><img src="${OrderViewList.productImage }" height="100%"></div>
+                        </td>
+                        <td>${OrderViewList.productName}</td>
+                        <td>${OrderViewList.productPrice }원</td>
+                        <td>${OrderViewList.orderCount }개</td>
+                        <td>${OrderViewList.productPrice * cart.orderCount}원</td>
+                    </tr>
+                    </c:forEach>
+                           </form>
                     <tr>
                         <tr class="my-order" onclick="location.href='Project/kh-semiproject/frontend-develop/지현/order_detail.html' ">
                         <td><input id="checkbox" type="checkbox"></td>
                         <td>20201217</td>
-                        <td>35435</td>
+
                         <td height="0">
                             <img src="..." alt="..." class="img-thumbnail">
                         </td>
@@ -100,7 +117,7 @@
                     <tr>
                         <td><input id="checkbox" type="checkbox"></td>
                         <td>20201217</td>
-                        <td>633456</td>
+ 
                         <td height="0">
                             <img src="..." alt="..." class="img-thumbnail">
                         </td>
@@ -115,7 +132,7 @@
 
                         <td><input id="checkbox" type="checkbox"></td>
                         <td>20201217</td>
-                        <td>633456</td>
+
                         <td height="0">
                             <img src="..." alt="..." class="img-thumbnail">
                         </td>
@@ -129,7 +146,6 @@
                     <tr>
                         <td><input id="checkbox" type="checkbox"></td>
                         <td>20201217</td>
-                        <td>633456</td>
                         <td height="0">
                             <img src="..." alt="..." class="img-thumbnail">
                         </td>
