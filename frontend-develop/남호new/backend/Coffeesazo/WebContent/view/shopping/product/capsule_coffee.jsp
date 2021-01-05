@@ -25,13 +25,14 @@
     <main>
  
        <p><h1 class="sub_title">캡슐커피</h1></p>
+       
         <div class="bean_product_list"> 
             <div class="inner_space">
                  <h3 class="tag_title"> # 룽고</h3>
                  <div class="sub_under_dec"></div><!--해시태그 밑의 바-->
                  <div class="row_space"><!--위치고정 큰 틀-->
                  
-                  <c:forEach items="${capList }" var="product" >
+				 <c:forEach items="${capList}" var="product" begin="0" end="2" >
                      <div class="col_space"> 
                       <div class="item_list">
                            <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Capsule1.jsp">

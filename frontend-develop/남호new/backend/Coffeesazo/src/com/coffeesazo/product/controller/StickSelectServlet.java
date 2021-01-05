@@ -30,6 +30,7 @@ public class StickSelectServlet extends HttpServlet {
 	
 		if(!stickList.isEmpty()) {
 			request.setAttribute("stickList", stickList);
+			String url = "index.jsp?inc=view/shopping/product/";
 			RequestDispatcher view = request.getRequestDispatcher("view/shopping/product/stick_coffee.jsp");
 			view.forward(request, response);
 			System.out.println(stickList);

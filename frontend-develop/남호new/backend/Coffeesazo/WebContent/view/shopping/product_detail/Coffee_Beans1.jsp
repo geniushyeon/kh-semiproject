@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +20,7 @@
         <div id="menu-container">
             <div class="menu1">
                 <div class="menu-toplogo">
+                <c:forEach items="${List }" var="Product_detail">
                     <h1><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">원두</a></h1>
                 </div>
                 <div class="menu-toptag">
@@ -48,7 +50,9 @@
                              
                             </div>
                             <div class="result-button">
-                              
+                              <%
+                              	if(session.getAttribute("id") != null){
+                              %>
                           <!-- Button trigger modal -->
 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     장바구니
@@ -80,7 +84,33 @@
                         
                 </div>
             </div>
-            
+            <% } else { %>
+            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    장바구니
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         로그인을 해주세요
+        </div>
+      </div>
+    </div>
+  </div>
+                                <button type="button" class="btn btn-outline-secondary" onclick= " location.href = 'index.jsp?inc=view/signin/login.jsp'">바로구매</button>
+                            </div>
+
+                        </form>
+                    </div>
+                        
+                </div>
+                <% } %>
             <div class="menu2">
                 <img src="./view/img/Morita.png" alt="">
                 <div class="detail-infomation">
@@ -103,7 +133,7 @@
                 </div>
             </div>
             
-
+	</c:forEach>
             </div>
 
     </main>
