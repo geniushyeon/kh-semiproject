@@ -48,11 +48,11 @@ public class OrderListSelectServlet extends HttpServlet {
 	    }
 
 		System.out.println(allresult);
-		System.out.println(odList.size());
+
 		if(!odList.isEmpty()) {
 			request.setAttribute("odList", odList);
 			request.setAttribute("allresult", allresult);
-			RequestDispatcher view = request.getRequestDispatcher("view/mypage/Mypage_order.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("index.jsp?inc=view/mypage/Mypage_order.jsp");
 			view.forward(request, response);
 			System.out.println(odList);
 		} else {
