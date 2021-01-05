@@ -45,6 +45,7 @@ public class SignupServlet extends HttpServlet {
 		String memberPhone = request.getParameter("memberPhone");
 		String memberZipcode = request.getParameter("memberZipcode");
 		String[] memberAddressArray = request.getParameterValues("memberAddress");
+		
 		String memberAddress = "";
 
 		for(int i=0; i<memberAddressArray.length; i++) {

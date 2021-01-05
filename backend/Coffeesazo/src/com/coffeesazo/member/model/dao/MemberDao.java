@@ -18,6 +18,46 @@ public class MemberDao {
 		conn = new Application().getConn();
 
 	}
+	
+	public List<MemberVo> updateMemberInfo(String memberId) {
+		List<MemberVo> memberInfoList = new ArrayList<>();
+		
+		
+		try {
+			String sql = "UPDATE cs_member "
+					+ "SET member_pwd = ?, member_phone = ?, member_email = ?, member_zipcode = ?, member_address = ? "
+					+ "WHERE member_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberInfoList.get(0).getMemberPwd());
+			pstmt.setString(2, memberInfoList.get(0).getMemberPhone());
+			pstmt.setString(3, memberInfoList.get(0).getMemberEmail());
+			pstmt.setString(4, memberInfoList.get(0).getMemberZipcode());
+			pstmt.setString(5, memberInfoList.get(0).getMemberAddress());
+			pstmt.setString(6, memberId);
+			
+			int affectedRows = pstmt.executeUpdate();
+			
+			if (affectedRows > 0) {
+				System.out.println("회원정보 업데이트 성공.");
+				conn.commit();
+			} else {
+				System.out.println("회원정보 업데이트 실패.");
+				conn.rollback();
+			}
+			
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return memberInfoList;
+		
+	}
 
 	public int signup(MemberVo memberVo) {
 		int affectedRows = 0;
@@ -236,5 +276,7 @@ public class MemberDao {
 
 		return result;
 	}
+	
+	
 
 }

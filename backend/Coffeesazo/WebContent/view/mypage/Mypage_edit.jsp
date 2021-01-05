@@ -78,7 +78,7 @@
         <h1>회원정보수정</h1>
       </div>
 
-
+	<form name="form_mypage_edit" method="POST">
       <div class="form-group" id="input-container">
 
         <p>
@@ -194,7 +194,7 @@
         </div>
         </p>
 
-
+		</form>
       </div>
     </div>
 
