@@ -29,8 +29,8 @@ public class ProductService {
 	
 	//��ƽĿ��//
 	
-	ArrayList<Product> stickList = null;
 	public ArrayList<Product> StickSelete() {
+		ArrayList<Product> stickList = null;
 		try {
 			Connection conn = new Application().getConn();
 			stickList =  new ProductDao().StickSelect(conn);
@@ -46,8 +46,8 @@ public class ProductService {
 
 	//ĸ��Ŀ��//
 	
-	ArrayList<Product> capList = null;
 	public ArrayList<Product> CapsuleSelete() {
+		ArrayList<Product> capList = null;
 		try {
 			Connection conn = new Application().getConn();
 			capList =  new ProductDao().CapsuleSelect(conn);
