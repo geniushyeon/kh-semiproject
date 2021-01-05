@@ -1,6 +1,6 @@
 package cart.controller;
 
-import java.io.IOException;
+import java.io.IOException; 
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -39,10 +39,18 @@ public class CartSelectServlet extends HttpServlet {
 		HttpSession session = request.getSession(); //나 세션을 가지고올래
 		String memberid = ((String)session.getAttribute("id"));
 		//뇌절오는부분 -- 50%이해햇다 아주칭찬해
-		ArrayList<Cart> pList = new CartService().selectCartList(memberid);
+		ArrayList<Cart> pList = new CartService().SelectCartList(memberid);
+		int allresult = 0;
 	    
+		for(Cart plist : pList) {
+	    int price = plist.getProductPrice();
+	    int count = plist.getOrderCount();
+	    allresult += price * count;
+	    }
+		System.out.println(allresult);
 		if(!pList.isEmpty()) {
 			request.setAttribute("pList", pList);
+			request.setAttribute("allresult", allresult);
 			RequestDispatcher view = request.getRequestDispatcher("view/order/shopping_cart.jsp");
 			view.forward(request, response);
 			System.out.println(pList);

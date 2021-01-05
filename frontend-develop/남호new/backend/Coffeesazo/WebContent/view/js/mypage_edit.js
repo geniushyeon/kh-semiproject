@@ -96,6 +96,8 @@
        			}
         	}
         })
+
+		
         console.log(phonenumberExists);
         
         if (phonenumberExists == 0) {
@@ -104,9 +106,46 @@
         
         
     })
-
+$("#input-original-password").focusout(function() {
+		var password = $("#input-original-password").val();
+		var passwordCheck;
+		
+		var passwordEmptyCheck = function() {
+			if (password == "") {
+				$("#original-password-check").html("기존 비밀번호를 입력해주세요. ");
+		        $("#original-password-check").css("display", "inline-block");
+	           	$("#original-password-check").css("color", "red");    	
+			
+			}
+		}
+		
+		$.ajax({
+			type : "POST",
+			url : "./CheckOriginPasswordServlet",
+			async : false,
+			data : {memberPwd : password},
+			success : function(result) {
+				if (result == 1) {
+					$("#original-password-check").css("display", "none");
+					passwordCheck = result;
+				}
+				else if(result == 0) {
+					$("#original-password-check").html("비밀번호가 틀립니다. ");
+			        $("#original-password-check").css("display", "inline-block");
+		           	$("#original-password-check").css("color", "red"); 
+		           	passwordCheck = result;
+				}
+			}
+			
+		})
+		
+		if (passwordCheck == 0) {
+			passwordEmptyCheck();
+		}
+	})
  $("#input-new-password").focusout(function () {
         var password = $("#input-new-password").val();
+		var originalPassword = $("#input-original-password").val();
         var numRegExp = password.search(/[0-9]/g);
         var engRegExp = password.search(/[a-z]/ig);
 		
@@ -132,17 +171,24 @@
             $("#new-password-required").css("display", "inline-block");
             $("#new-password-required").css("color", "red");
             return false;
-        } else {
+		
+        } else if(originalPassword == password){
+			$("#new-password-required").html("기존 비밀번호와 다르게 입력해주세요.");
+            $("#new-password-required").css("display", "inline-block");
+            $("#new-password-required").css("color", "red");
+		} else {
             $("#new-password-required").css("display", "none");
             return true;
         }
     })
 
-    $("#check-input-password").focusout(function () {
+    $("#input-new-password-check").focusout(function () {
         var password = $("#input-new-password").val();
         var checkPassword = $("#input-new-password-check").val();
-
-        if (checkPassword == "") {
+		console.log(password);
+		console.log(checkPassword);
+		
+        if (password != "" && checkPassword == "") {
             // 입력 여부 검사
             $("#new-password-check-required").html("비밀번호 확인은 필수 정보입니다.");
             $("#new-password-check-required").css("display", "inline-block");
@@ -157,8 +203,7 @@
             return false;
 
         } else {
-            console.log("true");
-            $("#new-password-check-requiredrequired").css("display", "none");
+            $("#new-password-check-required").css("display", "none");
             return true;
         }
     })

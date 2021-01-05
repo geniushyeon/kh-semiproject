@@ -21,7 +21,7 @@
  
     <div class="main-body"> <!--전체 div 시작-->
 
-        <form method="post" action="findid" onsubmit= "return login_checks()"> <!--form태그 시작-->
+        <form method="post" action="findid" onsubmit= "return find_id()"> <!--form태그 시작-->
             <p class="main-title">아이디 찾기</p>
             <p>　</p>
             <p><input class="input" type="text" name="name" id="name"
@@ -34,12 +34,6 @@
             <p>　</p>
             <p>
                 <input class="findid-button" type="submit" value="이메일로 인증번호 받기" > 
-                <!--
-                    1. 이름&이메일 DB에 있는 정보일 경우 : 
-                        1) alert : "인증번호가 전송 되었습니다.
-                        2) findId2-next.jsp 로 이동
-                    2. 없을 경우 : alert "입력하신 정보의 회원이 없습니다."
-                --> 
             </p>
        </form> <!--form태그 끝-->
             <p class="title">
@@ -49,7 +43,7 @@
     </div> <!--전체 div 끝-->
     
 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-	<script src="./view/js/signin.js" charset="utf-8"></script>
+	<script src="./view/js/find_id.js" charset="utf-8"></script>
 
 </body>
 </html>

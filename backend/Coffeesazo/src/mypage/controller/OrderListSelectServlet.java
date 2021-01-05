@@ -1,11 +1,17 @@
 package mypage.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import mypage.model.service.OrderService;
+import mypage.model.vo.OrderViewList;
 
 /**
  * Servlet implementation class OrderListSelectServlet
@@ -13,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/OrderListSelect")
 public class OrderListSelectServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+      
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -27,9 +33,38 @@ public class OrderListSelectServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		HttpSession session = request.getSession(); 
+		String memberid = ((String)session.getAttribute("id"));
+		ArrayList<OrderViewList> odList = new OrderService().SelectOrderList(memberid);
+	
+		int allresult = 0;
+
+		for(OrderViewList odlist : odList) {
+	    int price = odlist.getProductPrice();
+	    int count = odlist.getOrderCount();
+	    allresult += price * count;
+	    }
+
+		System.out.println(allresult);
+
+		if(!odList.isEmpty()) {
+			request.setAttribute("odList", odList);
+			request.setAttribute("allresult", allresult);
+			RequestDispatcher view = request.getRequestDispatcher("index.jsp?inc=view/mypage/Mypage_order.jsp");
+			view.forward(request, response);
+			System.out.println(odList);
+		} else {
+			response.sendRedirect("");
+		}
+	
+	
 	}
 
+	
+	
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

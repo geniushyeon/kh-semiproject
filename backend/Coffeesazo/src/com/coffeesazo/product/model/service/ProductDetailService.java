@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.util.ArrayList;
 
 import com.coffeesazo.Application;
-import com.coffeesazo.product.model.dao.Product_datilDao;
+import com.coffeesazo.product.model.dao.ProductDetailDao;
 import com.coffeesazo.product.model.vo.Product;
 
 import common.JDBCTemplate;
@@ -17,7 +17,7 @@ public class ProductDetailService {
 	public ArrayList<Product> CoffeeDetail() {
 		try {
 			Connection conn = new Application().getConn();
-			coffee =  new Product_datilDao().coffee_datil(conn);
+			coffee =  new ProductDetailDao().CoffeeDetail(conn);
 			JDBCTemplate.close(conn);
 		} catch (Exception e) {
 

@@ -19,7 +19,7 @@ import com.coffeesazo.member.model.vo.MemberVo;
  */
 
 @WebServlet("/mypage_edit")
-public class MemberInfoServlet extends HttpServlet {
+public class SelectMemberInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	String url = "index.jsp?inc=view/mypage/";
