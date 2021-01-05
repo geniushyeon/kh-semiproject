@@ -117,6 +117,9 @@ display: inline-block;
 }
 
 
+form {
+	display: inline-block;
+}
 
 nav{
 text-align: center;

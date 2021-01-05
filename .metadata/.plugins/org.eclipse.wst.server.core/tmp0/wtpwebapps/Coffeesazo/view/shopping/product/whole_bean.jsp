@@ -25,94 +25,105 @@
             
      <p><h1 class="sub_title">원두</h1></p><!--상품타이틀-->
                                  
-     <div class="bean_product_list"> <!--풍부한 산미 리스트-->
-         <div class="inner_space">
-         
-      <a name="tag_body"></a> <!-- 메인 '묵직한바디감' 해시태그  -->
-            
-             <h3 class="tag_title">#풍부한산미</h3>
-             <div class="sub_under_dec"></div><!--해시태그 밑의 바-->
-             <div class="row_space"><!--위치고정 큰 틀-->
-			
-			  <c:forEach items="${beanList}" var="product" >
-                <div class="col_space">
-                 <div class="item_list">
-                    <a href="index.jsp?inc=./view/shopping/product_detail/Coffee_Beans1.jsp">
-                        <img src="view/img/${product.productImage}" alt="">
-                        <div class="bean_name"> '${product.productName}'</div> 
-                        <p><div class="product_price">${product.productPrice}원</div></p> 
-                    </a> 
-                    </div>
-                 </div>
-                 
-                 </c:forEach>
-<!-- 
-                 <div class="col_space"> 
-                    <div class="item_list">
-                        <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans2.jsp">
-                            <img src="view/img/El_Laure.png" alt="">
-                            <div class="bean_name"> '엘 라우렐'</div> 
-                            <p><div class="product_price">16,000원</div></p>
-                        </a>
-                    </div>
-                 </div>
-
-                 <div class="col_space"> 
-                    <div class="item_list">
-                        <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans3.jsp">
-                            <img src="view/img/Busanze.png" alt="">
-                            <div class="bean_name"> '부산제'</div>
-                            <p><div class="product_price">14,000원</div></p>
+ 
+    <div class="bean_product_list">  <!--풍부한 산미 리스트-->
+      
+       <a name="tag_latin"="${product.fkHashtagIndex}" var="product" begin="2"></a> 
+       
+        <div class="inner_space">
+        
+        
+            <h3 class="tag_title">#풍부한산미</h3>
+            <div class="sub_under_dec"></div>
+            <div class="row_space">
+   			<c:forEach items="${beanList}" var="product" begin="0" end="2" >
+                <div class="col_space"> 
+                   <div class="item_list">
+                       <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans4.jsp">
+                           <img src="view/img/${product.productImage}" alt="">
+                           <div class="bean_name"> '${product.productName}'</div> 
+                           <p><div class="product_price">${product.productPrice}원</div></p>
                        </a>
-                    </div>
-                 </div>
-            </div>
-        </div>
-    </div>
-    
-                      묵직한바디감 상품 리스트
+                   </div>
+                </div>
+                </c:forEach>
+           </div>
+       </div>
+   </div>
+   
     <div class="bean_product_list"> 
-       <a name="tag_latin"></a> 메인 '중남미원두' 해시태그 
+       <a name="tag_latin"></a> 
         <div class="inner_space">
             <h3 class="tag_title">#묵직한바디감</h3>
             <div class="sub_under_dec"></div>
             <div class="row_space">
-
+   			<c:forEach items="${beanList}" var="product" begin="3" end="5" >
                 <div class="col_space"> 
                    <div class="item_list">
                        <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans4.jsp">
-                           <img src="view/img/KasahunJebo.png" alt="">
-                           <div class="bean_name"> '카사훈 제보'</div> 
-                           <p><div class="product_price">15,000원</div></p>
+                           <img src="view/img/${product.productImage}" alt="">
+                           <div class="bean_name"> '${product.productName}'</div> 
+                           <p><div class="product_price">${product.productPrice}원</div></p>
                        </a>
                    </div>
                 </div>
-
+                </c:forEach>
+           </div>
+       </div>
+   </div>
+   
+    <div class="bean_product_list"> 
+       <a name="tag_latin"></a> 
+        <div class="inner_space">
+            <h3 class="tag_title">#중남미원두</h3>
+            <div class="sub_under_dec"></div>
+            <div class="row_space">
+   			<c:forEach items="${beanList}" var="product" begin="6" end="8" >
                 <div class="col_space"> 
                    <div class="item_list">
-                       <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans5.jsp">
-                           <img src="view/img/ElLaurelHijo.png" alt="">
-                           <div class="bean_name"> '엘 라우렐 이호'</div> 
-                           <p><div class="product_price">27,000원</div></p>
+                       <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans4.jsp">
+                           <img src="view/img/${product.productImage}" alt="">
+                           <div class="bean_name"> '${product.productName}'</div> 
+                           <p><div class="product_price">${product.productPrice}원</div></p>
                        </a>
                    </div>
                 </div>
-
-                 <div class="col_space"> 
+                </c:forEach>
+           </div>
+       </div>
+   </div>
+   
+    <div class="bean_product_list"> 
+       <a name="tag_latin"></a> 
+        <div class="inner_space">
+            <h3 class="tag_title">#아프리카원두</h3>
+            <div class="sub_under_dec"></div>
+            <div class="row_space">
+   			<c:forEach items="${beanList}" var="product" begin="9" end="11" >
+                <div class="col_space"> 
                    <div class="item_list">
-                       <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans6.jsp">
-                           <img src="view/img/Esencia.png" alt="">
-                           <div class="bean_name"> '에센시아 디카페인'</div> 
-                           <p><div class="product_price">16,000원</div></p>
+                       <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Beans4.jsp">
+                           <img src="view/img/${product.productImage}" alt="">
+                           <div class="bean_name"> '${product.productName}'</div> 
+                           <p><div class="product_price">${product.productPrice}원</div></p>
                        </a>
                    </div>
                 </div>
+                </c:forEach>
            </div>
        </div>
    </div>
 
+                
 
-                     중남미원두 상품리스트
+               
+
+                 
+    <!-- 
+                      
+
+
+                    
     <div class="bean_product_list"> 
         <div class="inner_space">
             <h3 class="tag_title">#중남미원두</h3>
@@ -152,9 +163,9 @@
       </div>
     </div>
 
-                아프리카원두 상품리스트
+               
     <div class="bean_product_list"> 
-     <a name="tag_africa"></a> 메인 '아프리카원두' 해시태그 
+     <a name="tag_africa"></a> 
         <div class="inner_space">
             <h3 class="tag_title">#아프리카원두</h3>
             <div class="sub_under_dec"></div>
@@ -188,8 +199,8 @@
                         <p><div class="product_price">12,000원</div></p>
                    </a>
                 </div>
-             </div> -->
-           </div>
+             </div>
+           </div> -->
        </div>
      </div>
    </main>

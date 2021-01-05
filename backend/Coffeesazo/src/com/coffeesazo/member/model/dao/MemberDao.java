@@ -18,6 +18,48 @@ public class MemberDao {
 		conn = new Application().getConn();
 
 	}
+	
+	public int updateMemberInfo(MemberVo memberVo) {
+		int affectedRows = 0;
+		
+		try {
+			String sql = "UPDATE cs_member "
+					+ "SET member_pwd=?, member_phone=?, member_email=?, member_zipcode=?, member_address=? "
+					+ "WHERE member_id=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberVo.getMemberPwd());
+			pstmt.setString(2, memberVo.getMemberPhone());
+			pstmt.setString(3, memberVo.getMemberEmail());
+			pstmt.setString(4, memberVo.getMemberZipcode());
+			pstmt.setString(5, memberVo.getMemberAddress());
+			pstmt.setString(6, memberVo.getMemberId());
+			
+			affectedRows = pstmt.executeUpdate();
+			System.out.println(affectedRows);
+			
+			if(affectedRows < 1) {
+				System.out.println("회원정보수정 실패.");
+				conn.rollback();
+			} else {
+				System.out.println("회원정보수정 성공.");
+				conn.commit();
+			}
+			
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return affectedRows;
+	}
+
 
 	public int signup(MemberVo memberVo) {
 		int affectedRows = 0;
@@ -42,8 +84,9 @@ public class MemberDao {
 				System.out.println("회원가입 실패");
 				conn.rollback();
 			} else {
+				System.out.println("회원가입 성공");
 				conn.commit();
-				return affectedRows;
+				
 			}
 
 
@@ -236,5 +279,7 @@ public class MemberDao {
 
 		return result;
 	}
+	
+	
 
 }

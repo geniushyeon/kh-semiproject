@@ -10,7 +10,7 @@ import common.JDBCTemplate;
 
 public class CartDao {
 
-	public ArrayList<Cart> selectCartList(Connection conn, String memberid) {
+	public ArrayList<Cart> SelectCartList(Connection conn, String memberid) {
 		
 		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
 		ResultSet rs = null;//결과값을 다루는 아이
@@ -46,6 +46,54 @@ public class CartDao {
 		}
 		
 		return pList;
+	}
+
+	public int CheckCartDelete(Connection conn, int[] cpd, String memberid) {
+		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
+		ResultSet rs = null;//결과값을 다루는 아이
+		
+		int result = 0;
+		String params = "";
+		for(int i=0; i<cpd.length; i++) {
+			params += cpd[i];
+			if(i <cpd.length-1) {
+				params += ",";
+			}
+		}
+		System.out.println(params);
+		System.out.println(memberid);
+		String sql = "DELETE FROM cs_cart WHERE fk_member_id = ? AND fk_product_index IN ("+params+")";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberid);
+			result=pstmt.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			JDBCTemplate.close(pstmt);
+			JDBCTemplate.close(rs);
+		}
+		return result;
+	}
+
+	public int CartDeleteAll(Connection conn, String memberid) {
+		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
+		ResultSet rs = null;//결과값을 다루는 아이
+		int result = 0;
+		String sql = "DELETE FROM cs_cart WHERE fk_member_id = ?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberid);
+			result=pstmt.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			JDBCTemplate.close(pstmt);
+			JDBCTemplate.close(rs);
+		}
+		return result;
 	}
 
 }

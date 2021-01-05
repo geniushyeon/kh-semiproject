@@ -14,12 +14,13 @@
   <link rel="stylesheet" href="view/css/addressApi.css" type="text/css">
   <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="view/css/Mypage.css" type="text/css">
-    <link rel="stylesheet" href="view/css/mypage_edit.css" type="text/css">
+  <link rel="stylesheet" href="./view/css/mypage_edit.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 </head>
 <body>
 <%
+
 	List<MemberVo> memberInfoList = (List<MemberVo>)request.getAttribute("memberInfoList");
 	String mainAddress = (String)request.getAttribute("mainAddress");
 	String detailAddress = (String)request.getAttribute("detailAddress");
@@ -27,7 +28,6 @@
 	String memberZipcode = (String)request.getAttribute("memberZipcode");
 %>
  <!--------------------- 메인시작 --------------------->
-  <!--------------------- 메인시작 --------------------->
   <main id="main_container">
     <div class="size-controll">
 
@@ -52,7 +52,6 @@
 
             </a>
         </ul>
-        
         
          <form method="POST" name="form_edit">
                 <ul>
@@ -80,7 +79,7 @@
         <h1>회원정보수정</h1>
       </div>
 
-
+	<form name="form_mypage_edit" method="POST">
       <div class="form-group" id="input-container">
 
         <p>
@@ -95,7 +94,7 @@
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label" id="label-original-pwd">기존 비밀번호 입력</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="input-original-password" name="memberPwd" placeholder="기존 비밀번호">
+            <input type="password" class="form-control" id="input-original-password" required name="originalMemberPwd" placeholder="기존 비밀번호">
           	<span class="warn-info" id="original-password-check"></span>
           </div>
         </div>
@@ -104,32 +103,53 @@
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label">변경할 비밀번호</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="input-new-password" placeholder="영문, 숫자, 특수문자 포함 최소 8자">
+            <input type="password" class="form-control" id="input-new-password" name="newMemberPwd" placeholder="영문, 숫자, 특수문자 포함 최소 8자">
           	<span class="warn-info" id="new-password-required">형식에 맞게 입력해주세요.</span>
           	
           </div>
         </div>
+        
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label">변경할 비밀번호 확인</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control"  id="input-new-password-check" placeholder="비밀번호 확인">
+            <input type="password" class="form-control" id="input-new-password-check" placeholder="비밀번호 확인">
           	<span class="warn-info" id="new-password-check-required">형식에 맞게 입력해주세요.</span>
           </div>
         </div>
 
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label">전화번호</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" value="<%= memberInfoList.get(0).getMemberPhone()%>"id="input-phonenumber" placeholder="전화번호 입력">
-          	<span class="warn-info" id="phonenumber-required">형식에 맞게 입력해주세요.</span>
+          <div class="col-sm-10">	
+            <input type="text" class="form-control" name="originalMemberPhone" id="input-phonenumber" readonly value="<%= memberInfoList.get(0).getMemberPhone()%>" placeholder="전화번호 입력">
+	        <button type="button" class="btn btn-outline-secondary" id="button-edit-phonenumber">변경하기</button>
+	        <button type="button" class="btn btn-outline-secondary" id="button-edit-phonenumber-cancel">취소하기</button>
+          	
+          </div>
+        </div>
+        
+        <div class="row mb-3" id="div-edit-phonenumber">
+          <label for="colFormLabel" class="col-sm-2 col-form-label" id="label-edit-phonenumber">변경할 전화번호</label>
+          <div class="col-sm-10">	
+            <input type="text" class="form-control" name="newMemberPhone" id="input-new-phonenumber" placeholder="전화번호 입력">
+            
+          	<span class="warn-info" id="phonenumber-required"></span>
           </div>
         </div>
 
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label" >이메일</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="input-email" value="<%=memberInfoList.get(0).getMemberEmail()%>" placeholder="이메일 형식에 맞게 입력">
-            <span class="warn-info" id="email-required">형식에 맞게 입력해주세요.</span>
+            <input type="email" class="form-control" name="originalMemberEmail" id="input-email" readonly value="<%=memberInfoList.get(0).getMemberEmail()%>" placeholder="이메일 형식에 맞게 입력">
+	        <button type="button" class="btn btn-outline-secondary" id="button-edit-email">변경하기</button>
+	        <button type="button" class="btn btn-outline-secondary" id="button-edit-email-cancel">취소하기</button>
+            
+          </div>
+        </div>
+        <div class="row mb-3" id="div-edit-email">
+          <label for="colFormLabel" class="col-sm-2 col-form-label" id="label-edit-email">변경할 이메일</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" name="newMemberEmail" id="input-new-email" placeholder="이메일 형식에 맞게 입력">
+            <span class="warn-info" id="email-required"></span>
             </br></br>
           </div>
         </div>
@@ -139,7 +159,7 @@
           <label for="colFormLabel" class="col-sm-2 col-form-label">주소</label>
           <div class="col-sm-10">
 
-            <input type="text" class="form-control" id="sample6_postcode" value="<%=memberZipcode %>"readonly placeholder="우편번호">
+            <input type="text" class="form-control" id="sample6_postcode" name="memberZipcode" value="<%=memberZipcode %>"readonly placeholder="우편번호">
                     <!--------------------- 우편번호 시작 --------------------->
         
           <button type="button" class="btn btn-outline-secondary" id="sample6_postcode_search"
@@ -154,7 +174,7 @@
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="sample6_address" value="<%=mainAddress %>" readonly placeholder="주소">
+            <input type="text" class="form-control" id="sample6_address" name="memberAddress" value="<%=mainAddress %>" readonly placeholder="주소">
           </div>
         </div>
 
@@ -162,16 +182,16 @@
         <div class="row mb-3">
           <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="sample6_detailAddress" value="<%=detailAddress %>" placeholder="상세주소">
-          	<input type="text" class="form-control" id="sample6_extraAddress" value="<%=extraAddress %>" readonly placeholder="참고항목">
+            <input type="text" class="form-control" id="sample6_detailAddress" name="memberAddress" value="<%=detailAddress %>" placeholder="상세주소">
+          	<input type="text" class="form-control" id="sample6_extraAddress" name="memberAddress" value="<%=extraAddress %>" readonly placeholder="참고항목">
           </div>
         </div>
 
 
 
-          <button type="button" class="btn btn-outline-secondary">취소하기</button>
+          
           <!-- 확인창 나오는버튼 -->
-          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" >
             변경하기
           </button>
 
@@ -188,7 +208,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">취소하기</button>
-                <button type="button" class="btn btn-outline-success">변경하기</button>
+                <input type="submit" class="btn btn-outline-success" value="변경하기" id="button-update" onclick="editConfirm()"/>
               </div>
             </div>
           </div>
@@ -196,7 +216,7 @@
         </div>
         </p>
 
-
+		</form>
       </div>
     </div>
 
@@ -206,53 +226,8 @@
 
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="view/js/addressApi.js"></script>
-<script src="view/js/mypage_edit.js"></script>
   <script src="view/js/jquery.min.js"></script>
-<script type="text/javascript">
-	function gotoEdit() {
-		var form = document.form_edit;
-		form.action = "mypage_edit";
-		form.submit();
-	}
-	$("#input-original-password").focusout(function() {
-		var password = $("#input-original-password").val();
-		var passwordCheck;
-		
-		var passwordEmptyCheck = function() {
-			if (password == "") {
-				$("#original-password-check").html("기존 비밀번호를 입력해주세요. ");
-		        $("#original-password-check").css("display", "inline-block");
-	           	$("#original-password-check").css("color", "red");    	
-			
-			}
-		}
-		
-		$.ajax({
-			type : "POST",
-			url : "./CheckOriginPasswordServlet",
-			async : false,
-			data : {memberPwd : password},
-			success : function(result) {
-				if (result == 1) {
-					$("#original-password-check").css("display", "none");
-					passwordCheck = result;
-				}
-				else if(result == 0) {
-					$("#original-password-check").html("비밀번호가 틀립니다. ");
-			        $("#original-password-check").css("display", "inline-block");
-		           	$("#original-password-check").css("color", "red"); 
-		           	passwordCheck = result;
-				}
-			}
-			
-		})
-		
-		if (passwordCheck == 0) {
-			passwordEmptyCheck();
-		}
-	})
-
-</script>
+<script src="view/js/mypage_edit.js"></script>
   <script src="view/js/bootstrap.min.js"></script>
   <script src="view/js/popper.js"></script>
 

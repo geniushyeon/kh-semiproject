@@ -30,12 +30,12 @@ public class WholeSelectServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		ArrayList<Product> beanList = new ProductService().WholeSelete();
 		
-	
 		if(!beanList.isEmpty()) {
 			request.setAttribute("beanList", beanList);
-			RequestDispatcher view = request.getRequestDispatcher("view/shopping/product/whole_bean.jsp");
+			String url = "index.jsp?inc=view/shopping/product/";
+			RequestDispatcher view = request.getRequestDispatcher(url + "whole_bean.jsp");
 			view.forward(request, response);
-			System.out.println(beanList);
+
 		} else {
 			response.sendRedirect("");
 		}

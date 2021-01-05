@@ -23,16 +23,19 @@ html, body {
 	background-color: white;
 	width: 500px;
 }
+
 #sample6_extraAddress, #sample6_detailAddress {
 	display: inline-block;
 	background-color: white;
 	width: 247px;
 }
-#sample6_postcode {
+
+
+#input-phonenumber, #input-email, #sample6_postcode {
 	display: inline-block;
 	background-color: white;
-	width: 250px;
-} 
+	width: 310px;
+}
 
 title, header, footer, h1 {
 	font-family: 'Nanum Myeongjo', serif;
@@ -162,11 +165,6 @@ ul { /* 버튼정렬*/
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
-#inputemail, #inputPhone, #inputPassword3, #inputname {
-	margin-bottom: 20px;
-	width: 490px;
-}
-
 .btn-outline-secondary, .btn-outline-success {
 	margin-left: 20px;
 	margin-bottom: 20px;
@@ -233,22 +231,25 @@ form {
 	display: inline-block;
 }
 
-#sample6_postcode_search {
-	display: inline-block;
-	margin-left: 5px;
-	margin-bottom: 5px;
-	height: 38px;
-}
-
-#input-email, #input-phonenumber, #input-new-password-check, #input-new-password, 
-#input-original-password {
+#input-new-email, #input-new-phonenumber, #input-new-password-check,
+	#input-new-password, #input-original-password {
 	display: inline-block;
 	width: 500px;
 }
 
 #input-container {
 	margin: 0 auto;
-	
 	width: 1000px;
-	
+}
+
+#sample6_postcode_search, #button-edit-phonenumber, #button-edit-email,
+	#button-edit-phonenumber-cancel, #button-edit-email-cancel {
+	display: inline-block;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	height: 38px;
+}
+
+#button-edit-phonenumber-cancel, #button-edit-email-cancel {
+	display: none;
 }

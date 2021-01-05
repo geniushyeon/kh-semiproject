@@ -28,12 +28,13 @@
 
         <div class="stick_product_list"> 
             <div class="inner_space">
+            
                  <h3 class="tag_title">#쉽고간편한</h3>
                  <div class="sub_under_dec"></div><!--해시태그 밑의 바-->
                  <div class="row_space"><!--위치고정 큰 틀-->
                  
-                 
- 				<c:forEach items="${stickList }" var="product" >
+                 <c:forEach items="${stickList}" var="product" begin="0" end="2" >
+ 	
                      <div class="col_space">
                       <div class="item_list">
                         <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Stick1.jsp">
