@@ -19,6 +19,7 @@
 </head>
 <body>
 	<main>
+		<form action="notice" method="post">
 		<div id="container">
 			<div id="contents">
 				<a href="index.jsp?inc=view/notice/notice.jsp"><h1>고객센터</h1></a>
@@ -47,14 +48,13 @@
 							<tr style="background-color: #FFFFFF; color: black;">
 								<td>${noticevo.noticeIndex }</td>
 								<td class="displaynone"></td>
-								<td class="subject"><a
-									href="index.jsp?inc=view/notice/notice_detail.jsp">${noticevo.noticeText }</a></td>
-								<td>${noticevo.fkMemberId }</td>
+								<td class="subject"><a href="index.jsp?inc=view/notice/notice_detail.jsp">${noticevo.noticeTitle }</a></td>
+								<td>관리자</td>
 								<td class="txtLess ">${noticevo.noticeDate }</td>
 							</tr>
 							</c:forEach>
 						</tbody>
-						<tbody class="index-box">
+						<!-- <tbody class="index-box">
 							<tr style="background-color: #FFFFFF; color: black;">
 								<td>5</td>
 								<td class="displaynone"></td>
@@ -98,7 +98,7 @@
 								<td>관리자</td>
 								<td class="txtLess ">2020-12-16</td>
 							</tr>
-						</tbody>
+						</tbody> -->
 					</table>
 				</div>
 					<div class='btns'>
@@ -112,6 +112,7 @@
 				</div>
 			</div>
 		</div>
+		</form>
 	</main>
 	<!-- 부트스트랩 자바스크립트 추가 -->
 	<script src="./js/bootstrap.min.js"></script>

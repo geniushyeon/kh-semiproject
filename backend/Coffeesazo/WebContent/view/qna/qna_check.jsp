@@ -39,8 +39,8 @@
 						</div>
 						<div class="bottom-button">
 							<a href="index.jsp?inc=view/qna/qna.jsp" class="btn-board">목록으로</a> 
-							<a href="index.jsp?inc=view/qna/qna.jsp" class="btn-cancle">삭제하기</a> 
-							<a href="index.jsp?inc=view/qna/qna_modify.jsp" class="btn-modify">수정하기</a>
+							<a href="#" class="btn-cancle" onclick="javascript:cancle()">삭제하기</a> 
+							<a href="#" class="btn-modify" onclick="javascript:modify()">수정하기</a>
 						</div>
 					</form>
 				</div>
@@ -49,5 +49,21 @@
 	</main>
 	<!-- 부트스트랩 자바스크립트 추가 -->
 	<script src="./js/bootstrap.min.js"></script>
+	<script>
+		function cancle() {
+	        var writeCancle = confirm("삭제하시겠습니까?");
+	        if( writeCancle == true ) {
+	            alert("삭제가 완료되었습니다.");
+	            location.href = "index.jsp?inc=view/qna/qna.jsp";
+	        } 
+	    }
+		function modify() {
+	        var writeCancle = confirm("수정하시겠습니까?");
+	        if( writeCancle == true ) {
+	            alert("수정이 완료되었습니다.");
+	            location.href = "index.jsp?inc=view/qna/qna.jsp";
+	        } 
+	    }
+	</script>
 </body>
 </html>
