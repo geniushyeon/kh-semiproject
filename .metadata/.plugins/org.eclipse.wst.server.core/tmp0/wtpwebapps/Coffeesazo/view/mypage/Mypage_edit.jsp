@@ -27,7 +27,6 @@
 	String memberZipcode = (String)request.getAttribute("memberZipcode");
 %>
  <!--------------------- 메인시작 --------------------->
-  <!--------------------- 메인시작 --------------------->
   <main id="main_container">
     <div class="size-controll">
 
@@ -52,7 +51,6 @@
 
             </a>
         </ul>
-        
         
          <form method="POST" name="form_edit">
                 <ul>
@@ -214,43 +212,7 @@
 		form.action = "mypage_edit";
 		form.submit();
 	}
-	$("#input-original-password").focusout(function() {
-		var password = $("#input-original-password").val();
-		var passwordCheck;
-		
-		var passwordEmptyCheck = function() {
-			if (password == "") {
-				$("#original-password-check").html("기존 비밀번호를 입력해주세요. ");
-		        $("#original-password-check").css("display", "inline-block");
-	           	$("#original-password-check").css("color", "red");    	
-			
-			}
-		}
-		
-		$.ajax({
-			type : "POST",
-			url : "./CheckOriginPasswordServlet",
-			async : false,
-			data : {memberPwd : password},
-			success : function(result) {
-				if (result == 1) {
-					$("#original-password-check").css("display", "none");
-					passwordCheck = result;
-				}
-				else if(result == 0) {
-					$("#original-password-check").html("비밀번호가 틀립니다. ");
-			        $("#original-password-check").css("display", "inline-block");
-		           	$("#original-password-check").css("color", "red"); 
-		           	passwordCheck = result;
-				}
-			}
-			
-		})
-		
-		if (passwordCheck == 0) {
-			passwordEmptyCheck();
-		}
-	})
+	
 
 </script>
   <script src="view/js/bootstrap.min.js"></script>

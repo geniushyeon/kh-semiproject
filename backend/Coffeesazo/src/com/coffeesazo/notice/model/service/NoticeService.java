@@ -15,7 +15,7 @@ public class NoticeService {
 
 	ArrayList<NoticeVo> noticeList = null;
 
-	public ArrayList<NoticeVo> selectNoticeList(String memberid) {
+	public ArrayList<NoticeVo> selectNoticeList() {
 		try {
 			Connection conn = new Application().getConn();
 			noticeList =  new NoticeDao().selectNoticeList(conn);
