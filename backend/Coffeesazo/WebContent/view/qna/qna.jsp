@@ -142,7 +142,7 @@
 		console.log(idvalue);
 		
 		if(id != idvalue){
-			alert("접근 권한이 없습니다.");
+			alert("접근 권한이 없습니다....");
 		}
 	}
 	</script>
