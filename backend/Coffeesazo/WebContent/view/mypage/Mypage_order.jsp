@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-        <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>  
+    <%@ page import="java.util.Map"%>
+<%@ page import="java.util.List"%>
+<%@ page import="java.util.ArrayList"%>  
+    <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>  
+
 <!DOCTYPE html>
-<html lang = "en">
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -34,7 +38,7 @@
         
         
                 <ul>
-            <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_order.jsp">
+            <a class="card_small" href="OrderListSelect">
                 <h3 class="softblack">주문내역</h3>
                 <p class="card_text">최근 주문내역을 </br>확인하실 수 있습니다.</p>
 
@@ -42,13 +46,15 @@
         </ul>
         
         
+				<form method="POST" name="form_edit">
                 <ul>
-                    <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_edit.jsp">
+                    <a class="card_small" id="mypage-edit" onclick="gotoEdit()">
                         <h3>회원정보수정</h3>
                         <p class="card_text">나의 정보를 </br>변경하실 수 있습니다.</p>
-    
+
                     </a>
                 </ul>
+      	</form>
       
                 <ul>
                     <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_qna.jsp">
@@ -86,20 +92,21 @@
                     
                     
                            <tbody>
-                      <c:forEach items="${pList}" var="order" >
+                      <c:forEach  items="${odList}" var="OrderViewList" >
                     <tr>
                         <td><input id="checkbox" type="checkbox" name="delete-name" value="${OrderViewList.productIndex }"></td>
                         <td>${OrderViewList.productIndex }</td>
                         <td height="0">
                             <div style="height:100%"><img src="${OrderViewList.productImage }" height="100%"></div>
                         </td>
-                        <td>${OrderViewList.productName}</td>
+                        <td>${OrderViewList.productName}></td>
                         <td>${OrderViewList.productPrice }원</td>
                         <td>${OrderViewList.orderCount }개</td>
                         <td>${OrderViewList.productPrice * cart.orderCount}원</td>
                     </tr>
                     </c:forEach>
-                           </form>
+                         
+                       
                     <tr>
                         <tr class="my-order" onclick="location.href='Project/kh-semiproject/frontend-develop/지현/order_detail.html' ">
                         <td><input id="checkbox" type="checkbox"></td>
@@ -114,48 +121,11 @@
                         <td>14000원</td>
                     </tr>
 
-                    <tr>
-                        <td><input id="checkbox" type="checkbox"></td>
-                        <td>20201217</td>
- 
-                        <td height="0">
-                            <img src="..." alt="..." class="img-thumbnail">
-                        </td>
-                        <td>원두</td>
-                        <td>22000원</td>
-                        <td>2개</td>
-                        <td>44000원</td>
-                    </tr>
 
 
-                
-
-                        <td><input id="checkbox" type="checkbox"></td>
-                        <td>20201217</td>
-
-                        <td height="0">
-                            <img src="..." alt="..." class="img-thumbnail">
-                        </td>
-                        <td>원두</td>
-                        <td>22000원</td>
-                        <td>2개</td>
-                        <td>44000원</td>
-                    </tr>
-
-
-                    <tr>
-                        <td><input id="checkbox" type="checkbox"></td>
-                        <td>20201217</td>
-                        <td height="0">
-                            <img src="..." alt="..." class="img-thumbnail">
-                        </td>
-                        <td>원두</td>
-                        <td>22000원</td>
-                        <td>2개</td>
-                        <td>44000원</td>
-                    </tr>
-
-
+					</tbody>
+				</form>
+				
             </table>
             <!--------------------- 주문취소 버튼 --------------------->
             <div class="csl-button">
@@ -178,10 +148,17 @@
                 </ul>
             </nav>
         </div>
-
+  </form>
 
 
 
     </main>
+    <script>
+	function gotoEdit() {
+		var form = document.form_edit;
+		form.action = "mypage_edit";
+		form.submit();
+	}
+    </script>
 </body>
 </html>

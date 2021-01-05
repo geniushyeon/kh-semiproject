@@ -20,6 +20,7 @@
 </head>
 <body>
 <%
+
 	List<MemberVo> memberInfoList = (List<MemberVo>)request.getAttribute("memberInfoList");
 	String mainAddress = (String)request.getAttribute("mainAddress");
 	String detailAddress = (String)request.getAttribute("detailAddress");

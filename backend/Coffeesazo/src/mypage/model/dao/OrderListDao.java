@@ -13,25 +13,26 @@ public class OrderListDao {
 	public ArrayList<OrderViewList> SelectOrderList(Connection conn, String memberid) {
 		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
 		ResultSet rs = null;//결과값을 다루는 아이
-		ArrayList<OrderViewList> odlist = null;		
+		ArrayList<OrderViewList> odList = null;		
 		//p. 가 어디서나온거?
-		String sql = "SELECT * FROM cs_member c INNER JOIN cs_order o ON c.member_id = o.fk_member_id INNER JOIN cs_order_detail d ON o.order_index =  d.fk_order_index INNER JOIN cs_product p ON d.fk_product_index = p.product_index WHERE c.member_id = ?";
+		String sql = " SELECT * FROM cs_member c INNER JOIN cs_order o ON c.member_id = o.fk_member_id INNER JOIN cs_order_detail d ON o.order_index =  d.fk_order_index INNER JOIN cs_product p ON d.fk_product_index = p.product_index WHERE c.member_id = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberid);
 			rs = pstmt.executeQuery();
-			odlist = new ArrayList<OrderViewList>();
+			odList = new ArrayList<OrderViewList>();
 		
 			while(rs.next()) {
 				OrderViewList orderList = new OrderViewList();
 				orderList.setProductIndex(rs.getInt("product_index"));
 				orderList.setProductName(rs.getString("product_name"));
 				orderList.setProductPrice(rs.getInt("product_price"));
-				orderList.setOrderCount(rs.getInt("order_count"));
-				
+				orderList.setOrderCount(rs.getInt("order_product_count"));
+				orderList.setProductImage(rs.getString("product_image"));
+				orderList.setOrderIndex(rs.getInt("order_index"));
 				//첫번째vo가 꽉참
 				
-				odlist.add(orderList);
+				odList.add(orderList);
 			}
 			
 			
@@ -42,7 +43,7 @@ public class OrderListDao {
 			JDBCTemplate.close(rs);
 		}
 		//
-		return odlist;
+		return odList;
 	}
 
 	

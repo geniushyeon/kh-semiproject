@@ -8,7 +8,7 @@ import mypage.model.vo.OrderViewList;
 import common.JDBCTemplate;
 
 public class OrderService {
-	ArrayList<OrderViewList> pList = null;
+	ArrayList<OrderViewList> odList = null;
     int result = 0;
 	public ArrayList<OrderViewList> SelectOrderList(String memberid) {
 		
@@ -16,12 +16,12 @@ public class OrderService {
 		try {
 			
 			Connection conn = new Application().getConn();//데이터베이스 창고 열쇠를 만듬
-		    pList = new OrderListDao().SelectOrderList(conn, memberid);
+			odList = new OrderListDao().SelectOrderList(conn, memberid);
 			JDBCTemplate.close(conn);
 			} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return pList;
+		return odList;
 		
 	}
 

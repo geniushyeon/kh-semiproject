@@ -1,14 +1,21 @@
 package mypage.model.vo;
 import java.sql.Connection;
 import java.util.ArrayList;
-import java.util.Date;
 public class OrderViewList {
 	private int productIndex;
 	private int orderCount;
 	private String productImage;
 	private String productName;
 	private int productPrice;
+	private int orderIndex;
 	
+	
+	public int getOrderIndex() {
+		return orderIndex;
+	}
+	public void setOrderIndex(int orderIndex) {
+		this.orderIndex = orderIndex;
+	}
 	public int getProductIndex() {
 		return productIndex;
 	}
