@@ -29,10 +29,6 @@
         <p>
             <input class="input" type="text" name="auth_number" id="auth_number"
                placeholder="인증번호를 입력해 주세요"> <!--인증번호 입력 인풋-->
-                <!--
-                    1. 인증번호 일치 시 : success 로 이동
-                    2. 불일치 시 : alert "인증번호가 일치하지 않습니다."
-                -->
         </p>
         <p>　</p>
         <p>

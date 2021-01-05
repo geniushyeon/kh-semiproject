@@ -35,7 +35,6 @@
             <p>　</p>
             <p>
                 <input class="findpassword-button" type="submit" value="이메일로 인증번호 받기">
-                <!-- 일치 하지 않을 경우 alert '입력하신 정보로 일치하는 회원이 없습니다.' -->
             </p>
             
             <p class="title">

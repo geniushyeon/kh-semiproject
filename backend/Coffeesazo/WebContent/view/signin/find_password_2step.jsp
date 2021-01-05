@@ -31,7 +31,6 @@
             <p>　</p>
             <p>
                 <input class="findid-button" type="submit" value="인증번호 확인">
-                <!-- 일치 하지 않을 경우 alert '인증번호가 일치하지 않습니다.'  -->
             </p>
         </form> <!-- form태그 끝 -->
     </div> <!-- 전체 div 끝 -->

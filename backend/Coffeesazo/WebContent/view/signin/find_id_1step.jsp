@@ -34,12 +34,6 @@
             <p>　</p>
             <p>
                 <input class="findid-button" type="submit" value="이메일로 인증번호 받기" > 
-                <!--
-                    1. 이름&이메일 DB에 있는 정보일 경우 : 
-                        1) alert : "인증번호가 전송 되었습니다.
-                        2) findId2-next.jsp 로 이동
-                    2. 없을 경우 : alert "입력하신 정보의 회원이 없습니다."
-                --> 
             </p>
        </form> <!--form태그 끝-->
             <p class="title">
