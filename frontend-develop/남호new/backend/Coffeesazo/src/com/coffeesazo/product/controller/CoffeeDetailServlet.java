@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.coffeesazo.product.model.service.Product_datilService;
+import com.coffeesazo.product.model.service.ProductDetailService;
 import com.coffeesazo.product.model.vo.Product;
 
 
-@WebServlet("/coffee_datil")
-public class coffee_datilServlet extends HttpServlet {
+@WebServlet("/CoffeeDetail")
+public class CoffeeDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
         
 
-    public coffee_datilServlet() {
+    public CoffeeDetailServlet() {
         super();
 
     }
@@ -28,7 +28,7 @@ public class coffee_datilServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
-		ArrayList<Product> List = new Product_datilService().coffee_datil();
+		ArrayList<Product> List = new ProductDetailService().CoffeeDetail();
 		
 		
 		if(!List.isEmpty()) {

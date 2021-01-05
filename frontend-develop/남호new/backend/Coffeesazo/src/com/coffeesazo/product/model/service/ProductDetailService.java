@@ -10,11 +10,11 @@ import com.coffeesazo.product.model.vo.Product;
 import common.JDBCTemplate;
 
 
-public class Product_datilService {
+public class ProductDetailService {
 	
 	
 	ArrayList<Product> coffee = null;
-	public ArrayList<Product> coffee_datil() {
+	public ArrayList<Product> CoffeeDetail() {
 		try {
 			Connection conn = new Application().getConn();
 			coffee =  new Product_datilDao().coffee_datil(conn);

@@ -9,9 +9,9 @@ import com.coffeesazo.product.model.vo.Product;
 
 import common.JDBCTemplate;
 
-public class Product_datilDao {
+public class ProductDetailDao {
 
-	public ArrayList<Product> coffee_datil(Connection conn) {
+	public ArrayList<Product> CoffeeDetail(Connection conn) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<Product> coffeeList = null;
