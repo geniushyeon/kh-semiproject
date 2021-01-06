@@ -30,6 +30,7 @@ public class MyQnaListServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		doPost(request, response); 
 	}
 
@@ -39,7 +40,7 @@ public class MyQnaListServlet extends HttpServlet {
 		HttpSession session = request.getSession(); 
 		String memberid = ((String)session.getAttribute("id"));
 		ArrayList<MyQnaList> qnaList = new MyQnaService().SelectQnaList(memberid);
-		
+
 		System.out.println(qnaList.size());
 
 			request.setAttribute("qnaList", qnaList);

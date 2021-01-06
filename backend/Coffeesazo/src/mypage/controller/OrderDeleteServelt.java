@@ -28,24 +28,9 @@ public class OrderDeleteServelt extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("utf-8");
-		HttpSession session = request.getSession();
-		String memberid = ((String)session.getAttribute("id"));
-		String[] checkproduct = request.getParameterValues("delete-name");
-		int[] cpd = new int[checkproduct.length];
-		for(int i=0; i<cpd.length ; i++) {
-			cpd[i] = Integer.parseInt(checkproduct[i]);
-		}
-			int result = new OrderService().OrderDelete(cpd,memberid);
-			System.out.println("선택삭제 값:"+result);
-			if(result != 0) {
-				RequestDispatcher view = request.getRequestDispatcher("view/order/shopping_cart.jsp");
-				view.forward(request, response);
-			}else {
-				response.sendRedirect("");
-			}
+
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			doGet(request, response);
 
 	}
 
@@ -54,7 +39,24 @@ public class OrderDeleteServelt extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+	
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		HttpSession session = request.getSession();
+		String memberid = ((String)session.getAttribute("id"));
+		String[] checkorder = request.getParameterValues("delete-name");
+		int[] cod = new int[checkorder.length];
+		for(int i=0; i<cod.length ; i++) {
+			cod[i] = Integer.parseInt(checkorder[i]);
+		}
+			int result = new OrderService().OrderDelete(cod,memberid);
+			System.out.println("선택삭제 값:"+result);
+			if(result != 0) {
+				RequestDispatcher view = request.getRequestDispatcher("view/order/Mypage_order.jsp");
+				view.forward(request, response);
+			}else {
+				response.sendRedirect("");
+			}
 	}
 
 }

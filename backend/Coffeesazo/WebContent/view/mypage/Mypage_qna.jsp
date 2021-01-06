@@ -89,7 +89,8 @@
                     <tr>
                         <td>${MyQnaList.qnaIndex }</td>
                         <td>${MyQnaList.qnaCheck }</td>
-                        <td>${MyQnaList.qnaTitle }</td>
+                        <td>
+                        <a href="/view/qna/qna_check?no=${MyQnaList.qnaIndex}"></a>${MyQnaList.qnaTitle }</td>
                         <td>${MyQnaList.userId }</td>
                         <td>${MyQnaList.writeDate }</td>
                     </tr>
