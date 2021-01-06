@@ -93,7 +93,7 @@
                                 <p>농장주 : La Paz</p> 
                                 <p>재배 고도 : 1,560M</p>
                                 <p>품종 : Catuai,IH-90</p>
-                                <p>가공방식 : WASHED PROCESS</p>
+                                <p>가공방식 : 워시드</p>
 
                             </div>
 

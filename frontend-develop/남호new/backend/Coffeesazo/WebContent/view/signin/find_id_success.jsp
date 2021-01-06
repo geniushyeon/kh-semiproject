@@ -25,16 +25,14 @@
                 <p class="main-title">아이디 찾기</p>
                 <p>　</p>
             
-                <p class="sub-title">회원님의 아이디는<br><%=request.getAttribute("result") %> 입니다.</p>
+                <p class="sub-title">회원님의 아이디는<br><%=request.getAttribute("result") %><br> 입니다.</p>
                 <% 
                 session.invalidate();
                 %>
-                <!--span태그 사이에 디비에서 가져온 아이디 보일 수 있게 -->
                 <p>　</p>
                 <p>
                     <input class="findid-button" type="button"  value="로그인 하러 가기"
                     onclick="location.href='index.jsp?inc=view/signin/login.jsp'">
-                </p> <!--로그인 (login2) 페이지로 이동-->
                 <p class="title">
                 	<a href="index.jsp?inc=view/signin/find_password_1step.jsp">비밀번호를 잊으셨나요?</a>
                 </p>

@@ -1,6 +1,7 @@
-`	<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>  	
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,17 +44,21 @@
 								<th scope="col" class>작성일</th>
 							</tr>
 						</thead>
+						
 						<tbody class="index-box">
+							<c:forEach items="${qnaList }" var="qnavo">
 							<tr style="background-color: #FFFFFF; color: black;">
-								<td>6</td>
+								<td>${qnavo.qnaIndex }</td>
 								<td class="displaynone"></td>
 								<td class="subject"><a
-									href="index.jsp?inc=view/qna/qna_check.jsp">문의</a></td>
-								<td>제윤지</td>
-								<td class="txtLess ">2020-12-16</td>
+									href="#" onclick="javascript:registration_button()">${qnavo.qnaTitle }</a></td>
+								<td><input type="text" id="test" value="${qnavo.fkMemberId }"/>${qnavo.fkMemberId }</td>
+								<td class="txtLess ">${qnavo.qnaDate }</td>
 							</tr>
+							</c:forEach>
 						</tbody>
-						<tbody class="index-box">
+						
+			 			<!-- <tbody class="index-box">
 							<tr style="background-color: #FFFFFF; color: black;">
 								<td>5</td>
 								<td class="displaynone"></td>
@@ -97,9 +102,9 @@
 								<td>제윤지</td>
 								<td class="txtLess ">2020-12-16</td>
 							</tr>
-						</tbody>
-					</table>
-				</div>
+						</tbody> -->
+					</table> 
+				</div> 
 				<div class='btns'>
 					<input type='button' value='Prev' />
 
@@ -126,6 +131,18 @@
 			location.href = "index.jsp?inc=view/signin/login.jsp";
 		} else {
 			location.href = "index.jsp?inc=view/qna/qna_write.jsp";
+		}
+	}
+	
+	function registration_button() {
+		var id = '<%=(String)session.getAttribute("id")%>';
+		var idvalue = document.getElementById("test").value;
+		
+		console.log(id);
+		console.log(idvalue);
+		
+		if(id != idvalue){
+			alert("접근 권한이 없습니다....");
 		}
 	}
 	</script>

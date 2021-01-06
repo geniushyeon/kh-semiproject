@@ -15,7 +15,7 @@ public class MyQnaListDao {
 		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
 		ResultSet rs = null;//결과값을 다루는 아이
 		ArrayList<MyQnaList> qnaList = null;
-		String sql ="SELECT * FROM cs_member c INNER JOIN cs_qna q ON c.member_id = q.fk_member_id";
+		String sql ="SELECT * FROM cs_member c INNER JOIN cs_qna q ON c.member_id = q.fk_member_id  WHERE c.member_id = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberid);
@@ -34,6 +34,7 @@ public class MyQnaListDao {
 			
 			
 		} catch (Exception e) {
+			e.printStackTrace();
 			// TODO: handle exception
 		}finally {
 			JDBCTemplate.close(pstmt);

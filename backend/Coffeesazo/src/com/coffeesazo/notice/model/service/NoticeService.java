@@ -28,18 +28,18 @@ public class NoticeService {
 	}
 
 
-	public ArrayList<NoticeVo> selectNoticeDetailList(int noticeIndex) {
-		ArrayList<NoticeVo> noticeDetailList = null;
+	public NoticeVo selectNoticeDetailList(int noticeIndex) {
+		NoticeVo noticevo = null;
 
 		try {
 			Connection conn = new Application().getConn();
-			noticeDetailList =  new NoticeDao().selectNoticeDetailList(conn,noticeIndex);
+			noticevo =  new NoticeDao().selectNoticeDetailList(conn,noticeIndex);
 			JDBCTemplate.close(conn);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 
-		return noticeDetailList;
+		return noticevo;
 	}
 }
 

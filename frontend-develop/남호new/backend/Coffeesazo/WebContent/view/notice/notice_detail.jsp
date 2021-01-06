@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>	
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,12 +31,13 @@
 					</div>
 				</div>
 				<div class="base-table">
+				<c:forEach items="${noticeDetailList}" var="noticevo" > 
 					<table border="1" summary>
 						<caption>게시판 목록</caption>
-						<tbody>
+						<tbody>					
 							<tr>
 								<th scope="row">제목</th>
-								<td>크리스마스 EVENT</td>
+								<td>${noticevo.noticeTitle }</td>
 							</tr>
 							<tr>
 								<th scope="row">작성자</th>
@@ -42,11 +45,137 @@
 							</tr>
 							<tr>
 								<th scope="row">작성일</th>
-								<td>2020-12-16</td>
+								<td>${noticevo.noticeDate }</td>
 							</tr>
+					</table>
+					</c:forEach> 
+				</div>
+					<%-- <div class="base-table">
+					<table border="1" summary>
+						<caption>게시판 목록</caption>
+						<tbody>
+						<c:forEach items="${noticeDetailList}" var="noticevo" begin="1" end="1">
+							<tr>
+								<th scope="row">제목</th>
+								<td>${noticevo.noticeTitle }</td>
+							</tr>
+							<tr>
+								<th scope="row">작성자</th>
+								<td>관리자</td>
+							</tr>
+							<tr>
+								<th scope="row">작성일</th>
+								<td>${noticevo.noticeDate }</td>
+							</tr>
+						</c:forEach>	
 						</tbody>
 					</table>
 				</div>
+					<div class="base-table">
+					<table border="1" summary>
+						<caption>게시판 목록</caption>
+						<tbody>
+						<c:forEach items="${noticeDetailList}" var="noticevo" begin="2" end="2">
+							<tr>
+								<th scope="row">제목</th>
+								<td>${noticevo.noticeTitle }</td>
+							</tr>
+							<tr>
+								<th scope="row">작성자</th>
+								<td>관리자</td>
+							</tr>
+							<tr>
+								<th scope="row">작성일</th>
+								<td>${noticevo.noticeDate }</td>
+							</tr>
+						</c:forEach>	
+						</tbody>
+					</table>
+				</div>
+					<div class="base-table">
+					<table border="1" summary>
+						<caption>게시판 목록</caption>
+						<tbody>
+						<c:forEach items="${noticeDetailList}" var="noticevo" begin="3" end="3">
+							<tr>
+								<th scope="row">제목</th>
+								<td>${noticevo.noticeTitle }</td>
+							</tr>
+							<tr>
+								<th scope="row">작성자</th>
+								<td>관리자</td>
+							</tr>
+							<tr>
+								<th scope="row">작성일</th>
+								<td>${noticevo.noticeDate }</td>
+							</tr>
+						</c:forEach>	
+						</tbody>
+					</table>
+				</div>
+					<div class="base-table">
+					<table border="1" summary>
+						<caption>게시판 목록</caption>
+						<tbody>
+						<c:forEach items="${noticeDetailList}" var="noticevo" begin="4" end="4">
+							<tr>
+								<th scope="row">제목</th>
+								<td>${noticevo.noticeTitle }</td>
+							</tr>
+							<tr>
+								<th scope="row">작성자</th>
+								<td>관리자</td>
+							</tr>
+							<tr>
+								<th scope="row">작성일</th>
+								<td>${noticevo.noticeDate }</td>
+							</tr>
+						</c:forEach>	
+						</tbody>
+					</table>
+				</div>
+					<div class="base-table">
+					<table border="1" summary>
+						<caption>게시판 목록</caption>
+						<tbody>
+						<c:forEach items="${noticeDetailList}" var="noticevo" begin="5" end="5">
+							<tr>
+								<th scope="row">제목</th>
+								<td>${noticevo.noticeTitle }</td>
+							</tr>
+							<tr>
+								<th scope="row">작성자</th>
+								<td>관리자</td>
+							</tr>
+							<tr>
+								<th scope="row">작성일</th>
+								<td>${noticevo.noticeDate }</td>
+							</tr>
+						</c:forEach>	
+						</tbody>
+					</table>
+				</div>
+					<div class="base-table">
+					<table border="1" summary>
+						<caption>게시판 목록</caption>
+						<tbody>
+						<c:forEach items="${noticeDetailList}" var="noticevo" begin="6" end="6">
+							<tr>
+								<th scope="row">제목</th>
+								<td>${noticevo.noticeTitle }</td>
+							</tr>
+							<tr>
+								<th scope="row">작성자</th>
+								<td>관리자</td>
+							</tr>
+							<tr>
+								<th scope="row">작성일</th>
+								<td>${noticevo.noticeDate }</td>
+							</tr>
+						</c:forEach>	
+						</tbody>
+					</table>
+				</div> --%>
 				<tr class="view">
 					<div class="detail">
 						<div class="view-article">
@@ -59,10 +188,10 @@
 				</tr>
 				<div class="bottom-table">
 					<ul>
-						<li class="prev"><strong>이전글</strong> <a href="#">공지사항
-								어쩌꼬 저쩌꼬</a></li>
-						<li class="next"><strong>다음글</strong> <a href="#">공지사항
-								어쩌꼬 저쩌꼬</a></li>
+						<li class="prev"><strong>이전글</strong> 
+						<a href="#">공지사항 어쩌꼬 저쩌꼬</a></li>
+						<li class="next"><strong>다음글</strong> 
+						<a href="#">공지사항 어쩌꼬 저쩌꼬</a></li>
 					</ul>
 				</div>
 				<div class="list-button">

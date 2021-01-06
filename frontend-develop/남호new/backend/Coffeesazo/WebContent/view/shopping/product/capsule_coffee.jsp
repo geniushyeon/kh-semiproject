@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>  
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> <!-- jstl 숫자,금액,날짜 format -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,32 +20,43 @@
 <body>
 
 
-
-    <!-- 상품페이지 메인 -->
+			<!-- 상품 페이지 메인 -->
+  
 
     <main>
- 
+  		
+  		
        <p><h1 class="sub_title">캡슐커피</h1></p>
        
         <div class="bean_product_list"> 
             <div class="inner_space">
                  <h3 class="tag_title"> # 룽고</h3>
-                 <div class="sub_under_dec"></div><!--해시태그 밑의 바-->
-                 <div class="row_space"><!--위치고정 큰 틀-->
+                 <div class="sub_under_dec"></div> <!--  해시태그 밑의 바 -->
+                 <div class="row_space">   <!-- 위치고정 큰틀 -->
                  
 				 <c:forEach items="${capList}" var="product" begin="0" end="2" >
                      <div class="col_space"> 
                       <div class="item_list">
-                           <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Capsule1.jsp">
-                             <img src="view/img/${product.productImage}" alt="">
-                             <div class="capsule_name">'${product.productName}'</div> 
-                            <p><div class="product_price">${product.productPrice}원</div></p>
-                           </a>
+                          <a href="CoffeeDetail?List=${product.productName}">
+                            <img src="view/img/${product.productImage}" alt="">
+                            <div class="capsule_name">'${product.productName}'</div> 
+                            <p><div class="product_price"><fmt:formatNumber 
+	                          		value="${product.productPrice}" 
+	                          		pattern="###,###,###원"/></div></p>
+                          </a>
                       </div>
                      </div>
 				  </c:forEach>
- 				
- 				<!--  -->  
+				  
+				  
+		      </div>
+              </div>
+            </div>   
+   	 </main>
+				  
+ </body>
+</html>	
+
 <%--                      <div class="col_space"> 
                       <div class="item_list">
                         <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Capsule2.jsp">
@@ -65,11 +77,7 @@
                       </div>
                      </div>
  		 --%>
-                 </div>
-            </div>
-        </div>   
-    </main>
-
+ 
 
 
 <%--
@@ -81,5 +89,3 @@
     <script src="./js/popper.min.js"></script>
      --%>
     
-</body>
-</html>

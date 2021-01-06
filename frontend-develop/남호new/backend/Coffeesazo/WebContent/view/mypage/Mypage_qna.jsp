@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %> 
 <!DOCTYPE html>
 <html lang = "en">
 <html>
@@ -30,24 +31,27 @@
             <!--------------전체 버튼묶음-------------->
             <div class="button">
                 <ul>
-                    <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_order.jsp">
+                    <a class="card_small" href="OrderListSelect">
                         <h3 class="softblack">주문내역</h3>
                         <p class="card_text">최근 주문내역을 </br>확인하실 수 있습니다.</p>
                  
                     </a>
                 </ul>
       
+      
+   
+      
+					<form action="mypage_edit" method="POST" name="form_edit">
                 <ul>
-                    <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_edit.jsp">
+                    <a class="card_small" id="mypage-edit" onclick="gotoEdit()">
                         <h3>회원정보수정</h3>
                         <p class="card_text">나의 정보를 </br>변경하실 수 있습니다.</p>
 
                     </a>
                 </ul>
-      
 
         <ul>
-            <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_qna.jsp">
+            <a class="card_small" href="MyQnaList">
                 <h3 class="softblack">나의문의</h3>
                 <p class="card_text">나의1:1문의를 </br>확인하실 수 있습니다.</p>
 
@@ -68,8 +72,6 @@
                     <thead>
                         <tr>
                             <th>번호</th>
-                            <th>답변상태</th>
-                            <th>분류</th>
                             <th>제목</th>
                             <th>작성자</th>
                             <th>작성일</th>
@@ -80,30 +82,22 @@
 
 
                     <!--------------------- 글 시작 --------------------->
-                    <tr class="my-q" onclick="location.href='index.html' ">
-   
-                        
-                        
-                        <td>2</td>
-                        <td>대기</td>
-                        <td>상품질문</td>
-                        <td>커피색이 갈색이에요...</td>
-                        <td>크쿠루삥뽕</td>
-                        <td>2020-12-17</td>
-
-                    </tr>
-
-
+                  
+                                        <c:forEach  items="${qnaList}" var="MyQnaList" >
                     <tr>
-                        <td>1</td>
-                        <td>답변완료</td>
-                        <td>배송질문</td>
-                        <td>로켓배송인가요?</td>
-                        <td>루밍뽕</td>
-                        <td>2020-12-16</td>
-
-
+                       
+                        <td>${OrderViewList.qnaIndex }</td>
+                        <td>${MyQnaList.productName}</td>
+                        <td>${MyQnaList.qnaTitle }</td>
+                        <td>${MyQnaList.userId }</td>
+                        <td>${MyQnaList.writeDate }</td>
                     </tr>
+                    </c:forEach>
+                  
+                  
+                  
+                  
+                  
 
 
             </table>
@@ -129,5 +123,14 @@
 
             </div>
     </main>
+    
+        <script>
+	function gotoEdit() {
+		var form = document.form_edit;
+		form.action = "mypage_edit";
+		form.submit();
+	}
+    </script>
+    
 </body>
 </html>
