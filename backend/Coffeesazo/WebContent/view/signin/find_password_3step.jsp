@@ -29,7 +29,7 @@
         
         <p>
             <input class="input" type="password" name="password" id="pwd"
-            placeholder="비밀번호를 입력해 주세요"> <!--비번 입력 인풋-->
+            placeholder="비밀번호 입력(영문, 숫자, 특수문자 조합 최소8자)"> <!--비번 입력 인풋-->
         </p>
         
         <p>
