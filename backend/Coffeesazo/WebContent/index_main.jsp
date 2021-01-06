@@ -30,14 +30,14 @@
                 <h2>키워드로 상품을 찾아보세요!</h2>
             </div>
             <div class="hashtag-box">
-                <div class="tag"><a href='index.jsp?inc=view/shopping/product/whole_bean.jsp'>#풍부한산미</a></div>
-                <div class="tag"><a href='index.jsp?inc=view/shopping/product/whole_bean.jsp#tag_body'>#묵직한바디감</a></div>
-                <div class="tag"><a href='index.jsp?inc=view/shopping/product/whole_bean.jsp#tag_latin'>#중남미원두</a></div>
-                <div class="tag"><a href='index.jsp?inc=view/shopping/product/whole_bean.jsp#tag_africa'>#아프리카원두</a></div>
+                <div class="tag"><a href='wholebean'>#풍부한산미</a></div>
+                <div class="tag"><a href='wholebean#tag_body'>#묵직한바디감</a></div>
+                <div class="tag"><a href='wholebean#tag_latin'>#중남미원두</a></div>
+                <div class="tag"><a href='wholebean#tag_africa'>#아프리카원두</a></div>
             </div>
             <div class="hashtag-box">
-                <div class="tag"><a href='index.jsp?inc=view/shopping/product/stick_coffee.jsp'>#쉽고간편한</a></div>
-                <div class="tag"><a href='index.jsp?inc=view/shopping/product/capsule_coffee.jsp'>#룽고</a></div>
+                <div class="tag"><a href='stickcoffee'>#쉽고간편한</a></div>
+                <div class="tag"><a href='capsulecoffee'>#룽고</a></div>
             </div>
         </div>
     
