@@ -12,9 +12,9 @@ import common.JDBCTemplate;
 
 public class ProductService {
 	
-	//¿øµÎ //
-	ArrayList<Product> beanList = null;
+	//WholeBean //
 	public ArrayList<Product> WholeSelete() {
+		ArrayList<Product> beanList = null;
 		try {
 			Connection conn = new Application().getConn();
 			beanList =  new ProductDao().WholeSelect(conn);
@@ -27,10 +27,10 @@ public class ProductService {
 	}
 	
 	
-	//½ºÆ½Ä¿ÇÇ//
+	//StickCoffee//
 	
-	ArrayList<Product> stickList = null;
 	public ArrayList<Product> StickSelete() {
+		ArrayList<Product> stickList = null;
 		try {
 			Connection conn = new Application().getConn();
 			stickList =  new ProductDao().StickSelect(conn);
@@ -44,10 +44,10 @@ public class ProductService {
 
 	
 
-	//Ä¸½¶Ä¿ÇÇ//
+	//CapsuleCoffee//
 	
-	ArrayList<Product> capList = null;
 	public ArrayList<Product> CapsuleSelete() {
+		ArrayList<Product> capList = null;
 		try {
 			Connection conn = new Application().getConn();
 			capList =  new ProductDao().CapsuleSelect(conn);

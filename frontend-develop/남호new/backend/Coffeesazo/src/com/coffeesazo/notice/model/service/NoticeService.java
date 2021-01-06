@@ -13,9 +13,9 @@ import common.JDBCTemplate;
 
 public class NoticeService {
 
-	ArrayList<NoticeVo> noticeList = null;
+	public ArrayList<NoticeVo> selectNoticeList() {
+		ArrayList<NoticeVo> noticeList = null;
 
-	public ArrayList<NoticeVo> selectNoticeList(String memberid) {
 		try {
 			Connection conn = new Application().getConn();
 			noticeList =  new NoticeDao().selectNoticeList(conn);
@@ -25,6 +25,21 @@ public class NoticeService {
 		}
 
 		return noticeList;
+	}
+
+
+	public ArrayList<NoticeVo> selectNoticeDetailList(int noticeIndex) {
+		ArrayList<NoticeVo> noticeDetailList = null;
+
+		try {
+			Connection conn = new Application().getConn();
+			noticeDetailList =  new NoticeDao().selectNoticeDetailList(conn,noticeIndex);
+			JDBCTemplate.close(conn);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return noticeDetailList;
 	}
 }
 
