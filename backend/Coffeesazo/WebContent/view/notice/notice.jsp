@@ -25,8 +25,8 @@
 				<a href="index.jsp?inc=view/notice/notice.jsp"><h1>고객센터</h1></a>
 				<div class="title-area">
 					<div class="boardnavi">
-						<a href="index.jsp?inc=view/notice/notice.jsp" class="navi01"> <strong>공지사항</strong>
-						</a> <a href="index.jsp?inc=view/qna/qna.jsp" class="navi02"> <span>1:1
+						<a href="notice" class="navi01"> <strong>공지사항</strong>
+						</a> <a href="qna" class="navi02"> <span>1:1
 								문의</span>
 						</a>
 					</div>
@@ -47,7 +47,7 @@
 						<tbody class="index-box">
 							<c:forEach items="${noticeList}" var="noticevo">
 							<tr style="background-color: #FFFFFF; color: black;">
-							<input type="text" name="noticeIndex" value="${noticevo.noticeIndex }"/>
+							<input type="hidden" name="noticeIndex" value="${noticevo.noticeIndex }"/>
 								<td>${noticevo.noticeIndex }</td>
 								
 								<td class="displaynone"></td>
