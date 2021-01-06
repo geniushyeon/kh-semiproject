@@ -1,6 +1,7 @@
 package mypage.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -56,7 +57,11 @@ public class OrderListSelectServlet extends HttpServlet {
 			view.forward(request, response);
 			System.out.println(odList);
 		} else {
-			response.sendRedirect("");
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('주문정보가없습니다'); location.href='mypage_edit';</script>");
+
+	
 		}
 	
 	
