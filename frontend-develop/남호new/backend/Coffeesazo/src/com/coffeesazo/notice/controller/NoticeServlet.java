@@ -14,9 +14,6 @@ import javax.servlet.http.HttpSession;
 import com.coffeesazo.notice.model.service.NoticeService;
 import com.coffeesazo.notice.model.vo.NoticeVo;
 
-/**
- * Servlet implementation class NoticeServlet
- */
 @WebServlet("/notice")
 public class NoticeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -28,12 +25,12 @@ public class NoticeServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
+
+		HttpSession session = request.getSession(); 
+		// String memberid = ((String)session.getAttribute("id"));
 		
-		HttpSession session = request.getSession(); //나 세션을 가지고올래
-		String memberid = ((String)session.getAttribute("id"));
-		
-		ArrayList<NoticeVo> noticeList = new NoticeService().selectNoticeList(memberid);
+		ArrayList<NoticeVo> noticeList = new NoticeService().selectNoticeList();
 	
 		if(!noticeList.isEmpty()) {
 			request.setAttribute("noticeList", noticeList);
@@ -43,12 +40,8 @@ public class NoticeServlet extends HttpServlet {
 			System.out.println(noticeList);
 		} else {
 			response.sendRedirect("");
-		}
-		
-		
+		}	
 	}
-
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

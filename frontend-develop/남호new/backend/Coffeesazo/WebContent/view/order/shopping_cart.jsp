@@ -44,13 +44,13 @@
                         <td>${cart.productPrice * cart.orderCount}원</td>
                     </tr>
                     </c:forEach>
-                    
-                    
-                    
-                    
-
-
                 </tbody>
+                    
+                    
+                    
+                    
+
+
 
                 <tfoot>
                     <tr>
@@ -122,7 +122,7 @@
                 <!--------->
             </div>
             <div class="check-button">
-                <button type="button" onclick= " location.href = 'index.jsp?inc=view/order/shopping_payment.jsp'" class="btn btn-outline-success">구매하기</button>
+                <button type="button" onclick= " location.href = 'allbuy'" class="btn btn-outline-success">구매하기</button>
                 <button type="button" class="btn btn-outline-secondary">쇼핑계속하기</button>
 
 

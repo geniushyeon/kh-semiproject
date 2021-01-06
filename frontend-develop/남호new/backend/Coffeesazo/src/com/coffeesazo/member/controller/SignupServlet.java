@@ -21,9 +21,9 @@ import com.coffeesazo.member.model.vo.MemberVo;
 @WebServlet("/signup.do")
 public class SignupServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
+
 	String url = "index.jsp?inc=view/signup/";
-   
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -37,7 +37,7 @@ public class SignupServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-		
+
 		String memberId = request.getParameter("memberId");
 		String memberPwd = request.getParameter("memberPwd");
 		String memberName = request.getParameter("memberName");
@@ -45,14 +45,18 @@ public class SignupServlet extends HttpServlet {
 		String memberPhone = request.getParameter("memberPhone");
 		String memberZipcode = request.getParameter("memberZipcode");
 		String[] memberAddressArray = request.getParameterValues("memberAddress");
+		
 		String memberAddress = "";
 
+
 		for(int i=0; i<memberAddressArray.length; i++) {
-			memberAddress += memberAddressArray[i] + "+";
+			if (memberAddressArray[i] != "") {
+				memberAddress += memberAddressArray[i] + "+";
+			}
 		}
-		
+
 		System.out.println(memberAddress); // 디버깅용
-		
+
 		MemberVo memberVo = new MemberVo();
 		memberVo.setMemberId(memberId);
 		memberVo.setMemberPwd(memberPwd);
@@ -61,8 +65,8 @@ public class SignupServlet extends HttpServlet {
 		memberVo.setMemberPhone(memberPhone);
 		memberVo.setMemberZipcode(memberZipcode);
 		memberVo.setMemberAddress(memberAddress);
-		
-		
+
+
 		int affectedRows = new MemberDao().signup(memberVo);
 		RequestDispatcher rd = null;
 
