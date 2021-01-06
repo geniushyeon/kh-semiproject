@@ -3,7 +3,6 @@
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="com.coffeesazo.order.model.vo.OrderVo"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="com.coffeesazo.member.model.vo.MemberVo"/>
     <fullyQualifiedTypeName name="com.coffeesazo.member.model.dao.MemberDao"/>
@@ -15,4 +14,5 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.coffeesazo.notice.model.vo.NoticeVo"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
