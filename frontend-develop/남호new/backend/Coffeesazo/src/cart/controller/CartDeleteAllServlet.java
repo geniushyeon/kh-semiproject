@@ -37,8 +37,9 @@ public class CartDeleteAllServlet extends HttpServlet {
 		String memberid = ((String)session.getAttribute("id"));
 		int result = new CartService().CartAllDelete(memberid);
 		System.out.println("전체삭제값:" + result);
+		String url = "index.jsp?inc=view/order/";
 		if(result != 0) {
-			RequestDispatcher view = request.getRequestDispatcher("view/order/shopping_cart.jsp");
+			RequestDispatcher view = request.getRequestDispatcher(url + "shopping_cart.jsp");
 			view.forward(request, response);
 		}else {
 			response.sendRedirect("");

@@ -29,7 +29,7 @@
                 <div class="user_info_form"><img
                         src="https://raw.githubusercontent.com/St4rFi5h/ETC/main/sourcce/article-user-blank.jpg"
                         alt="blank_user">
-                    이지현(jhlee0912) 님</div>
+                 이지현(jhlee0912) 님</div>
             </div>
 
             <!--------------전체 버튼묶음-------------->
@@ -73,6 +73,7 @@
 
         <!---------------------테이블시작 --------------------->
         <div class="main_table">
+
             <table class="table table-hover">
                 <form action="" method="POST">
                     <thead>
@@ -112,6 +113,7 @@
 				</form>
 				
             </table>
+
             <!--------------------- 주문취소 버튼 --------------------->
             <div class="csl-button">
                 <p>

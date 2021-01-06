@@ -17,7 +17,7 @@
 			<h1>결제하기</h1>
 		</div>
 
-		<form action="allbuy" method="POST">
+		<form action="allbuy_submit" method="POST">
 			<div id="main-container">
 				<div class="top-logo">
 					<h2>
@@ -133,7 +133,7 @@
 
 									</div>
 								</div>
-		</form>
+		
 		<div class="form-container5">
 			<h2>이용 약관</h2>
 			<div class="tos1">
@@ -217,6 +217,7 @@
 
 		</div>
 		</div>
+		</form>
 	</main>
 	<script
 		src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
