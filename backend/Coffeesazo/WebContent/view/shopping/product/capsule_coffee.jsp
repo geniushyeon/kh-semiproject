@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>  
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> <!-- jstl 숫자,금액,날짜 format -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +40,9 @@
                           <a href="CoffeeDetail?List=${product.productName}">
                             <img src="view/img/${product.productImage}" alt="">
                             <div class="capsule_name">'${product.productName}'</div> 
-                           <p><div class="product_price">${product.productPrice}원</div></p>
+                            <p><div class="product_price"><fmt:formatNumber 
+	                          		value="${product.productPrice}" 
+	                          		pattern="###,###,###원"/></div></p>
                           </a>
                       </div>
                      </div>

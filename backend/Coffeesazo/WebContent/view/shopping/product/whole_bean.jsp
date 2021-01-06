@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>	<!-- jstl 숫자,금액,날짜 format -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,10 +41,12 @@
 	   			<c:forEach items="${beanList}" var="product" begin="0" end="2" >
 	                <div class="col_space"> 
 	                   <div class="item_list">
-	                       <a href="CoffeeDetail?List=${product.productName}">
+	                       <a href="CoffeeDetail?List=${product.productName}"> <!--  상세페이지 연결  -->
 	                           <img src="view/img/${product.productImage}" alt="">
-	                           <div class="bean_name"> '${product.productName}'</div> 
-	                           <p><div class="product_price">${product.productPrice}원</div></p>
+	                           <div class="bean_name">'${product.productName}'</div> 
+	                           <p><div class="product_price"><fmt:formatNumber 
+	                          		   value="${product.productPrice}" 
+	                          		   pattern="###,###,###원"/></div></p>
 	                       </a>
 	                   </div>
 	               	 </div>
@@ -72,7 +75,9 @@
 	                       <a href="CoffeeDetail?List=${product.productName}">
 	                           <img src="view/img/${product.productImage}" alt="">
 	                           <div class="bean_name"> '${product.productName}'</div> 
-	                           <p><div class="product_price">${product.productPrice}원</div></p>
+	                           <p><div class="product_price"><fmt:formatNumber 
+	                          		   value="${product.productPrice}" 
+	                          		   pattern="###,###,###원"/></div></p>
 	                       </a>
 	                   </div>
 	                </div>
@@ -98,7 +103,9 @@
 	                       <a href="CoffeeDetail?List=${product.productName}">
 	                           <img src="view/img/${product.productImage}" alt="">
 	                           <div class="bean_name"> '${product.productName}'</div> 
-	                           <p><div class="product_price">${product.productPrice}원</div></p>
+	                           <p><div class="product_price"><fmt:formatNumber 
+	                          		   value="${product.productPrice}" 
+	                          		   pattern="###,###,###원"/></div></p>
 	                       </a>
 	                   </div>
 	                </div>
@@ -126,7 +133,9 @@
 	                       <a href="CoffeeDetail?List=${product.productName}">
 	                           <img src="view/img/${product.productImage}" alt="">
 	                           <div class="bean_name"> '${product.productName}'</div> 
-	                           <p><div class="product_price">${product.productPrice}원</div></p>
+	                           <p><div class="product_price"><fmt:formatNumber 
+	                          		   value="${product.productPrice}" 
+	                          		   pattern="###,###,###원"/></div></p>
 	                       </a>
 	                   </div>
 	                 </div>
