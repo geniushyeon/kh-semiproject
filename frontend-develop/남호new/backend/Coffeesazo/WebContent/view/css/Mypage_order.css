@@ -85,6 +85,11 @@ transition: 0.1s ease-in-out;
 }
 
 
+
+form {
+	display: inline-block;
+}
+
 .card_text { /* 버튼글씨 속성*/
 padding-top: 2px;
 color: #666;

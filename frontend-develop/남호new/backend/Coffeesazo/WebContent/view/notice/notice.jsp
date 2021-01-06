@@ -19,6 +19,7 @@
 </head>
 <body>
 	<main>
+		<input type='hidden' name='noticeIndex' />
 		<div id="container">
 			<div id="contents">
 				<a href="index.jsp?inc=view/notice/notice.jsp"><h1>고객센터</h1></a>
@@ -31,6 +32,7 @@
 					</div>
 				</div>
 				<div class="base-table">
+				<form method="POST" name="form1" id="form1" >
 					<table border="1" summary>
 						<caption>게시판 목록</caption>
 						<thead class="element-box">
@@ -39,69 +41,29 @@
 								<th scope="col" class="displaynone">카테고리</th>
 								<th scope="col">제목</th>
 								<th scope="col">작성자</th>
-								<th scope="col" class>작성일</th>
+								<th scope="col">작성일</th>
 							</tr>
 						</thead>
 						<tbody class="index-box">
 							<c:forEach items="${noticeList}" var="noticevo">
 							<tr style="background-color: #FFFFFF; color: black;">
+							<input type="text" name="noticeIndex" value="${noticevo.noticeIndex }"/>
 								<td>${noticevo.noticeIndex }</td>
+								
 								<td class="displaynone"></td>
-								<td class="subject"><a
-									href="index.jsp?inc=view/notice/notice_detail.jsp">${noticevo.noticeText }</a></td>
-								<td>${noticevo.fkMemberId }</td>
+								<!--<td class="subject"><a href="noticedetail">${noticevo.noticeTitle }</a></td>-->
+								<td class="subject"  onclick="view(${noticevo.noticeIndex});">${noticevo.noticeTitle }</td>
+								<td>관리자</td>
 								<td class="txtLess ">${noticevo.noticeDate }</td>
 							</tr>
 							</c:forEach>
+						
 						</tbody>
-						<tbody class="index-box">
-							<tr style="background-color: #FFFFFF; color: black;">
-								<td>5</td>
-								<td class="displaynone"></td>
-								<td class="subject"><a href="#">공지사항</a></td>
-								<td>관리자</td>
-								<td class="txtLess ">2020-12-16</td>
-							</tr>
-						</tbody>
-						<tbody class="index-box">
-							<tr style="background-color: #FFFFFF; color: black;">
-								<td>4</td>
-								<td class="displaynone"></td>
-								<td class="subject"><a href="#">공지공지</a></td>
-								<td>관리자</td>
-								<td class="txtLess ">2020-12-16</td>
-							</tr>
-						</tbody>
-						<tbody class="index-box">
-							<tr style="background-color: #FFFFFF; color: black;">
-								<td>3</td>
-								<td class="displaynone"></td>
-								<td class="subject"><a href="#">공지지지</a></td>
-								<td>관리자</td>
-								<td class="txtLess ">2020-12-16</td>
-							</tr>
-						</tbody>
-						<tbody class="index-box">
-							<tr style="background-color: #FFFFFF; color: black;">
-								<td>2</td>
-								<td class="displaynone"></td>
-								<td class="subject"><a href="#">공 지</a></td>
-								<td>관리자</td>
-								<td class="txtLess ">2020-12-16</td>
-							</tr>
-						</tbody>
-						<tbody class="index-box">
-							<tr style="background-color: #FFFFFF; color: black;">
-								<td class="bottom">1</td>
-								<td class="displaynone"></td>
-								<td class="subject"><a href="#">공지쓰</a></td>
-								<td>관리자</td>
-								<td class="txtLess ">2020-12-16</td>
-							</tr>
-						</tbody>
+
 					</table>
+				</form>
 				</div>
-					<div class='btns'>
+				<div class='btns'>
 					<input type='button' value='Prev' />
 
 					<c:forEach var='i' begin='1' end='5'>
@@ -112,9 +74,18 @@
 				</div>
 			</div>
 		</div>
+		
 	</main>
 	<!-- 부트스트랩 자바스크립트 추가 -->
 	<script src="./js/bootstrap.min.js"></script>
-
+	<script>
+      function view(noticeIndex){
+         var frm = document.form1;
+         console.log(noticeIndex);
+         frm.action="noticedetail";
+         frm.noticeIndex.value = noticeIndex;
+         frm.submit();
+      }
+   </script>
 </body>
 </html>
