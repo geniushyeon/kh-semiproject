@@ -28,9 +28,9 @@
         </div>
 
         <div class="shopping">
-            <span id="wholebean"><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">원두</a></span>
-            <span id="stickcoffee"><a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">스틱커피</a></span>
-            <span id="capsulecoffee"><a href="index.jsp?inc=view/shopping/product/capsule_coffee.jsp">캡슐커피</a></span>
+            <span id="wholebean"><a href="wholebean">원두</a></span>
+            <span id="stickcoffee"><a href="stickcoffee">스틱커피</a></span>
+            <span id="capsulecoffee"><a href="capsulecoffee">캡슐커피</a></span>
 
         </div>
     
@@ -43,14 +43,14 @@
                 <span><a href="logout">로그아웃</a></span> <!--LogoutServlet 매핑 -->
                 <span><a href="OrderListSelect">마이페이지</a></span>
                 <span><a href="notice">고객센터</a></span>
-                <span><a href="index.jsp?inc=view/order/shopping_cart.jsp"><img src="view/img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="cart"><img src="view/img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 
         <div class="shopping">
-            <span id="wholebean"><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">원두</a></span>
-            <span id="stickcoffee"><a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">스틱커피</a></span>
-            <span id="capsulecoffee"><a href="index.jsp?inc=view/shopping/product/capsule_coffee.jsp">캡슐커피</a></span>
+            <span id="wholebean"><a href="wholebean">원두</a></span>
+            <span id="stickcoffee"><a href="stickcoffee">스틱커피</a></span>
+            <span id="capsulecoffee"><a href="capsulecoffee">캡슐커피</a></span>
 
         </div>
     <%} %>

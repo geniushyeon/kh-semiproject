@@ -48,15 +48,14 @@ public class CartSelectServlet extends HttpServlet {
 	    allresult += price * count;
 	    }
 		System.out.println(allresult);
-		if(!pList.isEmpty()) {
+		
 			request.setAttribute("pList", pList);
 			request.setAttribute("allresult", allresult);
-			RequestDispatcher view = request.getRequestDispatcher("view/order/shopping_cart.jsp");
+			String url = "index.jsp?inc=view/order/";
+			RequestDispatcher view = request.getRequestDispatcher(url + "shopping_cart.jsp");
 			view.forward(request, response);
 			System.out.println(pList);
-		} else {
-			response.sendRedirect("");
-		}
+		
 	    
 		
 		

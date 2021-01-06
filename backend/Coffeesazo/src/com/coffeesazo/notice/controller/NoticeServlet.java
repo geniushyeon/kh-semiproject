@@ -2,6 +2,7 @@ package com.coffeesazo.notice.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,13 +12,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.coffeesazo.Page;
 import com.coffeesazo.notice.model.service.NoticeService;
 import com.coffeesazo.notice.model.vo.NoticeVo;
 
 @WebServlet("/notice")
 public class NoticeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	
     public NoticeServlet() {
         super();
         // TODO Auto-generated constructor stub
@@ -26,14 +28,31 @@ public class NoticeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
-
-		HttpSession session = request.getSession(); 
-		// String memberid = ((String)session.getAttribute("id"));
 		
-		ArrayList<NoticeVo> noticeList = new NoticeService().selectNoticeList();
+		int nowPage = 1;
+		String findStr = "";
+		
+		Page page = null;
+		
+		if(request.getParameter("nowPage") != null) {
+			nowPage = Integer.parseInt(request.getParameter("nowPage"));
+		}
+		
+		if(request.getParameter("findStr") != null) {
+			findStr = request.getParameter("findStr");
+		}
+		
+		page = new Page();
+		page.setNowPage(nowPage);
+		System.out.println(page.getNowPage());
+		page.setFindStr(findStr);
+		
+		List<NoticeVo> noticeList = new NoticeService().selectNoticeList(page);
 	
 		if(!noticeList.isEmpty()) {
 			request.setAttribute("noticeList", noticeList);
+			request.setAttribute("page", page);
+			
 			String url = "index.jsp?inc=view/notice/";
 			RequestDispatcher view = request.getRequestDispatcher(url + "notice.jsp");
 			view.forward(request, response);

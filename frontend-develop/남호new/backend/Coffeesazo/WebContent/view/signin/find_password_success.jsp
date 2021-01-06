@@ -32,12 +32,11 @@
                 <p>　</p>
                 <p>
                     <input class="findid-button" type="button" value="로그인 하러 가기"
-                    onclick="location.href='index.jsp?inc=view/signin/login.jsp'">  <!--인덱스페이지로이동(헤더에 로그아웃버튼있는..) -->
+                    onclick="location.href='index.jsp?inc=view/signin/login.jsp'">
                 </p>
             </div>
         </form> 
     </div> <!--전체 div 끝-->
-     <!--findPassword-finish end!-->
 
 </body>
 

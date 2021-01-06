@@ -29,6 +29,8 @@
             </div>
 
             <!--------------전체 버튼묶음-------------->
+    
+            
             <div class="button">
                 <ul>
                     <a class="card_small" href="OrderListSelect">
@@ -41,7 +43,7 @@
       
    
       
-<form method="POST" name="form_edit">
+					<form action="mypage_edit" method="POST" name="form_edit">
                 <ul>
                     <a class="card_small" id="mypage-edit" onclick="gotoEdit()">
                         <h3>회원정보수정</h3>
@@ -49,7 +51,6 @@
 
                     </a>
                 </ul>
-      	</form>
 
         <ul>
             <a class="card_small" href="MyQnaList">
@@ -73,32 +74,32 @@
                     <thead>
                         <tr>
                             <th>번호</th>
+                            <th>답변여부</th>
                             <th>제목</th>
                             <th>작성자</th>
                             <th>작성일</th>
-
-
                         </tr>
                     </thead>
 
 
                     <!--------------------- 글 시작 --------------------->
-                  
-                                        <c:forEach  items="${qnaList}" var="MyQnaList" >
+          <c:if test ="${not empty qnaList }">
+                  	          <tbody>
+             	   <c:forEach  items="${qnaList}" var="MyQnaList" >
                     <tr>
-                       
-                        <td>${OrderViewList.qnaIndex }</td>
-                        <td>${MyQnaList.productName}</td>
+                        <td>${MyQnaList.qnaIndex }</td>
+                        <td>${MyQnaList.qnaCheck }</td>
                         <td>${MyQnaList.qnaTitle }</td>
                         <td>${MyQnaList.userId }</td>
                         <td>${MyQnaList.writeDate }</td>
                     </tr>
                     </c:forEach>
                   
+                             </tbody>
                   
+            </c:if>
                   
-                  
-                  
+                  </form>
 
 
             </table>
@@ -123,6 +124,11 @@
 
 
             </div>
+            
+ 
+            
+
+           </div>
     </main>
     
         <script>

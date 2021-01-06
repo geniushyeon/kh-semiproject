@@ -221,6 +221,10 @@ h1 {
 	text-align: center;
 	text-decoration: none;
 }
+
+.subject:hover {
+	cursor: pointer;
+}
 table {
 	width: 100%;
 	border: 0;

@@ -41,9 +41,9 @@
             </div>
             <div class="btns-signin-signup">
                 <span><a href="logout">로그아웃</a></span> <!--LogoutServlet 매핑 -->
-                <span><a href="index.jsp?inc=view/mypage/Mypage_order.jsp">마이페이지</a></span>
+                <span><a href="OrderListSelect">마이페이지</a></span>
                 <span><a href="notice">고객센터</a></span>
-                <span><a href="index.jsp?inc=view/order/shopping_cart.jsp"><img src="view/img/shoppingcart_white.png" id="shoppingcart"></a></span>
+                <span><a href="cart"><img src="view/img/shoppingcart_white.png" id="shoppingcart"></a></span>
             </div>
         </div>
 

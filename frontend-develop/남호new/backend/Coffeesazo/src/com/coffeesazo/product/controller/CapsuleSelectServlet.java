@@ -34,7 +34,7 @@ public class CapsuleSelectServlet extends HttpServlet {
 		if(!capList.isEmpty()) {
 			request.setAttribute("capList", capList);
 			String url = "index.jsp?inc=view/shopping/product/";
-			RequestDispatcher view = request.getRequestDispatcher("view/shopping/product/capsule_coffee.jsp");
+			RequestDispatcher view = request.getRequestDispatcher(url + "capsule_coffee.jsp");
 			view.forward(request, response);
 			System.out.println(capList);
 		} else {

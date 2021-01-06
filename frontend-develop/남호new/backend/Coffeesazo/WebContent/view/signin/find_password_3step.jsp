@@ -21,7 +21,7 @@
  
     <div class="main-body"> <!--전체 div-->
 
-    <form method="post" action="change" onsubmit= "return checks()"> <!--form 태그 시작-->
+    <form method="post" action="change" onsubmit= "return change_pwd()"> <!--form 태그 시작-->
         <p class="main-title">비밀번호 재설정</p>
         <p> </p>
         <p class="sub-title">새로운 비밀번호를<br>설정해 주세요</p>
@@ -29,7 +29,7 @@
         
         <p>
             <input class="input" type="password" name="password" id="pwd"
-            placeholder="비밀번호를 입력해 주세요"> <!--비번 입력 인풋-->
+            placeholder="비밀번호 입력(영문, 숫자, 특수문자 조합 최소8자)"> <!--비번 입력 인풋-->
         </p>
         
         <p>
@@ -43,6 +43,6 @@
         </p>
      </form> <!--form 태그 끝-->
     </div> <!--전체 div 끝-->
+<script src="./view/js/change_pwd.js" charset="utf-8"></script>
 </body>
-<script src="./view/js/signin.js" charset="utf-8"></script>
 </html>

@@ -12,7 +12,7 @@ import common.JDBCTemplate;
 
 public class ProductService {
 	
-	//���� //
+	//WholeBean //
 	public ArrayList<Product> WholeSelete() {
 		ArrayList<Product> beanList = null;
 		try {
@@ -27,7 +27,7 @@ public class ProductService {
 	}
 	
 	
-	//��ƽĿ��//
+	//StickCoffee//
 	
 	public ArrayList<Product> StickSelete() {
 		ArrayList<Product> stickList = null;
@@ -44,7 +44,7 @@ public class ProductService {
 
 	
 
-	//ĸ��Ŀ��//
+	//CapsuleCoffee//
 	
 	public ArrayList<Product> CapsuleSelete() {
 		ArrayList<Product> capList = null;

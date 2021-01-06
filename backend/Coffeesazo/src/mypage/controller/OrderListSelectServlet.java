@@ -1,6 +1,7 @@
 package mypage.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -46,18 +47,16 @@ public class OrderListSelectServlet extends HttpServlet {
 	    int count = odlist.getOrderCount();
 	    allresult += price * count;
 	    }
+		System.out.println(odList);
 
-		System.out.println(allresult);
+		request.setAttribute("odList", odList);
+		request.setAttribute("allresult", allresult);
+		String url = "index.jsp?inc=view/mypage/";
+		RequestDispatcher view = request.getRequestDispatcher(url + "Mypage_order.jsp");
+		view.forward(request, response);
+		System.out.println(odList);
 
-		if(!odList.isEmpty()) {
-			request.setAttribute("odList", odList);
-			request.setAttribute("allresult", allresult);
-			RequestDispatcher view = request.getRequestDispatcher("index.jsp?inc=view/mypage/Mypage_order.jsp");
-			view.forward(request, response);
-			System.out.println(odList);
-		} else {
-			response.sendRedirect("");
-		}
+
 	
 	
 	}

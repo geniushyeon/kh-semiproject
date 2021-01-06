@@ -1,7 +1,6 @@
 package com.coffeesazo.notice.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
 
 import com.coffeesazo.notice.model.service.NoticeService;
 import com.coffeesazo.notice.model.vo.NoticeVo;
@@ -24,20 +23,24 @@ public class NoticeDetailServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html; charset=utf-8");
-
-		HttpSession session = request.getSession(); 
+		response.setContentType("text/html; charset=utf-8"); 
 		
-		int noticeIndex = Integer.parseInt(request.getParameter("noticeIndex"));
+		String index = request.getParameter("noticeIndex");
+		int noticeIndex = Integer.parseInt(index);
 		
-		ArrayList<NoticeVo> noticeDetailList = new NoticeService().selectNoticeDetailList(noticeIndex);
+		System.out.println("받아온 파라미터 출력");
+		System.out.println(request.getParameter("noticeIndex"));
+		
+		
+		NoticeVo noticevo = new NoticeService().selectNoticeDetailList(noticeIndex);		
 	
-		if(!noticeDetailList.isEmpty()) {
-			request.setAttribute("noticeDetailList", noticeDetailList);
+		if(noticevo != null) {
+			request.setAttribute("noticeIndex", noticeIndex);
+			request.setAttribute("noticevo", noticevo);
 			String url = "index.jsp?inc=view/notice/";
 			RequestDispatcher view = request.getRequestDispatcher(url + "notice_detail.jsp");
 			view.forward(request, response);
-			System.out.println(noticeDetailList);
+			
 		} else {
 			response.sendRedirect("");
 		}	
