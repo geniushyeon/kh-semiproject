@@ -1,7 +1,6 @@
 package cart.controller;
 
-import java.io.IOException; 
-import java.io.PrintWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -12,25 +11,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.jasper.tagplugins.jstl.core.Out;
-
-import com.coffeesazo.member.model.vo.MemberVo;
-
 import cart.model.service.CartService;
 import cart.model.vo.Cart;
 
 /**
- * Servlet implementation class CartSelectServlet
+ * Servlet implementation class CartAddAllServlet
  */
-@WebServlet("/cart")
-public class CartSelectServlet extends HttpServlet {
+@WebServlet("/allbuy")
+public class CartAllBuyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	public CartSelectServlet() {
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public CartAllBuyServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");//요청사항 모든 텍스트 등등 을 utf-8인코딩해서 가져와라
 		response.setCharacterEncoding("utf-8");
@@ -41,31 +42,29 @@ public class CartSelectServlet extends HttpServlet {
 		//뇌절오는부분 -- 50%이해햇다 아주칭찬해
 		ArrayList<Cart> pList = new CartService().SelectCartList(memberid);
 		int allresult = 0;
-	    
 		for(Cart plist : pList) {
-	    int price = plist.getProductPrice();
-	    int count = plist.getOrderCount();
-	    allresult += price * count;
-	    }
-		System.out.println(allresult);
+		    int price = plist.getProductPrice();
+		    int count = plist.getOrderCount();
+		    allresult += price * count;
+		    }
 		if(!pList.isEmpty()) {
 			request.setAttribute("pList", pList);
 			request.setAttribute("allresult", allresult);
 			String url = "index.jsp?inc=view/order/";
-			RequestDispatcher view = request.getRequestDispatcher(url + "shopping_cart.jsp");
+			RequestDispatcher view = request.getRequestDispatcher(url + "shopping_payment.jsp");
 			view.forward(request, response);
 			System.out.println(pList);
+			
+			
 		} else {
 			response.sendRedirect("");
 		}
-	    
-		
 		
 	}
 
-	
-	
-	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

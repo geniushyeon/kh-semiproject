@@ -1,11 +1,14 @@
 package cart.model.dao;
 
-import java.sql.Connection;
+import java.sql.Connection; 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import cart.model.vo.Cart;
+import cart.model.vo.OrderIndex;
+import cart.model.vo.OrderVo;
 import common.JDBCTemplate;
 
 public class CartDao {
@@ -94,6 +97,81 @@ public class CartDao {
 			JDBCTemplate.close(rs);
 		}
 		return result;
+	}
+
+	public int OrderAllSubmit(Connection conn, OrderVo ordervo) {
+		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
+		ResultSet rs = null;//결과값을 다루는 아이
+		int submit = 0;
+		String sql = "INSERT INTO cs_order VALUES(seq_order_index.NEXTVAL, ?, ?, ?, ?, ?,sysdate, ?, ?, ?)";
+		
+		
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,ordervo.getMemberId());
+			pstmt.setString(2,ordervo.getOrderAddress());
+			pstmt.setString(3,ordervo.getOrderPayment());
+			pstmt.setString(4,ordervo.getOrderZipcode());
+			pstmt.setString(5,ordervo.getOrederText());
+			pstmt.setString(6,ordervo.getOrderReceiver());
+			pstmt.setString(7,ordervo.getOrderReceiverPhone());
+			pstmt.setString(8,ordervo.getOrderTotalPrice());
+			submit=pstmt.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			JDBCTemplate.close(pstmt);
+			JDBCTemplate.close(rs);
+		}
+		return submit;
+	}
+
+	public int OrderAllbuydetail(Connection conn, int[] ap, int[] apc, OrderIndex lastElement) {
+		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
+		ResultSet rs = null;//결과값을 다루는 아이
+		int submit2 = 0;
+		String sql = "INSERT INTO cs_order_detail VALUES(seq_order_detail_index.NEXTVAL,?,?,?)";
+		
+		try {
+			for(int i=0; i<ap.length; i++) {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1,lastElement.getOrderIndex());
+				pstmt.setInt(2,ap[i]);
+				pstmt.setInt(3, apc[i]);
+				submit2=pstmt.executeUpdate();
+				
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return submit2;
+	}
+
+	public ArrayList<OrderIndex> FindOrderIndex(Connection conn, String memberid) {
+		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
+		ResultSet rs = null;//결과값을 다루는 아이
+		ArrayList<OrderIndex> oIndex = null;
+		String sql = "SELECT * FROM cs_order WHERE fk_member_id = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberid);//setString(물음표위치, 넣어줄값)
+			rs = pstmt.executeQuery();
+			oIndex = new ArrayList<OrderIndex>();
+			while(rs.next()) {
+				OrderIndex orderindex = new OrderIndex();
+				orderindex.setOrderIndex(rs.getInt("order_index"));
+				oIndex.add(orderindex);
+				
+				
+				
+			}
+			
+		} catch (Exception e) {
+			JDBCTemplate.close(pstmt);
+			JDBCTemplate.close(rs);
+		}
+		return oIndex;
 	}
 
 }
