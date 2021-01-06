@@ -88,9 +88,9 @@
              	   <c:forEach  items="${qnaList}" var="MyQnaList" >
                     <tr>
                         <td>${MyQnaList.qnaIndex }</td>
-                        <td>${MyQnaList.qnaCheck }</td>
-                        <td>
-                        <a href="/view/qna/qna_check?no=${MyQnaList.qnaIndex}"></a>${MyQnaList.qnaTitle }</td>
+                        <td class ="title">${MyQnaList.qnaCheck }</td>
+                                            <!--------------------- qna 상세페이지 맵핑필요 --------------------->
+                        <td><a href="/view/qna/qna_check.jsp?id= ${MyQnaList.qnaIndex}">${MyQnaList.qnaTitle }</a></td>
                         <td>${MyQnaList.userId }</td>
                         <td>${MyQnaList.writeDate }</td>
                     </tr>

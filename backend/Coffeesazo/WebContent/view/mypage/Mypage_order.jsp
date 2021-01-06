@@ -111,8 +111,8 @@
 									<div style="height: 100%">
 										<img src="${OrderViewList.productImage }" height="100%">
 									</div>
-								</td>
-								<td>${OrderViewList.productName}</td>
+								</td>						<!------ 주문상세 맵핑필요 -------->		 		
+								<td><a href="/view/mypage/mypage_order_detail.jsp?id= ${MyQnaList.qnaIndex}">${OrderViewList.productName}</a></td>
 								<td>${OrderViewList.productPrice }원</td>
 								<td>${OrderViewList.orderCount }개</td>
 								<td>${OrderViewList.productPrice * cart.orderCount}원</td>
