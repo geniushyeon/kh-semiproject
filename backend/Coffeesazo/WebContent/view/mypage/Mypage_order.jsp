@@ -91,7 +91,7 @@
 
                     <!--------------------- 테이블 각항목 --------------------->
                     
-                    
+                            <c:if test ="${not empty odList }">
                            <tbody>
                       <c:forEach  items="${odList}" var="OrderViewList" >
                     <tr>
@@ -110,6 +110,8 @@
                        
     
 					</tbody>
+					
+					      </c:if>
 				</form>
 				
             </table>

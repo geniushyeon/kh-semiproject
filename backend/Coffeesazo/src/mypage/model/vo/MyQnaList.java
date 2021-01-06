@@ -6,7 +6,16 @@ public class MyQnaList {
 	private String qnaTitle;
 	private String userId;
 	private Date writeDate;
+	private int qnaCheck;
+
 	
+	
+	public int getQnaCheck() {
+		return qnaCheck;
+	}
+	public void setQnaCheck(int qnaCheck) {
+		this.qnaCheck = qnaCheck;
+	}
 	
 	public int getQnaIndex() {
 		return qnaIndex;
