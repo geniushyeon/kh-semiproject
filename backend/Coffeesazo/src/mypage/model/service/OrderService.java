@@ -25,6 +25,12 @@ public class OrderService {
 		
 	}
 
+	
+	
+	
+	
+	
+	
 	public int OrderDelete(int[] cpd, String memberid) {
 		int result = 0;
 		try {
