@@ -26,6 +26,7 @@ public class MyQnaListDao {
 				MyQnaList myqnaList = new MyQnaList();
 				myqnaList.setUserId(rs.getString("fk_member_id"));
 				myqnaList.setQnaTitle(rs.getString("qna_title"));
+				myqnaList.setUserId(rs.getString("QNA_CHECK"));
 				myqnaList.setQnaIndex(rs.getInt("qna_index"));
 				myqnaList.setWriteDate(rs.getDate("qna_date"));
 				
