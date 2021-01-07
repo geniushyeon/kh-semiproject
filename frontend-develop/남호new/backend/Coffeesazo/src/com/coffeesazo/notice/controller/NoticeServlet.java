@@ -17,7 +17,7 @@ import com.coffeesazo.notice.model.vo.NoticeVo;
 @WebServlet("/notice")
 public class NoticeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	
     public NoticeServlet() {
         super();
         // TODO Auto-generated constructor stub
@@ -26,9 +26,6 @@ public class NoticeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
-
-		HttpSession session = request.getSession(); 
-		// String memberid = ((String)session.getAttribute("id"));
 		
 		ArrayList<NoticeVo> noticeList = new NoticeService().selectNoticeList();
 	

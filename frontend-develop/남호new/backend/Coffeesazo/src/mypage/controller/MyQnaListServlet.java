@@ -1,6 +1,6 @@
 package mypage.controller;
 
-import java.io.IOException;
+import java.io.IOException; 
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -35,11 +35,12 @@ public class MyQnaListServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    request.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession(); 
 		String memberid = ((String)session.getAttribute("id"));
 		ArrayList<MyQnaList> qnaList = new MyQnaService().SelectQnaList(memberid);
-		request.setAttribute("qnaList", qnaList);
+		
+		System.out.println(qnaList.size());
 		if(!qnaList.isEmpty()) {
 			request.setAttribute("qnaList", qnaList);
 			RequestDispatcher view = request.getRequestDispatcher("index.jsp?inc=view/mypage/Mypage_qna.jsp");

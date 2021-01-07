@@ -28,14 +28,11 @@ public class OrderService {
 	
 	
 	
-	
-	
-	
-	public int OrderDelete(int[] cpd, String memberid) {
+	public int OrderDelete(int[] cod, String memberid) {
 		int result = 0;
 		try {
 			Connection conn = new Application().getConn();
-			result = new OrderListDao().CheckCartDelete(conn,cpd,memberid);
+			result = new OrderListDao().CheckOrderDelete(conn,cod,memberid);
 			JDBCTemplate.close(conn);
 			
 		} catch (Exception e) {
@@ -44,17 +41,7 @@ public class OrderService {
 		return result;
 	}
 
-	public int CartAllDelete(String memberid) {
-		int result = 0;
-		try {
-			Connection conn = new Application().getConn();
-			result = new OrderListDao().CartDeleteAll(conn,memberid);
-			JDBCTemplate.close(conn);
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		return result;
-	}
+
 	
 	
 }

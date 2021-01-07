@@ -30,6 +30,7 @@ public class MyQnaListServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		doPost(request, response); 
 	}
 
@@ -39,15 +40,14 @@ public class MyQnaListServlet extends HttpServlet {
 		HttpSession session = request.getSession(); 
 		String memberid = ((String)session.getAttribute("id"));
 		ArrayList<MyQnaList> qnaList = new MyQnaService().SelectQnaList(memberid);
-		
+
 		System.out.println(qnaList.size());
-		if(!qnaList.isEmpty()) {
+
 			request.setAttribute("qnaList", qnaList);
-			RequestDispatcher view = request.getRequestDispatcher("index.jsp?inc=view/mypage/Mypage_qna.jsp");
+			String url = "index.jsp?inc=view/mypage/";
+			RequestDispatcher view = request.getRequestDispatcher(url + "Mypage_qna.jsp");
 			view.forward(request, response);
-		} else {
-			response.sendRedirect("");
-		}	
+
 	}
 
 }

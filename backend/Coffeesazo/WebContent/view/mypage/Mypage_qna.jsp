@@ -29,6 +29,8 @@
             </div>
 
             <!--------------전체 버튼묶음-------------->
+    
+            
             <div class="button">
                 <ul>
                     <a class="card_small" href="OrderListSelect">
@@ -72,6 +74,7 @@
                     <thead>
                         <tr>
                             <th>번호</th>
+                            <th>답변여부</th>
                             <th>제목</th>
                             <th>작성자</th>
                             <th>작성일</th>
@@ -80,12 +83,14 @@
 
 
                     <!--------------------- 글 시작 --------------------->
+          <c:if test ="${not empty qnaList }">
                   	          <tbody>
              	   <c:forEach  items="${qnaList}" var="MyQnaList" >
                     <tr>
-                       
                         <td>${MyQnaList.qnaIndex }</td>
-                        <td>${MyQnaList.qnaTitle }</td>
+                        <td class ="title">${MyQnaList.qnaCheck }</td>
+                                            <!--------------------- qna 상세페이지 맵핑필요 --------------------->
+                        <td><a href="/view/qna/qna_check.jsp?id= ${MyQnaList.qnaIndex}">${MyQnaList.qnaTitle }</a></td>
                         <td>${MyQnaList.userId }</td>
                         <td>${MyQnaList.writeDate }</td>
                     </tr>
@@ -93,6 +98,7 @@
                   
                              </tbody>
                   
+            </c:if>
                   
                   </form>
 
@@ -119,6 +125,11 @@
 
 
             </div>
+            
+ 
+            
+
+           </div>
     </main>
     
         <script>
@@ -128,6 +139,7 @@
 		form.submit();
 	}
     </script>
-    
+       <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/popper.js"></script>
 </body>
 </html>

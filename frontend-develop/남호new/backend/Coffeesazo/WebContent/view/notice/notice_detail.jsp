@@ -1,3 +1,4 @@
+<%@page import="com.coffeesazo.notice.model.vo.NoticeVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>	
@@ -19,6 +20,11 @@
 <link href="./view/css/notice_detail.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<%
+	
+	NoticeVo noticevo = (NoticeVo)request.getAttribute("noticevo");
+	
+%>
 	<main>
 		<div id="container">
 			<div id="contents">
@@ -30,8 +36,9 @@
 						</a>
 					</div>
 				</div>
+			<form name="form1" method="POST">
 				<div class="base-table">
-				<c:forEach items="${noticeDetailList}" var="noticevo" > 
+				<input type="text" id="noticeIndex" name="noticeIndex" value="${noticevo.noticeIndex }"/> 
 					<table border="1" summary>
 						<caption>게시판 목록</caption>
 						<tbody>					
@@ -48,8 +55,9 @@
 								<td>${noticevo.noticeDate }</td>
 							</tr>
 					</table>
-					</c:forEach> 
+					
 				</div>
+			</form>
 					<%-- <div class="base-table">
 					<table border="1" summary>
 						<caption>게시판 목록</caption>
@@ -195,7 +203,7 @@
 					</ul>
 				</div>
 				<div class="list-button">
-					<a href="index.jsp?inc=view/notice/notice.jsp" class="btn-board">목록</a>
+					<a href="notice" class="btn-board">목록</a>
 				</div>
 			</div>
 		</div>

@@ -28,15 +28,14 @@ public class NoticeDetailServlet extends HttpServlet {
 		String index = request.getParameter("noticeIndex");
 		int noticeIndex = Integer.parseInt(index);
 		
-		System.out.println(noticeIndex);
+		System.out.println("받아온 파라미터 출력");
+		System.out.println(request.getParameter("noticeIndex"));
 		
-		NoticeVo noticevo = new NoticeService().selectNoticeDetailList(noticeIndex);
-		System.out.println(noticevo.getNoticeIndex());
-		System.out.println("여기까지");
 		
+		NoticeVo noticevo = new NoticeService().selectNoticeDetailList(noticeIndex);		
 	
 		if(noticevo != null) {
-			
+			request.setAttribute("noticeIndex", noticeIndex);
 			request.setAttribute("noticevo", noticevo);
 			String url = "index.jsp?inc=view/notice/";
 			RequestDispatcher view = request.getRequestDispatcher(url + "notice_detail.jsp");

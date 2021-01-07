@@ -34,7 +34,7 @@ public class CoffeeDetailServlet extends HttpServlet {
 		if(!List.isEmpty()) {
 			request.setAttribute("List", List);
 			String url = "index.jsp?inc=view/shopping/product_deatil/";
-			RequestDispatcher view = request.getRequestDispatcher(url + "Coffee_Beans1.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("view/shopping/product_detail/Coffee_Beans1.jsp");
 			view.forward(request, response);
 			System.out.println(List);
 		} else {

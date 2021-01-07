@@ -48,22 +48,22 @@ public class OrderListDao {
 
 	
 	
-	public int CheckCartDelete(Connection conn, int[] cpd, String memberid) {
+	public int CheckOrderDelete(Connection conn, int[] cod, String memberid) {
 		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
 		ResultSet rs = null;//결과값을 다루는 아이
 		
 		int result = 0;
 		String params = "";
-		for(int i=0; i<cpd.length; i++) {
-			params += cpd[i];
-			if(i <cpd.length-1) {
+		for(int i=0; i<cod.length; i++) {
+			params += cod[i];
+			if(i <cod.length-1) {
 				params += ",";
 			}
 		}
 		System.out.println(params);
 		System.out.println(memberid);
 		//밑문장해석필유
-		String sql = "DELETE FROM cs_order WHERE fk_member_id = ? AND fk_product_index IN ("+params+")";
+		String sql = "DELETE FROM cs_order WHERE order_index IN ("+params+")";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);

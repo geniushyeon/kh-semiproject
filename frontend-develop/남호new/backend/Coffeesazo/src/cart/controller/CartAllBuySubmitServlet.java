@@ -91,11 +91,12 @@ public class CartAllBuySubmitServlet extends HttpServlet {
 			apc[i] = Integer.parseInt(count[i]);
 		}
 		int submit2 = new CartService().OrderAllbuydetail(ap,apc,lastElement);
+		System.out.println("인서트횟수" + submit2);
 
+		int result = new CartService().CartAllDelete(memberid);
 		
 		
 		
-		//뇌절오는부분 -- 50%이해햇다 아주칭찬해
 		
 	}
 

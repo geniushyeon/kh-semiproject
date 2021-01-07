@@ -75,29 +75,26 @@
                             <th>제목</th>
                             <th>작성자</th>
                             <th>작성일</th>
-
-
                         </tr>
                     </thead>
 
 
                     <!--------------------- 글 시작 --------------------->
-                  
-                                        <c:forEach  items="${qnaList}" var="MyQnaList" >
+                  	          <tbody>
+             	   <c:forEach  items="${qnaList}" var="MyQnaList" >
                     <tr>
                        
-                        <td>${OrderViewList.qnaIndex }</td>
-                        <td>${MyQnaList.productName}</td>
+                        <td>${MyQnaList.qnaIndex }</td>
                         <td>${MyQnaList.qnaTitle }</td>
                         <td>${MyQnaList.userId }</td>
                         <td>${MyQnaList.writeDate }</td>
                     </tr>
                     </c:forEach>
                   
+                             </tbody>
                   
                   
-                  
-                  
+                  </form>
 
 
             </table>

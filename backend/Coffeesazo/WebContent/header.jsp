@@ -28,9 +28,9 @@
         </div>
 
         <div class="shopping">
-            <span id="wholebean"><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">원두</a></span>
-            <span id="stickcoffee"><a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">스틱커피</a></span>
-            <span id="capsulecoffee"><a href="index.jsp?inc=view/shopping/product/capsule_coffee.jsp">캡슐커피</a></span>
+            <span id="wholebean"><a href="wholebean">원두</a></span>
+            <span id="stickcoffee"><a href="stickcoffee">스틱커피</a></span>
+            <span id="capsulecoffee"><a href="capsulecoffee">캡슐커피</a></span>
 
         </div>
     
@@ -48,9 +48,9 @@
         </div>
 
         <div class="shopping">
-            <span id="wholebean"><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">원두</a></span>
-            <span id="stickcoffee"><a href="index.jsp?inc=view/shopping/product/stick_coffee.jsp">스틱커피</a></span>
-            <span id="capsulecoffee"><a href="index.jsp?inc=view/shopping/product/capsule_coffee.jsp">캡슐커피</a></span>
+            <span id="wholebean"><a href="wholebean">원두</a></span>
+            <span id="stickcoffee"><a href="stickcoffee">스틱커피</a></span>
+            <span id="capsulecoffee"><a href="capsulecoffee">캡슐커피</a></span>
 
         </div>
     <%} %>
