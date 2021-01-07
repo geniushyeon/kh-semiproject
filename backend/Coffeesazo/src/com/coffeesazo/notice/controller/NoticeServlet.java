@@ -1,6 +1,7 @@
 package com.coffeesazo.notice.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +29,7 @@ public class NoticeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out = response.getWriter();
 		
 		int nowPage = 1;
 		String findStr = "";
@@ -58,7 +60,7 @@ public class NoticeServlet extends HttpServlet {
 			view.forward(request, response);
 			System.out.println(noticeList);
 		} else {
-			response.sendRedirect("");
+			out.println("<script>alert('검색 결과가 없습니다.'); history.back(); </script>");
 		}	
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
