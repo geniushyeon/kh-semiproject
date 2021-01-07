@@ -100,8 +100,8 @@
 
 				<!--------------------- 테이블 각항목 --------------------->
 
-				<c:if test="${not empty odList }">
 					<tbody>
+				<c:if test="${not empty odList }">
 						<c:forEach items="${odList}" var="OrderViewList">
 							<tr>
 								<td><input id="checkbox" type="checkbox" name="delete-name"
@@ -131,22 +131,35 @@
 			<!--------------------- 주문취소 버튼 --------------------->
 			<div class="csl-button">
 				<p>
-					<button type="submit" class="btn btn-outline-secondary">주문취소</button>
-				</p>
-			</div>
+                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                    주문취소
+                </button>
 
-			<nav aria-label="Page navigation example">
-				<ul class="pagination justify-content-center">
-					<li class="page-item disabled"><a class="page-link" href="#"
-						tabindex="-1" aria-disabled="true">Previous</a></li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item"><a class="page-link" href="#">2</a></li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item"><a class="page-link" href="#">Next</a></li>
-				</ul>
-			</nav>
-		</div>
-		</form>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">선택삭제</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                               취소하시겠습니까?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+                                <button type="submit" class="btn btn-primary">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+				</p>
+
+		
 
 
 
