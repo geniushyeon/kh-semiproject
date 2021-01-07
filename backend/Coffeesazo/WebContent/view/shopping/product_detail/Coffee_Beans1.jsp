@@ -20,22 +20,22 @@
         <div id="menu-container">
             <div class="menu1">
                 <div class="menu-toplogo">
-                <c:forEach items="${coffeeList }" var="Product_detail">
-                    <h1><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">${ProductDeatil.fkCategoryIndex}</a></h1>
+                <c items="${coffeeList }" var="Product_detail">
+                    <h1><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">${Product.fk_CategoryIndex}</a></h1>
                 </div>
                 <div class="menu-toptag">
-                    <a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">${ProductDeatil.fkHashtagIndex}</a>
+                    <a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">${Product.fk_HashtagIndex}</a>
                 </div>
                 
                 <div class="menu-productinfo">
                     
 
                     
-                    <img src="./view/img/${ProductDetail.productImage}" alt="">
+                    <img src="./view/img/${Product.productImage}" alt="">
                     <div class="menu-result">
                         <form action="">
                             <div class="result-title">
-                                <h2>${ProductDetail.product_info}</h2>
+                                <h2>${Product.product_info}</h2>
                             </div>
                             <div class="result-product">
                                 <h3>'모리타'</h3>
@@ -115,7 +115,7 @@
                 <img src="./view/img/Morita.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
-                        <p class="p1">${ProductDetail.product_text}</p>
+                        <p class="p1">${Product.product_text}</p>
                             <p class="p2">Papua New Guinea 'Morita'</p>
                                 
                             </div>
@@ -133,7 +133,7 @@
                 </div>
             </div>
             
-	</c:forEach>
+	</c>
             </div>
 
     </main>
