@@ -17,18 +17,18 @@ public class MyQnaService {
 	
 
 	public List<MyQnaList> selectQnaPageList(Page page) {
-		List<MyQnaList> qnaList = null;
+		List<MyQnaList> qnaSearchList = null;
 		
 		
 		try {
 			Connection conn = new Application().getConn();
-			qnaList =  new MyQnaListDao().selectQnaPageList(conn, page);
+			qnaSearchList =  new MyQnaListDao().selectQnaPageList(conn, page);
 			JDBCTemplate.close(conn);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return qnaList;
+		return qnaSearchList;
 	}
 
 	

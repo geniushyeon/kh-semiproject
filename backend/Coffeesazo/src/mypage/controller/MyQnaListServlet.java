@@ -2,7 +2,7 @@ package mypage.controller;
 
 import java.io.IOException; 
 import java.util.ArrayList;
-
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,14 +22,14 @@ import mypage.model.vo.MyQnaList;
 @WebServlet("/MyQnaList")
 public class MyQnaListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public MyQnaListServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public MyQnaListServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -38,47 +38,42 @@ public class MyQnaListServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("utf-8");
 		int nowPage = 1;
 		String findStr = "";
-		
+
 		Page page = null;
-		
+
 		if(request.getParameter("nowPage") != null) {
 			nowPage = Integer.parseInt(request.getParameter("nowPage"));
 		}
-		
+
 		if(request.getParameter("findStr") != null) {
 			findStr = request.getParameter("findStr");
 		}
-		
+
 		page = new Page();
 		page.setNowPage(nowPage);
 		System.out.println(page.getNowPage());
 		page.setFindStr(findStr);
-		
+
 		HttpSession session = request.getSession(); 
 		String memberid = ((String)session.getAttribute("id"));
-		ArrayList<MyQnaList> qnaList = new MyQnaService().SelectQnaList(memberid);
+		List<MyQnaList> qnaList = new MyQnaService().SelectQnaList(memberid);
 
-		System.out.println(qnaList.size());
-
+		if(!qnaList.isEmpty()) {
 			request.setAttribute("qnaList", qnaList);
+			request.setAttribute("page", page);
+			System.out.println("스타트번호:"+page.getStartNo());
+			String url = "index.jsp?inc=view/mypage/";
+			RequestDispatcher view = request.getRequestDispatcher(url + "Mypage_qna.jsp");
+			view.forward(request, response);
+			System.out.println(qnaList);
+		} else {
+			response.sendRedirect("");
+		}
 
-
-			if(!qnaList.isEmpty()) {
-				request.setAttribute("noticeList", qnaList);
-				request.setAttribute("page", page);
-				
-				String url = "index.jsp?inc=view/mypage/";
-				RequestDispatcher view = request.getRequestDispatcher(url + "Mypage_qna.jsp");
-				view.forward(request, response);
-				System.out.println(qnaList);
-			} else {
-				response.sendRedirect("");
-			}
-			
 	}
 
 }

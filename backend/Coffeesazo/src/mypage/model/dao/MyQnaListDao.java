@@ -20,10 +20,9 @@ public class MyQnaListDao {
 		int totalListSize = 0;
 
 		try {
-			String sql = "SELECT COUNT(*) cnt FROM CS_QNA WHERE QNA_TITLE LIKE ? ";
+			String sql = "SELECT COUNT(*) cnt FROM CS_QNA ";
 
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, "%" + findStr + "%");
 
 			rs = pstmt.executeQuery();
 
@@ -50,19 +49,20 @@ public class MyQnaListDao {
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;	
-		List<MyQnaList> qnaList = null;
+		List<MyQnaList> qnaSearchList = null;
 
 		try {
 
-			qnaList = new ArrayList<MyQnaList>();
+			qnaSearchList = new ArrayList<MyQnaList>();
 			String findStr = page.getFindStr();
 			page.setTotalListSize(getTotalListSize(conn, findStr));
 			page.pageCompute();
 
+			System.out.println("totalListSize: "+page.getTotalListSize());
 			String sql = "SELECT * FROM ("
 					+ "SELECT ROWNUM no, n.* FROM ("
-					+ "SELECT * FROM cs_notice WHERE notice_title LIKE ? "
-					+ "ORDER BY notice_index DESC) n"
+					+ "SELECT * FROM CS_QNA"
+					+ "ORDER BY QNA_INDEX DESC) n"
 					+ " ) WHERE no BETWEEN ? AND ?";
 
 
@@ -76,11 +76,11 @@ public class MyQnaListDao {
 
 			while(rs.next()) {
 				MyQnaList myqnaList = new MyQnaList();
-				myqnaList.setQnaIndex(rs.getInt("notice_index"));
-				myqnaList.setQnaTitle(rs.getString("notice_title"));
-				myqnaList.setWriteDate(rs.getDate("notice_date"));
+				myqnaList.setQnaIndex(rs.getInt("QNA_INDEX"));
+				myqnaList.setQnaTitle(rs.getString("QNA_TITLE"));
+				myqnaList.setWriteDate(rs.getDate("QNA_DATE"));
 
-				qnaList.add(myqnaList);		
+				qnaSearchList.add(myqnaList);		
 			}		
 		} catch (Exception e){
 			e.printStackTrace();
@@ -88,7 +88,7 @@ public class MyQnaListDao {
 			JDBCTemplate.close(pstmt);
 			JDBCTemplate.close(rs);	
 		}
-		return qnaList;
+		return qnaSearchList;
 	}
 
 	

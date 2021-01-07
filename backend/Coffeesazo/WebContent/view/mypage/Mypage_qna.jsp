@@ -18,10 +18,8 @@
 <body>
 	<main>
 		<div class="size-controll">
-
 			<div class="user_info">
 				<div class="mypage_title">
-
 					<h1>마이페이지</h1>
 				</div>
 				<div class="user_info_form">
@@ -32,8 +30,6 @@
 			</div>
 
 			<!--------------전체 버튼묶음-------------->
-
-
 			<div class="button">
 				<ul>
 					<a class="card_small" href="OrderListSelect">
@@ -44,10 +40,6 @@
 
 					</a>
 				</ul>
-
-
-
-
 				<form action="mypage_edit" method="POST" name="form_edit">
 					<ul>
 						<a class="card_small" id="mypage-edit" onclick="gotoEdit()">
@@ -58,7 +50,6 @@
 
 						</a>
 					</ul>
-
 					<ul>
 						<a class="card_small" href="MyQnaList">
 							<h3 class="softblack">나의문의</h3>
@@ -69,56 +60,48 @@
 						</a>
 					</ul>
 			</div>
-
-
-
 			<div class="edit_title">
 				<h1>나의문의</h1>
 			</div>
-			<form method="POST" name="form1" id="form1" >
+			<form method="POST" name="form1" id="form1">
 				<div id="find-zone" style="float: right; margin-bottom: 20px;">
-				<input type="text" name="findStr" id="findStr" value="${param.findStr }" placeholder="제목으로 검색"/>
-				<input type="button" id="btnFind" value="검색" onclick="Find()" />
-				<input type="hidden" name="nowPage" value="${empty param.nowPage ? 1 : param.nowPage }"/>
+					<input type="text" name="findStr" id="findStr" value="${param.findStr }" placeholder="제목으로 검색" />
+					<input type="button" id="btnFind" value="검색" onclick="Find()" />
+					<input type="hidden" name="nowPage" value="${empty param.nowPage ? 1 : param.nowPage }" />
 				</div>
-			<!---------------------테이블 시작 --------------------->
-			<div class="main_table">
-				<table class="table table-hover">
-					<form action="" method="POST">
-						<thead>
-							<tr>
-								<th>번호</th>
-								<th>답변여부</th>
-								<th>제목</th>
-								<th>작성자</th>
-								<th>작성일</th>
-							</tr>
-						</thead>
+				<!---------------------테이블 시작 --------------------->
+				<div class="main_table">
+					<table class="table table-hover">
+						<form action="" method="POST">
+							<thead>
+								<tr>
+									<th>번호</th>
+									<th>답변여부</th>
+									<th>제목</th>
+									<th>작성자</th>
+									<th>작성일</th>
+								</tr>
+							</thead>
 
-
-						<!--------------------- 글 시작 --------------------->
-						<c:if test="${not empty qnaList }">
-							<tbody>
-								<c:forEach items="${qnaList}" var="MyQnaList">
-									<tr>
-										<td>${MyQnaList.qnaIndex }</td>
-										<td class="title">${MyQnaList.qnaCheck }</td>
-										<!--------------------- qna 상세페이지 맵핑필요 --------------------->
-										<td><a
-											href="/view/qna/qna_check.jsp?id= ${MyQnaList.qnaIndex}">${MyQnaList.qnaTitle }</a></td>
-										<td>${MyQnaList.userId }</td>
-										<td>${MyQnaList.writeDate }</td>
-									</tr>
-								</c:forEach>
-
-							</tbody>
-
-						</c:if>
-
-					</form>
-
-
-				</table>
+							<!--------------------- 글 시작 --------------------->
+							<c:if test="${not empty qnaList }">
+								<tbody>
+								
+								<c:set var="no" value="${page.startNo }"/>
+									<c:forEach items="${qnaList}" var="MyQna">
+										<tr>
+											<td><input type="hidden" name="qnaIndex" id="qnaIndex" value="${no}"/>${MyQna.qnaIndex }</td>
+											<td>${MyQna.qnaCheck }</td>
+											<td onclick="view(${MyQna.qnaIndex});">${MyQna.qnaTitle }</td>
+											<td>${MyQna.userId }</td>
+											<td>${MyQna.writeDate }</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</c:if>
+						</form>
+					</table>
+				</div>
 				<!--------------------- 글쓰기버튼 --------------------->
 				<div class="csl-button">
 					<p>
@@ -126,59 +109,70 @@
 					</p>
 					<nav aria-label="Page navigation example">
 						<ul class="pagination justify-content-center">
-							<c:if test="${page.startPage > 1 }">
-								<li class="page-item" value="Previous" id="btnPrev"
-									onclick="goPage(${page.startPage - 1})" />
-								<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-								</li>
-							</c:if>
-							<c:forEach var='i' begin='${page.startPage }'end='${page.endPage }'>
-								<li class="page-item" value='${i }' ${(param.nowPage == i) ? 'disabled' : '' } onclick='goPage(${i})' /></li>
-							</c:forEach>
-							<c:if test="${page.endPage < page.totalPage }">
-								<li class="page-item" value='Next' id="btnNext"
-									onclick="goPage(${page.endPage + 1})" />
+						${ page.startPage}
+					<c:if test="${page.startPage > 1 }">
+						<input type='button' value="처음" id="btnFirst" onclick="goPage(1)" />
+						<input type="button" value="이전" id="btnPrev" onclick="goPage(${page.startPage - 1})"/>
+					</c:if>
+					
+					
+					<c:forEach var='i' begin='${page.startPage }' end='${page.endPage }'>
+						<input type='button' value='${i }' ${(param.nowPage == i) ? 'disabled' : '' } onclick='goPage(${i})' />
+					</c:forEach>
+					
+					<c:if test="${page.endPage < page.totalPage }">
+						<input type='button' value='다음' id="btnNext" onclick="goPage(${page.endPage + 1})" />
+						<input type="button" value="맨끝" id="btnLast" onclick="goPage(${page.totalPage})"/> 
+					</c:if>
+						</ul>
+					</nav>
 
 
-							</c:if>
-                    </ul>
-                </nav>
+				</div>
 
 
-            </div>
-            
- 
-            
+			</form>
 
-           </div>
-    </form>
+		</div>
 	</main>
-    
-        <script>
 
-        
-    	function goPage(page) {
-    		var frm = document.form1;
-    		frm.action = "MyQnaList";
-    		frm.nowPage.value = page;
-    		frm.submit();
-    		
-    	}
-        
-    	function Find() {
-    		var frm = document.form1;
-    		frm.action = "MyQnaList";
-    		frm.nowPage.value = 1;
-    		frm.submit();
-    	}
-        
-	function gotoEdit() {
-		var form = document.form_edit;
-		form.action = "mypage_edit";
-		form.submit();
+	<script>
+	
+	
+	function view(qnaIndex){
+		// form태그 id
+		var frm = document.form1;
+		// 문의글태그 id
+		var index = document.getElementById("qnaIndex");
+		frm.action="noticedetail"; //윤지누나 꺼 넣기
+		index.value = qnaIndex;
+		console.log(index.value);
+		frm.submit();
 	}
-    </script>
-       <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/popper.js"></script>
+	
+		function goPage(page) {
+			var frm = document.form1;
+			frm.action = "MyQnaList";
+			frm.nowPage.value = page;
+			frm.submit();
+			
+		}
+	
+		function Find() {
+			var frm = document.form1;
+			frm.action = "MyQnaList";
+			frm.nowPage.value = 1;
+			frm.submit();
+		}
+
+		function gotoEdit() {
+			var form = document.form_edit;
+			form.action = "mypage_edit";
+			form.submit();
+		}
+		
+		
+	</script>
+
 </body>
 </html>
