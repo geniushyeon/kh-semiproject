@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.coffeesazo.Page;
+
 import mypage.model.service.MyQnaService;
 import mypage.model.vo.MyQnaList;
 
@@ -37,6 +40,24 @@ public class MyQnaListServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("utf-8");
+		int nowPage = 1;
+		String findStr = "";
+		
+		Page page = null;
+		
+		if(request.getParameter("nowPage") != null) {
+			nowPage = Integer.parseInt(request.getParameter("nowPage"));
+		}
+		
+		if(request.getParameter("findStr") != null) {
+			findStr = request.getParameter("findStr");
+		}
+		
+		page = new Page();
+		page.setNowPage(nowPage);
+		System.out.println(page.getNowPage());
+		page.setFindStr(findStr);
+		
 		HttpSession session = request.getSession(); 
 		String memberid = ((String)session.getAttribute("id"));
 		ArrayList<MyQnaList> qnaList = new MyQnaService().SelectQnaList(memberid);
@@ -44,10 +65,20 @@ public class MyQnaListServlet extends HttpServlet {
 		System.out.println(qnaList.size());
 
 			request.setAttribute("qnaList", qnaList);
-			String url = "index.jsp?inc=view/mypage/";
-			RequestDispatcher view = request.getRequestDispatcher(url + "Mypage_qna.jsp");
-			view.forward(request, response);
 
+
+			if(!qnaList.isEmpty()) {
+				request.setAttribute("noticeList", qnaList);
+				request.setAttribute("page", page);
+				
+				String url = "index.jsp?inc=view/mypage/";
+				RequestDispatcher view = request.getRequestDispatcher(url + "Mypage_qna.jsp");
+				view.forward(request, response);
+				System.out.println(qnaList);
+			} else {
+				response.sendRedirect("");
+			}
+			
 	}
 
 }
