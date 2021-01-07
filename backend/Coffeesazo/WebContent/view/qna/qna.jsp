@@ -27,7 +27,7 @@
 					<div class="boardnavi">
 						<a href="index.jsp?inc=view/notice/notice.jsp" class="navi01">
 							<span>공지사항</span>
-						</a> <a href="index.jsp?inc=view/qna/qna.jsp" class="navi02"> <strong>1:1
+						</a> <a href="qna" class="navi02"> <strong>1:1
 								문의</strong>
 						</a>
 					</div>
@@ -45,18 +45,20 @@
 							</tr>
 						</thead>
 						
+						<form action="" method="post" name="frm_index"> 
 						<tbody class="index-box">
+								<input type="text" name="qnaIndex"/>
 							<c:forEach items="${qnaList }" var="qnavo">
-							<tr style="background-color: #FFFFFF; color: black;">
+							<tr style="background-color: #FFFFFF; color: black;" onclick="view(${qnavo.qnaIndex})">
 								<td>${qnavo.qnaIndex }</td>
 								<td class="displaynone"></td>
-								<td class="subject"><a
-									href="#" onclick="javascript:registration_button()">${qnavo.qnaTitle }</a></td>
+								<td class="subject">${qnavo.qnaTitle }</td>
 								<td><input type="text" id="test" value="${qnavo.fkMemberId }"/>${qnavo.fkMemberId }</td>
 								<td class="txtLess ">${qnavo.qnaDate }</td>
 							</tr>
 							</c:forEach>
 						</tbody>
+						</form>
 						
 			 			<!-- <tbody class="index-box">
 							<tr style="background-color: #FFFFFF; color: black;">
@@ -134,7 +136,7 @@
 		}
 	}
 	
-	function registration_button() {
+	<%-- function registration_button() {
 		var id = '<%=(String)session.getAttribute("id")%>';
 		var idvalue = document.getElementById("test").value;
 		
@@ -144,7 +146,14 @@
 		if(id != idvalue){
 			alert("접근 권한이 없습니다....");
 		}
+	} --%>
+	function view(qnaIndex) {
+		var frm = document.frm_index;
+		frm.action = "index.jsp?inc=view/qna/qna_check.jsp";
+		frm.qnaIndex.value = qnaIndex;
+		frm.submit();
 	}
+
 	</script>
 </body>
 </html>

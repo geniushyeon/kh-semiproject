@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<jsp:useBean id="QnAVo" class="com.coffeesazo.qna.model.vo.QnAVo">	
+<jsp:setProperty name="QnAVo" property="*"/>
+</jsp:useBean>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,18 +31,18 @@
 				</div>
 				<div class="layout-box">
 					<h2>1:1 문의 수정하기</h2>
-					<form name="board" method="post" class="board">
+					<form name="board" method="post" action="qnamodify" class="board">
 						<label for="title">제목</label> <input type="text" id="title"
-							name="title" required /> <br /> <br /> 
+							name="title" value="<%=QnAVo.getQnaTitle() %>" required /> <br /> <br /> 
 						<label for="content">내용</label> 
-						<textarea class="content" rows="13" cols="85" name="content" required /></textarea> <br /> <br />	
+						<textarea class="content" rows="13" cols="85" name="content" required ><%=QnAVo.getQnaTitle() %></textarea> <br /> <br />	
 						<label for="file">첨부파일</label>
 						<div class="file-upload">
-							<input type="file" id="file" name="file" multiple />
+							<input type="file" id="file" name="file" value="<%=QnAVo.getQnaImage() %>" multiple />
 						</div>
 						<div class="bottom-button">
-							<a href="#" class="btn-save" onclick="javascript:registration()">등록하기</a>
-							<a href="#" class="btn-modify" onclick="javascript:modify()">수정하기</a>
+							<input class="btn-save" type="submit" value="등록하기">
+							<input class="btn-modify" type="submit" value="수정하기" onclick="javascript:modify()">
 						</div>
 					</form>
 				</div>
@@ -59,7 +62,7 @@
 		function modify() {
 	        var writeCancle = confirm("수정하시겠습니까?");
 	        if( writeCancle == true ) {
-	            alert("수정이 완료되었습니다.");
+	            //alert("수정이 완료되었습니다.");
 	            location.href = "index.jsp?inc=view/qna/qna.jsp";
 	        } 
 	    }

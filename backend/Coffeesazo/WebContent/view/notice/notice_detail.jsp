@@ -1,4 +1,3 @@
-<%@page import="com.coffeesazo.notice.model.vo.NoticeVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>	
@@ -31,9 +30,8 @@
 						</a>
 					</div>
 				</div>
-			<form name="form1" method="POST">
 				<div class="base-table">
-				<input type="hidden" id="noticeIndex" name="noticeIndex" value="${noticeIndex }"/> 
+				<c:forEach items="${noticeDetailList}" var="noticevo" > 
 					<table border="1" summary>
 						<caption>게시판 목록</caption>
 						<tbody>					
@@ -50,19 +48,144 @@
 								<td>${noticevo.noticeDate }</td>
 							</tr>
 					</table>
-					
+					</c:forEach> 
 				</div>
+					<%-- <div class="base-table">
+					<table border="1" summary>
+						<caption>게시판 목록</caption>
+						<tbody>
+						<c:forEach items="${noticeDetailList}" var="noticevo" begin="1" end="1">
+							<tr>
+								<th scope="row">제목</th>
+								<td>${noticevo.noticeTitle }</td>
+							</tr>
+							<tr>
+								<th scope="row">작성자</th>
+								<td>관리자</td>
+							</tr>
+							<tr>
+								<th scope="row">작성일</th>
+								<td>${noticevo.noticeDate }</td>
+							</tr>
+						</c:forEach>	
+						</tbody>
+					</table>
+				</div>
+					<div class="base-table">
+					<table border="1" summary>
+						<caption>게시판 목록</caption>
+						<tbody>
+						<c:forEach items="${noticeDetailList}" var="noticevo" begin="2" end="2">
+							<tr>
+								<th scope="row">제목</th>
+								<td>${noticevo.noticeTitle }</td>
+							</tr>
+							<tr>
+								<th scope="row">작성자</th>
+								<td>관리자</td>
+							</tr>
+							<tr>
+								<th scope="row">작성일</th>
+								<td>${noticevo.noticeDate }</td>
+							</tr>
+						</c:forEach>	
+						</tbody>
+					</table>
+				</div>
+					<div class="base-table">
+					<table border="1" summary>
+						<caption>게시판 목록</caption>
+						<tbody>
+						<c:forEach items="${noticeDetailList}" var="noticevo" begin="3" end="3">
+							<tr>
+								<th scope="row">제목</th>
+								<td>${noticevo.noticeTitle }</td>
+							</tr>
+							<tr>
+								<th scope="row">작성자</th>
+								<td>관리자</td>
+							</tr>
+							<tr>
+								<th scope="row">작성일</th>
+								<td>${noticevo.noticeDate }</td>
+							</tr>
+						</c:forEach>	
+						</tbody>
+					</table>
+				</div>
+					<div class="base-table">
+					<table border="1" summary>
+						<caption>게시판 목록</caption>
+						<tbody>
+						<c:forEach items="${noticeDetailList}" var="noticevo" begin="4" end="4">
+							<tr>
+								<th scope="row">제목</th>
+								<td>${noticevo.noticeTitle }</td>
+							</tr>
+							<tr>
+								<th scope="row">작성자</th>
+								<td>관리자</td>
+							</tr>
+							<tr>
+								<th scope="row">작성일</th>
+								<td>${noticevo.noticeDate }</td>
+							</tr>
+						</c:forEach>	
+						</tbody>
+					</table>
+				</div>
+					<div class="base-table">
+					<table border="1" summary>
+						<caption>게시판 목록</caption>
+						<tbody>
+						<c:forEach items="${noticeDetailList}" var="noticevo" begin="5" end="5">
+							<tr>
+								<th scope="row">제목</th>
+								<td>${noticevo.noticeTitle }</td>
+							</tr>
+							<tr>
+								<th scope="row">작성자</th>
+								<td>관리자</td>
+							</tr>
+							<tr>
+								<th scope="row">작성일</th>
+								<td>${noticevo.noticeDate }</td>
+							</tr>
+						</c:forEach>	
+						</tbody>
+					</table>
+				</div>
+					<div class="base-table">
+					<table border="1" summary>
+						<caption>게시판 목록</caption>
+						<tbody>
+						<c:forEach items="${noticeDetailList}" var="noticevo" begin="6" end="6">
+							<tr>
+								<th scope="row">제목</th>
+								<td>${noticevo.noticeTitle }</td>
+							</tr>
+							<tr>
+								<th scope="row">작성자</th>
+								<td>관리자</td>
+							</tr>
+							<tr>
+								<th scope="row">작성일</th>
+								<td>${noticevo.noticeDate }</td>
+							</tr>
+						</c:forEach>	
+						</tbody>
+					</table>
+				</div> --%>
 				<tr class="view">
 					<div class="detail">
 						<div class="view-article">
-							<p style="margin-top: 20px;">${noticevo.noticeText }</p>
+							<p></p>
 							<p style="text-align: center;">
-								<img src="${noticevo.noticeFile }" style="width: 550px; height: 500px; padding-top: 70px;">
+								<img src="./view/img/view-img.jpg" style="width: 550px; height: 500px; padding-top: 70px;">
 							</p>
 						</div>
 					</div>
 				</tr>
-			</form>
 				<div class="bottom-table">
 					<ul>
 						<li class="prev"><strong>이전글</strong> 
@@ -72,7 +195,7 @@
 					</ul>
 				</div>
 				<div class="list-button">
-					<a href="notice" class="btn-board">목록</a>
+					<a href="index.jsp?inc=view/notice/notice.jsp" class="btn-board">목록</a>
 				</div>
 			</div>
 		</div>

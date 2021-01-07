@@ -2,10 +2,9 @@ package com.coffeesazo.notice.model.service;
 
 import java.sql.Connection;
 import java.util.ArrayList;
-import java.util.List;
+
 
 import com.coffeesazo.Application;
-import com.coffeesazo.Page;
 import com.coffeesazo.notice.model.dao.NoticeDao;
 import com.coffeesazo.notice.model.vo.NoticeVo;
 
@@ -14,34 +13,33 @@ import common.JDBCTemplate;
 
 public class NoticeService {
 
-	public List<NoticeVo> selectNoticeList(Page page) {
-		List<NoticeVo> noticeList = null;
-		
-		
+	public ArrayList<NoticeVo> selectNoticeList() {
+		ArrayList<NoticeVo> noticeList = null;
+
 		try {
 			Connection conn = new Application().getConn();
-			noticeList =  new NoticeDao().selectNoticeList(conn, page);
+			noticeList =  new NoticeDao().selectNoticeList(conn);
 			JDBCTemplate.close(conn);
 		} catch (Exception e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 
 		return noticeList;
 	}
 
 
-	public NoticeVo selectNoticeDetailList(int noticeIndex) {
-		NoticeVo noticevo = null;
+	public ArrayList<NoticeVo> selectNoticeDetailList(int noticeIndex) {
+		ArrayList<NoticeVo> noticeDetailList = null;
 
 		try {
 			Connection conn = new Application().getConn();
-			noticevo =  new NoticeDao().selectNoticeDetailList(conn,noticeIndex);
+			noticeDetailList =  new NoticeDao().selectNoticeDetailList(conn,noticeIndex);
 			JDBCTemplate.close(conn);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 
-		return noticevo;
+		return noticeDetailList;
 	}
 }
 

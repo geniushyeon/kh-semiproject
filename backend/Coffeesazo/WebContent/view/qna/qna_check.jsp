@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<jsp:useBean id="QnAVo" class="com.coffeesazo.qna.model.vo.QnAVo">	
+<jsp:setProperty name="QnAVo" property="*"/>
+</jsp:useBean>		
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,17 +33,18 @@
 					<h2>1:1 문의 조회하기</h2>
 					<form name="board" method="post" class="board">
 						<label for="title">제목</label> <input type="text" id="title"
-							name="title" required /> <br /> <br /> 
+							name="title" value="<%=QnAVo.getQnaTitle() %>" readOnly /> <br /> <br /> 
 						<label for="content">내용</label> 
-						<textarea class="content" rows="13" cols="85" name="content" required /></textarea> <br /> <br />		
+						<textarea class="content" rows="13" cols="85" name="content" readOnly ><%=QnAVo.getQnaTitle() %></textarea> <br /> <br />		
 						<label for="file">첨부파일</label>
 						<div class="file-upload">
-							<input type="file" id="file" name="file" multiple />
+							<input type="file" id="file" name="file" value="<%=QnAVo.getQnaImage() %>" multiple />
 						</div>
+						<input type="text" name ="qnaIndex" value = "<%=QnAVo.getQnaIndex() %>"/>
 						<div class="bottom-button">
-							<a href="index.jsp?inc=view/qna/qna.jsp" class="btn-board">목록으로</a> 
-							<a href="#" class="btn-cancle" onclick="javascript:cancle()">삭제하기</a> 
-							<a href="#" class="btn-modify" onclick="javascript:modify()">수정하기</a>
+							<a href="qna" class="btn-board">목록으로</a> 
+							<a href="#" class="btn-cancle" onclick="cancle()">삭제하기</a> 
+							<a href="#" class="btn-modify" onclick="location.href='index.jsp?inc=view/qna/qna_modify.jsp'">수정하기</a>
 						</div>
 					</form>
 				</div>
@@ -54,14 +58,7 @@
 	        var writeCancle = confirm("삭제하시겠습니까?");
 	        if( writeCancle == true ) {
 	            alert("삭제가 완료되었습니다.");
-	            location.href = "index.jsp?inc=view/qna/qna.jsp";
-	        } 
-	    }
-		function modify() {
-	        var writeCancle = confirm("수정하시겠습니까?");
-	        if( writeCancle == true ) {
-	            alert("수정이 완료되었습니다.");
-	            location.href = "index.jsp?inc=view/qna/qna.jsp";
+	            location.href = "qna";
 	        } 
 	    }
 	</script>
