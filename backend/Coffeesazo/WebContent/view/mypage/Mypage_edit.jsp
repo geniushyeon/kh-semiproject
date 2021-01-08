@@ -46,7 +46,7 @@
        <!--------------전체 버튼묶음-------------->
        <div class="button">
         <ul>
-            <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_order.jsp">
+            <a class="card_small" href="OrderListSelect">
                 <h3 class="softblack">주문내역</h3>
                 <p class="card_text">최근 주문내역을 </br>확인하실 수 있습니다.</p>
 
