@@ -265,12 +265,12 @@ h1 {
 /* 하단 버튼 코드 */
 .bottom-button {
 	position: relative;
-	padding: 85px;
+	padding: 65px;
 	text-align: center;
 	cursor: pointer;
 }
 
-.bottom-button a {
+.bottom-button input {
 	text-decoration: none;
 	display: inline-block;
 	color: #353535;
@@ -281,12 +281,14 @@ h1 {
 	background-color: #4d2600;
 	color: #fff;
 	margin: 5px;
+	outline-style: none;
+	border: none;
 }
 
-.bottom-button a:hover {
+.bottom-button input:hover {
 	background-color: burlywood;
 	transition: 0.3s;
 	cursor: pointer;
 	text-decoration: none;
-	color: black;
+	color: #fff;
 }

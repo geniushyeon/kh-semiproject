@@ -33,18 +33,17 @@
 						<label for="title">제목</label>
 						<input type="text" id="title" name="title" value="${title}" required /> <br /> <br />
 						<label for="content">내용</label> 
-						<textarea class="content" rows="13" cols="85" name="content" id="content"  required />${text}</textarea> <br /> <br />
+						<textarea class="content" rows="13" cols="85" name="content" id="content"  required >${text}</textarea> <br /> <br />
 						<label for="file">첨부파일</label>
 						<div class="file-upload">
 							<input type="file" id="file" name="file" multiple /><br /><br />
-							${image}						
+							<span>${image}</span>						
 						</div>
 						<div class="bottom-button">
 							<input class="btn-save" type="submit" value="등록하기">
 							<input class="btn-cancle" type="button" onclick="cancle()" value="취소하기">
 							
 						</div>
-					
 					</form>
 				</div>
 			</div>
