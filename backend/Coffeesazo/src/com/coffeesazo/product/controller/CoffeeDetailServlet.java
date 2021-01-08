@@ -20,7 +20,6 @@ public class CoffeeDetailServlet extends HttpServlet {
         
 
     public CoffeeDetailServlet() {
-        super();
 
     }
  

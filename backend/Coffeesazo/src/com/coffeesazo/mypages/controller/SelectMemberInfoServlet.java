@@ -1,4 +1,4 @@
-package com.coffeesazo.member.controller;
+package com.coffeesazo.mypages.controller;
 
 import java.io.IOException;
 import java.util.List;
