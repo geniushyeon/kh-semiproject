@@ -46,6 +46,7 @@ public class QnAWriteServlet extends HttpServlet {
 		if(result == 1) {
 			//업데이트성공시
 			
+			out.println("<script>alert('등록이 완료되었습니다.');</script>");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("qna");
 			dispatcher.forward(request, response);
 		}

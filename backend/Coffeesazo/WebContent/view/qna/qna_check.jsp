@@ -31,7 +31,7 @@
 				</div>
 				<div class="layout-box">
 					<h2>1:1 문의 조회하기</h2>
-					<form name="board" method="post" class="board">
+					<form name="board" method="post" class="board" action="qnacheck">
 						<label for="title">제목</label> <input type="text" id="title"
 							name="title" value="<%=QnAVo.getQnaTitle() %>" readOnly /> <br /> <br /> 
 						<label for="content">내용</label> 
@@ -40,10 +40,12 @@
 						<div class="file-upload">
 							<input type="file" id="file" name="file" value="<%=QnAVo.getQnaImage() %>" multiple />
 						</div>
-						<input type="text" name ="qnaIndex" value = "<%=QnAVo.getQnaIndex() %>"/>
+						<input type="text" name ="qnaIndex" value="<%=QnAVo.getQnaIndex() %>"/>
 						<div class="bottom-button">
 							<a href="qna" class="btn-board">목록으로</a> 
-							<a href="#" class="btn-cancle" onclick="cancle()">삭제하기</a> 
+							<form name="qnadelete" method="post" action="qnadelete" name="delete">
+							<input class="btn-cancle" type="submit" value="삭제하기" onclick="cancle()">
+							</form>
 							<a href="#" class="btn-modify" onclick="location.href='index.jsp?inc=view/qna/qna_modify.jsp'">수정하기</a>
 						</div>
 					</form>
