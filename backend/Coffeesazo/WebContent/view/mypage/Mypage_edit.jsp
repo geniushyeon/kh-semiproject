@@ -224,13 +224,13 @@
 
   </main>
 
-<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="view/js/addressApi.js"></script>
-  <script src="view/js/jquery.min.js"></script>
-<script src="view/js/mypage_edit.js"></script>
-  <script src="view/js/bootstrap.min.js"></script>
-  <script src="view/js/popper.js"></script>
+	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="view/js/addressApi.js"></script>
+	<script src="view/js/jquery.min.js"></script>
+	<script src="view/js/mypage_edit.js"></script>
+	<script src="view/js/bootstrap.min.js"></script>
+	<script src="view/js/popper.js"></script>
 
-  
+
 </body>
 </html>
