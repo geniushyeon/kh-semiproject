@@ -19,8 +19,37 @@
 <style>
 	.subject:hover {
 		cursor: pointer;
+		text-decoration: underline;
 	}
-
+	
+	#btnFind {
+		width: 50px;
+		height: 30px;
+		border: 0;
+		background-color: #4d2600;
+		color: white;
+	}
+	
+	#btnFind:hover {
+		background-color: burlywood;
+		transition: 0.3s;
+		cursor: pointer;
+	
+	}
+	
+	#findStr {
+		width: 200px;
+		height: 30px;
+		border: 0;
+		border-bottom: 2px solid #8B4F1D;
+		padding-left: 8px;
+	}
+	
+	#findStr:focus {
+		outline: none;
+	}
+	
+	
 </style>
 
 </head>
@@ -71,7 +100,6 @@
 							</c:forEach>
 						
 						</tbody>
-
 					</table>
 				</div>
 				<div class='btns'>
@@ -98,7 +126,6 @@
 	<!-- 부트스트랩 자바스크립트 추가 -->
 	<script src = "js/notice.js"></script>
 	<script>
-
 	function view(noticeIndex){
 		var frm = document.form1;
 		var index = document.getElementById("noticeIndex");
@@ -107,7 +134,6 @@
 		console.log(index.value);
 		frm.submit();
 	}
-
 	function goPage(page) {
 		var frm = document.form1;
 		frm.action = "notice";

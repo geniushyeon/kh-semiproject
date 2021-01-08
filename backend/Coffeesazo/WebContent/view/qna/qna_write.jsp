@@ -20,26 +20,26 @@
 	<main>
 		<div id="container">
 			<div id="contents">
-				<a href="index.jsp?inc=view/notice/notice.jsp"><h1>고객센터</h1></a>
+				<a href="notice"><h1>고객센터</h1></a>
 				<div class="boardnavi">
-					<a href="index.jsp?inc=view/notice/notice.jsp" class="navi01"> <span>공지사항</span>
-					</a> <a href="index.jsp?inc=view/qna/qna.jsp" class="navi02"> <span>1:1 문의</span>
+					<a href="notice" class="navi01"> <span>공지사항</span>
+					</a> <a href="qna" class="navi02"> <span>1:1 문의</span>
 					</a>
 				</div>
 				<div class="layout-box">
 					<h2>1:1 문의 작성하기</h2>
-					<form name="board" method="post" class="board">
+					<form name="board" method="post" class="board" action="qnawrite">
 						<label for="title">제목</label> <input type="text" id="title"
 							name="title" placeholder="내용을 입력해 주세요." required /> <br /> <br />
 						<label for="content">내용</label> 
-						<textarea class="content" rows="13" cols="85" name="content" placeholder="내용을 입력해 주세요." required /></textarea> <br /> <br />
+						<textarea class="content" rows="13" cols="85" name="content" id="content" placeholder="내용을 입력해 주세요." required /></textarea> <br /> <br />
 						<label for="file">첨부파일</label>
 						<div class="file-upload">
 							<input type="file" id="file" name="file" multiple />
 						</div>
 						<div class="bottom-button">
-							<a href="#" class="btn-save" onclick="javascript:registration()">등록하기</a>
-							<a href="#" class="btn-cancle" onclick="javascript:cancle()">취소하기</a>
+							<input class="btn-save" type="submit" value="등록하기" onclick="registration()">
+							<input class="btn-cancle" type="button" onclick="cancle()" value="취소하기">
 						</div>
 					</form>
 				</div>
@@ -53,14 +53,14 @@
 			var writeRegistration = confirm("등록하시겠습니까?");
 			if(writeRegistration) {
 				alert("등록이 완료되었습니다.");
-				location.href = "index.jsp?inc=view/qna/qna.jsp";
+				location.href = "qna";
 			}
 		}	
 		  function cancle() {
 	        var writeCancle = confirm("취소하시겠습니까?");
 	        if( writeCancle == true ) {
 	            alert("작성이 취소되었습니다.");
-	            location.href = "index.jsp?inc=view/qna/qna.jsp";
+	            location.href = "qna";
 	        } 
 	    }
 	</script>

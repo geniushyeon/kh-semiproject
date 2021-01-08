@@ -22,12 +22,12 @@
 	<main>
 		<div id="container">
 			<div id="contents">
-				<a href="index.jsp?inc=view/notice/notice.jsp"><h1>고객센터</h1></a>
+				<a href="notice"><h1>고객센터</h1></a>
 				<div class="title-area">
 					<div class="boardnavi">
-						<a href="index.jsp?inc=view/notice/notice.jsp" class="navi01">
+						<a href="notice" class="navi01">
 							<span>공지사항</span>
-						</a> <a href="index.jsp?inc=view/qna/qna.jsp" class="navi02"> <strong>1:1
+						</a> <a href="qna" class="navi02"> <strong>1:1
 								문의</strong>
 						</a>
 					</div>
@@ -51,58 +51,13 @@
 								<td>${qnavo.qnaIndex }</td>
 								<td class="displaynone"></td>
 								<td class="subject"><a
-									href="#" onclick="javascript:registration_button()">${qnavo.qnaTitle }</a></td>
-								<td><input type="text" id="test" value="${qnavo.fkMemberId }"/>${qnavo.fkMemberId }</td>
+									href="qnaview?id=${qnavo.qnaIndex}" >${qnavo.qnaTitle }</a></td><!--인덱스 값 넘기기  -->
+								<td>${qnavo.fkMemberId }</td>
 								<td class="txtLess ">${qnavo.qnaDate }</td>
 							</tr>
 							</c:forEach>
 						</tbody>
 						
-			 			<!-- <tbody class="index-box">
-							<tr style="background-color: #FFFFFF; color: black;">
-								<td>5</td>
-								<td class="displaynone"></td>
-								<td class="subject"><a href="#">문의문의</a></td>
-								<td>이지현</td>
-								<td class="txtLess ">2020-12-16</td>
-							</tr>
-						</tbody>
-						<tbody class="index-box">
-							<tr style="background-color: #FFFFFF; color: black;">
-								<td>4</td>
-								<td class="displaynone"></td>
-								<td class="subject"><a href="#">문의문의문의</a></td>
-								<td>박서우</td>
-								<td class="txtLess ">2020-12-16</td>
-							</tr>
-						</tbody>
-						<tbody class="index-box">
-							<tr style="background-color: #FFFFFF; color: black;">
-								<td>3</td>
-								<td class="displaynone"></td>
-								<td class="subject"><a href="#">문의문의</a></td>
-								<td>이민영</td>
-								<td class="txtLess ">2020-12-16</td>
-							</tr>
-						</tbody>
-						<tbody class="index-box">
-							<tr style="background-color: #FFFFFF; color: black;">
-								<td>2</td>
-								<td class="displaynone"></td>
-								<td class="subject"><a href="#">문의</a></td>
-								<td>제윤지</td>
-								<td class="txtLess ">2020-12-16</td>
-							</tr>
-						</tbody>
-						<tbody class="index-box">
-							<tr style="background-color: #FFFFFF; color: black;">
-								<td class="bottom">1</td>
-								<td class="displaynone"></td>
-								<td class="subject"><a href="#">무니</a></td>
-								<td>제윤지</td>
-								<td class="txtLess ">2020-12-16</td>
-							</tr>
-						</tbody> -->
 					</table> 
 				</div> 
 				<div class='btns'>
@@ -114,7 +69,7 @@
 
 					<input type='button' value='Next' /> 
 					<div class="bottom-button">
-						<a href="#" class="bottom-button" onclick="javascript:bottom_button();">등록하기</a>
+						<a href="#" class="bottom-button" onclick="bottom_button();">등록하기</a>
 					</div>
 				</div>
 			</div>

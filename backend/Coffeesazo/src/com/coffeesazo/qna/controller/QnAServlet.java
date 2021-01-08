@@ -11,19 +11,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.coffeesazo.qna.mode.service.QnAService;
-import com.coffeesazo.qna.vo.QnAVo;
+import com.coffeesazo.qna.model.service.QnAService;
+import com.coffeesazo.qna.model.vo.QnAVo;
 
-/**
- * Servlet implementation class QnAServlet
- */
 @WebServlet("/qna")
 public class QnAServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     public QnAServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

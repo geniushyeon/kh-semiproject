@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib  prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,7 +72,7 @@
 											type="text" id="sample6_detailAddress" placeholder="상세주소"
 											style="width: 300px" name="address"> <input
 											type="text" id="sample6_extraAddress" placeholder="참고항목"
-											name="extraAddress"> <br> <label for="">배송
+											name="address"> <br> <label for="">배송
 											시 요청 사항 </label> <br> <input class="delivery-rq"
 											id="delivery-rq" type="text" name="delivery-rq"> <br>
 										<label for="">수령인</label> <br> <input
