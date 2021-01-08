@@ -41,7 +41,7 @@ public class OrderListSelectServlet extends HttpServlet {
 		HttpSession session = request.getSession(); 
 		String memberid = ((String)session.getAttribute("id"));
 		ArrayList<OrderViewList> odList = new OrderService().SelectOrderList(memberid);
-	
+
 		int allresult = 0;
 
 		for(OrderViewList odlist : odList) {
