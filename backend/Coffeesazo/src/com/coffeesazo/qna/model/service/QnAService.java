@@ -12,7 +12,6 @@ import common.JDBCTemplate;
 public class QnAService {
 
 	public ArrayList<QnAVo> selectQnAList() {
-		
 		ArrayList<QnAVo> qnaList = null;
 
 		try {
@@ -25,31 +24,4 @@ public class QnAService {
 		return qnaList;
 	}
 
-	/*
-	 * public ArrayList<QnAVo> writeQnAList(String memberid) {
-	 * 
-	 * ArrayList<QnAVo> qnaWriteList = null;
-	 * 
-	 * try { Connection conn = new Application().getConn(); qnaWriteList = new
-	 * QnADao().writeQnAList(conn, memberid); JDBCTemplate.close(conn); }
-	 * catch(Exception e) { e.printStackTrace(); } return qnaWriteList; }
-	 */
-	/*
-	 * public ArrayList<QnAVo> modifyQnAList(String memberid) {
-	 * 
-	 * ArrayList<QnAVo> qnaModifyList = null;
-	 * 
-	 * try { Connection conn = new Application().getConn(); qnaModifyList = new
-	 * QnADao().modifyQnAList(conn, memberid); JDBCTemplate.close(conn); }
-	 * catch(Exception e) { e.printStackTrace(); } return qnaModifyList; }
-	 */
-	/*
-	 * public ArrayList<QnAVo> deleteQnAList(String memberid) {
-	 * 
-	 * ArrayList<QnAVo> qnaDeleteList = null;
-	 * 
-	 * try { Connection conn = new Application().getConn(); qnaDeleteList = new
-	 * QnADao().deleteQnAList(conn, memberid); JDBCTemplate.close(conn); }
-	 * catch(Exception e) { e.printStackTrace(); } return qnaDeleteList; }
-	 */
 }

@@ -22,7 +22,8 @@ public class OrderDetailDao {
 					+ "INNER JOIN cs_order o ON m.member_id = o.fk_member_id "
 					+ "INNER JOIN cs_order_detail d ON o.order_index = d.fk_order_index "
 					+ "INNER JOIN cs_product p ON d.fk_product_index = p.product_index "
-					+ "WHERE m.member_id = ? AND o.order_index = ? ";
+					+ "WHERE m.member_id = ? AND o.order_index = ? "
+					+ "ORDER BY p.product_index ASC";
 
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberId);

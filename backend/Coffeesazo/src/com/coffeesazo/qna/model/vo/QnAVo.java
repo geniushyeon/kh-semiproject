@@ -12,10 +12,12 @@ public class QnAVo {
 	String qnaImage;
 	int qnaCheck;
 	
-	 
+
 	public int getQnaIndex() {
 		return qnaIndex;
 	}
+	
+	
 	public void setQnaIndex(int qnaIndex) {
 		this.qnaIndex = qnaIndex;
 	}

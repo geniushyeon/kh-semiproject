@@ -14,9 +14,9 @@ import javax.servlet.http.HttpSession;
 import com.coffeesazo.qna.model.dao.QnADao;
 import com.coffeesazo.qna.model.vo.QnAVo;
 
-//조회 페이지에서 수정 눌렀을 때 수정페이지 값 세팅 위한 서블릿
-@WebServlet("/qnamodify")
-public class QnAModifyServlet extends HttpServlet {
+
+@WebServlet("/qnamodifydo")
+public class QnAModifyDoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -26,45 +26,35 @@ public class QnAModifyServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 
 		HttpSession session = request.getSession(); 
 		String memberid = ((String)session.getAttribute("id"));
-		System.out.println(memberid);
-
+		
 		int index = Integer.parseInt(request.getParameter("id"));
-		System.out.println(index);
+		
+		String qnaTitle = request.getParameter("title");
+		System.out.println(qnaTitle);
+		String qnaText = request.getParameter("content");
+		System.out.println(qnaText);
+		String qnaImage = request.getParameter("file");
+		System.out.println(qnaImage);
 		
 		QnADao dao = new QnADao();
-		QnAVo vo = new QnAVo();
 		System.out.println("dao객체가 생성되었습니다.");
-		
-		String[] result = dao.viewqna(index,memberid); 
+		int result = dao.modifyqna(index, memberid , qnaTitle, qnaText, qnaImage); 
 		System.out.println("DB 조회 결과값 :" + result + "(성공 : 1 / 실패 : 0)");
 		
-		if(result != null) {
-			//select성공시
-			String title = result[0];
-			System.out.println(title);
-			String text = result[1];
-			System.out.println(text);
-			String image = result[2];
-			System.out.println(image);
+		if(result == 1) {
+			//업데이트성공시
 			
-			request.setAttribute("title",title);
-			request.setAttribute("text",text);
-			request.setAttribute("image",image);
-			request.setAttribute("index",index);
-			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp?inc=view/qna/qna_modify.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("qna");//이거 경로 아직 모르겠음.!터지면 이것부터 확인
 			dispatcher.forward(request, response);
 		}
-		/*
-		 * else
-		 * out.println("<script>alert('작성자만 접근이 가능합니다.'); history.back();</script>");
-		 */
-
+		else out.println("<script>alert('수정에 실패하였습니다..'); history.back();</script>");
+		
 	}
 }

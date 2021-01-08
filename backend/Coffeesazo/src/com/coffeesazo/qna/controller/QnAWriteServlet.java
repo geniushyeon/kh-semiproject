@@ -38,6 +38,7 @@ public class QnAWriteServlet extends HttpServlet {
 		System.out.println(qnaText);
 		String qnaImage = request.getParameter("file");
 		System.out.println(qnaImage);
+		
 		QnADao dao = new QnADao();
 		System.out.println("dao객체가 생성되었습니다.");
 		int result = dao.updateqna(memberid , qnaTitle, qnaText, qnaImage); 
@@ -46,11 +47,13 @@ public class QnAWriteServlet extends HttpServlet {
 		if(result == 1) {
 			//업데이트성공시
 			
-			out.println("<script>alert('등록이 완료되었습니다.');</script>");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("qna");
 			dispatcher.forward(request, response);
 		}
 		else out.println("<script>alert('등록에 실패하였습니다..'); history.back();</script>");
 		
+		
+		
+
 	}
 }
