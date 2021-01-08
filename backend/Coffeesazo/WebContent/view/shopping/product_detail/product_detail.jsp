@@ -20,7 +20,6 @@
         <div id="menu-container">
             <div class="menu1">
                 <div class="menu-toplogo">
-                <c:forEach items="${coffeeList }" var="Product_detail">
                     <h1><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">${ProductDeatil.fkCategoryIndex}</a></h1>
                 </div>
                 <div class="menu-toptag">
@@ -31,15 +30,15 @@
                     
 
                     
-                    <img src="./view/img/${ProductDetail.productImage}" alt="">
+                    <img src="./view/img/${List.productImage}" alt="">
                     <div class="menu-result">
                         <form action="">
                             <div class="result-title">
-                                <h2>${ProductDetail.product_info}</h2>
+                                <h2>${List.productInfo}</h2>
                             </div>
                             <div class="result-product">
-                                <h3>'모리타'</h3>
-                                <p>16,000원</p>
+                                <h3>${List.productName}</h3>
+                                <p>${List.productPrice}</p>
                                 <p>파푸아뉴기니</p>
                                 <p>용량:200g</p>
                                 <p>배송비:무료</p>
@@ -115,25 +114,18 @@
                 <img src="./view/img/Morita.png" alt="">
                 <div class="detail-infomation">
                     <div class="detail-top">
-                        <p class="p1">${ProductDetail.product_text}</p>
+                        <p class="p1">${List.productName}</p>
                             <p class="p2">Papua New Guinea 'Morita'</p>
                                 
                             </div>
                             <div class="detail-mid">
-                                <p>국가 : PAPUA NEW GUINEA</p>
-                                <p>지역 : AIYURA BALLEY,EASTERN HIGHLANDS</p>
-                                <p>농장 : MORITA</p>
-                                <p>농장주 : MORITA SMALL HOLDERS</p> 
-                                <p>재배 고도 : 1,850M</p>
-                                <p>품종 : K7,ARUSHA</p>
-                                <p>가공방식 : WASHED PROCESS</p>
+                                ${List.productText}
 
                             </div>
 
                 </div>
             </div>
             
-	</c:forEach>
             </div>
 
     </main>

@@ -1,6 +1,9 @@
 package com.coffeesazo.cart.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import com.coffeesazo.cart.model.service.CartService;
 import com.coffeesazo.cart.model.vo.Cart;
+import com.coffeesazo.cart.model.vo.OrderIndex;
 
 /**
  * Servlet implementation class CartAddOneServlet
@@ -38,6 +42,7 @@ public class CartOneBuyServlet extends HttpServlet {
 	String memberid = ((String)session.getAttribute("id"));
 
 	switch (click) {
+	//장바구니추가
 	case 1:
 		String pi = request.getParameter("product_index");
 		int productIndex= Integer.parseInt(pi);
@@ -61,8 +66,49 @@ public class CartOneBuyServlet extends HttpServlet {
 		
 		
 		break;
-		
+		//바로구매
 	case 2:
+		String pi2 = request.getParameter("product_index");
+		int productIndex2= Integer.parseInt(pi2);
+		String productImage2 = request.getParameter("product_image");
+		String productName2 = request.getParameter("product_name");
+		String pp2 = request.getParameter("product_price");
+	    int productPrice2 = Integer.parseInt(pp2);
+		String oc2 = request.getParameter("order_count");
+		int orderCount2 = Integer.parseInt(oc2);
+		
+		Cart cart2 = new Cart();
+		cart2.setOrderCount(orderCount2);
+		cart2.setProductImage(productImage2);
+		cart2.setProductIndex(productIndex2);
+		cart2.setProductName(productName2);
+		cart2.setProductPrice(productPrice2);
+		
+	    int addcart2 = new CartService().CartAddOne(memberid,cart2);
+	    ArrayList<Cart> pList = new CartService().SelectCartList(memberid);
+		int allresult = 0;
+		for(Cart plist : pList) {
+		    int price = plist.getProductPrice();
+		    int count = plist.getOrderCount();
+		    allresult += price * count;
+		    }
+		Cart lastElement = null;
+		if(!pList.isEmpty()) {
+			lastElement = pList.get(pList.size() - 1);
+		}
+		if(!pList.isEmpty()) {
+			request.setAttribute("lastElement", lastElement);
+			request.setAttribute("allresult", allresult);
+			String url = "index.jsp?inc=view/order/";
+			RequestDispatcher view = request.getRequestDispatcher(url + "shopping_payment_buyitnow.jsp");
+			view.forward(request, response);
+			System.out.println(pList);
+			
+			
+		} else {
+			response.sendRedirect("");
+		}
+	    
 
 	default:
 		break;

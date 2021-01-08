@@ -13,16 +13,16 @@ import common.JDBCTemplate;
 public class ProductDetailService {
 	
 	
-	ArrayList<Product> coffee = null;
-	public ArrayList<Product> CoffeeDetail() {
+	Product List = null;
+	public Product CoffeeDetail(String productname) {
 		try {
 			Connection conn = new Application().getConn();
-			coffee =  new ProductDetailDao().CoffeeDetail(conn);
+			List =  new ProductDetailDao().CoffeeDetail(conn,productname);
 			JDBCTemplate.close(conn);
 		} catch (Exception e) {
 
 		}
 		
-		return coffee;
+		return List;
 	}
 }

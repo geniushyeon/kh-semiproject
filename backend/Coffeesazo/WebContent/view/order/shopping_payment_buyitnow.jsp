@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
-<%@ taglib  prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
+<%@ taglib  prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,16 +25,16 @@
 						구매 정보
 						</h1>
 				</div>
-				<c:forEach items="${pList}" var="buylist">
+				
 					<div class="info-buy-container">
 						<div class="info-buy">
-							<img src="${buylist.productImage}" alt="">
+							<img src="${lastElement.productImage}" alt="">
 							<div class="info-buy-text">
-								<strong>${buylist.productName}</br></strong> <input type="hidden"
-									value="${buylist.productIndex }" name="index"> <input
-									type="hidden" value="${buylist.orderCount }" name="count">
+								<strong>${lastElement.productName}</br></strong> <input type="hidden"
+									value="${lastElement.productIndex }" name="index"> <input
+									type="hidden" value="${lastElement.orderCount }" name="count">
 								<p>
-									<strong>${buylist.productPrice}원</strong>x
+									<strong>${lastElement.productPrice}</strong>x
 									${buylist.orderCount}개
 								</p>
 								<u>무료배송</u>
@@ -44,7 +44,7 @@
 							</div>
 						</div>
 					</div>
-				</c:forEach>
+				
 				<div class="info-user-container">
 					<div class="info-user">
 						<div class="top-user">

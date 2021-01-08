@@ -28,13 +28,19 @@ public class CoffeeDetailServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
-		ArrayList<Product> List = new ProductDetailService().CoffeeDetail();
+		String productname = request.getParameter("List");
+		System.err.println("여기까지");
+		System.out.println(productname);
+		Product List = new ProductDetailService().CoffeeDetail(productname);
+		System.out.println(List);
+		System.out.println(List.getProductName());
 		
 		
-		if(!List.isEmpty()) {
+		
+		if(List != null) {
 			request.setAttribute("List", List);
-			String url = "index.jsp?inc=view/shopping/product_deatil/";
-			RequestDispatcher view = request.getRequestDispatcher("view/shopping/product_detail/Coffee_Beans1.jsp");
+			String url = "index.jsp?inc=view/shopping/product_detail/";
+			RequestDispatcher view = request.getRequestDispatcher(url + "product_detail.jsp");
 			view.forward(request, response);
 			System.out.println(List);
 		} else {

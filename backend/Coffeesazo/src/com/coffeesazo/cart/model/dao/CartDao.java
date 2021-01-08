@@ -193,4 +193,38 @@ public class CartDao {
 		return addcart;
 	}
 
+	public int OrderAllbuydetail2(Connection conn, int pd, int c, OrderIndex lastElement) {
+		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
+		ResultSet rs = null;//결과값을 다루는 아이
+		int submit2 = 0;
+		String sql = "INSERT INTO cs_order_detail VALUES(seq_order_detail_index.NEXTVAL,?,?,?)";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,lastElement.getOrderIndex());
+			pstmt.setInt(2,pd);
+			pstmt.setInt(3,c);
+			submit2=pstmt.executeUpdate();
+		} catch (Exception e) {
+			JDBCTemplate.close(pstmt);
+			JDBCTemplate.close(rs);
+		}
+		return submit2;
+	}
+
+	public int DeleteLastCart(Connection conn, String memberid, Cart lastcart) {
+		int result = 0;
+		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
+		ResultSet rs = null;//결과값을 다루는 아이
+		String sql = "DELETE FROM cs_cart WHERE fk_product_index = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,lastcart.getProductIndex());
+			
+		} catch (Exception e) {
+			JDBCTemplate.close(pstmt);
+			JDBCTemplate.close(rs);
+		}
+		return result;
+	}
+
 }

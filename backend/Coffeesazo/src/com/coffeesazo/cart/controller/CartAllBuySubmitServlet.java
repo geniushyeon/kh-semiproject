@@ -60,7 +60,6 @@ public class CartAllBuySubmitServlet extends HttpServlet {
 		OrderVo ordervo = new OrderVo();
 		ordervo.setMemberId(memberid);
 		ordervo.setOrderAddress(orderAddress);
-		
 		ordervo.setOrderPayment(orderPayment);
 		ordervo.setOrderReceiver(orderReceiver);
 		ordervo.setOrderReceiverPhone(orderReceiverPhone);
@@ -68,6 +67,7 @@ public class CartAllBuySubmitServlet extends HttpServlet {
 		ordervo.setOrderZipcode(orderZipcode);
 		ordervo.setOrederText(orederText);
 		ordervo.setOrderPhone(orderPhone);
+		
 		//오더테이블 인서트 로직
 		int submit = new CartService().OrderAllSubmit(ordervo);
 		//주문테이블식별자를 가지고오기위한 로직 뇌절온다....

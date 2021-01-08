@@ -47,7 +47,7 @@ public class CartAllBuyServlet extends HttpServlet {
 		    int count = plist.getOrderCount();
 		    allresult += price * count;
 		    }
-		//회원정보 가지고 오는 로직
+		
 		
 		
 		if(!pList.isEmpty()) {

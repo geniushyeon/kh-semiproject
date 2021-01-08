@@ -82,6 +82,7 @@ public class CartService {
 	}
 
 	public ArrayList<OrderIndex> FindOrderIndex(String memberid) {
+		
 		try {
 			Connection conn = new Application().getConn();//데이터베이스 창고 열쇠를 만듬
 		    oIndex = new CartDao().FindOrderIndex(conn, memberid);
@@ -103,6 +104,31 @@ public class CartService {
 			// TODO: handle exception
 		}
 		return addcart;
+	}
+
+	public int OrderAllbuydetail2(int pd, int c, OrderIndex lastElement) {
+			int submit2 = 0;
+		try {
+			Connection conn = new Application().getConn();
+			result = new CartDao().OrderAllbuydetail2(conn,pd,c,lastElement);
+			JDBCTemplate.close(conn);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return submit2;
+	}
+
+	public int DeleteLastCart(String memberid, Cart lastcart) {
+		int result = 0;
+		try {
+			Connection conn = new Application().getConn();
+			result = new CartDao().DeleteLastCart(conn,memberid,lastcart);
+			JDBCTemplate.close(conn);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return result;
 	}
 	
 	
