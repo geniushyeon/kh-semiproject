@@ -72,7 +72,7 @@
 	   			  <c:forEach items="${beanList}" var="product" begin="3" end="5" >
 	                <div class="col_space"> 
 	                   <div class="item_list">
-	                       <a href="CoffeeDetail?List=${product.productName}">
+	                       <a href="CoffeeDetail?coffeeList=${product.productName}">
 	                           <img src="view/img/${product.productImage}" alt="">
 	                           <div class="bean_name"> '${product.productName}'</div> 
 	                           <p><div class="product_price"><fmt:formatNumber 
@@ -100,7 +100,7 @@
 	   			 <c:forEach items="${beanList}" var="product" begin="6" end="8" >
 	                <div class="col_space"> 
 	                   <div class="item_list">
-	                       <a href="CoffeeDetail?List=${product.productName}">
+	                       <a href="CoffeeDetail?coffeeList=${product.productName}">
 	                           <img src="view/img/${product.productImage}" alt="">
 	                           <div class="bean_name"> '${product.productName}'</div> 
 	                           <p><div class="product_price"><fmt:formatNumber 
@@ -130,7 +130,7 @@
 	   			 <c:forEach items="${beanList}" var="product" begin="9" end="11" >
 	                <div class="col_space"> 
 	                   <div class="item_list">
-	                       <a href="CoffeeDetail?List=${product.productName}">
+	                       <a href="CoffeeDetail?coffeeList=${product.productName}">
 	                           <img src="view/img/${product.productImage}" alt="">
 	                           <div class="bean_name"> '${product.productName}'</div> 
 	                           <p><div class="product_price"><fmt:formatNumber 
