@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!DOCTYPE html>
-<html lang="en">
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -17,6 +17,7 @@
 	
 </head>
 <body>
+
 
 	<main>
 		<div class="size-controll">
@@ -72,9 +73,9 @@
 					<input type="hidden" name="nowPage" value="${empty param.nowPage ? 1 : param.nowPage }" />
 				</div>
 				<!---------------------테이블 시작 --------------------->
+		
 				<div class="main_table">
 					<table class="table table-hover">
-						<form action="" method="POST">
 							<thead>
 								<tr>
 									<th>번호</th>
@@ -108,7 +109,7 @@
 									</c:forEach>
 								</tbody>
 							</c:if>
-						</form>
+				
 					</table>
 				</div>
 				<!--------------------- 글쓰기버튼 --------------------->
@@ -118,7 +119,7 @@
 					</p>
 					<nav aria-label="Page navigation example">
 						<ul class="pagination justify-content-center">
-						${ page.startPage}
+							<div class='btns'>
 					<c:if test="${page.startPage > 1 }">
 						<input type='button' value="처음" id="btnFirst" onclick="goPage(1)" />
 						<input type="button" value="이전" id="btnPrev" onclick="goPage(${page.startPage - 1})"/>
@@ -133,6 +134,7 @@
 						<input type='button' value='다음' id="btnNext" onclick="goPage(${page.endPage + 1})" />
 						<input type="button" value="맨끝" id="btnLast" onclick="goPage(${page.totalPage})"/> 
 					</c:if>
+							</div>
 						</ul>
 					</nav>
 
@@ -148,16 +150,7 @@
 	<script>
 	
 	
-	function view(qnaIndex){
-		// form태그 id
-		var frm = document.form1;
-		// 문의글태그 id
-		var index = document.getElementById("qnaIndex");
-		frm.action="noticedetail"; //윤지누나 꺼 넣기
-		index.value = qnaIndex;
-		console.log(index.value);
-		frm.submit();
-	}
+
 	
 		function goPage(page) {
 			var frm = document.form1;

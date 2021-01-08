@@ -21,7 +21,7 @@ public class MyQnaListDao {
 		int totalListSize = 0;
 
 		try {
-			String sql = "SELECT COUNT(*) cnt FROM CS_QNA LIKE ? ";
+			String sql = "SELECT COUNT(*) cnt FROM CS_QNA  WHERE QNA_TITLE LIKE ? ";
 
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, "%" + findStr + "%");
@@ -127,7 +127,7 @@ public class MyQnaListDao {
 			JDBCTemplate.close(rs);
 		}
 		//
-		return qnaList;
+		return qnaPage;
 	}
 
 	
