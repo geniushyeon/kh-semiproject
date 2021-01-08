@@ -100,7 +100,8 @@
 										<c:if test="${MyQna.qnaCheck == 1  }">
 											<td>답변됨</td>
 											</c:if>
-											<td onclick="view(${MyQna.qnaIndex});">${MyQna.qnaTitle }</td>
+											<td ><a
+									href="qnaview?id=${MyQna.qnaIndex}" >${MyQna.qnaTitle }</a></td>
 											<td>${id }</td>
 											<td>${MyQna.writeDate }</td>
 										</tr>

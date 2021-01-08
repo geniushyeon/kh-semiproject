@@ -60,11 +60,11 @@ public class MyQnaListServlet extends HttpServlet {
 		String memberid = ((String)session.getAttribute("id"));
 		List<MyQnaList> qnaList = new MyQnaService().SelectQnaList(memberid);
 
-		
-		
-		
-		
-		
+
+
+
+
+
 		if(!qnaList.isEmpty()) {
 			request.setAttribute("qnaList", qnaList);
 			request.setAttribute("page", page);
