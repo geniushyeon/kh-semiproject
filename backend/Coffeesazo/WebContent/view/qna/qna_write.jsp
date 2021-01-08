@@ -53,13 +53,13 @@
 	<!-- 부트스트랩 자바스크립트 추가 -->
 	<script src="./js/bootstrap.min.js"></script>
 	<script>
-	/* 	function registration() {
+/* 	 function registration() {
 			var writeRegistration = confirm("등록하시겠습니까?");
 			if (writeRegistration) {
 				alert("등록이 완료되었습니다.");
 				location.href = "index.jsp?inc=view/qna/qna.jsp";
 			}
-		} */
+		}  */
 		function cancle() {
 			var writeCancle = confirm("취소하시겠습니까?");
 			if (writeCancle == true) {

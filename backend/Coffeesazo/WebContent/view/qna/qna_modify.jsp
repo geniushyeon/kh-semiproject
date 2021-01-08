@@ -41,8 +41,8 @@
 							<input type="file" id="file" name="file" value="<%=QnAVo.getQnaImage() %>" multiple />
 						</div>
 						<div class="bottom-button">
-							<input class="btn-save" type="submit" value="등록하기">
-							<input class="btn-modify" type="submit" value="수정하기" onclick="javascript:modify()">
+							<input class="btn-save" type="submit" value="등록하기" >
+							<input class="btn-modify" type="submit" value="수정하기">
 						</div>
 					</form>
 				</div>

@@ -43,18 +43,13 @@ public class QnAService {
 	 * QnADao().modifyQnAList(conn, memberid); JDBCTemplate.close(conn); }
 	 * catch(Exception e) { e.printStackTrace(); } return qnaModifyList; }
 	 */
-	
-public ArrayList<QnAVo> deleteQnAList(String memberid) {
-		
-		ArrayList<QnAVo> qnaDeleteList = null;
-
-		try {
-			Connection conn = new Application().getConn();
-			qnaDeleteList = new QnADao().deleteQnAList(conn, memberid);
-			JDBCTemplate.close(conn);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		return qnaDeleteList;
-	}
+	/*
+	 * public ArrayList<QnAVo> deleteQnAList(String memberid) {
+	 * 
+	 * ArrayList<QnAVo> qnaDeleteList = null;
+	 * 
+	 * try { Connection conn = new Application().getConn(); qnaDeleteList = new
+	 * QnADao().deleteQnAList(conn, memberid); JDBCTemplate.close(conn); }
+	 * catch(Exception e) { e.printStackTrace(); } return qnaDeleteList; }
+	 */
 }
