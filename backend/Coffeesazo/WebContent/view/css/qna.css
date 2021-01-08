@@ -254,7 +254,7 @@ td {
 	display: flex;
 	position: relative;
     justify-content:center;
-    margin-left: 81px;
+    margin-left: 250px; 
 }
 
 .btns input {
