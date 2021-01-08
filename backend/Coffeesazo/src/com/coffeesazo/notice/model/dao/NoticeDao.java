@@ -14,10 +14,9 @@ import common.JDBCTemplate;
 
 public class NoticeDao {
 
-
 	public int getTotalListSize(Connection conn, String findStr) {
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		ResultSet rs = null;	
 		int totalListSize = 0;
 
 		try {
@@ -77,33 +76,35 @@ public class NoticeDao {
 				noticevo.setNoticeIndex(rs.getInt("notice_index"));
 				noticevo.setNoticeTitle(rs.getString("notice_title"));
 				noticevo.setNoticeDate(rs.getDate("notice_date"));
-
 				noticeList.add(noticevo);		
 			}		
 		} catch (Exception e){
 			e.printStackTrace();
+			
 		} finally {
 			JDBCTemplate.close(pstmt);
 			JDBCTemplate.close(rs);	
 		}
 		return noticeList;
 	}
-
+	
 	public NoticeVo selectNoticeDetailList(Connection conn, int noticeIndex) {
-
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;	
 		NoticeVo noticevo = null;
 
 		String sql = "SELECT * FROM cs_notice WHERE notice_index = ?";
+		
 
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, noticeIndex);
 			rs = pstmt.executeQuery();
+			
 
 			while(rs.next()) {
 				noticevo = new NoticeVo();
+				
 
 				noticevo.setNoticeIndex(rs.getInt("notice_index"));
 				noticevo.setNoticeTitle(rs.getString("notice_title"));
@@ -121,4 +122,3 @@ public class NoticeDao {
 		return noticevo;
 	}
 }
-

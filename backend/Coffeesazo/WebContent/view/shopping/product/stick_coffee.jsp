@@ -39,7 +39,7 @@
                  <c:forEach items="${stickList}" var="product" begin="0" end="2" >
                      <div class="col_space">
                       <div class="item_list">
-                        <a href="CoffeeDetail?List=${product.productName}">
+                        <a href="CoffeeDetail?coffeeList=${product.productName}">
                             <img src="view/img/${product.productImage}" alt="">
                             <div class="stick_name"> '${product.productName}'</div> 
                             <p><div class="product_price"><fmt:formatNumber 

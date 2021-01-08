@@ -15,8 +15,16 @@ SELECT * FROM board;
 SELECT * FROM cs_member;
 
 
-
-
+SELECT * FROM cs_order;
+SELECT * FROM cs_order_detail;
+rollback;
+INSERT INTO cs_order_detail VALUES(
+    seq_order_detail_index.NEXTVAL,
+    1,
+    2,
+    4
+);
+commit;
 INSERT INTO cs_member VALUES(
     'admin', 'admin1234%%', '관리자', 'admin@coffeesazo.com', '01088987867', null, null, 1, default
 );
@@ -45,12 +53,12 @@ CREATE TABLE cs_order(
 INSERT INTO cs_order VALUES(
     seq_order_index.nextval,
     'laurel',
-    '서울시 관악구 봉천동',
+    '서울시 용산구 한남동',
     '무통장입금',
-    '11234',
+    '23445',
     '문 앞에 놔주세요',
     DEFAULT,
-    '지니어스현',
+    '이수현',
     '01098987867',
     50000
 );
@@ -63,18 +71,18 @@ SELECT od.*, p.product_name, p.product_price FROM cs_order_detail od, cs_product
 
 INSERT INTO cs_order_detail VALUES(
     seq_order_detail_index.nextval,
-    1,
+    21,
     1,
     10
 );
 
 INSERT INTO cs_order_detail VALUES(
     seq_order_detail_index.nextval,
-    1,
+    21,
     2,
     3
 );
-
+commit;
 SELECT * FROM cs_order_detail;
 
 /* 주문 상세 테이블 */

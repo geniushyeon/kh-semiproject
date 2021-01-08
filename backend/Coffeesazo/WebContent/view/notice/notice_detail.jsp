@@ -2,7 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>	
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +17,24 @@
 	integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 	crossorigin="anonymous"></script>
 <link href="./view/css/notice_detail.css" rel="stylesheet" type="text/css" />
+<style>
+
+#btnList {
+	width: 100px;
+	height: 40px;
+	border: 0;
+	padding: 5px;
+	background-color: #4d2600;
+	color: white;
+}
+
+#btnList:hover {
+	background-color: burlywood;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+</style>
 </head>
 <body>
 	<main>
@@ -32,7 +49,7 @@
 					</div>
 				</div>
 			<form name="form1" method="POST">
-				<div class="base-table">
+				<div class="base-table"> 
 				<input type="hidden" id="noticeIndex" name="noticeIndex" value="${noticeIndex }"/> 
 					<table border="1" summary>
 						<caption>게시판 목록</caption>
@@ -50,35 +67,35 @@
 								<td>${noticevo.noticeDate }</td>
 							</tr>
 					</table>
-					
+
 				</div>
 				<tr class="view">
 					<div class="detail">
 						<div class="view-article">
 							<p style="margin-top: 20px;">${noticevo.noticeText }</p>
-							<p style="text-align: center;">
+							<p style="text-align: center; margin-bottom: 70px;">
 								<img src="${noticevo.noticeFile }" style="width: 550px; height: 500px; padding-top: 70px;">
 							</p>
 						</div>
 					</div>
 				</tr>
 			</form>
-				<div class="bottom-table">
+				<!-- <div class="bottom-table">
 					<ul>
 						<li class="prev"><strong>이전글</strong> 
 						<a href="#">공지사항 어쩌꼬 저쩌꼬</a></li>
 						<li class="next"><strong>다음글</strong> 
 						<a href="#">공지사항 어쩌꼬 저쩌꼬</a></li>
 					</ul>
-				</div>
-				<div class="list-button">
-					<a href="notice" class="btn-board">목록</a>
+				</div> -->
+				<hr/>
+				<div class="list-button" style="text-align: center; margin-top: 20px;">
+					<a href="notice" id="btnList" class="btn-board">목록으로</a>
 				</div>
 			</div>
 		</div>
 	</main>
 	<!-- 부트스트랩 자바스크립트 추가 -->
 	<script src="./js/bootstrap.min.js"></script>
-
 </body>
 </html>

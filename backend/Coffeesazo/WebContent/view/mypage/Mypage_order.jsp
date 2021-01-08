@@ -20,6 +20,7 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
+
 	<main id="main_container">
 		<div class="size-controll">
 
@@ -83,8 +84,9 @@
 		<!---------------------테이블시작 --------------------->
 		<div class="main_table">
 
+		<c:if test="${not empty odList }">
 			<table class="table table-hover">
-				<form action="deleteorder" method="POST">
+				<form name="orderform" id="orderform" action="deleteorder" method="POST">
 				<thead>
 					<tr>
 						<th>선택</th>
@@ -101,21 +103,20 @@
 				<!--------------------- 테이블 각항목 --------------------->
 
 					<tbody>
-				<c:if test="${not empty odList }">
 						<c:forEach items="${odList}" var="OrderViewList">
 							<tr>
 								<td><input id="checkbox" type="checkbox" name="delete-name"
 									value="${OrderViewList.productIndex }"></td>
-								<td>${OrderViewList.productIndex }</td>
+								<td><input type="hidden" name="orderIndex" id="orderIndex" value="${OrderViewList.orderIndex }"/>${OrderViewList.orderIndex }</td>
 								<td height="0">
 									<div style="height: 100%">
-										<img src="${OrderViewList.productImage }" height="100%">
+										<img src="view/img/${OrderViewList.productImage }" style="width: 100px; height:100px;">
 									</div>
 								</td>						<!------ 주문상세 맵핑필요 -------->		 		
-								<td><a href="/view/mypage/mypage_order_detail.jsp?id= ${MyQnaList.qnaIndex}">${OrderViewList.productName}</a></td>
+								<td onclick="gotoOrderDetail(${OrderViewList.orderIndex})">${OrderViewList.productName}</td>
 								<td>${OrderViewList.productPrice }원</td>
 								<td>${OrderViewList.orderCount }개</td>
-								<td>${OrderViewList.productPrice * cart.orderCount}원</td>
+								<td>${OrderViewList.productPrice * OrderViewList.orderCount}원</td>
 							</tr>
 						</c:forEach>
 
@@ -123,7 +124,6 @@
 
 					</tbody>
 
-				</c:if>
 
 				</form>
 			</table>
@@ -158,6 +158,11 @@
                 
                 
 				</p>
+				</c:if>
+				<c:if test="${empty odList }">
+					<div style="text-align: center; font-weight: 500; font-size: 2rem;">주문정보가 없습니다. </div>
+				
+				</c:if>
 
 		
 
@@ -170,6 +175,15 @@
 		var form = document.form_edit;
 		form.action = "mypage_edit";
 		form.submit();
+	}
+	
+	function gotoOrderDetail(orderIndex) {
+		var frm = document.orderform;
+		var index = document.getElementById("orderIndex");
+		frm.action = "orderdetail";
+		index.value = orderIndex;
+		console.log(index.value);
+		frm.submit();
 	}
 	
 

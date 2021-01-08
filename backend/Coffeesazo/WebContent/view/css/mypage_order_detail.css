@@ -87,3 +87,7 @@
             cursor: pointer;
         }
         
+        .btns-orderlist input:focus {
+        	border: none;
+        }
+        

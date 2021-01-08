@@ -28,15 +28,15 @@ public class CoffeeDetailServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
-		ArrayList<Product> List = new ProductDetailService().CoffeeDetail();
+		ArrayList<Product> coffeeList = new ProductDetailService().CoffeeDetail();
 		
 		
-		if(!List.isEmpty()) {
-			request.setAttribute("List", List);
+		if(!coffeeList.isEmpty()) {
+			request.setAttribute("coffeeList", coffeeList);
 			String url = "index.jsp?inc=view/shopping/product_deatil/";
-			RequestDispatcher view = request.getRequestDispatcher("view/shopping/product_detail/Coffee_Beans1.jsp");
+			RequestDispatcher view = request.getRequestDispatcher(url+"Coffee_Beans1.jsp");
 			view.forward(request, response);
-			System.out.println(List);
+			System.out.println(coffeeList);
 		} else {
 			response.sendRedirect("");
 		}
