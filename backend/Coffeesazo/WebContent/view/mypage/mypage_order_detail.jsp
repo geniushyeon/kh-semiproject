@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>	
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +56,7 @@
                 <thead>
                     <tr>
                         <th scope="row">총 주문 금액</th>
-                        <td><%=orderDetailList.get(0).getOrderTotalPrice()%>원</td>
+                        <td><fmt:formatNumber value="<%=orderDetailList.get(0).getOrderTotalPrice()%>" pattern="###,###,###원"/></td>
                     </tr>
                     <tr>
                         <th scope="row">결제수단</th>
@@ -89,7 +90,7 @@
                         <td><img src="view/img/<%=o.getProductImage()%>" style="width: 100px; height:100px;"></td>
                         <td><%=o.getProductName() %></td>
                         <td><%=o.getOrderCount() %></td>
-                        <td><%=o.getProductPrice() %>원</td>
+                        <td><fmt:formatNumber value="<%=o.getProductPrice() %>" pattern="###,###,###원"/></td>
                     </tr>
                	<% }%>
                    <!--  <tr>

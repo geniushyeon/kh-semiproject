@@ -4,7 +4,7 @@
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html>
 
 <html>
@@ -114,9 +114,9 @@
 									</div>
 								</td>						<!------ 주문상세 맵핑필요 -------->		 		
 								<td onclick="gotoOrderDetail(${OrderViewList.orderIndex})">${OrderViewList.productName}</td>
-								<td>${OrderViewList.productPrice }원</td>
+								<td><fmt:formatNumber value="${OrderViewList.productPrice }" pattern="###,###,###원"/></td>
 								<td>${OrderViewList.orderCount }개</td>
-								<td>${OrderViewList.productPrice * OrderViewList.orderCount}원</td>
+								<td><fmt:formatNumber value="${OrderViewList.productPrice * OrderViewList.orderCount}" pattern="###,###,###원"/></td>
 							</tr>
 						</c:forEach>
 
