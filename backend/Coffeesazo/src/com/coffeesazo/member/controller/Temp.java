@@ -2,7 +2,7 @@ package com.coffeesazo.member.controller;
 
 public class Temp {
 	public static void main(String[] args) {
-		String coffee = "클래식 에스프레소 블렌드|모리타|16,000|파푸아뉴기니|용량:200g";
+		String coffee = "파푸아뉴기니 모리타|Papua New Guinea Morita|국가 : PAPUA NEW GUINEA|지역 : AIYURA BALLEY,EASTERN HIGHLANDS|농장 : MORITA|농장주 : MORITA SMALL HOLDERS|재배 고도 : 1,850M|품종 : K7,ARUSHA|가공방식 : WASHED PROCESS";
 
 		String[] coffeeArray = coffee.split("\\|");
 

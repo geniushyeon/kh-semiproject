@@ -16,7 +16,8 @@ public class OrderListDao {
 		ResultSet rs = null;//결과값을 다루는 아이
 		ArrayList<OrderViewList> odList = null;		
 		//p. 가 어디서나온거?
-		String sql = " SELECT * FROM cs_member c INNER JOIN cs_order o ON c.member_id = o.fk_member_id INNER JOIN cs_order_detail d ON o.order_index =  d.fk_order_index INNER JOIN cs_product p ON d.fk_product_index = p.product_index WHERE c.member_id = ?";
+		String sql = " SELECT * FROM cs_member c INNER JOIN cs_order o ON c.member_id = o.fk_member_id INNER JOIN cs_order_detail d ON o.order_index =  d.fk_order_index INNER JOIN cs_product p ON d.fk_product_index = p.product_index WHERE c.member_id = ? "
+				+ "ORDER BY o.order_index ASC";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberid);

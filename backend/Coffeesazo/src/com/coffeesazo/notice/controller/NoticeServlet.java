@@ -57,7 +57,6 @@ public class NoticeServlet extends HttpServlet {
 			view.forward(request, response);
 			System.out.println(noticeList);
 		} else {
-			response.sendRedirect("");
 			out.println("<script>alert('검색 결과가 없습니다.'); history.back(); </script>");
 		}	
 	}
