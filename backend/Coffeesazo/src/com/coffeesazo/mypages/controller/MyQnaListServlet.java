@@ -56,11 +56,16 @@ public class MyQnaListServlet extends HttpServlet {
 		page.setNowPage(nowPage);
 		System.out.println(page.getNowPage());
 		page.setFindStr(findStr);
-
 		HttpSession session = request.getSession(); 
 		String memberid = ((String)session.getAttribute("id"));
 		List<MyQnaList> qnaList = new MyQnaService().SelectQnaList(memberid);
 
+
+		
+		
+		
+		
+		
 		if(!qnaList.isEmpty()) {
 			request.setAttribute("qnaList", qnaList);
 			request.setAttribute("page", page);

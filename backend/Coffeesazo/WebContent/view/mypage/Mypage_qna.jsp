@@ -92,10 +92,16 @@
 								<c:set var="no" value="${page.startNo }"/>
 									<c:forEach items="${qnaList}" var="MyQna">
 										<tr>
+					
 											<td><input type="hidden" name="qnaIndex" id="qnaIndex" value="${no}"/>${MyQna.qnaIndex }</td>
-											<td>${MyQna.qnaCheck }</td>
+										<c:if test="${MyQna.qnaCheck == 0  }">
+											<td>답변안됨</td>
+											</c:if>
+										<c:if test="${MyQna.qnaCheck == 1  }">
+											<td>답변됨</td>
+											</c:if>
 											<td onclick="view(${MyQna.qnaIndex});">${MyQna.qnaTitle }</td>
-											<td>${MyQna.userId }</td>
+											<td>${id }</td>
 											<td>${MyQna.writeDate }</td>
 										</tr>
 									</c:forEach>
