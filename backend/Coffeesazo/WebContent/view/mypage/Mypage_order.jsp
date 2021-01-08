@@ -112,10 +112,10 @@
 										<img src="view/img/${OrderViewList.productImage }" style="width: 100px; height:100px;">
 									</div>
 								</td>						<!------ 주문상세 맵핑필요 -------->		 		
-								<td onclick="gotoOrderDetail(${OrderViewList.orderIndex})">${OrderViewList.productName}</a></td>
+								<td onclick="gotoOrderDetail(${OrderViewList.orderIndex})">${OrderViewList.productName}</td>
 								<td>${OrderViewList.productPrice }원</td>
 								<td>${OrderViewList.orderCount }개</td>
-								<td>${OrderViewList.productPrice * cart.orderCount}원</td>
+								<td>${OrderViewList.productPrice * OrderViewList.orderCount}원</td>
 							</tr>
 						</c:forEach>
 

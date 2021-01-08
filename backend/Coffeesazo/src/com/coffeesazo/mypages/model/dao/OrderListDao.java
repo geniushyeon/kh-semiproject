@@ -1,12 +1,13 @@
-package mypage.model.dao;
+package com.coffeesazo.mypages.model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import com.coffeesazo.mypages.model.vo.OrderViewList;
+
 import common.JDBCTemplate;
-import mypage.model.vo.OrderViewList;
 
 public class OrderListDao {
 

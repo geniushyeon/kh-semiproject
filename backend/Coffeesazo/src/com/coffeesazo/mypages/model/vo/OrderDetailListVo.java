@@ -1,4 +1,4 @@
-package mypage.model.vo;
+package com.coffeesazo.mypages.model.vo;
 
 import java.sql.Date;
 

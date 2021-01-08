@@ -1,4 +1,4 @@
-package mypage.controller;
+package com.coffeesazo.mypages.controller;
 
 import java.io.IOException; 
 import java.util.ArrayList;
@@ -12,9 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.coffeesazo.Page;
-
-import mypage.model.service.MyQnaService;
-import mypage.model.vo.MyQnaList;
+import com.coffeesazo.mypages.model.service.MyQnaService;
+import com.coffeesazo.mypages.model.vo.MyQnaList;
 
 /**
  * Servlet implementation class MyQnaListServlet

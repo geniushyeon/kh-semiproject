@@ -1,4 +1,4 @@
-package mypage.model.service;
+package com.coffeesazo.mypages.model.service;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -6,12 +6,12 @@ import java.util.List;
 
 import com.coffeesazo.Application;
 import com.coffeesazo.Page;
+import com.coffeesazo.mypages.model.dao.MyQnaListDao;
+import com.coffeesazo.mypages.model.vo.MyQnaList;
 import com.coffeesazo.notice.model.dao.NoticeDao;
 import com.coffeesazo.notice.model.vo.NoticeVo;
 
 import common.JDBCTemplate;
-import mypage.model.dao.MyQnaListDao;
-import mypage.model.vo.MyQnaList;
 
 public class MyQnaService {
 	

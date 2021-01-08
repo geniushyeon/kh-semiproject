@@ -1,4 +1,4 @@
-package mypage.controller;
+package com.coffeesazo.mypages.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,8 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import mypage.model.service.OrderService;
-import mypage.model.vo.OrderViewList;
+
+import com.coffeesazo.mypages.model.service.OrderService;
+import com.coffeesazo.mypages.model.vo.OrderViewList;
 
 /**
  * Servlet implementation class OrderListSelectServlet
@@ -36,6 +37,7 @@ public class OrderListSelectServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
+		
 		HttpSession session = request.getSession(); 
 		String memberid = ((String)session.getAttribute("id"));
 		ArrayList<OrderViewList> odList = new OrderService().SelectOrderList(memberid);
@@ -46,8 +48,8 @@ public class OrderListSelectServlet extends HttpServlet {
 	    int price = odlist.getProductPrice();
 	    int count = odlist.getOrderCount();
 	    allresult += price * count;
-	    }
-		System.out.println(odList);
+	    }		
+
 
 		request.setAttribute("odList", odList);
 		request.setAttribute("allresult", allresult);

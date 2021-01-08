@@ -1,4 +1,4 @@
-package mypage.controller;
+package com.coffeesazo.mypages.controller;
 
 import java.io.IOException;
 
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import mypage.model.service.OrderDetailService;
+import com.coffeesazo.mypages.model.service.OrderDetailService;
 
 /**
  * Servlet implementation class OrderDetailDeleteServlet

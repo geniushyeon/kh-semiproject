@@ -1,4 +1,4 @@
-package mypage.model.vo;
+package com.coffeesazo.mypages.model.vo;
 import java.sql.Connection;
 import java.util.ArrayList;
 public class OrderViewList {

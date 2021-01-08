@@ -1,4 +1,4 @@
-package mypage.model.dao;
+package com.coffeesazo.mypages.model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.coffeesazo.mypages.model.vo.OrderDetailListVo;
+
 import common.JDBCTemplate;
-import mypage.model.vo.OrderDetailListVo;
 
 public class OrderDetailDao {
 

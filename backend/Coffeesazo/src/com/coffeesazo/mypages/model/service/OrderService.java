@@ -1,10 +1,11 @@
-package mypage.model.service;
+package com.coffeesazo.mypages.model.service;
 
 import java.sql.Connection;
 import java.util.ArrayList;
 import com.coffeesazo.Application;
-import mypage.model.dao.OrderListDao;
-import mypage.model.vo.OrderViewList;
+import com.coffeesazo.mypages.model.dao.OrderListDao;
+import com.coffeesazo.mypages.model.vo.OrderViewList;
+
 import common.JDBCTemplate;
 
 public class OrderService {

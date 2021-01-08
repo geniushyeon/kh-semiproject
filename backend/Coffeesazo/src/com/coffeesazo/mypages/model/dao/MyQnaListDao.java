@@ -1,4 +1,4 @@
-package mypage.model.dao;
+package com.coffeesazo.mypages.model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import com.coffeesazo.Page;
+import com.coffeesazo.mypages.model.vo.MyQnaList;
+
 import common.JDBCTemplate;
-import mypage.model.vo.MyQnaList;
 
 
 
@@ -20,9 +21,10 @@ public class MyQnaListDao {
 		int totalListSize = 0;
 
 		try {
-			String sql = "SELECT COUNT(*) cnt FROM CS_QNA ";
+			String sql = "SELECT COUNT(*) cnt FROM CS_QNA LIKE ? ";
 
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "%" + findStr + "%");
 
 			rs = pstmt.executeQuery();
 
@@ -58,10 +60,9 @@ public class MyQnaListDao {
 			page.setTotalListSize(getTotalListSize(conn, findStr));
 			page.pageCompute();
 
-			System.out.println("totalListSize: "+page.getTotalListSize());
 			String sql = "SELECT * FROM ("
 					+ "SELECT ROWNUM no, n.* FROM ("
-					+ "SELECT * FROM CS_QNA"
+					+ "SELECT * FROM CS_QNA WHERE QNA_TITLE LIKE ? "
 					+ "ORDER BY QNA_INDEX DESC) n"
 					+ " ) WHERE no BETWEEN ? AND ?";
 

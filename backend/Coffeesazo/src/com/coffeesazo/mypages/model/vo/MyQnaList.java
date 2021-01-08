@@ -1,4 +1,4 @@
-package mypage.model.vo;
+package com.coffeesazo.mypages.model.vo;
 import java.util.Date;
 import java.sql.Connection;
 public class MyQnaList {
