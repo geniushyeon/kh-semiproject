@@ -1,8 +1,4 @@
-	function gotoEdit() {
-		var form = document.form_edit;
-		form.action = "mypage_edit";
-		form.submit();
-	}
+
 	
 	
 	function editConfirm() {
