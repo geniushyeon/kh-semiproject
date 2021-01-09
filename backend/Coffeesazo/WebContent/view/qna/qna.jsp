@@ -20,8 +20,33 @@
 <style>
 .find {
 	float: right;
-	margin-bottom: 30x;
 }
+#btnFind {
+		width: 50px;
+		height: 30px;
+		border: 0;
+		background-color: #4d2600;
+		color: white;
+	}
+	
+	#btnFind:hover {
+		background-color: burlywood;
+		transition: 0.3s;
+		cursor: pointer;
+	
+	}
+	
+	#findStr {
+		width: 200px;
+		height: 30px;
+		border: 0;
+		border-bottom: 2px solid #8B4F1D;
+		padding-left: 8px;
+	}
+	
+	#findStr:focus {
+		outline: none;
+	}
 </style>
 </head>
 <body>
@@ -78,21 +103,16 @@
 					<div class='btns'>
 						<c:if test="${page.startPage>1 }">
 							<input type='button' value='맨첨' id='btnFirst' onclick='goPage(1)' />
-							<input type='button' value='이전' id='btnPrev'
-								onclick='goPage(${page.startPage-1})' />
+							<input type='button' value='이전' id='btnPrev' onclick='goPage(${page.startPage-1})' />
 						</c:if>
 	
-						<c:forEach var="i" begin='${page.startPage }'
-							end='${page.endPage }'>
-							<input type='button' value='${i}'
-								${(param.nowPage == i)? 'disabled' : '' } onclick='goPage(${i})' />
+						<c:forEach var="i" begin='${page.startPage }' end='${page.endPage }'>
+							<input type='button' value='${i}' ${(param.nowPage == i)? 'disabled' : '' } onclick='goPage(${i})' />
 						</c:forEach>
 	
-						<c:if test="${page.endPage<page.totPage }">
-							<input type='button' value='다음' id='btnNext'
-								onclick='goPage(${page.endPage+1})' />
-							<input type='button' value='맨끝' id='btnLast'
-								onclick='goPage(${page.totPage})' />
+						<c:if test="${page.endPage<page.totalPage }">
+							<input type='button' value='다음' id='btnNext' onclick='goPage(${page.endPage+1})' />
+							<input type='button' value='맨끝' id='btnLast' onclick='goPage(${page.totalPage})' />
 						</c:if>
 					<div class="bottom-button">
 						<a href="#" class="bottom-button" onclick="bottom_button();">등록하기</a>
