@@ -18,7 +18,7 @@
 			<h1>결제하기</h1>
 		</div>
 
-		<form action="allbuy_submit" method="POST">
+		<form action="allbuy_submit" method="POST" name="form_buy" onsubmit="return checkForm(this)">
 			<div id="main-container">
 				<div class="top-logo">
 					<h2>
@@ -67,19 +67,20 @@
 										<button type="button" class="btn btn-secondary"
 											id="postbutton" onclick="sample6_execDaumPostcode()">우편번호</button>
 										<br> <input type="text" id="sample6_address"
-											placeholder="도로명주소" name="address"><span id="guide"
-											style="color: #999; display: none"></span><br> <input
+											placeholder="주소" name="address" readonly><span id="guide"
+											style="color: #999; display: none"></span><span class="warn-info" id="address-required" style="margin-left: 10px;"></span><br> <input
 											type="text" id="sample6_detailAddress" placeholder="상세주소"
 											style="width: 300px" name="address"> <input
 											type="text" id="sample6_extraAddress" placeholder="참고항목"
-											name="address"> <br> <label for="">배송
+											name="address" readonly> <br> <label for="">배송
 											시 요청 사항 </label> <br> <input class="delivery-rq"
-											id="delivery-rq" type="text" name="delivery-rq"> <br>
+											id="delivery-rq" type="text" name="delivery-rq" placeholder="요청 사항 입력(선택사항)"> <br>
 										<label for="">수령인</label> <br> <input
 											class="recipient-rq" id="recipient-rq" type="text"
-											name="recipient-rq"> <br> <label for="">연락처</label>
+											name="recipient-rq" placeholder="수령인 이름 입력"><span class="warn-info" id="name-required" style="margin-left: 10px;"></span> <br> 
+											<label for="">연락처</label>
 										<br> <input class="number-rq" id="number-rq" type="text"
-											name="number-rq">
+											name="number-rq" placeholder="수령인 전화번호 입력(- 제외)"><span class="warn-info" id="phonenumber-required" style="margin-left: 10px;"></span>
 									</div>
 								</div>
 								<div class="form-container3">
@@ -108,10 +109,6 @@
 												<td>결제방법</td>
 											</tr>
 											<tr>
-												<td>상품금액</td>
-												<td>35,000원</td>
-											</tr>
-											<tr>
 												<td>배송비</td>
 												<td>0원</td>
 											</tr>
@@ -138,7 +135,7 @@
 		<div class="form-container5">
 			<h2>이용 약관</h2>
 			<div class="tos1">
-				<input type="checkbox" style="width: 25; height: 15px;">
+				<input type="checkbox" style="width: 25; height: 15px;" name="admit">
 				<p style="display: inline-block;">개인정보 판매자 제공에 동의합니다.</p>
 				<div class="TermsOfService1"
 					style="display: inline-block; margin-left: 38px;">
@@ -168,7 +165,7 @@
 				</div>
 			</div>
 			<div class="tos2">
-				<input type="checkbox" style="width: 25; height: 15px;">
+				<input type="checkbox" style="width: 25; height: 15px;" name="admit">
 				<p style="display: inline-block;">구매자의 정보수집 및 이용에 동의합니다.</p>
 				<div class="TermsOfService2" style="display: inline-block;">
 					<button type="button" class="btn btn-outline-secondary"
@@ -223,6 +220,9 @@
 	<script
 		src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="view/js/addressApi.js"></script>
+	 <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<script src="view/js/shopping_payment.js"></script>
 
 </body>
 </html>
