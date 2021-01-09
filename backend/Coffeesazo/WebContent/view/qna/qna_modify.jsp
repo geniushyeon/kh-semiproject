@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>   
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,15 +36,23 @@
 						<input type="text" id="title" name="title" value="${title}" required /> <br /> <br />
 						<label for="content">내용</label> 
 						<textarea class="content" rows="13" cols="85" name="content" id="content"  required >${text}</textarea> <br /> <br />
-						<label for="file">첨부파일</label>
 						<div class="file-upload">
-							<input type="file" id="file" name="file" multiple /><br /><br />
-							<span>${image}</span>						
+						<label for="file">첨부파일</label>
+						<input type="file" id="btnPhoto" name="photo" multiple /><br /><br />
+							<span>${image}</span>
+							<c:choose>
+			               <c:when test="${empty image}">
+			                  <img src = 'http://placehold.it/200x140' id=photo width = '200px' height = '140px'/>      
+			               </c:when>
+			               <c:otherwise>
+			                  <img src='.view/upload/${image}' id=photo width = '200px' height = '140px'/>
+			               	</c:otherwise>
+			           	   </c:choose>					
 						</div>
 						<div class="bottom-button">
 							<input class="btn-save" type="submit" value="등록하기">
 							<input class="btn-cancle" type="button" onclick="cancle()" value="취소하기">
-							
+							<input type = 'hidden' name = 'delFile' value = '${image}'/>
 						</div>
 					</form>
 				</div>
@@ -60,6 +70,23 @@
         } 
     }
 		
+
+	// 이미지 파일 미리보기
+	var btnPhoto = getID('btnPhoto');
+	if(btnPhoto != null) {
+		btnPhoto.onchange = function(ev) {
+			var tag = ev.srcElement; // 이벤트 발생한 태그
+			var url = tag.files[0]; // 선택된 파일명
+			var reader = new FileReader();
+			reader.readAsDataURL(url);
+			reader.onload = function(e) {
+				var img = new Image();
+				img.src = e.target.result;
+				var photo = getID('photo');
+				photo.src = img.src;
+			}
+		}
+	}
 	</script>
 </body>
 </html>

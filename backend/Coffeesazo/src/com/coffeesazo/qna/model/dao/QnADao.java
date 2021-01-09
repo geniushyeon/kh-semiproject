@@ -1,5 +1,6 @@
 package com.coffeesazo.qna.model.dao;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,6 +13,8 @@ import com.coffeesazo.member.model.vo.MemberVo;
 import com.coffeesazo.qna.model.vo.QnAVo;
 
 import common.JDBCTemplate;
+
+
 
 public class QnADao {
 
@@ -120,12 +123,22 @@ public class QnADao {
 			if(row ==1) {
 
 				return 1;
+			}	
+			
+			if(qnaImage != null && !qnaImage.equals("")) {
+				File file = new File(FileUpload.saveDir + qnaImage);
+				if(file.exists()) {
+					file.delete();
+				}
 			}
+			
 			else
 				return 0 ;
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			// 이미 업로드된 파일 삭제 방법
+			
 		}
 		return 0;
 

@@ -35,7 +35,8 @@
 						<textarea class="content" rows="13" cols="85" name="content" id="content" placeholder="내용을 입력해 주세요." required /></textarea> <br /> <br />
 						<label for="file">첨부파일</label>
 						<div class="file-upload">
-							<input type="file" id="file" name="file" multiple />
+							<input type="file" id="btnPhoto" name="photo" multiple />
+							<img src='http://placehold.it/200x140' id='photo'  width='200px' height='140px' />
 						</div>
 						<div class="bottom-button">
 							<input class="btn-save" type="submit" value="등록하기" onclick="registration()">
