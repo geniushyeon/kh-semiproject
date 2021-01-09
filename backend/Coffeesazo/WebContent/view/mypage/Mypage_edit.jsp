@@ -53,18 +53,18 @@
             </a>
         </ul>
         
-         
+       <!--   <form method="POST" name="form_edit">--> 
                 <ul>
-                    <a class="card_small" id="mypage-edit" href="mypage_edit">
+                    <a class="card_small" id="mypage-edit" onclick="gotoEdit()">
                         <h3>회원정보수정</h3>
                         <p class="card_text">나의 정보를 </br>변경하실 수 있습니다.</p>
 
                     </a>
                 </ul>
-      	
+       <!--  	</form>--> 
         
             <ul>
-                    <a class="card_small" href="MyQnaList">
+                    <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_qna.jsp">
                         <h3 class="softblack">나의문의</h3>
                         <p class="card_text">나의1:1문의를 </br>확인하실 수 있습니다.</p>
         

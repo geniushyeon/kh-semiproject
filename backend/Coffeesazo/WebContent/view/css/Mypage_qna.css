@@ -27,6 +27,14 @@ html, body {
   }
 
 
+.btns input {
+	background-color: #fff;
+	border: none;
+	align-self:center;
+	position: relative;
+	display:inline-block;
+	text-decoration: none;
+}
 
 main{   
 margin-top:200px ;
@@ -112,13 +120,13 @@ display: inline-block;
 }
 
 .button { /*전체 버튼속성*/
-    
+    display: inline ;
     margin-left:10px
 }
 
 
 form {
-	display: inline-block;
+	display:block;
 }
 
 nav{
@@ -126,4 +134,24 @@ text-align: center;
 }
 
 
+.btns {
+	padding-top:30px;
+	display: flex;
+	position: relative;
+    justify-content:center;
+    margin-left: 250px; 
+}
 
+.btns input {
+	background-color: #fff;
+	border: none;
+	align-self:center;
+	position: relative;
+	display:inline-block;
+	text-decoration: none;
+}
+
+.btns input:focus {
+	outline: none;
+	cursor: pointer;
+}

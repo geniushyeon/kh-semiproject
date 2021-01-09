@@ -127,7 +127,7 @@ public class MyQnaListDao {
 			JDBCTemplate.close(rs);
 		}
 		//
-		return qnaPage;
+		return qnaList;
 	}
 
 	

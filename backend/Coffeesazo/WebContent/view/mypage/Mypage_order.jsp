@@ -82,11 +82,10 @@
 		</div>
 
 		<!---------------------테이블시작 --------------------->
-		<div class="main_table">
-
-		<c:if test="${not empty odList }">
-			<table class="table table-hover">
 				<form name="orderform" id="orderform" action="deleteorder" method="POST">
+
+
+			<table class="table table-hover">
 				<thead>
 					<tr>
 						<th>선택</th>
@@ -102,6 +101,7 @@
 
 				<!--------------------- 테이블 각항목 --------------------->
 
+		<c:if test="${not empty odList }">
 					<tbody>
 						<c:forEach items="${odList}" var="OrderViewList">
 							<tr>
@@ -123,9 +123,8 @@
 
 
 					</tbody>
+			</c:if>
 
-
-				</form>
 			</table>
 
 			<!--------------------- 주문취소 버튼 --------------------->
@@ -155,10 +154,11 @@
                         </div>
                     </div>
                 </div>
+				</form>
                 
                 
 				</p>
-				</c:if>
+				
 				<c:if test="${empty odList }">
 					<div style="text-align: center; font-weight: 500; font-size: 2rem;">주문정보가 없습니다. </div>
 				
@@ -185,6 +185,9 @@
 		console.log(index.value);
 		frm.submit();
 	}
+	
+	
+	
 	
 
     </script>
