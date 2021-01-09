@@ -5,7 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.coffeesazo.Application;
 import com.coffeesazo.Page;
+import com.coffeesazo.member.model.vo.MemberVo;
 import com.coffeesazo.mypages.model.vo.MyQnaList;
 
 import common.JDBCTemplate;
@@ -13,7 +16,9 @@ import common.JDBCTemplate;
 
 
 public class MyQnaListDao {
-	
+
+
+
 	
 	public int getTotalListSize(Connection conn, String findStr) {
 		PreparedStatement pstmt = null;
@@ -92,9 +97,7 @@ public class MyQnaListDao {
 		return qnaSearchList;
 	}
 
-	
-	
-	
+
 
 	public ArrayList<MyQnaList> SelectQnaList(Connection conn, String memberid) {
 		PreparedStatement pstmt = null;// 쿼리문을 담는 박스

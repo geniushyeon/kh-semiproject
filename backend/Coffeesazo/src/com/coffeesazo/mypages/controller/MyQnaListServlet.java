@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.coffeesazo.Page;
+import com.coffeesazo.member.model.dao.MemberDao;
+import com.coffeesazo.member.model.vo.MemberVo;
 import com.coffeesazo.mypages.model.service.MyQnaService;
 import com.coffeesazo.mypages.model.vo.MyQnaList;
 
@@ -31,17 +33,25 @@ public class MyQnaListServlet extends HttpServlet {
 
 		doPost(request, response); 
 	}
-//현제 게시판과 다르게 나의정보가아닌 타인의 db가생기면오류뜸
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("utf-8");
 		PrintWriter out = response.getWriter();
-		HttpSession session = request.getSession(); 
+		HttpSession session = request.getSession();
+		
 		String memberid = ((String)session.getAttribute("id"));
+
 		List<MyQnaList> qnaList = new MyQnaService().SelectQnaList(memberid);
 		int nowPage = 1;
 		String findStr = "";
-
+		List<MemberVo> memberInfoList = new MemberDao().selectMemberInfo(memberid);
+		System.out.println(memberid);
+		System.out.println(memberInfoList.toString());
+		
+		String memberName = memberInfoList.get(0).getMemberName();
+		String memberId = memberInfoList.get(0).getMemberId();
+		System.out.println("멤버이름"+memberName);
 		Page page = null;
 
 		if(request.getParameter("nowPage") != null) {
@@ -58,8 +68,8 @@ public class MyQnaListServlet extends HttpServlet {
 		page.setFindStr(findStr);
 		
 	
+		
 		List<MyQnaList> qnaPage = new MyQnaService().selectQnaPageList(page);
-
 
 		if(!qnaPage.isEmpty()) {
 			request.setAttribute("qnaList", qnaPage);
@@ -67,6 +77,8 @@ public class MyQnaListServlet extends HttpServlet {
 
 			String url = "index.jsp?inc=view/mypage/";
 			RequestDispatcher view = request.getRequestDispatcher(url + "Mypage_qna.jsp");
+			request.setAttribute("memberId", memberId);
+			request.setAttribute("memberName", memberName);
 			view.forward(request, response);
 			System.out.println(qnaPage);
 		} else {
