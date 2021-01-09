@@ -100,8 +100,10 @@ public class UpdateMemberInfoServlet extends HttpServlet {
 		int affectedRows = new MemberDao().updateMemberInfo(memberVo);
 		
 		if (affectedRows > 0) {
-			RequestDispatcher rd = request.getRequestDispatcher("mypage_edit");
-			rd.forward(request, response);
+//			RequestDispatcher rd = request.getRequestDispatcher("mypage_edit");
+//			rd.forward(request, response);
+			
+			response.sendRedirect("mypage_edit");
 		}
 		
 	}
