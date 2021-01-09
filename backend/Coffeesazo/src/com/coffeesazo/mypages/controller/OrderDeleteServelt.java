@@ -46,15 +46,19 @@ public class OrderDeleteServelt extends HttpServlet {
 		HttpSession session = request.getSession();
 		String memberid = ((String)session.getAttribute("id"));
 		String[] checkorder = request.getParameterValues("delete-name");
+		
 		int[] cod = new int[checkorder.length];
 		for(int i=0; i<cod.length ; i++) {
 			cod[i] = Integer.parseInt(checkorder[i]);
 		}
 			int result = new OrderService().OrderDelete(cod,memberid);
 			System.out.println("선택삭제 값:"+result);
-			if(result != 0) {
-				RequestDispatcher view = request.getRequestDispatcher("view/order/Mypage_order.jsp");
-				view.forward(request, response);
+			String url = "index.jsp?inc=view/mypage/";
+
+			if(result != 0) {			
+				RequestDispatcher view = request.getRequestDispatcher(url + "mypage_order.jsp");
+			view.forward(request, response);
+				response.sendRedirect("OrderListSelect");
 			}else {
 				response.sendRedirect("");
 			}

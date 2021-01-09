@@ -65,7 +65,7 @@ public class OrderListDao {
 		System.out.println(params);
 		System.out.println(memberid);
 		//밑문장해석필유
-		String sql = "DELETE FROM cs_order WHERE order_index IN ("+params+")";
+		String sql = "DELETE FROM cs_order WHERE fk_member_id = ? AND order_index IN ("+params+")";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -77,26 +77,10 @@ public class OrderListDao {
 			JDBCTemplate.close(pstmt);
 			JDBCTemplate.close(rs);
 		}
+		System.out.println("리설트입니다"+result);
 		return result;
 	}
 
-	public int CartDeleteAll(Connection conn, String memberid) {
-		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
-		ResultSet rs = null;//결과값을 다루는 아이
-		int result = 0;
-		String sql = "DELETE FROM cs_order WHERE fk_member_id = ?";
-		
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, memberid);
-			result=pstmt.executeUpdate();
-		} catch (Exception e) {
-			// TODO: handle exception
-		}finally {
-			JDBCTemplate.close(pstmt);
-			JDBCTemplate.close(rs);
-		}
-		return result;
-	}
+
 
 }
