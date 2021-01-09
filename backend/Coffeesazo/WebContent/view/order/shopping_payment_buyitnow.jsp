@@ -18,7 +18,7 @@
 			<h1>결제하기</h1>
 		</div>
 
-		<form action="allbuy_submit" method="POST">
+		<form action="buyitnow" method="POST">
 			<div id="main-container">
 				<div class="top-logo">
 					<h2>
@@ -28,18 +28,18 @@
 				
 					<div class="info-buy-container">
 						<div class="info-buy">
-							<img src="${lastElement.productImage}" alt="">
+							<img src="view/img/${lastElement.productImage}" alt="">
 							<div class="info-buy-text">
 								<strong>${lastElement.productName}</br></strong> <input type="hidden"
 									value="${lastElement.productIndex }" name="index"> <input
 									type="hidden" value="${lastElement.orderCount }" name="count">
 								<p>
-									<strong>${lastElement.productPrice}</strong>x
-									${buylist.orderCount}개
+									<strong><fmt:formatNumber value="${lastElement.productPrice}" pattern="###,###,###원" /></strong>x
+									${lastElement.orderCount}개
 								</p>
 								<u>무료배송</u>
 								<p>
-									<strong></strong>구매가격 &nbsp;</strong><strong>${buylist.productPrice * cart.orderCount }원</strong>
+									<strong></strong>구매가격 &nbsp;</strong><strong><fmt:formatNumber value="${lastElement.productPrice * lastElement.orderCount }" pattern="###,###,###원" /></strong>
 								</p>
 							</div>
 						</div>
@@ -109,7 +109,7 @@
 											</tr>
 											<tr>
 												<td>상품금액</td>
-												<td>35,000원</td>
+												<td><fmt:formatNumber value="${lastElement.productPrice * lastElement.orderCount }" pattern="###,###,###원" /></td>
 											</tr>
 											<tr>
 												<td>배송비</td>
@@ -122,12 +122,12 @@
 										<table class="checkorder-table2">
 											<tr>
 												<td>최종 결제 금액</td>
-												<td>${allresult}원</td>
+												<td><fmt:formatNumber value="${allresult}" pattern="###,###,###원" /></td>
 
 											</tr>
 
 										</table>
-										<input type="text" value="${allresult}" name="allresult">
+										<input type="hidden" value="${allresult}" name="allresult">
 
 
 

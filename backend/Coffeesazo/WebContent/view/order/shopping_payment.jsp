@@ -28,18 +28,18 @@
 				<c:forEach items="${pList}" var="buylist">
 					<div class="info-buy-container">
 						<div class="info-buy">
-							<img src="${buylist.productImage}" alt="">
+							<img src="view/img/${buylist.productImage}" alt="">
 							<div class="info-buy-text">
 								<strong>${buylist.productName}</br></strong> <input type="hidden"
 									value="${buylist.productIndex }" name="index"> <input
 									type="hidden" value="${buylist.orderCount }" name="count">
 								<p>
-									<strong>${buylist.productPrice}원</strong>x
+									<strong><fmt:formatNumber value="${buylist.productPrice}" pattern="###,###,###원" /></strong>x
 									${buylist.orderCount}개
 								</p>
 								<u>무료배송</u>
 								<p>
-									<strong></strong>구매가격 &nbsp;</strong><strong>${buylist.productPrice * cart.orderCount }원</strong>
+									<strong></strong>구매가격 &nbsp;</strong><strong><fmt:formatNumber value="${buylist.productPrice * buylist.orderCount }" pattern="###,###,###원" /></strong>
 								</p>
 							</div>
 						</div>
@@ -122,12 +122,12 @@
 										<table class="checkorder-table2">
 											<tr>
 												<td>최종 결제 금액</td>
-												<td>${allresult}원</td>
+												<td><fmt:formatNumber value="${allresult}" pattern="###,###,###원" /></td>
 
 											</tr>
 
 										</table>
-										<input type="text" value="${allresult}" name="allresult">
+										<input type="hidden" value="${allresult}" name="allresult">
 
 
 

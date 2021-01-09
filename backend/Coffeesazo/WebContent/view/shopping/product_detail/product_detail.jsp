@@ -20,6 +20,9 @@
 <body>
     <main>
         <div id="menu-container">
+        <form action="cartaddone" var="orderdetail">
+        
+        
             <div class="menu1">
                 <div class="menu-toplogo">
                     <h1><a href="index.jsp?inc=view/shopping/product/whole_bean.jsp">${ProductDeatil.fkCategoryIndex}</a></h1>
@@ -34,7 +37,7 @@
                     
                     <img src="./view/img/${List.productImage}" alt="">
                     <div class="menu-result">
-                        <form action="">
+                        <form action="cartaddone" var="addcart">
                             <div class="result-title">
                                 <h2>${infoArray[0]}</h2>
                             </div>
@@ -47,15 +50,18 @@
                                 <p>배송 기간: 이틀 예정</p>
                                 <p>[영업일 기준 2일 이내 발송]</p>
                                 <label for="addcount">수량</label>
-                                <input type="button" id="count-plus" value="+" style="width: 30px;"/><input type="text" id="account" class="addcount" style="width: 50px;" value="1"><input type="button" id="count-minus" value="-" style="width: 30px;"/>
-                             
+                                <input type="button" id="count-plus" value="+" style="width: 30px;"/><input type="text" id="account" class="addcount" style="width: 50px;" value="1" name="product_count"><input type="button" id="count-minus" value="-" style="width: 30px;"/>
+                                <input type="hidden" value="${List.productIndex }" name="product_index"/>
+                                <input type="hidden" value="${List.productImage }" name="product_image"/>
+                                <input type="hidden" value="${List.productName }" name="product_name"/>
+                                <input type="hidden" value="${List.productPrice }" name="product_price"/>
                             </div>
                             <div class="result-button">
                               <%
                               	if(session.getAttribute("id") != null){
                               %>
                           <!-- Button trigger modal -->
-<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="submit" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" name="servlet" value="1">
     장바구니
   </button>
   
@@ -77,7 +83,7 @@
       </div>
     </div>
   </div>
-                                <button type="button" class="btn btn-outline-secondary" onclick= " location.href = 'index.jsp?inc=view/order/shopping_payment.jsp'">바로구매</button>
+                                <button type="submit" class="btn btn-outline-secondary" name="servlet" value="2" >바로구매</button>
                             </div>
 
                         </form>
@@ -85,6 +91,7 @@
                         
                 </div>
             </div>
+            </form>
             <% } else { %>
             <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     장바구니
@@ -104,7 +111,7 @@
       </div>
     </div>
   </div>
-                                <button type="button" class="btn btn-outline-secondary" onclick= " location.href = 'index.jsp?inc=view/signin/login.jsp'">바로구매</button>
+                                <button type="submit" class="btn btn-outline-secondary" name="servlet" value="2" >바로구매</button>
                             </div>
 
                         </form>

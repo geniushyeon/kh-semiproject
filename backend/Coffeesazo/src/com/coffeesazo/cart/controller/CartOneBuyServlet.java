@@ -1,6 +1,7 @@
 package com.coffeesazo.cart.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -35,9 +36,13 @@ public class CartOneBuyServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	//장바구니 버튼과 바로구매버튼 여기다가만듬
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		String clicks = request.getParameter("servlet");
 		int click = 0;
-	request.setCharacterEncoding("utf-8");
-	response.setCharacterEncoding("utf-8");
+        click = Integer.parseInt(clicks);	
+        System.out.println(click);
 	HttpSession session = request.getSession();
 	String memberid = ((String)session.getAttribute("id"));
 
@@ -50,7 +55,7 @@ public class CartOneBuyServlet extends HttpServlet {
 		String productName = request.getParameter("product_name");
 		String pp = request.getParameter("product_price");
 	    int productPrice = Integer.parseInt(pp);
-		String oc = request.getParameter("order_count");
+		String oc = request.getParameter("product_count");
 		int orderCount = Integer.parseInt(oc);
 		
 		Cart cart = new Cart();
@@ -61,6 +66,15 @@ public class CartOneBuyServlet extends HttpServlet {
 		cart.setProductPrice(productPrice);
 		
 	    int addcart = new CartService().CartAddOne(memberid,cart);
+	    System.out.println("인서트 횟수:" + addcart);
+	    if(addcart != 0 ) {
+	    	out.println("<script>alert('장바구니에 추가되었습니다.');  location.href='cart'; </script>");
+	    	out.close();
+	    	
+	    	
+	    	
+	    }
+	    
 	
 	        
 		
@@ -74,7 +88,7 @@ public class CartOneBuyServlet extends HttpServlet {
 		String productName2 = request.getParameter("product_name");
 		String pp2 = request.getParameter("product_price");
 	    int productPrice2 = Integer.parseInt(pp2);
-		String oc2 = request.getParameter("order_count");
+		String oc2 = request.getParameter("product_count");
 		int orderCount2 = Integer.parseInt(oc2);
 		
 		Cart cart2 = new Cart();
@@ -87,15 +101,14 @@ public class CartOneBuyServlet extends HttpServlet {
 	    int addcart2 = new CartService().CartAddOne(memberid,cart2);
 	    ArrayList<Cart> pList = new CartService().SelectCartList(memberid);
 		int allresult = 0;
-		for(Cart plist : pList) {
-		    int price = plist.getProductPrice();
-		    int count = plist.getOrderCount();
-		    allresult += price * count;
-		    }
+		
 		Cart lastElement = null;
 		if(!pList.isEmpty()) {
 			lastElement = pList.get(pList.size() - 1);
 		}
+		int price = lastElement.getProductPrice();
+	    int count = lastElement.getOrderCount();
+	    allresult = price*count;
 		if(!pList.isEmpty()) {
 			request.setAttribute("lastElement", lastElement);
 			request.setAttribute("allresult", allresult);

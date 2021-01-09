@@ -110,7 +110,7 @@ public class CartService {
 			int submit2 = 0;
 		try {
 			Connection conn = new Application().getConn();
-			result = new CartDao().OrderAllbuydetail2(conn,pd,c,lastElement);
+			submit2 = new CartDao().OrderAllbuydetail2(conn,pd,c,lastElement);
 			JDBCTemplate.close(conn);
 			
 		} catch (Exception e) {

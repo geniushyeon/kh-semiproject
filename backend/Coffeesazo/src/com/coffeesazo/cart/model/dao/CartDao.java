@@ -215,11 +215,12 @@ public class CartDao {
 		int result = 0;
 		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
 		ResultSet rs = null;//결과값을 다루는 아이
-		String sql = "DELETE FROM cs_cart WHERE fk_product_index = ?";
+		String sql = "DELETE FROM cs_cart WHERE fk_member_id = ? AND fk_product_index = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1,lastcart.getProductIndex());
-			
+			pstmt.setString(1,memberid);
+			pstmt.setInt(2,lastcart.getProductIndex());
+			result=pstmt.executeUpdate();
 		} catch (Exception e) {
 			JDBCTemplate.close(pstmt);
 			JDBCTemplate.close(rs);
