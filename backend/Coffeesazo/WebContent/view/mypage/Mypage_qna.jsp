@@ -44,17 +44,13 @@
 
 					</a>
 				</ul>
-		<form action="mypage_edit" method="POST" name="form_edit">  
-					<ul>
-						<a class="card_small" id="mypage-edit" onclick="gotoEdit()">
-							<h3>회원정보수정</h3>
-							<p class="card_text">
-								나의 정보를 </br>변경하실 수 있습니다.
-							</p>
+		        <ul>
+                    <a class="card_small" id="mypage-edit" href="mypage_edit">
+                        <h3>회원정보수정</h3>
+                        <p class="card_text">나의 정보를 </br>변경하실 수 있습니다.</p>
 
-						</a>
-					</ul>
-				</form>		
+                    </a>
+                </ul>
 					<ul>
 						<a class="card_small" href="MyQnaList">
 							<h3 class="softblack">나의문의</h3>
@@ -168,13 +164,6 @@
 			frm.nowPage.value = 1;
 			frm.submit();
 		}
-
-		function gotoEdit() {
-			var form = document.form_edit;
-			form.action = "mypage_edit";
-			form.submit();
-		}
-		
 		
 	</script>
 

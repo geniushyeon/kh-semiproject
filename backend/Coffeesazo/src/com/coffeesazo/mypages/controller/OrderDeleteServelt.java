@@ -16,52 +16,51 @@ import com.coffeesazo.mypages.model.service.OrderService;
  */
 @WebServlet("/deleteorder")
 public class OrderDeleteServelt extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public OrderDeleteServelt() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+   /**
+    * @see HttpServlet#HttpServlet()
+    */
+   public OrderDeleteServelt() {
+      super();
+      // TODO Auto-generated constructor stub
+   }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+   /**
+    * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+    */
 
-		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			doGet(request, response);
+      protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+         doGet(request, response);
 
-	}
+   }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	
-		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("utf-8");
-		HttpSession session = request.getSession();
-		String memberid = ((String)session.getAttribute("id"));
-		String[] checkorder = request.getParameterValues("delete-name");
-		
-		int[] cod = new int[checkorder.length];
-		for(int i=0; i<cod.length ; i++) {
-			cod[i] = Integer.parseInt(checkorder[i]);
-		}
-			int result = new OrderService().OrderDelete(cod,memberid);
-			System.out.println("선택삭제 값:"+result);
-			String url = "index.jsp?inc=view/mypage/";
+   /**
+    * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+    */
+   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      // TODO Auto-generated method stub
+   
+      request.setCharacterEncoding("utf-8");
+      response.setCharacterEncoding("utf-8");
+      HttpSession session = request.getSession();
+      String memberid = ((String)session.getAttribute("id"));
+      String[] checkorder = request.getParameterValues("delete-name");
+      
+      int[] cod = new int[checkorder.length];
+      for(int i=0; i<cod.length ; i++) {
+         cod[i] = Integer.parseInt(checkorder[i]);
+      }
+         int result = new OrderService().OrderDelete(cod,memberid);
+         System.out.println("선택삭제 값:"+result);
+         
 
-			if(result != 0) {			
-				RequestDispatcher view = request.getRequestDispatcher(url + "mypage_order.jsp");
-			view.forward(request, response);
-				response.sendRedirect("OrderListSelect");
-			}else {
-				response.sendRedirect("");
-			}
-	}
+         if(result != 0) {         
+            
+            response.sendRedirect("OrderListSelect");
+         }else {
+            response.sendRedirect("");
+         }
+   }
 
 }
