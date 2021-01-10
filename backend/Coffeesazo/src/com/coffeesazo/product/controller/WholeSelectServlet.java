@@ -37,7 +37,7 @@ public class WholeSelectServlet extends HttpServlet {
 			view.forward(request, response);
 
 		} else {
-			response.sendRedirect("");
+			System.out.print("<script> alert('잘못된 접근입니다.'); history.back(); </script>");
 		}
 		
 	}
