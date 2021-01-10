@@ -121,7 +121,7 @@
 
 
                </tbody>
-         </c:if>
+        
 
          </table>
 
@@ -131,7 +131,7 @@
                 <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
                     주문취소
                 </button>
-
+     </p>
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
@@ -152,13 +152,16 @@
                         </div>
                     </div>
                 </div>
+                
+                </div>
+                 </c:if>
             </form>
                 
                 
-            </p>
+         
             
             <c:if test="${empty odList }">
-               <div style="text-align: center; font-weight: 500; font-size: 2rem;">주문정보가 없습니다. </div>
+               <div style="text-align: center; font-weight: 500; font-size: 2rem;">주문정보가 없습니다.<br><br><br><br>   </div>
             
             </c:if>
 
