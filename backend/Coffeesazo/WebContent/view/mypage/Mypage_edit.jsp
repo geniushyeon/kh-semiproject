@@ -64,7 +64,7 @@
        <!--  	</form>--> 
         
             <ul>
-                    <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_qna.jsp">
+                    <a class="card_small" href="MyQnaList"">
                         <h3 class="softblack">나의문의</h3>
                         <p class="card_text">나의1:1문의를 </br>확인하실 수 있습니다.</p>
         

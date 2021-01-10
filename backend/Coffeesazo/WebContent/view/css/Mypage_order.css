@@ -116,3 +116,8 @@ ul { /* 버튼정렬*/
 a.page-link {
 	text-align: center;
 }
+
+td{
+	
+		cursor: pointer;
+}
