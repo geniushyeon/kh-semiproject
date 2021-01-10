@@ -85,6 +85,7 @@ color: #444;
 background-color: #fff;
 transition: 0.1s ease-in-out;
 display: inline-block;
+cursor: pointer;
 }
 
 
@@ -142,6 +143,7 @@ text-align: center;
 	position: relative;
     justify-content:center;
     margin-left: 250px; 
+    cursor: pointer;
 }
 
 .btns input {

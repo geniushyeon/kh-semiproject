@@ -116,9 +116,9 @@
 				</div>
 				<!--------------------- 글쓰기버튼 --------------------->
 				<div class="csl-button">
-					<p>
-						<button type="button" class="btn btn-outline-secondary">글쓰기</button>
-					</p>
+					<a href="/Coffeesazo/index.jsp?inc=view/qna/qna_write.jsp">
+						<button type="button" class="btn btn-outline-secondary" >글쓰기</button>
+					</a>
 					<nav aria-label="Page navigation example">
 						<ul class="pagination justify-content-center">
 							<div class='btns'>
