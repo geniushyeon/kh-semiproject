@@ -20,7 +20,7 @@
 <body>
 
 
-			<!-- 상품 페이지 메인 -->
+				<!-- 상품 페이지 메인 -->
   
 
     <main>
@@ -53,39 +53,7 @@
               </div>
             </div>   
    	 </main>
-				  
+	 <!-- 부트스트랩 자바스크립트 추가 -->
+    <script src="./js/bootstrap.min.js"></script>
  </body>
 </html>	
-
-<%--                      <div class="col_space"> 
-                      <div class="item_list">
-                        <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Capsule2.jsp">
-                            <img src="view/img/Volluto.png" alt="">
-                            <div class="capsule_name">${product.ProductName}</div> 
-                            <p><div class="product_price">${product.ProductPrice}</div></p>
-                        </a>
-                      </div>
-                     </div>
-
-                     <div class="col_space"> 
-                      <div class="item_list">
-                        <a href="index.jsp?inc=view/shopping/product_detail/Coffee_Capsule2.jsp">
-                            <img src="view/img/Linizio_Lungo.png" alt="">
-                            <div class="capsule_name">${product.ProductName}</div> 
-                            <p><div class="product_price">${product.ProductPrice}</div></p>
-                        </a>
-                      </div>
-                     </div>
- 		 --%>
- 
-
-
-<%--
-    <!-- 제이쿼리 자바스크립트 추가 -->
-    <script src="./js/jquery.min.js"></script>
-    <!-- 부트스트랩 자바스크립트 추가 -->
-    <script src="./js/bootstrap.min.js"></script>
-    <!-- 파퍼 자바스크립트 추가 -->
-    <script src="./js/popper.min.js"></script>
-     --%>
-    

@@ -146,7 +146,8 @@
 	  	   </div>
 
 	</main>
-
+   <!-- 부트스트랩 자바스크립트 추가 -->
+   <script src="./js/bootstrap.min.js"></script>
 </body>
 
 </html>
