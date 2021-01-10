@@ -56,11 +56,24 @@ public class OrderDetailServlet extends HttpServlet {
 		
 
 		List<OrderDetailListVo> orderDetailList = new OrderDetailService().selectOrderDetailList(memberId, orderIndex);
-		System.out.println(orderDetailList.toString());
-
+		String orderAddress = orderDetailList.get(0).getOrderAddress();
+		String orderText = orderDetailList.get(0).getOrderText();
+		String finalOrderAddress = "";
+		String[] orderAddressArray = orderAddress.split("\\+");
+		
+		for (String temp : orderAddressArray) {
+			finalOrderAddress += temp + " ";
+		}
+		
+		if (orderText == null) {
+			orderDetailList.get(0).setOrderText("요청사항 없음");
+		}
+		
+		
 		if (!orderDetailList.isEmpty()) {
 			request.setAttribute("orderIndex", orderIndex);
 			request.setAttribute("orderDetailList", orderDetailList);
+			request.setAttribute("orderAddress", finalOrderAddress);
 			String url = "index.jsp?inc=view/mypage/";
 			RequestDispatcher rd = request.getRequestDispatcher(url + "mypage_order_detail.jsp");
 			rd.forward(request, response);

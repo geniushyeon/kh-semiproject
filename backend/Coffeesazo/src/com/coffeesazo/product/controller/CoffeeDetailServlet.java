@@ -50,7 +50,9 @@ public class CoffeeDetailServlet extends HttpServlet {
 			RequestDispatcher view = request.getRequestDispatcher(url + "product_detail.jsp");
 			view.forward(request, response);
 			System.out.println(List);
-		}
+		} else {
+			System.out.print("<script> alert('잘못된 접근입니다.'); history.back(); </script>");
+		}	
 		
 	}
 

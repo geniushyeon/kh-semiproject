@@ -21,6 +21,10 @@ html, body {
 	height: 100%;
 }
 
+form {
+	display: inline;
+}
+
 .size-controll {
 	text-align: center;
 }
@@ -69,7 +73,6 @@ nav {
 	transition: 0.1s ease-in-out;
 }
 
-
 .card_text { /* 버튼글씨 속성*/
 	padding-top: 2px;
 	color: #666;
@@ -87,12 +90,6 @@ nav {
 	color: #4d2600;
 }
 
-#mypage-edit {
-	box-shadow: 4px 8px 20px 2px rgba(0, 0, 0, 0.15);
-	transition: 0.2s ease-in-out;
-	color: #4d2600;
-	cursor: pointer;
-}
 
 h1 {
 	border-bottom: solid #000000;
@@ -110,3 +107,8 @@ ul { /* 버튼정렬*/
 a.page-link {
 	text-align: center;
 }
+
+td {
+	cursor: pointer;
+}
+

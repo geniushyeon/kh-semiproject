@@ -1,6 +1,4 @@
 
-	
-	
 	function editConfirm() {
 		var originalPassword = document.getElementById("input-original-password").value;
 		console.log(originalPassword)

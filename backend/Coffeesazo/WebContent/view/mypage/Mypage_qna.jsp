@@ -44,17 +44,13 @@
 
 					</a>
 				</ul>
-			<!--	<form action="mypage_edit" method="POST" name="form_edit">  -->
-					<ul>
-						<a class="card_small" id="mypage-edit" onclick="gotoEdit()">
-							<h3>회원정보수정</h3>
-							<p class="card_text">
-								나의 정보를 </br>변경하실 수 있습니다.
-							</p>
+		        <ul>
+                    <a class="card_small" id="mypage-edit" href="mypage_edit">
+                        <h3>회원정보수정</h3>
+                        <p class="card_text">나의 정보를 </br>변경하실 수 있습니다.</p>
 
-						</a>
-					</ul>
-				<!--</form>   -->		
+                    </a>
+                </ul>
 					<ul>
 						<a class="card_small" href="MyQnaList">
 							<h3 class="softblack">나의문의</h3>
@@ -116,9 +112,9 @@
 				</div>
 				<!--------------------- 글쓰기버튼 --------------------->
 				<div class="csl-button">
-					<p>
-						<button type="button" class="btn btn-outline-secondary">글쓰기</button>
-					</p>
+					<a href="/Coffeesazo/index.jsp?inc=view/qna/qna_write.jsp">
+						<button type="button" class="btn btn-outline-secondary" >글쓰기</button>
+					</a>
 					<nav aria-label="Page navigation example">
 						<ul class="pagination justify-content-center">
 							<div class='btns'>
@@ -168,13 +164,6 @@
 			frm.nowPage.value = 1;
 			frm.submit();
 		}
-
-		function gotoEdit() {
-			var form = document.form_edit;
-			form.action = "mypage_edit";
-			form.submit();
-		}
-		
 		
 	</script>
 
