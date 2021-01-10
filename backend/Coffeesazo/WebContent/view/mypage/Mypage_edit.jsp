@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="view/css/addressApi.css" type="text/css">
   <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="view/css/Mypage.css" type="text/css">
-  <link rel="stylesheet" href="./view/css/mypage_edit.css" type="text/css">
+  <link rel="stylesheet" href="./view/css/Mypage_edit.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 </head>
