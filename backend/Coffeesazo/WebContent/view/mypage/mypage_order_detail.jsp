@@ -20,7 +20,7 @@
 
 <body>
 <%
-	
+	String orderAddress = (String) request.getAttribute("orderAddress");
 	List<OrderDetailListVo> orderDetailList = (List)request.getAttribute("orderDetailList");
 %>
     <div class="main-container">
@@ -118,7 +118,7 @@
                     </tr>
                     <tr>
                         <th scope="row">주소</th>
-                        <td><%=orderDetailList.get(0).getOrderAddress() %></td>
+                        <td><%= orderAddress %></td>
                     </tr>
                     <tr>
                         <th scope="row">연락처</th>
