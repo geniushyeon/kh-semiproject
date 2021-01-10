@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,34 +29,23 @@
 				</div>
 				<div class="layout-box">
 					<h2>1:1 문의 조회하기</h2>
-					<form name="board" method="post" class="board" enctype="multipart/form-data">
-						<label for="title">제목</label> 
-						<input type="text" id="title" name="title" value="${title}" readonly />
-						<br /> <br /> 
-						<label for="content">내용</label>
-						<textarea class="content" rows="13" cols="85" name="content" readonly>${text}</textarea>
-						<br /> <br /> 
+					<form name="board" method="post" class="board">
+						<label for="title">제목</label> <input type="text" id="title"
+							name="title" value="${title}" readonly /> <br /> <br /> 
+						<label for="content">내용</label> 
+						<textarea class="content" rows="13" cols="85" name="content"  readonly>${text}</textarea> <br /> <br />		
+						<label for="file">첨부파일<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						${image}</span></label>
 						<div class="file-upload">
-						<label for="file"><!-- 첨부파일 --><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						${image} </span></label>
-							<!-- <input type="file" id="file" name="file" multiple readonly  /> -->
+							<!-- <input type="file" id="imgInput" name="file" multiple readonly  /> -->
 							<%-- <span>${image}</span> --%>
-							<c:choose>
-								<c:when test="${empty image}">
-									<img src='http://placehold.it/200x140' width='200px' height='140px' />
-								</c:when>
-								<c:otherwise>
-									<a href=".view/upload/${image}" download="${image}"> <!-- 첨부된 이미지 다운로드 기능 -->
-										<img src=".view/upload/${image}" width='200px' height='140px' />
-									</a>
-								</c:otherwise>
-							</c:choose>
+							<!-- <img id="image_section" src='#' style="width: 200px; height:140px;"/> -->
+
 						</div>
 						<div class="bottom-button">
-							<a href="qna" class="btn-board">목록으로</a>
-							<a class="btn-modify" href="qnamodify?id=${index}">수정하기</a> 
-							<a class="btn-cancle" href="qnadelete?id=${index}" onclick="javascript:cancle()">삭제하기</a>
-							<input type="text" name="delFile" value="${image}" />
+						<a href="qna" class="btn-board" >목록으로</a> 
+						<a class="btn-modify" href="qnamodify?id=${index}">수정하기</a>
+						<a class="btn-cancle" href="qnadelete?id=${index}" onclick="javascript:cancle()">삭제하기</a> 
 						</div>
 					</form>
 				</div>
@@ -67,37 +56,34 @@
 	<script src="./js/bootstrap.min.js"></script>
 	<script>
 		function cancle() {
-			var writeCancle = confirm("삭제하시겠습니까?");
-			if (writeCancle == true) {
-				/*  alert("삭제가 완료되었습니다."); 서블릿에서 처리*/
-				location.href = "qnadelete";
-			}
-		}
+	        var writeCancle = confirm("삭제하시겠습니까?");
+	        if( writeCancle == true ) {
+	            /*  alert("삭제가 완료되었습니다."); 서블릿에서 처리*/
+	            location.href = "qnadelete";
+	        } 
+	    }
 		function modify() {
-			var writeCancle = confirm("수정하시겠습니까?");
-			if (writeCancle == true) {
-				/*  alert("수정이 완료되었습니다."); 서블릿에서 처리*/
-				location.href = "qnamodify";
+	        var writeCancle = confirm("수정하시겠습니까?");
+	        if( writeCancle == true ) {
+	            /*  alert("수정이 완료되었습니다."); 서블릿에서 처리*/
+	            location.href = "qnamodify";
+	        } 
+	    }
+		function readURL(input) {
+			 if (input.files && input.files[0]) {
+			  var reader = new FileReader();
+			  
+			  reader.onload = function (e) {
+			   $('#image_section').attr('src', e.target.result);  
+			  }
+			  
+			  reader.readAsDataURL(input.files[0]);
+			  }
 			}
-		}
-		// 이미지 파일 미리보기
-		var photo = function(){
-		var btnPhoto = getID('btnPhoto');
-		if(btnPhoto != null) {
-			btnPhoto.onchange = function(ev) {
-				var tag = ev.srcElement; // 이벤트 발생한 태그
-				var url = tag.files[0]; // 선택된 파일명
-				var reader = new FileReader();
-				reader.readAsDataURL(url);
-				reader.onload = function(e) {
-					var img = new Image();
-					img.src = e.target.result;
-					var photo = getID('photo');
-					photo.src = img.src;
-				}
-			}
-		}
-		}
+			 
+			$("#imgInput").change(function(){
+			   readURL(this);
+			});
 	</script>
 </body>
 </html>

@@ -28,18 +28,19 @@
 				</div>
 				<div class="layout-box">
 					<h2>1:1 문의 작성하기</h2>
-					<form name="board" method="post" class="board" action="qnawrite">
+					<form name="board" method="post" class="board" action="qnawrite" onsubmit="return requiredCheck();">
 						<label for="title">제목</label> <input type="text" id="title"
-							name="title" placeholder="내용을 입력해 주세요." required /> <br /> <br />
+							name="title" placeholder="제목을 입력해 주세요."  /> <br /> <br />
 						<label for="content">내용</label> 
-						<textarea class="content" rows="13" cols="85" name="content" id="content" placeholder="내용을 입력해 주세요." required /></textarea> <br /> <br />
+						<textarea class="content" rows="13" cols="85" name="content" id="content" placeholder="내용을 입력해 주세요."  /></textarea> <br /> <br />
 						<label for="file">첨부파일</label>
 						<div class="file-upload">
-							<input type="file" id="btnPhoto" name="photo" multiple />
-							<img src='http://placehold.it/200x140' id='photo'  width='200px' height='140px' />
+							<input type="file" id="btnPhoto" name="file"  multiple /> <br /> <br />
+							<img src='view/upload/${image}' id='file'  width='200px' height='140px' />
+							<!-- <img id="image_section" width='200px' height='140px' /> -->
 						</div>
 						<div class="bottom-button">
-							<input class="btn-save" type="submit" value="등록하기" onclick="registration()">
+							<input class="btn-save" type="submit" value="등록하기">
 							<input class="btn-cancle" type="button" onclick="cancle()" value="취소하기">
 						</div>
 					</form>
@@ -50,20 +51,75 @@
 	  <!-- 부트스트랩 자바스크립트 추가 -->
     <script src="./js/bootstrap.min.js"></script>
 	<script>
-		function registration(){
-			var writeRegistration = confirm("등록하시겠습니까?");
-			if(writeRegistration) {
-				alert("등록이 완료되었습니다.");
-				location.href = "qna";
+
+		function requiredCheck(){ 
+			
+			var title = $("#title").val();
+			var content = $("#content").val();
+			var writeRegistration = null;
+			
+			if(title == "") {
+				alert('제목을 입력해 주세요.');
+				$("#title").focus(); 
+				return false;
+				}
+			
+			else if(content ==""){
+				alert('내용을 입력해 주세요.');
+				$("#content").focus(); 
+				return false;
 			}
-		}	
-		  function cancle() {
-	        var writeCancle = confirm("취소하시겠습니까?");
-	        if( writeCancle == true ) {
-	            alert("작성이 취소되었습니다.");
-	            location.href = "qna";
-	        } 
-	    }
+			
+			else if (title != null || content !=null) {
+				writeRegistration =confirm("등록하시겠습니까?");
+				if(writeRegistration==true)
+				alert('등록이 완료되었습니다.');	
+			}			
+}		
+		
+function cancle() {
+	    var writeCancle = confirm("취소하시겠습니까?");
+	     if( writeCancle == true ) {
+	        alert("작성이 취소되었습니다.");
+	        location.href = "qna";
+	    } 
+	}
+	
+/* function readURL(input) {
+	 if (input.files && input.files[0]) {
+	  var reader = new FileReader();
+	  
+	  reader.onload = function (e) {
+	   $('#image_section').attr('src', e.target.result);  
+	  }
+	  
+	  reader.readAsDataURL(input.files[0]);
+	  }
+	}
+
+	$("#imgInput").change(function(){
+	   readURL(this);
+	});
+ */
+ function getID(id){ return document.getElementById(id)}
+ var photo = function(){
+ var btnPhoto = getID('btnPhoto');
+	 if(btnPhoto != null) {
+			btnPhoto.onchange = function(ev) {
+				var tag = ev.srcElement; // 이벤트 발생한 태그
+				var url = tag.files[0]; // 선택된 파일명
+				var reader = new FileReader();
+				reader.readAsDataURL(url);
+				reader.onload = function(e) {
+					var img = new Image();
+					img.src = e.target.result;
+					var file = getID('file');
+					file.src = img.src;
+				}
+			}
+		}
+ }
+
 	</script>
 
 </body>

@@ -60,7 +60,7 @@ public class QnAServlet extends HttpServlet {
 			view.forward(request, response);
 			System.out.println(qnaList);
 		} else {
-			out.println("<script>('검색 결과가 없습니다..'); history.back();</script>");
+			out.println("<script>alert('검색 결과가 없습니다..'); history.back(); </script>");
 		}	
 	}
 

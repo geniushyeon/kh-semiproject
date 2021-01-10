@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>   
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>   
  
 <!DOCTYPE html>
 <html>
@@ -30,29 +30,22 @@
 				</div>
 				<div class="layout-box">
 					<h2>1:1 문의 수정하기</h2>
-					<form name="board" method="post" class="board" action="qnamodifydo?id=${index}">
+					<form name="board" method="post" class="board" action="qnamodifydo?id=${index}" onsubmit="return requiredCheck();">
 						<input type="hidden" value="$(index)">
 						<label for="title">제목</label>
 						<input type="text" id="title" name="title" value="${title}" required /> <br /> <br />
 						<label for="content">내용</label> 
 						<textarea class="content" rows="13" cols="85" name="content" id="content"  required >${text}</textarea> <br /> <br />
-						<div class="file-upload">
 						<label for="file">첨부파일</label>
-						<input type="file" id="btnPhoto" name="photo" multiple /><br /><br />
+						<div class="file-upload">
+						<input type="file" id="imgInput" name="file" multiple /><br /><br />
 							<span>${image}</span>
-							<c:choose>
-			               <c:when test="${empty image}">
-			                  <img src = 'http://placehold.it/200x140' id=photo width = '200px' height = '140px'/>      
-			               </c:when>
-			               <c:otherwise>
-			                  <img src='.view/upload/${image}' id=photo width = '200px' height = '140px'/>
-			               	</c:otherwise>
-			           	   </c:choose>					
+						<img id="image_section" style="width: 200px; height:140px; "/>
 						</div>
 						<div class="bottom-button">
 							<input class="btn-save" type="submit" value="등록하기">
 							<input class="btn-cancle" type="button" onclick="cancle()" value="취소하기">
-							<input type = 'hidden' name = 'delFile' value = '${image}'/>
+							<%-- <input type = 'text' name = 'delFile' value = '${image}'/> --%>
 						</div>
 					</form>
 				</div>
@@ -62,6 +55,33 @@
 	<!-- 부트스트랩 자바스크립트 추가 -->
 	<script src="./js/bootstrap.min.js"></script>
 	<script>
+function requiredCheck(){ 
+		
+		var title = $("#title").val();
+		var content = $("#content").val();
+		var writeRegistration = null;
+		
+		if(title == "") {
+			alert('제목을 입력해 주세요.');
+			$("#title").focus(); 
+			return false;
+			}
+		
+		else if(content ==""){
+			alert('내용을 입력해 주세요.');
+			$("#content").focus(); 
+			return false;
+		}
+		
+		else if (title != null || content !=null) {
+			writeRegistration =confirm("수정 하시겠습니까?");
+			if(writeRegistration==true)
+			alert('수정이 완료되었습니다.');
+			
+		}
+		
+}
+	
 	function cancle() {
         var writeCancle = confirm("취소하시겠습니까?");
         if( writeCancle == true ) {
@@ -70,23 +90,21 @@
         } 
     }
 		
-
-	// 이미지 파일 미리보기
-	var btnPhoto = getID('btnPhoto');
-	if(btnPhoto != null) {
-		btnPhoto.onchange = function(ev) {
-			var tag = ev.srcElement; // 이벤트 발생한 태그
-			var url = tag.files[0]; // 선택된 파일명
-			var reader = new FileReader();
-			reader.readAsDataURL(url);
-			reader.onload = function(e) {
-				var img = new Image();
-				img.src = e.target.result;
-				var photo = getID('photo');
-				photo.src = img.src;
-			}
+	function readURL(input) {
+		 if (input.files && input.files[0]) {
+		  var reader = new FileReader();
+		  
+		  reader.onload = function (e) {
+		   $('#image_section').attr('src', e.target.result);  
+		  }
+		  
+		  reader.readAsDataURL(input.files[0]);
+		  }
 		}
-	}
+		 
+		$("#imgInput").change(function(){
+		   readURL(this);
+		});
 	</script>
 </body>
 </html>

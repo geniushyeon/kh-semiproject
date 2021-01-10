@@ -11,7 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.coffeesazo.member.model.vo.MemberVo;
+import com.coffeesazo.qna.model.dao.FileUpload;
 import com.coffeesazo.qna.model.dao.QnADao;
+import com.coffeesazo.qna.model.vo.QnAVo;
+
+
+
+
 
 
 @WebServlet("/qnawrite")
@@ -38,6 +45,11 @@ public class QnAWriteServlet extends HttpServlet {
 		System.out.println(qnaText);
 		String qnaImage = request.getParameter("file");
 		System.out.println(qnaImage);
+		
+		//파일업로드
+		QnAVo vo = null;
+		FileUpload fu = new FileUpload(request);
+		//vo = fu.getphoto();
 		
 		QnADao dao = new QnADao();
 		System.out.println("dao객체가 생성되었습니다.");
