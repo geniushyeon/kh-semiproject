@@ -21,6 +21,12 @@ html, body {
 	height: 100%;
 }
 
+
+
+form {
+	display:inline;
+}
+
 .size-controll {
 	text-align: center;
 }

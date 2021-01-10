@@ -43,9 +43,8 @@ public class SelectMemberName extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 
 		HttpSession session = request.getSession();
-		List<MemberVo> memberInfoList = new MemberDao().selectMemberInfo(memberId);
-		System.out.println(memberId);
-		System.out.println(memberInfoList.toString());
+
+
 	}
 
 }

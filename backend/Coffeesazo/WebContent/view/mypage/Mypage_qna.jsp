@@ -44,7 +44,7 @@
 
 					</a>
 				</ul>
-			<!--	<form action="mypage_edit" method="POST" name="form_edit">  -->
+		<form action="mypage_edit" method="POST" name="form_edit">  
 					<ul>
 						<a class="card_small" id="mypage-edit" onclick="gotoEdit()">
 							<h3>회원정보수정</h3>
@@ -54,7 +54,7 @@
 
 						</a>
 					</ul>
-				<!--</form>   -->		
+				</form>		
 					<ul>
 						<a class="card_small" href="MyQnaList">
 							<h3 class="softblack">나의문의</h3>
