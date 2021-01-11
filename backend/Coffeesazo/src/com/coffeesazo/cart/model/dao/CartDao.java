@@ -7,7 +7,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import com.coffeesazo.cart.model.vo.Cart;
+import com.coffeesazo.cart.model.vo.CartCompare;
 import com.coffeesazo.cart.model.vo.OrderIndex;
+import com.coffeesazo.cart.model.vo.OrderMember;
 import com.coffeesazo.cart.model.vo.OrderVo;
 
 import common.JDBCTemplate;
@@ -38,6 +40,7 @@ public class CartDao {
 				//첫번째vo가 꽉참
 				
 				pList.add(cart);
+				
 				//Cart객채를 0~6번인덱스로 만듬
 			}
 				
@@ -175,7 +178,7 @@ public class CartDao {
 		return oIndex;
 	}
 
-	public int CartAddOne(Connection conn, String memberid, Cart cart) {
+	public int CartAddOne(Connection conn, String memberid, CartCompare cartcompare) {
 		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
 		ResultSet rs = null;//결과값을 다루는 아이
 		int addcart = 0;
@@ -183,8 +186,8 @@ public class CartDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,memberid);
-			pstmt.setInt(2,cart.getProductIndex());
-			pstmt.setInt(3,cart.getOrderCount());
+			pstmt.setInt(2,cartcompare.getProductIndex());
+			pstmt.setInt(3,cartcompare.getOrderCount());
 		    addcart=pstmt.executeUpdate();
 		} catch (Exception e) {
 			JDBCTemplate.close(pstmt);
@@ -226,6 +229,45 @@ public class CartDao {
 			JDBCTemplate.close(rs);
 		}
 		return result;
+	}
+
+	public OrderMember SearchMember(Connection conn, String memberid) {
+		OrderMember om = null;
+		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
+		ResultSet rs = null;//결과값을 다루는 아이
+		String sql = "SELECT * FROM cs_member WHERE member_id = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,memberid);
+			rs=pstmt.executeQuery();
+			rs.next();
+			om = new OrderMember();
+			
+			om.setMemberEmail(rs.getString("member_email"));
+			om.setMemberName(rs.getString("member_name"));
+			om.setMemberPhone(rs.getString("member_phone"));
+		} catch (Exception e) {
+			JDBCTemplate.close(pstmt);
+			JDBCTemplate.close(rs);
+		}
+		return om;
+	}
+
+	public int UpdateCart(Connection conn, CartCompare cartcompare, String memberid, int cal) {
+		int updatecart = 0;
+		PreparedStatement pstmt = null;// 쿼리문을 담는 박스
+		ResultSet rs = null;//결과값을 다루는 아이
+		String sql = "UPDATE cs_cart SET order_count = ? WHERE fk_product_index = ? AND FK_MEMBER_ID = ? ";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,cal);
+			pstmt.setInt(2,cartcompare.getProductIndex());
+			pstmt.setString(3,memberid);
+			updatecart=pstmt.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return updatecart;
 	}
 
 }

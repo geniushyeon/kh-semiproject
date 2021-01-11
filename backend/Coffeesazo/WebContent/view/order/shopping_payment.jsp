@@ -52,12 +52,12 @@
 								<h2>주문자 정보</h2>
 								<div class="form-userinfo">
 									<label for="name">이름</label> <input class="name" id="name"
-										type="text" style="margin-left: 46px;" name="name"> <br>
+										type="text" style="margin-left: 46px;" name="name" value="${om.memberName }" readonly="readonly"> <br>
 									<label for="E-mail">이메일</label> <input class="E-mail"
 										id="E-mail" type="email" style="margin-left: 27px;"
-										name="e-mail"> <br> <label for="number">연락처</label>
+										name="e-mail" value="${om.memberEmail}" readonly="readonly"> <br> <label for="number">연락처</label>
 									<input class="number" id="number" type="text"
-										style="margin-left: 27px;" name="number">
+										style="margin-left: 27px;" name="number" value="${om.memberPhone }" readonly="readonly">
 								</div>
 								<div class="form-container2">
 									<h2>배송 정보</h2>
