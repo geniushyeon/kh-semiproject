@@ -32,7 +32,7 @@ function checkForm() {
 	}
 
 
-$("#sample6_postcode").focusout(function() {
+$("#sample6_detailAddress").focusout(function() {
 	var address = $("#sample6_address").val();
 	
 	if (address == "") {
@@ -81,14 +81,20 @@ $("#number-rq").focusout(function() {
 		requiredCheck = true;
 	}
 })
+
 function checkFrom(){
-var form = document.getElementsByName("form_buy");
-if (requiredCheck == false){
-alert("필수 항목을 입력하셔야 회원가입이 가능합니다.");
-return false;
-}else{
-form.submit();
-}
+	var form = document.getElementsByName("form_buy");
+	if (requiredCheck == false){
+		alert("필수 항목을 입력하셔야 회원가입이 가능합니다.");
+		return false;
+	}else{
+		form.submit();
+	}
 
 }
+
+function getPayment(event) {
+		document.getElementById('payment-result').innerText = 
+			event.target.value;
+	}
 
