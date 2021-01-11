@@ -29,7 +29,7 @@
 				</div>
 				<div class="layout-box">
 					<h2>1:1 문의 조회하기</h2>
-					<form name="board" method="post" class="board">
+					<form name="board" id="board" method="post" class="board">
 						<label for="title">제목</label> <input type="text" id="title"
 							name="title" value="${title}" readonly /> <br /> <br /> 
 						<label for="content">내용</label> 
@@ -44,7 +44,8 @@
 						<div class="bottom-button">
 						<a href="qna" class="btn-board" >목록으로</a> 
 						<a class="btn-modify" href="qnamodify?id=${index}">수정하기</a>
-						<a class="btn-cancle" href="qnadelete?id=${index}" onclick="javascript:cancle()">삭제하기</a> 
+						<a class="btn-cancle" onclick="cancle()">
+						<input type="hidden" id="index" name="index" value="${index }"/>삭제하기</a> 
 						</div>
 					</form>
 				</div>
@@ -56,9 +57,15 @@
 	<script>
 		function cancle() {
 	        var writeCancle = confirm("삭제하시겠습니까?");
+	        var frm = document.getElementById("board");
+	        var index = document.getElementById("index");
+	        
 	        if( writeCancle == true ) {
+	            frm.action = "qnadelete";
 	            alert("삭제가 완료되었습니다.");
-	            location.href = "qnadelete";
+				frm.index = index.value;
+				frm.submit();
+	         
 	        }
 	        if( writeCancle==false){
 	             return false;

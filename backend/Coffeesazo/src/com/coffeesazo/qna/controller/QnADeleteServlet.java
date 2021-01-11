@@ -32,7 +32,7 @@ public class QnADeleteServlet extends HttpServlet {
 		HttpSession session = request.getSession(); 
 		String memberid = ((String)session.getAttribute("id"));
 
-		int index = Integer.parseInt(request.getParameter("id"));
+		int index = Integer.parseInt(request.getParameter("index"));
 		System.out.println(index);
 		
 		QnADao dao = new QnADao();
