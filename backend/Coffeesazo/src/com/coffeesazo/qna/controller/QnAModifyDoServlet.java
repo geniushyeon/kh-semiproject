@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.coffeesazo.qna.model.dao.FileUpload;
 import com.coffeesazo.qna.model.dao.QnADao;
 import com.coffeesazo.qna.model.vo.QnAVo;
 
@@ -42,6 +43,10 @@ public class QnAModifyDoServlet extends HttpServlet {
 		System.out.println(qnaText);
 		String qnaImage = request.getParameter("file");
 		System.out.println(qnaImage);
+	
+		//파일업로드
+		FileUpload fu = new FileUpload(request);
+	
 		
 		QnADao dao = new QnADao();
 		System.out.println("dao객체가 생성되었습니다.");
@@ -51,8 +56,12 @@ public class QnAModifyDoServlet extends HttpServlet {
 		if(result == 1) {
 			//업데이트성공시
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("qna");//이거 경로 아직 모르겠음.!터지면 이것부터 확인
-			dispatcher.forward(request, response);
+			response.sendRedirect("qna");
+			
+			/*
+			 * RequestDispatcher dispatcher = request.getRequestDispatcher("qna");//이거 경로 아직
+			 * 모르겠음.!터지면 이것부터 확인 dispatcher.forward(request, response);
+			 */
 		}
 		else out.println("<script>alert('수정에 실패하였습니다..'); history.back();</script>");
 		

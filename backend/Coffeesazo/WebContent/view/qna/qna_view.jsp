@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,13 +33,13 @@
 						<label for="title">제목</label> <input type="text" id="title"
 							name="title" value="${title}" readonly /> <br /> <br /> 
 						<label for="content">내용</label> 
-						<textarea class="content" rows="13" cols="85" name="content"  readonly  />${text}</textarea> <br /> <br />		
+						<textarea class="content" rows="13" cols="85" name="content"  readonly>${text}</textarea> <br /> <br />		
 						<label for="file">첨부파일<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						${image}</span></label>
-						<div class="file-upload">
-							<!-- <input type="file" id="file" name="file" multiple readonly  /> -->
-							<%-- <span>${image}</span> --%>
-						</div>
+						
+							<img src="upload/${image}" style="width: 140px; height:100px;"/>
+
+						
 						<div class="bottom-button">
 						<a href="qna" class="btn-board" >목록으로</a> 
 						<a class="btn-modify" href="qnamodify?id=${index}">수정하기</a>
@@ -66,6 +67,21 @@
 	            location.href = "qnamodify";
 	        } 
 	    }
+		function readURL(input) {
+			 if (input.files && input.files[0]) {
+			  var reader = new FileReader();
+			  
+			  reader.onload = function (e) {
+			   $('#image_section').attr('src', e.target.result);  
+			  }
+			  
+			  reader.readAsDataURL(input.files[0]);
+			  }
+			}
+			 
+			$("#imgInput").change(function(){
+			   readURL(this);
+			});
 	</script>
 </body>
 </html>

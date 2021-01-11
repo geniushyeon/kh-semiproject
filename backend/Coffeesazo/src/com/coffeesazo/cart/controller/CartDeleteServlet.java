@@ -42,12 +42,10 @@ public class CartDeleteServlet extends HttpServlet {
 		}
 			int result = new CartService().CheckCartDelete(cpd,memberid);
 			System.out.println("선택삭제 값:"+result);
-			String url = "index.jsp?inc=view/order/";
 			if(result != 0) {
-				RequestDispatcher view = request.getRequestDispatcher(url + "shopping_cart.jsp");
-				view.forward(request, response);
+				response.sendRedirect("cart");
 			}else {
-				response.sendRedirect("");
+				System.out.print("<script> alert('잘못된 접근입니다.'); history.back(); </script>");
 			}
 
 	}

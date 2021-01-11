@@ -2,13 +2,13 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!DOCTYPE html>
-<html lang="en">
+
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="view/css/bootstrap.min.css">
 <link rel="stylesheet" href="view/css/Mypage_qna.css" type="text/css">
+<link rel="stylesheet" href="view/css/bootstrap.min.css">
 <link
 	rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.js"
@@ -16,9 +16,11 @@
 	crossorigin="anonymous"></script>
 	
 </head>
+
 <body>
 
-	<main>
+<main>
+	
 		<div class="size-controll">
 			<div class="user_info">
 				<div class="mypage_title">
@@ -27,7 +29,7 @@
 				<div class="user_info_form">
 					<img
 						src="https://raw.githubusercontent.com/St4rFi5h/ETC/main/sourcce/article-user-blank.jpg"
-						alt="blank_user"> 이지현(jhlee0912) 님
+						alt="blank_user">  ${memberName}(${id })님
 				</div>
 			</div>
 
@@ -42,16 +44,13 @@
 
 					</a>
 				</ul>
-				<form action="mypage_edit" method="POST" name="form_edit">
-					<ul>
-						<a class="card_small" id="mypage-edit" onclick="gotoEdit()">
-							<h3>회원정보수정</h3>
-							<p class="card_text">
-								나의 정보를 </br>변경하실 수 있습니다.
-							</p>
+		        <ul>
+                    <a class="card_small" id="mypage-edit" href="mypage_edit">
+                        <h3>회원정보수정</h3>
+                        <p class="card_text">나의 정보를 </br>변경하실 수 있습니다.</p>
 
-						</a>
-					</ul>
+                    </a>
+                </ul>
 					<ul>
 						<a class="card_small" href="MyQnaList">
 							<h3 class="softblack">나의문의</h3>
@@ -67,14 +66,14 @@
 			</div>
 			<form method="POST" name="form1" id="form1">
 				<div id="find-zone" style="float: right; margin-bottom: 20px;">
-					<input type="text" name="findStr" id="findStr" value="${param.findStr }" placeholder="제목으로 검색" />
-					<input type="button" id="btnFind" value="검색" onclick="Find()" />
+					<input type="hidden" name="findStr" id="findStr" value="${param.findStr }" placeholder="제목으로 검색" />
+					<input type="hidden" id="btnFind" value="검색" onclick="Find()" />
 					<input type="hidden" name="nowPage" value="${empty param.nowPage ? 1 : param.nowPage }" />
 				</div>
 				<!---------------------테이블 시작 --------------------->
+		
 				<div class="main_table">
 					<table class="table table-hover">
-						<form action="" method="POST">
 							<thead>
 								<tr>
 									<th>번호</th>
@@ -100,38 +99,40 @@
 										<c:if test="${MyQna.qnaCheck == 1  }">
 											<td>답변됨</td>
 											</c:if>
-											<td onclick="view(${MyQna.qnaIndex});">${MyQna.qnaTitle }</td>
+											<td ><a
+									href="qnaview?id=${MyQna.qnaIndex}" >${MyQna.qnaTitle }</a></td>
 											<td>${id }</td>
 											<td>${MyQna.writeDate }</td>
 										</tr>
 									</c:forEach>
 								</tbody>
 							</c:if>
-						</form>
+				
 					</table>
 				</div>
 				<!--------------------- 글쓰기버튼 --------------------->
 				<div class="csl-button">
-					<p>
-						<button type="button" class="btn btn-outline-secondary">글쓰기</button>
-					</p>
+					<a href="/Coffeesazo/index.jsp?inc=view/qna/qna_write.jsp">
+						<button type="button" class="btn btn-outline-secondary" >글쓰기</button>
+					</a>
 					<nav aria-label="Page navigation example">
 						<ul class="pagination justify-content-center">
-						${ page.startPage}
+							<div class='btns'>
 					<c:if test="${page.startPage > 1 }">
-						<input type='button' value="처음" id="btnFirst" onclick="goPage(1)" />
-						<input type="button" value="이전" id="btnPrev" onclick="goPage(${page.startPage - 1})"/>
+						<input type='button' class="btn btn-outline-secondary"  value="처음" id="btnFirst" onclick="goPage(1)" />
+						<input type="button"  class="btn btn-outline-secondary" value="이전" id="btnPrev" onclick="goPage(${page.startPage - 1})"/>
 					</c:if>
 					
 					
 					<c:forEach var='i' begin='${page.startPage }' end='${page.endPage }'>
-						<input type='button' value='${i }' ${(param.nowPage == i) ? 'disabled' : '' } onclick='goPage(${i})' />
+						<input type='button'class="btn btn-outline-secondary"  value='${i }' ${(param.nowPage == i) ? 'disabled' : '' } onclick='goPage(${i})' />
 					</c:forEach>
 					
 					<c:if test="${page.endPage < page.totalPage }">
-						<input type='button' value='다음' id="btnNext" onclick="goPage(${page.endPage + 1})" />
-						<input type="button" value="맨끝" id="btnLast" onclick="goPage(${page.totalPage})"/> 
+						<input type='button'class="btn btn-outline-secondary"  value='다음' id="btnNext" onclick="goPage(${page.endPage + 1})" />
+						<input type="button"class="btn btn-outline-secondary" value="맨끝" id="btnLast" onclick="goPage(${page.totalPage})"/> 
 					</c:if>
+							</div>
 						</ul>
 					</nav>
 
@@ -147,16 +148,7 @@
 	<script>
 	
 	
-	function view(qnaIndex){
-		// form태그 id
-		var frm = document.form1;
-		// 문의글태그 id
-		var index = document.getElementById("qnaIndex");
-		frm.action="noticedetail"; //윤지누나 꺼 넣기
-		index.value = qnaIndex;
-		console.log(index.value);
-		frm.submit();
-	}
+
 	
 		function goPage(page) {
 			var frm = document.form1;
@@ -172,13 +164,6 @@
 			frm.nowPage.value = 1;
 			frm.submit();
 		}
-
-		function gotoEdit() {
-			var form = document.form_edit;
-			form.action = "mypage_edit";
-			form.submit();
-		}
-		
 		
 	</script>
 

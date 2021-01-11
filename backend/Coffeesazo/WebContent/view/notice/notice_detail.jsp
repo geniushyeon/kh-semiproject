@@ -40,11 +40,11 @@
 	<main>
 		<div id="container">
 			<div id="contents">
-				<a href="index.jsp?inc=view/notice/notice.jsp"><h1>고객센터</h1></a>
+				<a href="notice"><h1>고객센터</h1></a>
 				<div class="title-area">
 					<div class="boardnavi">
-						<a href="index.jsp?inc=view/notice/notice.jsp" class="navi01"> <span>공지사항</span>
-						</a> <a href="index.jsp?inc=view/qna/qna.jsp" class="navi02"> <span>1:1 문의</span>
+						<a href="notice" class="navi01"> <span>공지사항</span>
+						</a> <a href="qna" class="navi02"> <span>1:1 문의</span>
 						</a>
 					</div>
 				</div>
@@ -73,9 +73,11 @@
 					<div class="detail">
 						<div class="view-article">
 							<p style="margin-top: 20px;">${noticevo.noticeText }</p>
-							<p style="text-align: center; margin-bottom: 70px;">
-								<img src="${noticevo.noticeFile }" style="width: 550px; height: 500px; padding-top: 70px;">
-							</p>
+							<c:if test="${noticevo.noticeFile != null }">
+								<p style="text-align: center; margin-bottom: 70px;">
+									<img src="${noticevo.noticeFile }" style="width: 400px; height: 600px; padding-top: 70px;">
+								</p>
+							</c:if>
 						</div>
 					</div>
 				</tr>

@@ -43,10 +43,13 @@ public class QnADeleteServlet extends HttpServlet {
 		if(result == 1) {
 			//업데이트성공시
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("qna");
-			dispatcher.forward(request, response);
+			response.sendRedirect("qna");
+			/*
+			 * RequestDispatcher dispatcher = request.getRequestDispatcher("qna");
+			 * dispatcher.forward(request, response);
+			 */
 		}
-		else out.println("<script>alert('등록에 실패하였습니다..'); history.back();</script>");
+		else out.println("<script>alert('삭제에 실패하였습니다..'); history.back();</script>");
 		
 		
 		

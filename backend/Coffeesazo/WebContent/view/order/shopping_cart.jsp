@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>  
+    <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+    <%@ taglib  prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,19 +39,19 @@
                         <td><input id="checkbox" type="checkbox" name="delete-name" value="${cart.productIndex }"></td>
                         <td>${cart.productIndex }</td>
                         <td height="0">
-                            <div style="height:100%"><img src="${cart.productImage }" height="100%"></div>
+                            <div style="height:100%"><img src="view/img/${cart.productImage }" height="100%"></div>
                         </td>
                         <td>${cart.productName}</td>
-                        <td>${cart.productPrice }원</td>
+                        <td><fmt:formatNumber value="${cart.productPrice }" pattern="###,###,###원" /></td>
                         <td>${cart.orderCount }개</td>
-                        <td>${cart.productPrice * cart.orderCount}원</td>
+                        <td><fmt:formatNumber value="${cart.productPrice * cart.orderCount}" pattern="###,###,###원" /></td>
                     </tr>
                     </c:forEach>
                 </tbody>
                 <tfoot>
                     <tr>
                         <td colspan="6"></td>
-                        <td>총가격:${allresult}원</td>
+                        <td>총가격:<fmt:formatNumber value="${allresult}" pattern="###,###,###원" /></td>
                     </tr>
                 </tfoot>
         </table>
@@ -118,7 +119,7 @@
             </div>
             <div class="check-button">
                 <button type="button" onclick= " location.href = 'allbuy'" class="btn btn-outline-success">구매하기</button>
-                <button type="button" class="btn btn-outline-secondary">쇼핑계속하기</button>
+                <button type="button" class="btn btn-outline-secondary" onclick= " location.href = 'wholebean'">쇼핑계속하기</button>
 
 
 
@@ -225,7 +226,7 @@
             </div>
             <div class="check-button">
                 <button type="button" class="btn btn-outline-success" onclick="alert('장바구니가 비었습니다.');return false;">구매하기</button>
-                <button type="button" class="btn btn-outline-secondary">쇼핑계속하기</button>
+                <button type="button" class="btn btn-outline-secondary" onclick= " location.href = 'wholebean'">쇼핑계속하기</button>
 
 
 

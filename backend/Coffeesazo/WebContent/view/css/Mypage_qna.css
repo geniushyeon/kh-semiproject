@@ -27,6 +27,14 @@ html, body {
   }
 
 
+.btns input {
+	background-color: #fff;
+	border: none;
+	align-self:center;
+	position: relative;
+	display:inline-block;
+	text-decoration: none;
+}
 
 main{   
 margin-top:200px ;
@@ -77,6 +85,7 @@ color: #444;
 background-color: #fff;
 transition: 0.1s ease-in-out;
 display: inline-block;
+cursor: pointer;
 }
 
 
@@ -92,7 +101,9 @@ text-decoration: underline;
 color: #888;
 }
 
-
+.form{
+	display:inline;
+}
 
 .card_small:hover {   /*마우스 올릴시 효과*/
     box-shadow: 4px 8px 20px 2px rgba(0,0,0,0.15); 
@@ -112,18 +123,41 @@ display: inline-block;
 }
 
 .button { /*전체 버튼속성*/
-    
+    display: inline ;
     margin-left:10px
 }
 
 
 form {
-	display: inline-block;
+	display:inline;
 }
 
 nav{
 text-align: center;
 }
 
+
+.btns {
+	padding-top:30px;
+	display: flex;
+	position: relative;
+    justify-content:center;
+    margin-left: 250px; 
+    cursor: pointer;
+}
+
+.btns input {
+	background-color: #fff;
+	border: none;
+	align-self:center;
+	position: relative;
+	display:inline-block;
+	text-decoration: none;
+}
+
+.btns input:focus {
+	outline: none;
+	cursor: pointer;
+}
 
 

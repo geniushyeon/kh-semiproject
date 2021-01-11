@@ -68,6 +68,7 @@ public class CartBuyItNowServlet extends HttpServlet {
 		
 		//오더테이블 인서트 로직
 		int submit = new CartService().OrderAllSubmit(ordervo);
+		System.out.println("submit:" + submit);
 		//주문테이블식별자를 가지고오기위한 로직 뇌절온다....
 		ArrayList<OrderIndex> index = new CartService().FindOrderIndex(memberid);
 		//주문식별자 뽑아온뒤 마지막인덱스값 뽑아오기
@@ -86,7 +87,7 @@ public class CartBuyItNowServlet extends HttpServlet {
 		c = Integer.parseInt(count);
 		
 		int submit2 = new CartService().OrderAllbuydetail2(pd, c,lastElement);
-		System.out.println("인서트횟수" + submit2);
+		System.out.println("submit2:" + submit2);
 		
 		//인서트완료되면 장바구니 마지막인덱스 삭제
 		ArrayList<Cart> pList = new CartService().SelectCartList(memberid);
@@ -94,9 +95,17 @@ public class CartBuyItNowServlet extends HttpServlet {
 		if(!pList.isEmpty()) {
 			lastcart = pList.get(pList.size() - 1);
 		}
-		int deletelast = new CartService().DeleteLastCart(memberid,lastcart);
 		
-		
+		String url = "index.jsp?inc=view/order/";
+		if(submit != 0 && submit2 !=0) {
+		System.out.println("들어옴");
+			int deletelast = new CartService().DeleteLastCart(memberid,lastcart);
+			System.out.println("마지막값지워짐:"+ deletelast);
+			RequestDispatcher view = request.getRequestDispatcher(url + "shopping_finish.jsp");
+			view.forward(request, response);
+		}else {
+			System.out.print("<script> alert('잘못된 접근입니다.'); history.back(); </script>");
+		}
 		
 		
 		

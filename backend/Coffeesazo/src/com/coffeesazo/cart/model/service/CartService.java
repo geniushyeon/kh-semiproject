@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import com.coffeesazo.Application;
 import com.coffeesazo.cart.model.dao.CartDao;
 import com.coffeesazo.cart.model.vo.Cart;
+import com.coffeesazo.cart.model.vo.CartCompare;
 import com.coffeesazo.cart.model.vo.OrderIndex;
+import com.coffeesazo.cart.model.vo.OrderMember;
 import com.coffeesazo.cart.model.vo.OrderVo;
 
 import common.JDBCTemplate;
@@ -93,12 +95,12 @@ public class CartService {
 		return oIndex;
 	}
 
-	public int CartAddOne(String memberid, Cart cart) {
+	public int CartAddOne(String memberid, CartCompare cartcompare) {
 		int addcart = 0;
 		
 		try {
 			Connection conn = new Application().getConn();
-			addcart = new CartDao().CartAddOne(conn,memberid,cart);
+			addcart = new CartDao().CartAddOne(conn,memberid,cartcompare);
 			JDBCTemplate.close(conn);
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -110,7 +112,7 @@ public class CartService {
 			int submit2 = 0;
 		try {
 			Connection conn = new Application().getConn();
-			result = new CartDao().OrderAllbuydetail2(conn,pd,c,lastElement);
+			submit2 = new CartDao().OrderAllbuydetail2(conn,pd,c,lastElement);
 			JDBCTemplate.close(conn);
 			
 		} catch (Exception e) {
@@ -129,6 +131,31 @@ public class CartService {
 			// TODO: handle exception
 		}
 		return result;
+	}
+
+	public OrderMember SearchMember(String memberid) {
+		OrderMember om = null;
+		try {
+			Connection conn = new Application().getConn();
+			om = new CartDao().SearchMember(conn,memberid);
+			JDBCTemplate.close(conn);
+		} catch (Exception e) {
+			
+		}
+		
+		return om;
+	}
+
+	public int UpdateCart(String memberid, CartCompare cartcompare , int cal) {
+		int updatecart = 0;
+		try {
+			Connection conn = new Application().getConn();
+			updatecart = new CartDao().UpdateCart(conn,cartcompare,memberid,cal);
+			JDBCTemplate.close(conn);
+		} catch (Exception e) {
+			
+		}
+		return updatecart;
 	}
 	
 	

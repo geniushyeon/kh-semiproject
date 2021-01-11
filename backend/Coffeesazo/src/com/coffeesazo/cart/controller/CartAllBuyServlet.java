@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import com.coffeesazo.cart.model.service.CartService;
 import com.coffeesazo.cart.model.vo.Cart;
+import com.coffeesazo.cart.model.vo.OrderMember;
 
 /**
  * Servlet implementation class CartAddAllServlet
@@ -47,12 +48,13 @@ public class CartAllBuyServlet extends HttpServlet {
 		    int count = plist.getOrderCount();
 		    allresult += price * count;
 		    }
-		
-		
+		//주문자정보
+		OrderMember om = new CartService().SearchMember(memberid);
 		
 		if(!pList.isEmpty()) {
 			request.setAttribute("pList", pList);
 			request.setAttribute("allresult", allresult);
+			request.setAttribute("om", om);
 			String url = "index.jsp?inc=view/order/";
 			RequestDispatcher view = request.getRequestDispatcher(url + "shopping_payment.jsp");
 			view.forward(request, response);
@@ -60,7 +62,7 @@ public class CartAllBuyServlet extends HttpServlet {
 			
 			
 		} else {
-			response.sendRedirect("");
+			System.out.print("<script> alert('잘못된 접근입니다.'); history.back(); </script>");
 		}
 		
 	}

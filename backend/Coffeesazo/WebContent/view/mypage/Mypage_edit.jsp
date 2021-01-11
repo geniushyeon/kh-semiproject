@@ -14,9 +14,15 @@
   <link rel="stylesheet" href="view/css/addressApi.css" type="text/css">
   <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="view/css/Mypage.css" type="text/css">
-  <link rel="stylesheet" href="./view/css/mypage_edit.css" type="text/css">
+  <link rel="stylesheet" href="./view/css/Mypage_edit.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
+    <style>
+   #btn-change {
+		margin: 0 auto;
+   }
+    
+    </style>
 </head>
 <body>
 <%
@@ -53,18 +59,18 @@
             </a>
         </ul>
         
-         <form method="POST" name="form_edit">
+       <!--   <form method="POST" name="form_edit">--> 
                 <ul>
-                    <a class="card_small" id="mypage-edit" onclick="gotoEdit()">
+                    <a class="card_small" id="mypage-edit" href="mypage_edit">
                         <h3>회원정보수정</h3>
                         <p class="card_text">나의 정보를 </br>변경하실 수 있습니다.</p>
 
                     </a>
                 </ul>
-      	</form>
+       <!--  	</form>--> 
         
             <ul>
-                    <a class="card_small" href="index.jsp?inc=view/mypage/Mypage_qna.jsp">
+                    <a class="card_small" href="MyQnaList"">
                         <h3 class="softblack">나의문의</h3>
                         <p class="card_text">나의1:1문의를 </br>확인하실 수 있습니다.</p>
         
@@ -191,7 +197,7 @@
 
           
           <!-- 확인창 나오는버튼 -->
-          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+          <button type="button" id="btn-change" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" >
             변경하기
           </button>
 

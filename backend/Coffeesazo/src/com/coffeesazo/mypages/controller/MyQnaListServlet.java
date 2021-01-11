@@ -1,6 +1,7 @@
 package com.coffeesazo.mypages.controller;
 
-import java.io.IOException; 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -12,19 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.coffeesazo.Page;
+import com.coffeesazo.member.model.dao.MemberDao;
+import com.coffeesazo.member.model.vo.MemberVo;
 import com.coffeesazo.mypages.model.service.MyQnaService;
 import com.coffeesazo.mypages.model.vo.MyQnaList;
 
-/**
- * Servlet implementation class MyQnaListServlet
- */
+
 @WebServlet("/MyQnaList")
 public class MyQnaListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public MyQnaListServlet() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -38,10 +36,22 @@ public class MyQnaListServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		HttpSession session = request.getSession();
+		
+		String memberid = ((String)session.getAttribute("id"));
+
+		List<MyQnaList> qnaList = new MyQnaService().SelectQnaList(memberid);
 		int nowPage = 1;
 		String findStr = "";
-
+		List<MemberVo> memberInfoList = new MemberDao().selectMemberInfo(memberid);
+		System.out.println(memberid);
+		System.out.println(memberInfoList.toString());
+		
+		String memberName = memberInfoList.get(0).getMemberName();
+		String memberId = memberInfoList.get(0).getMemberId();
+		System.out.println("멤버이름"+memberName);
 		Page page = null;
 
 		if(request.getParameter("nowPage") != null) {
@@ -56,25 +66,23 @@ public class MyQnaListServlet extends HttpServlet {
 		page.setNowPage(nowPage);
 		System.out.println(page.getNowPage());
 		page.setFindStr(findStr);
-		HttpSession session = request.getSession(); 
-		String memberid = ((String)session.getAttribute("id"));
-		List<MyQnaList> qnaList = new MyQnaService().SelectQnaList(memberid);
+		
+	
+		
+		List<MyQnaList> qnaPage = new MyQnaService().selectQnaPageList(page ,memberid);
 
-		
-		
-		
-		
-		
-		if(!qnaList.isEmpty()) {
-			request.setAttribute("qnaList", qnaList);
+		if(!qnaPage.isEmpty()) {
+			request.setAttribute("qnaList", qnaPage);
 			request.setAttribute("page", page);
-			System.out.println("스타트번호:"+page.getStartNo());
+
 			String url = "index.jsp?inc=view/mypage/";
 			RequestDispatcher view = request.getRequestDispatcher(url + "Mypage_qna.jsp");
+			request.setAttribute("memberId", memberId);
+			request.setAttribute("memberName", memberName);
 			view.forward(request, response);
-			System.out.println(qnaList);
+			System.out.println(qnaPage);
 		} else {
-			response.sendRedirect("");
+			out.println("<script>alert('잘못된 접근입니다.'); history.back(); </script>");
 		}
 
 	}

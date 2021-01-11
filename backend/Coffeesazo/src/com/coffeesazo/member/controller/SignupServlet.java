@@ -1,6 +1,7 @@
 package com.coffeesazo.member.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Arrays;
 
 import javax.servlet.RequestDispatcher;
@@ -37,7 +38,8 @@ public class SignupServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-
+		PrintWriter out = response.getWriter();
+		
 		String memberId = request.getParameter("memberId");
 		String memberPwd = request.getParameter("memberPwd");
 		String memberName = request.getParameter("memberName");
@@ -74,6 +76,8 @@ public class SignupServlet extends HttpServlet {
 			rd = request.getRequestDispatcher(url + "signup_complete.jsp");
 			request.setAttribute("memberId", memberVo.getMemberId());
 			rd.forward(request, response);
+		} else {
+			out.print("<script> alert('잘못된 접근입니다. '); history.back(); </script>");
 		}
 	}
 
