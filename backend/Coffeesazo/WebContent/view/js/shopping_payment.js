@@ -32,7 +32,7 @@ function checkForm() {
 	}
 
 
-$("#sample6_postcode").focusout(function() {
+$("#sample6_detailAddress").focusout(function() {
 	var address = $("#sample6_address").val();
 	
 	if (address == "") {

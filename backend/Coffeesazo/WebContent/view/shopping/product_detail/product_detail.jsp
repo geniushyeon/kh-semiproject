@@ -172,7 +172,7 @@ countPlus.onclick = function() {
 }
 
 countMinus.onclick = function() {
-	if(account.value > 0) {
+	if(account.value > 1) {
 		account.value = parseInt(account.value) - 1;	
 	}
 }
