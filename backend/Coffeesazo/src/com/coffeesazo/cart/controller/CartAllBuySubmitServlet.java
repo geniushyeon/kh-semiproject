@@ -102,6 +102,8 @@ public class CartAllBuySubmitServlet extends HttpServlet {
 			int delete = new CartService().CartAllDelete(memberid);
 			RequestDispatcher view = request.getRequestDispatcher(url + "shopping_finish.jsp");
 			view.forward(request, response);
+		}else {
+			System.out.print("<script> alert('잘못된 접근입니다.'); history.back(); </script>");
 		}
 			
 		

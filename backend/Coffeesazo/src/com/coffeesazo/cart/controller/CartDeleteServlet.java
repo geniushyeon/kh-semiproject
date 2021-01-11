@@ -44,6 +44,8 @@ public class CartDeleteServlet extends HttpServlet {
 			System.out.println("선택삭제 값:"+result);
 			if(result != 0) {
 				response.sendRedirect("cart");
+			}else {
+				System.out.print("<script> alert('잘못된 접근입니다.'); history.back(); </script>");
 			}
 
 	}

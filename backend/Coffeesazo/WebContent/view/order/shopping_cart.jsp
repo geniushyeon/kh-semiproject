@@ -119,7 +119,7 @@
             </div>
             <div class="check-button">
                 <button type="button" onclick= " location.href = 'allbuy'" class="btn btn-outline-success">구매하기</button>
-                <button type="button" class="btn btn-outline-secondary">쇼핑계속하기</button>
+                <button type="button" class="btn btn-outline-secondary" onclick= " location.href = 'wholebean'">쇼핑계속하기</button>
 
 
 
@@ -226,7 +226,7 @@
             </div>
             <div class="check-button">
                 <button type="button" class="btn btn-outline-success" onclick="alert('장바구니가 비었습니다.');return false;">구매하기</button>
-                <button type="button" class="btn btn-outline-secondary">쇼핑계속하기</button>
+                <button type="button" class="btn btn-outline-secondary" onclick= " location.href = 'wholebean'">쇼핑계속하기</button>
 
 
 
