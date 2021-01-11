@@ -38,10 +38,12 @@
 						<textarea class="content" rows="13" cols="85" name="content" id="content"  required >${text}</textarea> <br /> <br />
 						<label for="file">첨부파일</label>
 						<div class="file-upload">
-						<input type="file" id="imgInput" name="file" multiple /><br /><br />
-							<span>${image}</span>
-						<img id="image_section" style="width: 200px; height:140px; "/>
+						<input type="file" id="imgInput" name="file" value="${image}" multiple /><br /><br />
+						${image}
 						</div>
+						<%-- <label for="file">첨부된 파일</label>${image} --%>
+						<img src="upload/${image}" style="width: 140px; height:100px;"/>
+						
 						<div class="bottom-button">
 							<input class="btn-save" type="submit" value="등록하기">
 							<input class="btn-cancle" type="button" onclick="cancle()" value="취소하기">
@@ -55,56 +57,64 @@
 	<!-- 부트스트랩 자바스크립트 추가 -->
 	<script src="./js/bootstrap.min.js"></script>
 	<script>
-function requiredCheck(){ 
-		
-		var title = $("#title").val();
-		var content = $("#content").val();
-		var writeRegistration = null;
-		
-		if(title == "") {
-			alert('제목을 입력해 주세요.');
-			$("#title").focus(); 
-			return false;
-			}
-		
-		else if(content ==""){
-			alert('내용을 입력해 주세요.');
-			$("#content").focus(); 
-			return false;
-		}
-		
-		else if (title != null || content !=null) {
-			writeRegistration =confirm("수정 하시겠습니까?");
-			if(writeRegistration==true)
-			alert('수정이 완료되었습니다.');
-			
-		}
-		
-}
-	
-	function cancle() {
-        var writeCancle = confirm("취소하시겠습니까?");
-        if( writeCancle == true ) {
-            alert("작성이 취소되었습니다.");
-            location.href = "qna";
-        } 
-    }
-		
-	function readURL(input) {
-		 if (input.files && input.files[0]) {
-		  var reader = new FileReader();
-		  
-		  reader.onload = function (e) {
-		   $('#image_section').attr('src', e.target.result);  
-		  }
-		  
-		  reader.readAsDataURL(input.files[0]);
-		  }
-		}
-		 
-		$("#imgInput").change(function(){
-		   readURL(this);
-		});
+	function requiredCheck(){ 
+	      
+	      var title = $("#title").val();
+	      var content = $("#content").val();
+	      var writeRegistration = null;
+	      
+	   
+	      
+	      if(title == "") {
+	         alert('제목을 입력해 주세요.');
+	         $("#title").focus(); 
+	         return false;
+	         }
+	      
+	      else if(content ==""){
+	         alert('내용을 입력해 주세요.');
+	         $("#content").focus(); 
+	         return false;
+	      }
+	      
+	      else if (title != null || content !=null) {
+	         writeRegistration =confirm("수정 하시겠습니까?");
+	         if(writeRegistration==true)
+	         alert('수정이 완료되었습니다.');
+	         if( writeRegistration==false){
+	            return false;
+	         }
+	         
+	      }
+	      
+	}
+	   
+	   function cancle() {
+	        var writeCancle = confirm("취소하시겠습니까?");
+	        if( writeCancle == true ) {
+	            alert("작성이 취소되었습니다.");
+	            location.href = "qna";
+	        }
+	        if( writeRegistration==false){
+	         return false;
+	      }
+	    }
+	      
+	   function readURL(input) {
+	       if (input.files && input.files[0]) {
+	        var reader = new FileReader();
+	        
+	        reader.onload = function (e) {
+	         $('#image_section').attr('src', e.target.result);  
+	        }
+	        
+	        reader.readAsDataURL(input.files[0]);
+	        }
+	      }
+	       
+	      $("#imgInput").change(function(){
+	         readURL(this);
+	      });
 	</script>
 </body>
 </html>

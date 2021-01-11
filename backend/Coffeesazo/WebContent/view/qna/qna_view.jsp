@@ -36,12 +36,10 @@
 						<textarea class="content" rows="13" cols="85" name="content"  readonly>${text}</textarea> <br /> <br />		
 						<label for="file">첨부파일<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						${image}</span></label>
-						<div class="file-upload">
-							<!-- <input type="file" id="imgInput" name="file" multiple readonly  /> -->
-							<%-- <span>${image}</span> --%>
-							<!-- <img id="image_section" src='#' style="width: 200px; height:140px;"/> -->
+						
+							<img src="upload/${image}" style="width: 140px; height:100px;"/>
 
-						</div>
+						
 						<div class="bottom-button">
 						<a href="qna" class="btn-board" >목록으로</a> 
 						<a class="btn-modify" href="qnamodify?id=${index}">수정하기</a>

@@ -37,12 +37,13 @@ public class FileUpload {
 			ex.printStackTrace();
 		}				
 	}
+}
 
-
- public QnAVo getphoto() { QnAVo vo = new QnAVo();
- // vo.setQnaTitle(mul.getParameter("QNA_TITLE"));
- // vo.setQnaText(mul.getParameter("QNA_TEXT"));
- vo.setQnaImage(sysFile);
-  
-  return vo; } }
+/*
+ * public QnAVo getphoto() { QnAVo vo = new QnAVo(); //
+ * vo.setQnaTitle(mul.getParameter("QNA_TITLE")); //
+ * vo.setQnaText(mul.getParameter("QNA_TEXT")); vo.setQnaImage(sysFile);
+ * 
+ * return vo; } }
+ */
  

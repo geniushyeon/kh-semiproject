@@ -7,7 +7,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 	// 1. upload 폴더 생성이 안되어 있으면 생성
-	String saveDirectory = pageContext.getServletContext().getRealPath("./view/upload");
+	String saveDirectory = pageContext.getServletContext().getRealPath("/view/upload");
 	System.out.println(saveDirectory);
 
 	File saveDir = new File(saveDirectory);
@@ -35,8 +35,8 @@
 	File uploadFile = mrequest.getFile("file");
   //input type="file" 태그의 name속성값을 이용해 파일객체를 생성
 	long uploadFile_length = uploadFile.length();
-	String originalFileName = mrequest.getOriginalFileName("upload"); //기존 이름
-	String filesystemName = mrequest.getFilesystemName("upload"); //기존
+	String originalFileName = mrequest.getOriginalFileName("file"); //기존 이름
+	String filesystemName = mrequest.getFilesystemName("file"); //기존
 %>
 <!DOCTYPE html>
 <html>

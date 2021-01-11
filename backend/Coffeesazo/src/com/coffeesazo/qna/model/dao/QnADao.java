@@ -91,6 +91,7 @@ public class QnADao {
 				qnavo.setQnaTitle(rs.getString("qna_title"));
 				qnavo.setQnaDate(rs.getDate("qna_date"));
 				qnavo.setFkMemberId(rs.getString("fk_member_id"));
+				qnavo.setQnaImage(rs.getString("qna_image"));
 				qnaList.add(qnavo);
 
 			}			
@@ -124,14 +125,8 @@ public class QnADao {
 
 				return 1;
 			}
-			//파일
-			if(qnaImage != null && !qnaImage.equals("")) {
-				File file = new File(FileUpload.saveDir + qnaImage);
-				if(file.exists()) {
-					file.delete();
-				}
-			}
 			
+					
 			else
 				return 0 ;
 		
