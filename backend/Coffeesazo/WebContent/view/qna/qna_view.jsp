@@ -36,9 +36,10 @@
 						<textarea class="content" rows="13" cols="85" name="content"  readonly>${text}</textarea> <br /> <br />		
 						<label for="file">첨부파일<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						${image}</span></label>
-						
-							<img src="upload/${image}" style="width: 140px; height:100px;"/>
-
+						<div class="file-upload">
+						<p></p>
+						<img src="upload/${image}" style="width: 140px; height:100px;"/>
+						</div>
 						
 						<div class="bottom-button">
 						<a href="qna" class="btn-board" >목록으로</a> 
@@ -56,16 +57,22 @@
 		function cancle() {
 	        var writeCancle = confirm("삭제하시겠습니까?");
 	        if( writeCancle == true ) {
-	            /*  alert("삭제가 완료되었습니다."); 서블릿에서 처리*/
+	            alert("삭제가 완료되었습니다.");
 	            location.href = "qnadelete";
-	        } 
+	        }
+	        if( writeCancle==false){
+	             return false;
+	          }
 	    }
 		function modify() {
 	        var writeCancle = confirm("수정하시겠습니까?");
 	        if( writeCancle == true ) {
-	            /*  alert("수정이 완료되었습니다."); 서블릿에서 처리*/
+	            alert("수정이 완료되었습니다.");
 	            location.href = "qnamodify";
-	        } 
+	        }
+	        if( writeCancle==false){
+	             return false;
+	          }
 	    }
 		function readURL(input) {
 			 if (input.files && input.files[0]) {

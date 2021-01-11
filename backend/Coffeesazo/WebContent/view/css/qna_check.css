@@ -200,7 +200,7 @@ h1 {
 .board {
 	position: relative;
 	display: inherit;
-	height: 620px;
+	height: 780px;
 	padding: 70px 0 70px 0;
 	border: 1px solid #e5e5e5;
 	word-wrap: break-word;
@@ -255,13 +255,16 @@ h1 {
 	padding-right: 487px;
 	position: relative;
 }
+img {
+	float: left;
+}
 .layout-box span {
 	padding-left: 10.5px;
 }
 /* 하단 버튼 코드 */
 .bottom-button {
-	position: relative;
-	padding: 85px;
+	position: relative;            
+	padding-top: 230px;
 	text-align: center;
 	cursor: pointer;
 }

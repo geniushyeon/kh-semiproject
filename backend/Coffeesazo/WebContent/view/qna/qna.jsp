@@ -133,7 +133,7 @@
 			location.href = "index.jsp?inc=view/qna/qna_write.jsp";
 		}
 	 }
-	
+
 	function registration_button() {
 		var id = '<%=(String) session.getAttribute("id")%>';
 		var idvalue = document.getElementById("test").value;

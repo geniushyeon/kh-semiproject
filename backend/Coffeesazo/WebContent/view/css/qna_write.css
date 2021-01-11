@@ -199,7 +199,7 @@ h1 {
 .board {
 	position: relative;
 	display: inherit;
-	height: 620px;
+	height: 780px;
 	padding: 70px 0 70px 0;
 	border: 1px solid #e5e5e5;
 	word-wrap: break-word;
@@ -262,10 +262,13 @@ h1 {
 	padding-right: 487px;
 	position: relative;
 }
+.file-upload #image_section {
+	padding-left: 30px;
+}
 /* 하단 버튼 코드 */
 .bottom-button {
 	position: relative;
-	padding: 65px;
+	padding-top: 60px;
 	text-align: center;
 	cursor: pointer;
 }
