@@ -14,7 +14,7 @@ CREATE TABLE cs_member(
 SELECT * FROM board;
 SELECT * FROM cs_member;
 
-
+SELECT * FROM cs_notice;
 SELECT * FROM cs_order;
 SELECT * FROM cs_order_detail;
 rollback;
@@ -337,7 +337,24 @@ VALUES(seq_notice_index.nextval, 'admin', '크리스마스 EVENT6','어렵다어
 INSERT INTO cs_notice(notice_index, fk_member_id, notice_title, notice_text, notice_file)
 VALUES(seq_notice_index.nextval, 'admin', '크리스마스 EVENT7','어렵다어려워', null);
 
-SELECT * FROM cs_order_detail;
+INSERT INTO cs_notice VALUES(
+    seq_notice_index.nextval,
+    'admin',
+    '상세 주소지 누락건에 대한 공지',
+    default,
+    '상세주소지를 제외한 기본 배송지만 기재되어 주소지 누락으로 다시 반송처리 되는 경우가 발생하고 있습니다! 꼭 상세주소지 (동호수)를 포함한 주소지를 기입해주세요!',
+    null
+);
+INSERT INTO cs_notice VALUES(
+    seq_notice_index.nextval,
+    'admin',
+    '코로나 19로 인한 배송 지연 안내',
+    default,
+    '코로나 19로 인한 배송 지연 안내입니다.',
+    './view/img/delivery-delay.jpg'
+);
+commit;
+SELECT * FROM cs_notice;
 SELECT * FROM cs_cart;
 
 INSERT INTO cs_cart VALUES(
