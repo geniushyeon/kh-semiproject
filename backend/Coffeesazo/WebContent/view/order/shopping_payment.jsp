@@ -90,12 +90,12 @@
 										<div class="card">
 											<input type="radio" name="gener" checked="checked"
 												style="height: 20px; width: 20px; margin-right: 50px;"
-												value="카드결제" /> <span class="up" style="font-size: 20px;">신용카드/체크카드</span>
+												value="카드결제" onclick="getPayment(event)"/> <span class="up" style="font-size: 20px;">신용카드/체크카드</span>
 										</div>
 										<div class="money">
 											<input type="radio" name="gener"
 												style="height: 20px; width: 20px; margin-right: 50px;"
-												value="무통장입금" /> <span class="up" style="font-size: 20px;">무통장입금</span>
+												value="무통장입금" onclick="getPayment(event)"/> <span class="up" style="font-size: 20px;">무통장입금</span>
 										</div>
 									</div>
 								</div>
@@ -106,7 +106,7 @@
 
 											<tr>
 												<td>결제방법</td>
-												<td>결제방법</td>
+												<td><div id="payment-result">결제방법을 선택해주세요.</div></td>
 											</tr>
 											<tr>
 												<td>배송비</td>
@@ -223,6 +223,7 @@
 	 <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 	<script src="view/js/shopping_payment.js"></script>
+
 
 </body>
 </html>
