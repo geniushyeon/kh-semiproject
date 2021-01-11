@@ -42,7 +42,7 @@ public class OrderDeleteServelt extends HttpServlet {
       // TODO Auto-generated method stub
    
       request.setCharacterEncoding("utf-8");
-      response.setCharacterEncoding("utf-8");
+  		response.setContentType("text/html;charset=UTF-8");
       HttpSession session = request.getSession();
       String memberid = ((String)session.getAttribute("id"));
       String[] checkorder = request.getParameterValues("delete-name");
@@ -59,7 +59,7 @@ public class OrderDeleteServelt extends HttpServlet {
             
             response.sendRedirect("OrderListSelect");
          }else {
-            response.sendRedirect("");
+ 			System.out.println("<script>alert('잘못된 접근입니다.'); history.back(); </script>");
          }
    }
 

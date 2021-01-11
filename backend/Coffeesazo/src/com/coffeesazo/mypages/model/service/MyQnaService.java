@@ -16,13 +16,14 @@ import common.JDBCTemplate;
 public class MyQnaService {
 	
 
-	public List<MyQnaList> selectQnaPageList(Page page) {
+	public List<MyQnaList> selectQnaPageList(Page page, String memberid) {
 		List<MyQnaList> qnaSearchList = null;
 		
 		
 		try {
 			Connection conn = new Application().getConn();
-			qnaSearchList =  new MyQnaListDao().selectQnaPageList(conn, page);
+			qnaSearchList =  new MyQnaListDao().selectQnaPageList(conn, page , memberid);
+			
 			JDBCTemplate.close(conn);
 		} catch (Exception e) {
 			e.printStackTrace();

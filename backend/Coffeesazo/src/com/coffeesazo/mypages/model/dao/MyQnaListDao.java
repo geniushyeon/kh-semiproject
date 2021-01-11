@@ -20,17 +20,17 @@ public class MyQnaListDao {
 
 
 	
-	public int getTotalListSize(Connection conn, String findStr) {
+	public int getTotalListSize(Connection conn, String findStr , String memberid) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		int totalListSize = 0;
 
 		try {
-			String sql = "SELECT COUNT(*) cnt FROM CS_QNA  WHERE QNA_TITLE LIKE ? ";
+			String sql = "SELECT COUNT(*) cnt FROM CS_QNA  WHERE QNA_TITLE LIKE ? AND fk_member_id = ? ";
 
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, "%" + findStr + "%");
-
+			pstmt.setString(2,  memberid);
 			rs = pstmt.executeQuery();
 
 			while(rs.next()) {
@@ -52,7 +52,7 @@ public class MyQnaListDao {
 	
 	
 	
-	public List<MyQnaList> selectQnaPageList(Connection conn, Page page) {
+	public List<MyQnaList> selectQnaPageList(Connection conn, Page page, String memberid) {
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;	
@@ -62,20 +62,21 @@ public class MyQnaListDao {
 
 			qnaSearchList = new ArrayList<MyQnaList>();
 			String findStr = page.getFindStr();
-			page.setTotalListSize(getTotalListSize(conn, findStr));
+			page.setTotalListSize(getTotalListSize(conn, findStr , memberid));
 			page.pageCompute();
 
 			String sql = "SELECT * FROM ("
 					+ "SELECT ROWNUM no, n.* FROM ("
-					+ "SELECT * FROM CS_QNA WHERE QNA_TITLE LIKE ? "
+					+ "SELECT * FROM CS_QNA WHERE QNA_TITLE LIKE ? AND fk_member_id = ? "
 					+ "ORDER BY QNA_INDEX DESC) n"
 					+ " ) WHERE no BETWEEN ? AND ?";
 
 
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, "%" + findStr + "%");
-			pstmt.setInt(2, page.getStartNo());
-			pstmt.setInt(3, page.getEndNo());
+			pstmt.setString(2, memberid );
+			pstmt.setInt(3, page.getStartNo());
+			pstmt.setInt(4, page.getEndNo());
 //			System.out.println(page.getStartNo());
 //			System.out.println(page.getEndNo());
 			rs = pstmt.executeQuery();

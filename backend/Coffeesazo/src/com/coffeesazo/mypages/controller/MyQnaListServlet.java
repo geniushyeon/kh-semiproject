@@ -36,7 +36,7 @@ public class MyQnaListServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
 		
@@ -69,7 +69,7 @@ public class MyQnaListServlet extends HttpServlet {
 		
 	
 		
-		List<MyQnaList> qnaPage = new MyQnaService().selectQnaPageList(page);
+		List<MyQnaList> qnaPage = new MyQnaService().selectQnaPageList(page ,memberid);
 
 		if(!qnaPage.isEmpty()) {
 			request.setAttribute("qnaList", qnaPage);
@@ -82,7 +82,7 @@ public class MyQnaListServlet extends HttpServlet {
 			view.forward(request, response);
 			System.out.println(qnaPage);
 		} else {
-			response.sendRedirect("");
+			out.println("<script>alert('잘못된 접근입니다.'); history.back(); </script>");
 		}
 
 	}
