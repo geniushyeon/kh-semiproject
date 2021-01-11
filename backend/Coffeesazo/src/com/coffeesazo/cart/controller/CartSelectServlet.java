@@ -47,7 +47,9 @@ public class CartSelectServlet extends HttpServlet {
 	    allresult += price * count;
 	    }
 		System.out.println(allresult);
-		
+		    if(pList !=null) {
+		    	
+		    }
 			request.setAttribute("pList", pList);
 			request.setAttribute("allresult", allresult);
 			String url = "index.jsp?inc=view/order/";

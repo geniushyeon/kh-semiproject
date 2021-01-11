@@ -18,9 +18,9 @@
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
     <style>
-    #input-container {
-    	
-    }
+   #btn-change {
+		margin: 0 auto;
+   }
     
     </style>
 </head>
@@ -197,7 +197,7 @@
 
           
           <!-- 확인창 나오는버튼 -->
-          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+          <button type="button" id="btn-change" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" >
             변경하기
           </button>
 
