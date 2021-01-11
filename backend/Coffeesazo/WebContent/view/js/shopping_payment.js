@@ -16,6 +16,16 @@ function isAllChecked() {
 		return true;
 	}
 	
+	function checkpayment(){
+	var checkpayment = $("input:radio[name='gener']").is(":checked");
+        if (checkpayment == false){
+		
+        return false;
+		}
+		return true;
+		
+	}
+	
 function checkForm() {
 		
 		var form = document.getElementsByName("form_buy");
@@ -25,7 +35,11 @@ function checkForm() {
 		}else if (requiredCheck == false){
         alert("필수 항목을 입력하셔야 구매가 가능합니다.");
         return false;
-		}else{
+		}else if(checkpayment() == false){
+		alert("결제방법을 선택하셔야 구매가 가능합니다.");
+        return false;
+		}
+		else{
 		form.submit();
 		}
 		

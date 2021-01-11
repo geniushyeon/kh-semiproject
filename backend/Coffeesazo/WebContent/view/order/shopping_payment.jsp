@@ -88,13 +88,13 @@
 									<br>
 									<div class="payment-radio-container">
 										<div class="card">
-											<input type="radio" name="gener" checked="checked"
-												style="height: 20px; width: 20px; margin-right: 50px;"
+											<input type="radio" name="gener"
+												id = "check" style="height: 20px; width: 20px; margin-right: 50px;"
 												value="카드결제" onclick="getPayment(event)"/> <span class="up" style="font-size: 20px;">신용카드/체크카드</span>
 										</div>
 										<div class="money">
 											<input type="radio" name="gener"
-												style="height: 20px; width: 20px; margin-right: 50px;"
+												id = "check" style="height: 20px; width: 20px; margin-right: 50px;"
 												value="무통장입금" onclick="getPayment(event)"/> <span class="up" style="font-size: 20px;">무통장입금</span>
 										</div>
 									</div>
