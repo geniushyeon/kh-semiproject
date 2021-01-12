@@ -4,7 +4,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="./css/bootstrap.min.css">
-<link rel="stylesheet" href="./css/payment.css" type="text/css">
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>

@@ -78,7 +78,7 @@
 								<th scope="col" class="displaynone">카테고리</th>
 								<th scope="col">제목</th>
 								<th scope="col">작성자</th>
-								<th scope="col">작성일</th>
+								<th scope="col" class>작성일</th>
 							</tr>
 						</thead>
 

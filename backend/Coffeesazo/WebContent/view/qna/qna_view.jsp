@@ -8,7 +8,6 @@
 <title>1:1문의 조회 | COFFEESAZO</title>
 <!-- 부트스트랩 불러오기 -->
 <link rel="stylesheet" href="./css/bootstrap.min.css">
-<link rel="stylesheet" href="index copy.css" type="text/css">
 <!--favicon-->
 <link rel="shortcut icon"
 	href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
