@@ -106,11 +106,11 @@
 										</tr>
 									</c:forEach>
 								</tbody>
-							</c:if>
 				
 					</table>
 				</div>
-				 <c:if test="${empty odList }">
+				</c:if>
+				 <c:if test="${empty qnaList }">
                		<div style="text-align: center; font-weight: 500; font-size: 2rem;">문의내역이 없습니다.<br><br>   </div>
             
             	</c:if>
