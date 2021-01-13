@@ -36,7 +36,6 @@
 						<label for="file">첨부파일</label>
 						<div class="file-upload">
 							<input type="file" id="imgInput" name="file" multiple /> <br /> <br />
-<!-- 							<img src='http://placehold.it/200x140' id='photo'  width='200px' height='140px' />  -->
 							<img id="image_section" src="http://placehold.it/140x100" width='140px' height='100px' />
 						</div>
 						<div class="bottom-button">
@@ -57,6 +56,7 @@
        var title = $("#title").val();
        var content = $("#content").val();
        var writeRegistration = null;
+       var imgInput = $("#imgInput").val();
        
        if(title == "") {
           alert('제목을 입력해 주세요.');
@@ -69,6 +69,12 @@
           $("#content").focus(); 
           return false;
        }
+
+       else if(imgInput ==""){
+           alert('사진을 반드시 첨부해 주세요.');
+           $("#content").focus(); 
+           return false;
+        }
        
        else if (title != null || content !=null) {
           writeRegistration =confirm("등록하시겠습니까?");
@@ -78,7 +84,10 @@
           if( writeRegistration==false){
              return false;
           }
-       }         
+      
+       }
+       
+   
 }      
     
 function cancle() {

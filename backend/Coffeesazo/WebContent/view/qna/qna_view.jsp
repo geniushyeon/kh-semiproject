@@ -8,7 +8,6 @@
 <title>1:1문의 조회 | COFFEESAZO</title>
 <!-- 부트스트랩 불러오기 -->
 <link rel="stylesheet" href="./css/bootstrap.min.css">
-<link rel="stylesheet" href="index copy.css" type="text/css">
 <!--favicon-->
 <link rel="shortcut icon"
 	href="https://p7.hiclipart.com/preview/988/211/651/white-coffee-tea-cafe-computer-icons-cup-of-coffee-icon.jpg">
@@ -29,21 +28,23 @@
 				</div>
 				<div class="layout-box">
 					<h2>1:1 문의 조회하기</h2>
-					<form name="board" method="post" class="board">
+					<form name="board" id="board" method="post" class="board">
 						<label for="title">제목</label> <input type="text" id="title"
 							name="title" value="${title}" readonly /> <br /> <br /> 
 						<label for="content">내용</label> 
 						<textarea class="content" rows="13" cols="85" name="content"  readonly>${text}</textarea> <br /> <br />		
 						<label for="file">첨부파일<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						${image}</span></label>
-						
-							<img src="upload/${image}" style="width: 140px; height:100px;"/>
-
+						<div class="file-upload">
+						<p></p>
+						<img src="upload/${image}" style="width: 140px; height:100px;"/>
+						</div>
 						
 						<div class="bottom-button">
 						<a href="qna" class="btn-board" >목록으로</a> 
 						<a class="btn-modify" href="qnamodify?id=${index}">수정하기</a>
-						<a class="btn-cancle" href="qnadelete?id=${index}" onclick="javascript:cancle()">삭제하기</a> 
+						<a class="btn-cancle" onclick="cancle()">
+						<input type="hidden" id="index" name="index" value="${index }"/>삭제하기</a> 
 						</div>
 					</form>
 				</div>
@@ -55,17 +56,29 @@
 	<script>
 		function cancle() {
 	        var writeCancle = confirm("삭제하시겠습니까?");
+	        var frm = document.getElementById("board");
+	        var index = document.getElementById("index");
+	        
 	        if( writeCancle == true ) {
-	            /*  alert("삭제가 완료되었습니다."); 서블릿에서 처리*/
-	            location.href = "qnadelete";
-	        } 
+	            frm.action = "qnadelete";
+	            alert("삭제가 완료되었습니다.");
+				frm.index = index.value;
+				frm.submit();
+	         
+	        }
+	        if( writeCancle==false){
+	             return false;
+	          }
 	    }
 		function modify() {
 	        var writeCancle = confirm("수정하시겠습니까?");
 	        if( writeCancle == true ) {
-	            /*  alert("수정이 완료되었습니다."); 서블릿에서 처리*/
+	            alert("수정이 완료되었습니다.");
 	            location.href = "qnamodify";
-	        } 
+	        }
+	        if( writeCancle==false){
+	             return false;
+	          }
 	    }
 		function readURL(input) {
 			 if (input.files && input.files[0]) {

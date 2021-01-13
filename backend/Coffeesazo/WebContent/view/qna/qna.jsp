@@ -64,7 +64,7 @@
 				<form name='frm_qna' method='post' id='frm_qna'>
 					<!-- 	<input type='button' value='입력' id='btnInsert' /> -->
 					<div class="find">
-						<input type='text' name='findStr' class='findStr' value='${param.findStr}' placeholder="제목으로만 검색이 가능합니다."/> 
+						<input type='text' name='findStr' class='findStr' value='${param.findStr}' placeholder="제목으로 검색"/> 
 						<input type='button' value='검색' id='btnFind' onclick="view()" /> 
 						<input type='hidden' name='nowPage' value='${(empty param.nowPage)? 1 : param.nowPage }' />
 					</div>
@@ -133,7 +133,7 @@
 			location.href = "index.jsp?inc=view/qna/qna_write.jsp";
 		}
 	 }
-	
+
 	function registration_button() {
 		var id = '<%=(String) session.getAttribute("id")%>';
 		var idvalue = document.getElementById("test").value;

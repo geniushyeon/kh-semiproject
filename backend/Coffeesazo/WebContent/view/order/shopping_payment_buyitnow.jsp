@@ -88,7 +88,7 @@
 									<br>
 									<div class="payment-radio-container">
 										<div class="card">
-											<input type="radio" name="gener" checked="checked"
+											<input type="radio" name="gener" 
 												style="height: 20px; width: 20px; margin-right: 50px;"
 												value="카드결제" onclick="getPayment(event)" /> <span class="up" style="font-size: 20px;">신용카드/체크카드</span>
 										</div>

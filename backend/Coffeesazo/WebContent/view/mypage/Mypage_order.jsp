@@ -33,7 +33,7 @@
             <div class="user_info_form">
                <img
                   src="https://raw.githubusercontent.com/St4rFi5h/ETC/main/sourcce/article-user-blank.jpg"
-                  alt="blank_user">  ${memberName}(${id })님
+                  alt="blank_user">  ${memberName}(${id }) 님
             </div>
          </div>
 

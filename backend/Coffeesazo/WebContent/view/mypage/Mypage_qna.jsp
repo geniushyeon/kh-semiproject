@@ -71,7 +71,7 @@
 					<input type="hidden" name="nowPage" value="${empty param.nowPage ? 1 : param.nowPage }" />
 				</div>
 				<!---------------------테이블 시작 --------------------->
-		
+		<c:if test="${not empty qnaList }">
 				<div class="main_table">
 					<table class="table table-hover">
 							<thead>
@@ -85,7 +85,7 @@
 							</thead>
 
 							<!--------------------- 글 시작 --------------------->
-							<c:if test="${not empty qnaList }">
+							
 								<tbody>
 								
 								<c:set var="no" value="${page.startNo }"/>
@@ -106,10 +106,14 @@
 										</tr>
 									</c:forEach>
 								</tbody>
-							</c:if>
 				
 					</table>
 				</div>
+				</c:if>
+				 <c:if test="${empty qnaList }">
+               		<div style="text-align: center; font-weight: 500; font-size: 2rem;">문의내역이 없습니다.<br><br>   </div>
+            
+            	</c:if>
 				<!--------------------- 글쓰기버튼 --------------------->
 				<div class="csl-button">
 					<a href="/Coffeesazo/index.jsp?inc=view/qna/qna_write.jsp">
@@ -143,6 +147,7 @@
 			</form>
 
 		</div>
+		
 	</main>
 
 	<script>

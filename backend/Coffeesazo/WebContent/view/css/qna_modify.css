@@ -262,6 +262,10 @@ h1 {
  */
 }
 
+.file-upload img {
+	padding-top: 100px;
+}
+
 /* 하단 버튼 코드 */
 .bottom-button {
     position: relative;

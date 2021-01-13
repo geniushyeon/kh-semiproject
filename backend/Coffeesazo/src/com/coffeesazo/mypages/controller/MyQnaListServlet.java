@@ -39,7 +39,7 @@ public class MyQnaListServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		
+
 		String memberid = ((String)session.getAttribute("id"));
 
 		List<MyQnaList> qnaList = new MyQnaService().SelectQnaList(memberid);
@@ -48,7 +48,7 @@ public class MyQnaListServlet extends HttpServlet {
 		List<MemberVo> memberInfoList = new MemberDao().selectMemberInfo(memberid);
 		System.out.println(memberid);
 		System.out.println(memberInfoList.toString());
-		
+
 		String memberName = memberInfoList.get(0).getMemberName();
 		String memberId = memberInfoList.get(0).getMemberId();
 		System.out.println("멤버이름"+memberName);
@@ -66,12 +66,12 @@ public class MyQnaListServlet extends HttpServlet {
 		page.setNowPage(nowPage);
 		System.out.println(page.getNowPage());
 		page.setFindStr(findStr);
-		
-	
-		
+
+
+
 		List<MyQnaList> qnaPage = new MyQnaService().selectQnaPageList(page ,memberid);
 
-		if(!qnaPage.isEmpty()) {
+		if(qnaPage != null) {
 			request.setAttribute("qnaList", qnaPage);
 			request.setAttribute("page", page);
 
