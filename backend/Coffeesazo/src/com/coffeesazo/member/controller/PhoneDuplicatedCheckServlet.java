@@ -32,8 +32,6 @@ public class PhoneDuplicatedCheckServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		
 		String memberPhone = request.getParameter("memberPhone");
-		System.out.println(memberPhone); // 입력받은 값 들어오는지 확인 
-		
 		
 		MemberDao memberDao = new MemberDao();
 		response.getWriter().write(memberDao.phoneDuplicatedCheck(memberPhone) + "");

@@ -34,8 +34,6 @@ public class IdDuplicatedCheckServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		
 		String memberId = request.getParameter("memberId");
-		System.out.println(memberId); // 입력받은 값 들어오는지 확인 
-		
 		
 		MemberDao memberDao = new MemberDao();
 		response.getWriter().write(memberDao.idDuplicatedCheck(memberId)+ "");
