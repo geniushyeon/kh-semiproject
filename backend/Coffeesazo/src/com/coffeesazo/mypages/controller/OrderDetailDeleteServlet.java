@@ -52,9 +52,6 @@ public class OrderDetailDeleteServlet extends HttpServlet {
 		System.out.println(affectedRows);
 		
 		if (affectedRows > 0) {
-//			String url = "index.jsp?inc=view/mypage/";
-//			RequestDispatcher rd = request.getRequestDispatcher("OrderListSelect");
-//			rd.forward(request, response);
 			
 			response.sendRedirect("OrderListSelect");
 		}

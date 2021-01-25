@@ -41,9 +41,9 @@ public class CheckOriginPhoneServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		String memberId = ((String)session.getAttribute("id"));
-		System.out.println(memberId);
+		
 		String memberPhone = request.getParameter("memberPhone");
-		System.out.println(memberPhone);
+		
 		
 		MemberDao memberDao = new MemberDao();
 		response.getWriter().write(memberDao.checkOriginPhone(memberId, memberPhone) + "");

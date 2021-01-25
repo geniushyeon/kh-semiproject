@@ -33,9 +33,7 @@ public class EmailDuplicatedCheckServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 		
-		String memberEmail = request.getParameter("memberEmail");
-		System.out.println(memberEmail); // 입력받은 값 들어오는지 확인 
-		
+		String memberEmail = request.getParameter("memberEmail"); 
 		
 		MemberDao memberDao = new MemberDao();
 		response.getWriter().write(memberDao.emailDuplicatedCheck(memberEmail) + "");
