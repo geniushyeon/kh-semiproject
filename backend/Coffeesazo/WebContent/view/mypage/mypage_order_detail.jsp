@@ -85,7 +85,6 @@
                 	for(OrderDetailListVo o : orderDetailList) {
                 %>
                     <tr>
-                        <!-- <td rowspan="2">20201223-01</td> -->
                         <td><%=o.getOrderIndex() %></td>
                         <td><img src="view/img/<%=o.getProductImage()%>" style="width: 100px; height:100px;"></td>
                         <td><%=o.getProductName() %></td>
@@ -93,13 +92,6 @@
                         <td><fmt:formatNumber value="<%=o.getProductPrice() %>" pattern="###,###,###원"/></td>
                     </tr>
                	<% }%>
-                   <!--  <tr>
-                        <td>20201223-01</td>
-                        <td><img src="..." alt="..."></td>
-                        <td>부산제</td>
-                        <td>1</td>
-                        <td>14,000원</td>
-                    </tr> -->
                 </tbody>
             
         </table>
