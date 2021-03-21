@@ -5,12 +5,13 @@
 - OS: Windows 10 / macOS Catalina 10.15.7
 - Version Control: Github
 - Framework: Bootstrap
-- Front-end: HTML5 / CSS3 / javascript / jQuery / AJAX / Kakao Oven
+- Wireframe: Kakao Oven
+- Front-end: HTML5 / CSS3 / javascript / jQuery
 - Back-end: Java 11.0.8
 - WAS: Apache Tomcat 9.0
 - DB: Oracle, ERDCloud
 - Developer Tools: Eclipse EE / vscode / SqlDeveloper
-- API: 다음 주소 API
+- API: Daum 주소 API
 
 ## 팀원별 맡은 역할
 - 이지현(조장): 메인(헤더/푸터), 회원가입, 공지사항(백엔드), 마이페이지(주문상세조회, 회원정보수정 백엔드)
@@ -26,8 +27,8 @@
 |:---:|:---:|---|
 |12.04 - 12.06|자료 조사 및 주제 선정|
 |12.07 - 12.11|와이어프레임 제작|
-|12.12 - 12.14|메인 페이지 제작
-|12.15 - 12.20|역할 분담 및 프론트엔드 개발
+|12.12 - 12.14|메인 페이지 제작|
+|12.15 - 12.20|역할 분담 및 프론트엔드 개발|
 |12.21 - 12.27|프론트엔드 버그 수정 및 DB 설계 시작|
 |12.28 - 12.31|DB 설계 완료 및 SQL문 작성|
 |01.01 - 01.08|백엔드 개발
